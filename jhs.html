@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JHS Studio — Padula Design Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0a0a0a; --surface: #111111; --border: #1e1e1e;
+    --text: #e8e6e0; --muted: #6b6862; --accent: #ebbe38;
+    --accent-dim: rgba(235,190,56,0.08);
+    --font-display: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; cursor: none; }
+  .cursor { width:10px;height:10px;background:var(--accent);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s; }
+  .cursor-ring { width:36px;height:36px;border:1px solid rgba(235,190,56,.4);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transition:transform .08s ease;transform:translate(-50%,-50%); }
+  body:has(a:hover) .cursor,body:has(button:hover) .cursor { width:6px;height:6px;background:#fff; }
+  body:has(a:hover) .cursor-ring,body:has(button:hover) .cursor-ring { width:52px;height:52px;border-color:rgba(235,190,56,.7); }
+  .progress-bar { position:fixed;top:0;left:0;height:2px;background:var(--accent);z-index:1000;width:0%;transition:width .1s linear; }
+  section { padding:120px 48px; }
+  .section-number { font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-family:var(--font-display);margin-bottom:16px; }
+  .section-title { font-family:var(--font-display);font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin-bottom:32px; }
+  .section-body { font-size:17px;line-height:1.75;color:#b0aea8;max-width:640px; }
+
+  /* HERO */
+  .hero { min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px;position:relative;overflow:hidden; }
+  .hero-bg { position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 40%,rgba(235,190,56,.06) 0%,transparent 70%);pointer-events:none; }
+  .hero-label { font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:12px; }
+  .hero-label::before { content:'';display:block;width:32px;height:1px;background:var(--muted); }
+  .hero-title { font-family:var(--font-display);font-size:clamp(64px,10vw,140px);font-weight:800;line-height:.92;letter-spacing:-.03em;margin-bottom:48px; }
+  .hero-title span { color:var(--accent); }
+  .hero-meta { display:grid;grid-template-columns:repeat(4,auto) 1fr;gap:0;border-top:1px solid var(--border);padding-top:32px;max-width:900px; }
+  .meta-item { padding-right:48px;border-right:1px solid var(--border);margin-right:48px; }
+  .meta-item:last-child { border:none;margin:0;padding:0; }
+  .meta-label { font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px; }
+  .meta-value { font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--text); }
+  .hero-cta { display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#0a0a0a;font-family:var(--font-display);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:14px 24px;text-decoration:none;margin-top:12px;transition:transform .2s,box-shadow .2s; }
+  .hero-cta:hover { transform:translateY(-2px);box-shadow:0 8px 24px rgba(235,190,56,.25); }
+  .hero-cta svg { transition:transform .2s; }
+  .hero-cta:hover svg { transform:translateX(4px); }
+
+  /* HERO IMAGE */
+  .hero-image-section { padding:0 48px 120px; }
+  .hero-image-wrap { width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;background:var(--surface); }
+  .hero-image-wrap img { width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.92);transition:filter .6s,transform .6s; }
+  .hero-image-wrap:hover img { filter:brightness(1);transform:scale(1.01); }
+  .hero-image-placeholder { width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:160px;font-weight:800;color:var(--border);letter-spacing:-.06em; }
+  .image-caption { font-size:12px;color:var(--muted);letter-spacing:.06em;margin-top:12px; }
+
+  /* CHALLENGE */
+  .challenge-section { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;border-top:1px solid var(--border); }
+
+  /* SOLUTION */
+  .solution-section { background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border); }
+  .solution-inner { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start; }
+  .solution-tags { display:flex;flex-wrap:wrap;gap:8px;margin-top:32px; }
+  .tag { font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border:1px solid var(--border);color:var(--muted);font-family:var(--font-display); }
+
+  /* GALLERY */
+  .gallery-section { border-top:1px solid var(--border); }
+  .gallery-grid { display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:64px; }
+  .gallery-item { position:relative;overflow:hidden;background:var(--surface); }
+  .gallery-item.full { grid-column:1 / -1; }
+  .gallery-item img { width:100%;display:block;aspect-ratio:4/3;object-fit:cover;filter:brightness(.9);transition:filter .5s,transform .5s; }
+  .gallery-item.full img { aspect-ratio:16/7; }
+  .gallery-item:hover img { filter:brightness(1);transform:scale(1.02); }
+  .gallery-placeholder { width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:80px;font-weight:800;color:var(--border); }
+  .gallery-item.full .gallery-placeholder { aspect-ratio:16/7; }
+  .gallery-label { position:absolute;bottom:16px;left:20px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);background:rgba(0,0,0,.5);padding:4px 10px;backdrop-filter:blur(6px); }
+
+  /* RESULTS */
+  .results-section { border-top:1px solid var(--border); }
+  .results-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:64px 0; }
+  .result-card { background:var(--surface);padding:48px 40px;border:1px solid var(--border);position:relative;overflow:hidden;transition:border-color .3s; }
+  .result-card:hover { border-color:rgba(235,190,56,.3); }
+  .result-card::before { content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s; }
+  .result-card:hover::before { transform:scaleX(1); }
+  .result-number { font-family:var(--font-display);font-size:clamp(48px,5vw,72px);font-weight:800;color:var(--accent);line-height:1;margin-bottom:12px;letter-spacing:-.03em; }
+  .result-desc { font-size:14px;color:var(--muted);line-height:1.5; }
+  .results-text { font-size:17px;line-height:1.75;color:#b0aea8;max-width:640px; }
+
+  /* NEXT PROJECT */
+  .next-project { display:block;padding:80px 48px;background:var(--surface);border-top:1px solid var(--border);text-decoration:none;position:relative;overflow:hidden;transition:background .4s; }
+  .next-project:hover { background:#161616; }
+  .next-project::after { content:'';position:absolute;inset:0;background:radial-gradient(ellipse 40% 60% at 80% 50%,rgba(235,190,56,.04) 0%,transparent 70%);opacity:0;transition:opacity .4s; }
+  .next-project:hover::after { opacity:1; }
+  .next-label { font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:12px; }
+  .next-title { font-family:var(--font-display);font-size:clamp(36px,6vw,80px);font-weight:800;color:var(--text);line-height:1;letter-spacing:-.03em;display:flex;align-items:center;gap:24px;transition:gap .3s; }
+  .next-project:hover .next-title { gap:36px; }
+  .next-arrow { font-size:.6em;color:var(--accent);transition:transform .3s; }
+  .next-project:hover .next-arrow { transform:translateX(8px); }
+
+  /* ANIMATIONS */
+  .fade-up { opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease; }
+  .fade-up.visible { opacity:1;transform:translateY(0); }
+
+  /* MOBILE */
+  @media (max-width:768px) {
+    section,.hero-image-section { padding-left:24px;padding-right:24px; }
+    .hero { padding:0 24px 60px; }
+    .hero-meta { grid-template-columns:1fr 1fr;gap:24px; }
+    .meta-item { border:none;margin:0;padding:0; }
+    .challenge-section,.solution-inner { grid-template-columns:1fr;gap:40px; }
+    .results-grid { grid-template-columns:1fr; }
+    .gallery-grid { grid-template-columns:1fr; }
+    .gallery-item.full { grid-column:1; }
+    .next-project { padding:60px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="progress-bar" id="progressBar"></div>
+
+<div id="nav-root"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-label">Case Study — Web Design</div>
+  <h1 class="hero-title">JHS <span>Studio</span></h1>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <div class="meta-label">Cliente</div>
+      <div class="meta-value">JHS Studio</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Ano</div>
+      <div class="meta-value">2024</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Escopo</div>
+      <div class="meta-value">Design + Dev</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Stack</div>
+      <div class="meta-value">Figma / WordPress</div>
+    </div>
+    <div class="meta-item" style="display:flex;align-items:flex-end;">
+      <a href="https://jhsstudio.com.br/" target="_blank" rel="noopener noreferrer" class="hero-cta">
+        Ver site ao vivo
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HERO IMAGE -->
+<div class="hero-image-section">
+  <div class="hero-image-wrap">
+    <div class="hero-image-placeholder">JHS</div>
+  </div>
+  <p class="image-caption">Visão geral — Homepage JHS Studio</p>
+</div>
+
+<!-- CHALLENGE -->
+<section class="challenge-section fade-up">
+  <div>
+    <div class="section-number">01 — O desafio</div>
+    <h2 class="section-title">Ir além das redes sociais e construir presença digital própria</h2>
+  </div>
+  <div>
+    <p class="section-body">
+      A JHS Studio é um estúdio de audiovisual com portfólio sólido e reputação construída principalmente pelo boca a boca e pela presença em redes sociais. Apesar da qualidade do trabalho, a empresa não tinha um espaço digital próprio que centralizasse essa produção e apresentasse a marca de forma profissional para novos clientes.
+    </p>
+    <p class="section-body" style="margin-top:20px;">
+      O desafio foi criar um site que funcionasse como vitrine de autoridade — um lugar onde um potencial cliente chegasse, entendesse rapidamente o que o estúdio faz, visse a qualidade do trabalho e tomasse a decisão de entrar em contato. Sem depender do algoritmo de nenhuma rede.
+    </p>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution-section">
+  <div class="solution-inner fade-up">
+    <div>
+      <div class="section-number">02 — A solução</div>
+      <h2 class="section-title">Site institucional com portfólio em destaque</h2>
+      <div class="solution-tags">
+        <span class="tag">UI Design</span>
+        <span class="tag">WordPress</span>
+        <span class="tag">Elementor</span>
+        <span class="tag">SEO On-page</span>
+      </div>
+    </div>
+    <div>
+      <p class="section-body">
+        O design foi construído para colocar o trabalho do estúdio em primeiro plano. A estrutura visual usa muito contraste e espaço para respirar, criando um ambiente que não compete com os vídeos e fotos exibidos — ele os emoldura.
+      </p>
+      <p class="section-body" style="margin-top:20px;">
+        A arquitetura de informação foi pensada para uma leitura escaneada: quem chega pela primeira vez entende em segundos o que o estúdio faz, quais são os serviços e como entrar em contato. O portfólio é o coração do site, com galeria de projetos organizados por categoria.
+      </p>
+      <p class="section-body" style="margin-top:20px;">
+        O desenvolvimento no WordPress com Elementor entregou um painel de gestão simples para a equipe do estúdio adicionar novos projetos, atualizar serviços e manter o conteúdo em dia sem precisar de suporte técnico.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="section-number fade-up">03 — Capturas do projeto</div>
+  <div class="gallery-grid">
+    <div class="gallery-item fade-up">
+      <div class="gallery-placeholder">J</div>
+      <span class="gallery-label">Hero section</span>
+    </div>
+    <div class="gallery-item fade-up">
+      <div class="gallery-placeholder">HS</div>
+      <span class="gallery-label">Galeria de projetos</span>
+    </div>
+    <div class="gallery-item full fade-up">
+      <div class="gallery-placeholder" style="aspect-ratio:16/7;">JHS</div>
+      <span class="gallery-label">Visão de página completa</span>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results-section">
+  <div class="section-number fade-up">04 — O resultado</div>
+  <h2 class="section-title fade-up">Presença digital própria, independente de algoritmo</h2>
+  <div class="results-grid">
+    <div class="result-card fade-up">
+      <div class="result-number">3<span style="font-size:0.5em;color:var(--muted)">sem</span></div>
+      <div class="result-desc">Do briefing ao site publicado, com design e desenvolvimento integrados</div>
+    </div>
+    <div class="result-card fade-up">
+      <div class="result-number">100<span style="font-size:0.4em;color:var(--muted)">%</span></div>
+      <div class="result-desc">Editável pelo time do estúdio via painel WordPress, sem depender de dev</div>
+    </div>
+    <div class="result-card fade-up">
+      <div class="result-number">1<span style="font-size:0.5em;color:var(--muted)">hub</span></div>
+      <div class="result-desc">Canal próprio que centraliza portfólio, serviços e contato em um só lugar</div>
+    </div>
+  </div>
+  <p class="results-text fade-up">
+    A JHS Studio passou a ter um endereço digital que representa o nível do trabalho que produz. O site funciona como ponto de chegada para indicações e como argumento de credibilidade em propostas — um ativo que cresce junto com o estúdio.
+  </p>
+</section>
+
+<!-- NEXT PROJECT -->
+<a href="menndel.html" class="next-project">
+  <div class="next-label">Próximo projeto</div>
+  <div class="next-title">
+    Essent.IA
+    <span class="next-arrow">→</span>
+  </div>
+</a>
+
+<div id="footer-root"></div>
+
+<script src="components/layout.js"></script>
+<script>
+  // Cursor
+  const cursor = document.getElementById('cursor');
+  const cursorRing = document.getElementById('cursorRing');
+  if (cursor && cursorRing) {
+    let mx=0, my=0, rx=0, ry=0;
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.left = mx + 'px';
+      cursor.style.top = my + 'px';
+    });
+    function animateRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      cursorRing.style.left = rx + 'px';
+      cursorRing.style.top = ry + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('lg'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('lg'));
+    });
+  }
+
+  // Progress bar
+  const bar = document.getElementById('progressBar');
+  if (bar) {
+    window.addEventListener('scroll', () => {
+      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+      bar.style.width = pct + '%';
+    });
+  }
+
+  // Fade up on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
