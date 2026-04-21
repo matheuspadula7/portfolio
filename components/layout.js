@@ -18,7 +18,7 @@
   const navHTML = `
 <nav class="nav" id="nav">
   <div class="container row">
-    <a href="${base}#top" class="logo"><span class="star">✸</span> Padula</a>
+    <a href="${base}#top" class="logo"><img src="${isHome ? '' : '../'}assets/logo.png" alt="Padula" style="height:28px;display:block;"></a>
     <div class="nav-links">
       <a href="${base}#portfolio">Portfolio</a>
       <a href="${base}#sobre">Sobre</a>
