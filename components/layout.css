@@ -3,6 +3,7 @@
 
 :root {
   --bg-0: #0A0A0A;
+  --bg-2: #161616;
   --fg: #F5F5F0;
   --fg-dim: #8a8a82;
   --fg-mute: #55554f;
@@ -31,6 +32,11 @@
 .cta-btn .arrow { transition: transform .2s; }
 .cta-btn:hover .arrow { transform: translate(2px, -2px); }
 .burger { display: none; cursor: pointer; }
+
+/* LANG SWITCHER */
+.lang { display: flex; background: var(--bg-2); border: 1px solid var(--line); border-radius: 999px; padding: 3px; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+.lang button { padding: 5px 10px; border-radius: 999px; color: var(--fg-dim); letter-spacing: .05em; background: transparent; border: 0; cursor: pointer; font: inherit; transition: all .2s; }
+.lang button.on { background: var(--accent); color: #0A0A0A; font-weight: 600; }
 @media (max-width: 900px) {
   .cta-btn { display: none; }
   .nav-links {
