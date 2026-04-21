@@ -73,6 +73,25 @@
       nav.classList.toggle('scrolled', window.scrollY > 20);
     });
 
+    // ── BURGER TOGGLE ────────────────────────────────────────────────────────
+    const burger = nav.querySelector('.burger');
+    const navLinks = nav.querySelector('.nav-links');
+    if (burger && navLinks) {
+      burger.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        burger.textContent = isOpen ? 'FECHAR' : 'MENU';
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      // Fecha ao clicar em qualquer link
+      navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          burger.textContent = 'MENU';
+          document.body.style.overflow = '';
+        });
+      });
+    }
+
     // Cursor lg em links do nav
     nav.querySelectorAll('a, button').forEach(el => {
       el.addEventListener('mouseenter', () => {
