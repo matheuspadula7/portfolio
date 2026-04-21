@@ -78,11 +78,11 @@
     const navLinks = nav.querySelector('.nav-links');
     if (burger && navLinks) {
       burger.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('open');
-        burger.textContent = isOpen ? 'FECHAR' : 'MENU';
-        document.body.style.overflow = isOpen ? 'hidden' : '';
+        const isOpen = navLinks.classList.contains('open');
+        navLinks.classList.toggle('open', !isOpen);
+        burger.textContent = isOpen ? 'MENU' : 'FECHAR';
+        document.body.style.overflow = isOpen ? '' : 'hidden';
       });
-      // Fecha ao clicar em qualquer link
       navLinks.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => {
           navLinks.classList.remove('open');

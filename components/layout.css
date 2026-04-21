@@ -33,20 +33,20 @@
 .burger { display: none; cursor: pointer; }
 @media (max-width: 900px) {
   .cta-btn { display: none; }
-  .nav-links { display: none; }
-  .nav-links.open {
-    display: flex;
+  .nav-links {
+    display: none;
     flex-direction: column;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--bg-0);
+    z-index: 99;
     align-items: center;
     justify-content: center;
-    gap: 40px;
-    position: fixed;
-    inset: 0;
-    z-index: 99;
-    background: var(--bg-0);
+    gap: 32px;
   }
-  .nav-links.open a { font-size: 28px; color: var(--fg); font-family: 'Bricolage Grotesque', serif; font-weight: 600; letter-spacing: -.02em; }
-  .nav-links.open a:hover { color: var(--accent); }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 28px; color: var(--fg); }
+  .nav-links a:hover { color: var(--accent); }
   .burger { display: inline-flex; color: var(--fg-dim); font-size: 12px; font-family: 'JetBrains Mono', monospace; letter-spacing: .08em; }
 }
 
