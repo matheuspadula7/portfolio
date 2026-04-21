@@ -32,6 +32,7 @@
 .cta-btn:hover .arrow { transform: translate(2px, -2px); }
 .burger { display: none; cursor: pointer; }
 @media (max-width: 900px) {
+  .cta-btn { display: none; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex;
