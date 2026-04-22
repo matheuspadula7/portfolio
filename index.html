@@ -290,16 +290,18 @@ section{position:relative;padding:140px 0}
 .proj-card.hidden{display:none}
 
 /* GRAFICO & MOTION */
-.grafico-card{display:block;text-decoration:none;color:inherit;}
-.grafico-thumb{position:relative;overflow:hidden;border-radius:var(--radius);border:1px solid var(--line);}
-.grafico-thumb img{width:100%;display:block;filter:brightness(.8);transition:filter .5s,transform .5s;}
-.grafico-card:hover .grafico-thumb img{filter:brightness(1);transform:scale(1.02);}
-.grafico-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(10,10,10,.4);opacity:0;transition:opacity .3s;}
-.grafico-card:hover .grafico-overlay{opacity:1;}
-.grafico-cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#0A0A0A;font-family:'Bricolage Grotesque',serif;font-size:16px;font-weight:600;padding:14px 28px;border-radius:999px;}
-.grafico-meta{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:11.5px;}
-.grafico-label{color:var(--fg-dim);}
-.grafico-hint{color:var(--fg-mute);}
+.carousel-wrap{position:relative;overflow:hidden;border-radius:var(--radius);}
+.carousel{display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:4px;}
+.carousel::-webkit-scrollbar{display:none;}
+.carousel-item{flex:0 0 auto;width:320px;border-radius:var(--radius);overflow:hidden;background:var(--bg-1);border:1px solid var(--line);}
+.carousel-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s var(--ease);}
+.carousel-item:hover img{transform:scale(1.03);}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(10,10,10,.8);border:1px solid var(--line-2);color:var(--fg);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;transition:all .2s;backdrop-filter:blur(8px);z-index:2;}
+.carousel-btn:hover{border-color:var(--accent);color:var(--accent);}
+.carousel-btn.prev{left:12px;}
+.carousel-btn.next{right:12px;}
+.grafico-footer{display:flex;align-items:center;justify-content:space-between;margin-top:24px;flex-wrap:wrap;gap:16px;}
+@media(max-width:720px){.carousel-item{width:260px;}.carousel-btn{display:none;}}
 </style>
 </head>
 <body>
@@ -625,18 +627,22 @@ section{position:relative;padding:140px 0}
       </div>
       <h2 class="title" style="font-size:clamp(32px,5vw,64px)">Gráfico <em>&</em> Motion.</h2>
     </div>
-    <a href="https://drive.google.com/drive/folders/1tDHlBhuUGGjru-VhM6AbS3WllSO7EGIc" target="_blank" rel="noopener noreferrer" class="grafico-card r">
-      <div class="grafico-thumb">
-        <img src="assets/grafico_e_motion.png" alt="Portfólio Gráfico e Motion">
-        <div class="grafico-overlay">
-          <span class="grafico-cta">Ver portfólio completo <span class="arrow">↗</span></span>
-        </div>
+    <div class="carousel-wrap r">
+      <div class="carousel" id="carousel">
+        <div class="carousel-item"><img src="assets/images/grafico_1.png" alt="Criativo 1" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/grafico_2.png" alt="Criativo 2" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/grafico_3.png" alt="Criativo 3" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/grafico_4.png" alt="Criativo 4" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/grafico_5.png" alt="Criativo 5" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/grafico_6.png" alt="Criativo 6" loading="lazy"></div>
       </div>
-      <div class="grafico-meta">
-        <span class="grafico-label">Social Media · Ads · Motion Design</span>
-        <span class="grafico-hint">Google Drive ↗</span>
-      </div>
-    </a>
+      <button class="carousel-btn prev" id="carouselPrev">←</button>
+      <button class="carousel-btn next" id="carouselNext">→</button>
+    </div>
+    <div class="grafico-footer r">
+      <p style="font-size:14px;color:var(--fg-dim);">Social Media · Ads · Motion Design</p>
+      <a href="https://drive.google.com/drive/folders/1tDHlBhuUGGjru-VhM6AbS3WllSO7EGIc" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top:0;">Ver todos no Drive <span class="arrow">↗</span></a>
+    </div>
   </div>
 </section>
 
@@ -1026,6 +1032,14 @@ document.querySelectorAll('.tweaks [data-hero]').forEach(s=>{
     saveTweak('hero', s.dataset.hero);
   });
 });
+const carousel = document.getElementById('carousel');
+const prevBtn = document.getElementById('carouselPrev');
+const nextBtn = document.getElementById('carouselNext');
+if (carousel && prevBtn && nextBtn) {
+  const scrollAmt = 336;
+  prevBtn.addEventListener('click', () => carousel.scrollBy({left: -scrollAmt, behavior: 'smooth'}));
+  nextBtn.addEventListener('click', () => carousel.scrollBy({left: scrollAmt, behavior: 'smooth'}));
+}
 </script>
 <script src="components/layout.js"></script>
 </body>
