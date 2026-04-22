@@ -1035,10 +1035,41 @@ document.querySelectorAll('.tweaks [data-hero]').forEach(s=>{
 const carousel = document.getElementById('carousel');
 const prevBtn = document.getElementById('carouselPrev');
 const nextBtn = document.getElementById('carouselNext');
-if (carousel && prevBtn && nextBtn) {
-  const scrollAmt = 336;
-  prevBtn.addEventListener('click', () => carousel.scrollBy({left: -scrollAmt, behavior: 'smooth'}));
-  nextBtn.addEventListener('click', () => carousel.scrollBy({left: scrollAmt, behavior: 'smooth'}));
+if (carousel) {
+  let isPaused = false;
+  let animFrame;
+  let speed = 1;
+
+  function autoScroll() {
+    if (!isPaused) {
+      carousel.scrollLeft += speed;
+      if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 2) {
+        carousel.scrollLeft = 0;
+      }
+    }
+    animFrame = requestAnimationFrame(autoScroll);
+  }
+
+  animFrame = requestAnimationFrame(autoScroll);
+
+  carousel.addEventListener('mouseenter', () => isPaused = true);
+  carousel.addEventListener('mouseleave', () => isPaused = false);
+  carousel.addEventListener('touchstart', () => isPaused = true, {passive: true});
+  carousel.addEventListener('touchend', () => { setTimeout(() => isPaused = false, 2000); }, {passive: true});
+
+  if (prevBtn && nextBtn) {
+    const scrollAmt = 336;
+    prevBtn.addEventListener('click', () => {
+      isPaused = true;
+      carousel.scrollBy({left: -scrollAmt, behavior: 'smooth'});
+      setTimeout(() => isPaused = false, 1000);
+    });
+    nextBtn.addEventListener('click', () => {
+      isPaused = true;
+      carousel.scrollBy({left: scrollAmt, behavior: 'smooth'});
+      setTimeout(() => isPaused = false, 1000);
+    });
+  }
 }
 </script>
 <script src="components/layout.js"></script>
