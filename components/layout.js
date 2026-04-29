@@ -63,14 +63,12 @@
       inject('footer-root', footerHTML);
       initNav();
       initLang();
-      initFixedLang();
     });
   } else {
     inject('nav-root', navHTML);
     inject('footer-root', footerHTML);
     initNav();
     initLang();
-    initFixedLang();
   }
 
   // ── NAV SCROLL BEHAVIOR ───────────────────────────────────────────────────
@@ -178,53 +176,5 @@
     });
   }
 
-  // ── FIXED LANG SWITCHER ───────────────────────────────────────────────────
-  function initFixedLang() {
-    const langHTML = `
-<div id="lang-switcher" style="
-  position:fixed;
-  bottom:24px;
-  left:24px;
-  z-index:200;
-  display:flex;
-  background:var(--bg-2);
-  border:1px solid var(--line-2);
-  border-radius:999px;
-  padding:3px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;
-  gap:2px;
-">
-  <button data-lang="pt" style="padding:5px 10px;border-radius:999px;border:none;background:var(--accent);color:#0A0A0A;font-weight:600;font-family:inherit;font-size:inherit;cursor:pointer;">PT</button>
-  <button data-lang="en" style="padding:5px 10px;border-radius:999px;border:none;background:transparent;color:var(--fg-dim);font-family:inherit;font-size:inherit;cursor:pointer;">EN</button>
-</div>`;
-
-    document.body.insertAdjacentHTML('beforeend', langHTML);
-
-    const switcher = document.getElementById('lang-switcher');
-    if (!switcher) return;
-
-    const btns = switcher.querySelectorAll('button');
-    const saved = localStorage.getItem('lang') || 'pt';
-
-    function setLang(lang) {
-      localStorage.setItem('lang', lang);
-      btns.forEach(b => {
-        const isActive = b.dataset.lang === lang;
-        b.style.background = isActive ? 'var(--accent)' : 'transparent';
-        b.style.color = isActive ? '#0A0A0A' : 'var(--fg-dim)';
-        b.style.fontWeight = isActive ? '600' : '400';
-      });
-      if (typeof setLang_home === 'function') setLang_home(lang);
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        if (window.CASE_I18N && window.CASE_I18N[lang] && window.CASE_I18N[lang][el.dataset.i18n]) {
-          el.innerHTML = window.CASE_I18N[lang][el.dataset.i18n];
-        }
-      });
-    }
-
-    setLang(saved);
-    btns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
-  }
 
 })();
