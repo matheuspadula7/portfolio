@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Briefing — Identidade Visual · Matheus Padula</title>
+<meta name="description" content="Preencha o briefing para iniciarmos seu projeto de identidade visual.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-0:#0A0A0A;
+  --bg-1:#111111;
+  --bg-2:#161616;
+  --accent:#ebbe38;
+  --accent-soft:rgba(235,190,56,.10);
+  --fg:#F5F5F0;
+  --fg-dim:#8a8a82;
+  --fg-mute:#55554f;
+  --line:#1f1f1f;
+  --line-2:#2a2a27;
+  --radius:14px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-0);
+  color:var(--fg);
+  font-family:'Inter',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  min-height:100vh;
+}
+::selection{background:var(--accent);color:#0A0A0A}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* GRAIN */
+.grain{position:fixed;inset:-50%;z-index:1;pointer-events:none;opacity:.04;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2' seed='3'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* CONTAINER */
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{padding:28px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(10,10,10,.85);backdrop-filter:blur(12px);z-index:100}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:'Bricolage Grotesque',serif;font-weight:500;font-size:18px;letter-spacing:-.02em}
+.nav-brand span{color:var(--accent)}
+.nav-back{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--fg-dim);display:inline-flex;align-items:center;gap:6px;transition:color .2s}
+.nav-back:hover{color:var(--accent)}
+
+/* HERO SECTION */
+.page-hero{padding:80px 0 60px;border-bottom:1px solid var(--line)}
+.label{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--fg-dim);letter-spacing:.02em;display:inline-flex;align-items:center;gap:8px;margin-bottom:24px}
+.label::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.page-hero h1{font-family:'Bricolage Grotesque',serif;font-weight:500;font-size:clamp(40px,6vw,72px);line-height:.98;letter-spacing:-.035em;margin-bottom:20px}
+.page-hero h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.page-hero p{font-size:16px;line-height:1.6;color:var(--fg-dim);max-width:54ch}
+
+/* PROGRESS */
+.progress-wrap{padding:32px 0 0}
+.progress-steps{display:flex;gap:6px;margin-bottom:16px}
+.step-dot{flex:1;height:2px;background:var(--line-2);border-radius:2px;transition:background .4s var(--ease)}
+.step-dot.done{background:var(--fg-mute)}
+.step-dot.active{background:var(--accent)}
+.progress-meta{display:flex;justify-content:space-between;align-items:center}
+.step-label{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--fg-mute)}
+.step-label span{color:var(--accent)}
+
+/* FORM BODY */
+.form-body{padding:48px 0}
+
+.section-title{font-family:'Bricolage Grotesque',serif;font-size:28px;font-weight:500;letter-spacing:-.02em;margin-bottom:8px}
+.section-title em{font-style:italic;font-weight:400;color:var(--accent)}
+.section-sub{font-size:14px;color:var(--fg-dim);line-height:1.55;margin-bottom:40px;max-width:52ch}
+
+.field{margin-bottom:24px}
+.field label{display:block;font-size:13.5px;font-weight:500;color:var(--fg);margin-bottom:6px}
+.field .hint{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--fg-mute);margin-bottom:10px;display:block;line-height:1.5}
+.field .required{color:var(--accent);margin-left:3px}
+
+input[type="text"],input[type="email"],input[type="url"],textarea,select{
+  width:100%;padding:12px 16px;
+  font-size:14.5px;font-family:'Inter',sans-serif;
+  background:var(--bg-1);
+  border:1px solid var(--line-2);
+  border-radius:10px;
+  color:var(--fg);
+  transition:border-color .2s var(--ease),background .2s;
+  -webkit-appearance:none;
+  appearance:none;
+}
+input::placeholder,textarea::placeholder{color:var(--fg-mute)}
+input:focus,textarea:focus,select:focus{
+  outline:none;
+  border-color:var(--fg-dim);
+  background:var(--bg-2);
+}
+textarea{resize:vertical;min-height:90px;line-height:1.6}
+select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%238a8a82' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer}
+select option{background:var(--bg-1);color:var(--fg)}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.grid-2{grid-template-columns:1fr}}
+
+/* CHIPS */
+.chip-group{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 14px;
+  border:1px solid var(--line-2);
+  border-radius:999px;
+  font-size:13px;
+  color:var(--fg-dim);
+  background:var(--bg-1);
+  cursor:pointer;
+  user-select:none;
+  transition:all .2s var(--ease);
+  font-family:'Inter',sans-serif;
+}
+.chip:hover{border-color:var(--fg-mute);color:var(--fg)}
+.chip.selected{
+  background:var(--accent-soft);
+  border-color:var(--accent);
+  color:var(--accent);
+  font-weight:500;
+}
+
+/* COLOR PICKER */
+.color-grid{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px}
+.color-swatch{
+  width:38px;height:38px;border-radius:50%;
+  cursor:pointer;
+  border:2px solid transparent;
+  transition:transform .2s var(--ease),border-color .2s,box-shadow .2s;
+  position:relative;
+}
+.color-swatch:hover{transform:scale(1.1)}
+.color-swatch.selected{border-color:var(--fg);box-shadow:0 0 0 3px rgba(245,245,240,.15)}
+.color-selected-text{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--fg-mute)}
+
+/* DIVIDER */
+.divider{border:none;border-top:1px solid var(--line);margin:40px 0}
+
+/* ACTIONS */
+.actions{display:flex;gap:12px;justify-content:space-between;align-items:center;padding:32px 0;border-top:1px solid var(--line);margin-top:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-size:14px;font-weight:500;transition:all .25s var(--ease);border:1px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#0A0A0A;border-color:var(--accent)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px -8px rgba(235,190,56,.4)}
+.btn-secondary{border-color:var(--line-2);color:var(--fg-dim);background:transparent}
+.btn-secondary:hover{border-color:var(--fg-mute);color:var(--fg);background:var(--bg-1)}
+.btn .arrow{display:inline-block;transition:transform .25s var(--ease);font-style:normal}
+.btn:hover .arrow{transform:translate(3px,-2px)}
+.btn:disabled{opacity:.35;cursor:not-allowed;transform:none!important}
+
+/* RESULT */
+.result-section{padding:48px 0}
+.result-header{margin-bottom:32px}
+.result-header h2{font-family:'Bricolage Grotesque',serif;font-size:32px;font-weight:500;letter-spacing:-.02em;margin-bottom:8px}
+.result-header h2 em{font-style:italic;color:var(--accent)}
+.result-header p{font-size:14px;color:var(--fg-dim);line-height:1.55}
+.result-box{
+  background:var(--bg-1);
+  border:1px solid var(--line-2);
+  border-radius:var(--radius);
+  padding:28px 32px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:12.5px;
+  line-height:1.8;
+  color:var(--fg-dim);
+  white-space:pre-wrap;
+  word-break:break-word;
+  max-height:500px;
+  overflow-y:auto;
+}
+.result-box .rb-section{color:var(--accent);font-weight:500;margin-top:4px}
+.result-box .rb-val{color:var(--fg)}
+.result-actions{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+
+/* FOOTER */
+footer{padding:48px 0;border-top:1px solid var(--line);text-align:center}
+.footer-brand{font-family:'Bricolage Grotesque',serif;font-size:15px;font-weight:500;color:var(--fg-dim);margin-bottom:8px}
+.footer-brand span{color:var(--accent)}
+.footer-sub{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--fg-mute)}
+
+/* SUCCESS BANNER */
+.success-banner{display:none;background:rgba(235,190,56,.08);border:1px solid rgba(235,190,56,.3);border-radius:10px;padding:16px 20px;margin-bottom:24px;font-size:14px;color:var(--accent);font-family:'JetBrains Mono',monospace}
+.success-banner.show{display:block}
+
+/* TOAST */
+.toast{position:fixed;bottom:28px;right:28px;background:var(--fg);color:#0A0A0A;padding:12px 20px;border-radius:999px;font-size:13px;font-weight:500;font-family:'Inter',sans-serif;transform:translateY(80px);opacity:0;transition:all .35s var(--ease);z-index:9999}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.r.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <span class="nav-brand">Matheus<span>.</span></span>
+      <a href="https://matheuspadula.com.br" class="nav-back">← voltar ao site</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="page-hero">
+  <div class="container">
+    <div class="label r">// briefing</div>
+    <h1 class="r">Identidade visual<br>que <em>representa você.</em></h1>
+    <p class="r">Preencha com calma. Suas respostas são a base de um trabalho que vai representar seu negócio por anos. Leva cerca de 10 minutos.</p>
+  </div>
+</header>
+
+<!-- PROGRESS -->
+<div class="container">
+  <div class="progress-wrap r">
+    <div class="progress-steps" id="progressSteps"></div>
+    <div class="progress-meta">
+      <span class="step-label" id="stepLabel"><span>01</span> / 05</span>
+      <span class="step-label" id="stepName">Sobre o negócio</span>
+    </div>
+  </div>
+</div>
+
+<!-- FORM -->
+<main>
+  <div class="container">
+    <div class="form-body">
+      <div id="formArea"></div>
+      <div class="actions" id="formActions">
+        <button class="btn btn-secondary" id="btnPrev" onclick="navigate(-1)" style="display:none">← Voltar</button>
+        <div style="flex:1"></div>
+        <button class="btn btn-primary" id="btnNext" onclick="navigate(1)">Avançar <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-brand">Matheus Padula<span>.</span></div>
+    <div class="footer-sub">Web Designer · Do briefing ao ar.</div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── CONFIG ───────────────────────────────────────────────
+// Cole aqui a URL gerada pelo Google Apps Script após configurar a planilha
+const SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwqqPD64wNKf5ekoNqEldLVorfjbVPUsXDbBK5k6krj8qyYie-7k-He8toju3v1lMBlBg/exec';
+// ──────────────────────────────────────────────────────────
+
+const STEPS = [
+  { name: 'Sobre o negócio' },
+  { name: 'Público e posicionamento' },
+  { name: 'Personalidade da marca' },
+  { name: 'Visual e estética' },
+  { name: 'Aplicações e entrega' },
+];
+
+let current = 0;
+let chipSelections = {};
+let colorSelections = [];
+
+// ─── RENDER STEPS ─────────────────────────────────────────
+function renderStep() {
+  const area = document.getElementById('formArea');
+  const prev = document.getElementById('btnPrev');
+  const next = document.getElementById('btnNext');
+  const label = document.getElementById('stepLabel');
+  const sname = document.getElementById('stepName');
+
+  label.innerHTML = `<span>${String(current+1).padStart(2,'0')}</span> / ${STEPS.length}`;
+  sname.textContent = STEPS[current].name;
+
+  renderProgress();
+  prev.style.display = current === 0 ? 'none' : '';
+  next.textContent = current === STEPS.length - 1 ? 'Gerar briefing' : 'Avançar';
+  next.innerHTML = current === STEPS.length - 1
+    ? 'Gerar briefing <span class="arrow">↗</span>'
+    : 'Avançar <span class="arrow">→</span>';
+
+  area.innerHTML = getStepHTML(current);
+  restoreChips();
+  restoreColors();
+
+  setTimeout(() => area.querySelectorAll('.r').forEach(el => el.classList.add('in')), 30);
+}
+
+function renderProgress() {
+  const wrap = document.getElementById('progressSteps');
+  wrap.innerHTML = STEPS.map((s, i) => {
+    let cls = '';
+    if (i < current) cls = 'done';
+    else if (i === current) cls = 'active';
+    return `<div class="step-dot ${cls}"></div>`;
+  }).join('');
+}
+
+// ─── STEPS HTML ───────────────────────────────────────────
+function getStepHTML(i) {
+  const steps = [step0, step1, step2, step3, step4];
+  return steps[i]();
+}
+
+function step0() {
+  return `
+    <div class="section-title r">Sobre o <em>negócio</em></div>
+    <p class="section-sub r">Conta um pouco sobre o que você construiu e para quem.</p>
+    <div class="field r"><label>Nome da marca / empresa <span class="required">*</span></label><input type="text" id="f_nome" placeholder="Como será chamada?"></div>
+    <div class="field r"><label>Segmento de atuação <span class="required">*</span></label><input type="text" id="f_segmento" placeholder="Ex: consultoria jurídica, estúdio de pilates, moda feminina..."></div>
+    <div class="field r"><label>O que você faz? <span class="required">*</span></label><span class="hint">Descreva em poucas frases o que o negócio entrega e para quem.</span><textarea id="f_oque" placeholder="Somos uma empresa que..."></textarea></div>
+    <div class="field r"><label>Qual problema você resolve?</label><span class="hint">Qual dor ou necessidade do cliente você atende?</span><textarea id="f_problema"></textarea></div>
+    <div class="grid-2">
+      <div class="field r"><label>Há quanto tempo existe?</label><input type="text" id="f_tempo" placeholder="Ex: novo negócio, 3 anos..."></div>
+      <div class="field r"><label>Site atual (se tiver)</label><input type="url" id="f_site" placeholder="https://..."></div>
+    </div>
+  `;
+}
+
+function step1() {
+  return `
+    <div class="section-title r">Público e <em>posicionamento</em></div>
+    <p class="section-sub r">Quem você quer atingir e como quer ser visto no mercado.</p>
+    <div class="field r"><label>Quem é seu cliente ideal? <span class="required">*</span></label><span class="hint">Faixa etária, gênero, estilo de vida, renda, valores — quanto mais detalhado, melhor.</span><textarea id="f_publico"></textarea></div>
+    <div class="field r"><label>Principais concorrentes</label><span class="hint">Liste de 2 a 4 marcas que disputam o mesmo cliente.</span><textarea id="f_concorrentes" style="min-height:70px" placeholder="Ex: Marca A, Marca B..."></textarea></div>
+    <div class="field r"><label>O que te diferencia deles?</label><textarea id="f_diferencial" placeholder="O que você tem ou faz que eles não têm?"></textarea></div>
+    <div class="field r"><label>Como quer ser percebida no mercado?</label><span class="hint">Ex: referência técnica, marca afetiva, premium acessível, disruptiva...</span><textarea id="f_percepcao" style="min-height:70px"></textarea></div>
+  `;
+}
+
+function step2() {
+  return `
+    <div class="section-title r">Personalidade <em>da marca</em></div>
+    <p class="section-sub r">Se sua marca fosse uma pessoa, como ela seria?</p>
+    <div class="field r">
+      <label>Escolha as características que combinam</label>
+      <span class="hint">Selecione quantas quiser.</span>
+      <div class="chip-group" id="chips-personalidade">
+        ${["Confiável","Ousada","Sofisticada","Acolhedora","Divertida","Séria","Criativa","Minimalista","Vibrante","Exclusiva","Transparente","Inovadora","Humanizada","Técnica","Premium"].map(v=>`<div class="chip" data-group="personalidade" onclick="toggleChip(this,'personalidade')">${v}</div>`).join('')}
+      </div>
+    </div>
+    <div class="field r"><label>Palavras-chave da marca</label><span class="hint">Palavras soltas que descrevem a essência. Ex: leveza, tecnologia, afeto, precisão.</span><input type="text" id="f_palavras" placeholder="leveza, precisão, cuidado..."></div>
+    <div class="field r"><label>Marcas que admira (de qualquer segmento)</label><span class="hint">Quais marcas te inspiram visualmente ou pelo posicionamento? Por quê?</span><textarea id="f_inspira"></textarea></div>
+    <div class="field r"><label>O que definitivamente não combina com você?</label><span class="hint">Estilos, sensações ou referências que quer evitar.</span><textarea id="f_nao" style="min-height:70px"></textarea></div>
+  `;
+}
+
+function step3() {
+  const colors = [
+    ['#1a1a2e','Preto / Noite'],['#2b2d42','Grafite'],['#3d5a80','Azul profundo'],
+    ['#0077b6','Azul vivo'],['#48cae4','Ciano / água'],['#2d6a4f','Verde escuro'],
+    ['#74c69d','Verde suave'],['#d62828','Vermelho'],['#f4a261','Terracota'],
+    ['#ebbe38','Dourado'],['#e9c46a','Âmbar / caramelo'],['#c77dff','Violeta'],
+    ['#ff9ef5','Rosa vibrante'],['#f2e9e4','Nude / off-white'],['#f8f9fa','Branco / neutro'],
+  ];
+  return `
+    <div class="section-title r">Visual e <em>estética</em></div>
+    <p class="section-sub r">Nos ajude a entender o caminho visual que faz sentido para você.</p>
+    <div class="field r">
+      <label>Direção estética desejada <span class="required">*</span></label>
+      <span class="hint">Selecione quantas quiser.</span>
+      <div class="chip-group" id="chips-visual">
+        ${["Clean / minimalista","Orgânico / natural","Geométrico","Tipográfico","Ilustrativo","Manuscrito / handmade","Retrô / vintage","Futurista / tech","Editorial / luxo","Bold / impactante","Suave / delicado","Moderno / contemporâneo"].map(v=>`<div class="chip" data-group="visual" onclick="toggleChip(this,'visual')">${v}</div>`).join('')}
+      </div>
+    </div>
+    <div class="field r" style="margin-top:32px">
+      <label>Paleta de cores — sensação desejada</label>
+      <span class="hint">Clique nas cores que fazem sentido para a marca. Podem ser várias.</span>
+      <div class="color-grid" id="colorGrid">
+        ${colors.map(([c,n])=>`<div class="color-swatch" style="background:${c}" title="${n}" data-name="${n}" onclick="toggleColor(this)"></div>`).join('')}
+      </div>
+      <div class="color-selected-text" id="colorText">Nenhuma selecionada</div>
+    </div>
+    <div class="field r"><label>Referências visuais</label><span class="hint">Links de Pinterest, Instagram, sites ou imagens que guardam o caminho estético.</span><textarea id="f_refs" placeholder="https://pin.it/..." style="min-height:70px"></textarea></div>
+    <div class="field r"><label>Existe algum elemento que precisa ser mantido?</label><span class="hint">Cor específica, símbolo, fonte que já usa e não quer abandonar.</span><input type="text" id="f_existente" placeholder="Ex: já uso o azul #003366 e quero manter..."></div>
+  `;
+}
+
+function step4() {
+  return `
+    <div class="section-title r">Aplicações <em>e entrega</em></div>
+    <p class="section-sub r">Onde a identidade vai viver e o que espera desta parceria.</p>
+    <div class="field r">
+      <label>Onde a identidade será aplicada? <span class="required">*</span></label>
+      <span class="hint">Selecione tudo que se aplica ao seu projeto.</span>
+      <div class="chip-group" id="chips-aplicacoes">
+        ${["Logo principal","Variações de logo","Paleta de cores","Tipografias","Manual de marca","Cartão de visita","Papelaria completa","Instagram / redes sociais","Stories e Reels","Site","Landing page","Embalagem / rótulo","Uniforme / vestuário","Sinalização / banner","Apresentações / pitch"].map(v=>`<div class="chip" data-group="aplicacoes" onclick="toggleChip(this,'aplicacoes')">${v}</div>`).join('')}
+      </div>
+    </div>
+    <div class="field r"><label>Outros formatos não listados</label><input type="text" id="f_outros" placeholder="Descreva se tiver algo específico..."></div>
+    <hr class="divider">
+    <div class="grid-2">
+      <div class="field r"><label>Prazo esperado</label>
+        <select id="f_prazo">
+          <option value="">Selecione...</option>
+          <option>Urgente (menos de 2 semanas)</option>
+          <option>2 a 4 semanas</option>
+          <option>1 a 2 meses</option>
+          <option>Sem pressa definida</option>
+        </select>
+      </div>
+      <div class="field r"><label>Referência de investimento</label>
+        <select id="f_budget">
+          <option value="">Prefiro não informar</option>
+          <option>Até R$ 800</option>
+          <option>R$ 800 a R$ 2.000</option>
+          <option>R$ 2.000 a R$ 5.000</option>
+          <option>Acima de R$ 5.000</option>
+        </select>
+      </div>
+    </div>
+    <div class="field r"><label>Seu nome</label><input type="text" id="f_cliente_nome" placeholder="Como prefere ser chamado(a)?"></div>
+    <div class="field r"><label>E-mail para contato <span class="required">*</span></label><input type="email" id="f_email" placeholder="seu@email.com"></div>
+    <div class="field r"><label>Observações finais</label><span class="hint">Tudo que não coube nas perguntas anteriores.</span><textarea id="f_obs" placeholder="Fique à vontade..."></textarea></div>
+  `;
+}
+
+// ─── CHIP LOGIC ───────────────────────────────────────────
+function toggleChip(el, group) {
+  el.classList.toggle('selected');
+  if (!chipSelections[group]) chipSelections[group] = [];
+  const val = el.textContent.trim();
+  if (el.classList.contains('selected')) {
+    if (!chipSelections[group].includes(val)) chipSelections[group].push(val);
+  } else {
+    chipSelections[group] = chipSelections[group].filter(v => v !== val);
+  }
+}
+
+function restoreChips() {
+  Object.entries(chipSelections).forEach(([group, vals]) => {
+    document.querySelectorAll(`[data-group="${group}"]`).forEach(chip => {
+      if (vals.includes(chip.textContent.trim())) chip.classList.add('selected');
+    });
+  });
+}
+
+// ─── COLOR LOGIC ──────────────────────────────────────────
+function toggleColor(el) {
+  el.classList.toggle('selected');
+  const name = el.dataset.name;
+  if (el.classList.contains('selected')) {
+    if (!colorSelections.includes(name)) colorSelections.push(name);
+  } else {
+    colorSelections = colorSelections.filter(v => v !== name);
+  }
+  const txt = document.getElementById('colorText');
+  if (txt) txt.textContent = colorSelections.length ? colorSelections.join(', ') : 'Nenhuma selecionada';
+}
+
+function restoreColors() {
+  document.querySelectorAll('.color-swatch').forEach(sw => {
+    if (colorSelections.includes(sw.dataset.name)) sw.classList.add('selected');
+  });
+  const txt = document.getElementById('colorText');
+  if (txt) txt.textContent = colorSelections.length ? colorSelections.join(', ') : 'Nenhuma selecionada';
+}
+
+// ─── NAVIGATION ───────────────────────────────────────────
+function getVal(id) { const el = document.getElementById(id); return el ? el.value.trim() : ''; }
+
+function validate() {
+  if (current === 0) {
+    if (!getVal('f_nome')) { showToast('Informe o nome da marca'); return false; }
+    if (!getVal('f_segmento')) { showToast('Informe o segmento de atuação'); return false; }
+    if (!getVal('f_oque')) { showToast('Descreva o que o negócio faz'); return false; }
+  }
+  if (current === 1) {
+    if (!getVal('f_publico')) { showToast('Descreva o cliente ideal'); return false; }
+  }
+  if (current === 4) {
+    if (!getVal('f_email')) { showToast('Informe seu e-mail para contato'); return false; }
+    if (!(chipSelections['aplicacoes'] && chipSelections['aplicacoes'].length)) {
+      showToast('Selecione ao menos uma aplicação'); return false;
+    }
+  }
+  return true;
+}
+
+function navigate(dir) {
+  if (dir === 1 && !validate()) return;
+  if (dir === 1 && current === STEPS.length - 1) { finalize(); return; }
+  current = Math.max(0, Math.min(STEPS.length - 1, current + dir));
+  renderStep();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── FINALIZE ─────────────────────────────────────────────
+function collectData() {
+  return {
+    timestamp: new Date().toLocaleString('pt-BR'),
+    nome: getVal('f_nome'),
+    segmento: getVal('f_segmento'),
+    o_que_faz: getVal('f_oque'),
+    problema: getVal('f_problema'),
+    tempo: getVal('f_tempo'),
+    site: getVal('f_site'),
+    publico: getVal('f_publico'),
+    concorrentes: getVal('f_concorrentes'),
+    diferencial: getVal('f_diferencial'),
+    percepcao: getVal('f_percepcao'),
+    personalidade: (chipSelections['personalidade'] || []).join(', '),
+    palavras_chave: getVal('f_palavras'),
+    marcas_admira: getVal('f_inspira'),
+    o_que_nao_combina: getVal('f_nao'),
+    direcao_visual: (chipSelections['visual'] || []).join(', '),
+    cores: colorSelections.join(', '),
+    referencias: getVal('f_refs'),
+    elementos_manter: getVal('f_existente'),
+    aplicacoes: (chipSelections['aplicacoes'] || []).join(', '),
+    outros_formatos: getVal('f_outros'),
+    prazo: getVal('f_prazo'),
+    budget: getVal('f_budget'),
+    cliente_nome: getVal('f_cliente_nome'),
+    email: getVal('f_email'),
+    observacoes: getVal('f_obs'),
+  };
+}
+
+async function finalize() {
+  const data = collectData();
+  const btn = document.getElementById('btnNext');
+  btn.disabled = true;
+  btn.innerHTML = 'Enviando... <span class="arrow">⟳</span>';
+
+  // Enviar para planilha
+  let enviado = false;
+  if (SHEET_WEBHOOK_URL && SHEET_WEBHOOK_URL !== 'COLE_A_URL_DO_APPS_SCRIPT_AQUI') {
+    try {
+      await fetch(SHEET_WEBHOOK_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      enviado = true;
+    } catch(e) {
+      console.warn('Erro ao enviar para planilha:', e);
+    }
+  }
+
+  showResult(data, enviado);
+}
+
+function showResult(data, enviado) {
+  const area = document.getElementById('formArea');
+  const actions = document.getElementById('formActions');
+
+  const linhas = [
+    `BRIEFING — IDENTIDADE VISUAL`,
+    `${'─'.repeat(44)}`,
+    ``,
+    `[ SOBRE O NEGÓCIO ]`,
+    `Nome / marca:        ${data.nome || '—'}`,
+    `Segmento:            ${data.segmento || '—'}`,
+    `O que faz:           ${data.o_que_faz || '—'}`,
+    `Problema que resolve: ${data.problema || '—'}`,
+    `Tempo de mercado:    ${data.tempo || '—'}`,
+    `Site atual:          ${data.site || '—'}`,
+    ``,
+    `[ PÚBLICO E POSICIONAMENTO ]`,
+    `Cliente ideal:       ${data.publico || '—'}`,
+    `Concorrentes:        ${data.concorrentes || '—'}`,
+    `Diferencial:         ${data.diferencial || '—'}`,
+    `Percepção desejada:  ${data.percepcao || '—'}`,
+    ``,
+    `[ PERSONALIDADE DA MARCA ]`,
+    `Características:     ${data.personalidade || '—'}`,
+    `Palavras-chave:      ${data.palavras_chave || '—'}`,
+    `Marcas que admira:   ${data.marcas_admira || '—'}`,
+    `O que não combina:   ${data.o_que_nao_combina || '—'}`,
+    ``,
+    `[ VISUAL E ESTÉTICA ]`,
+    `Direção visual:      ${data.direcao_visual || '—'}`,
+    `Cores desejadas:     ${data.cores || '—'}`,
+    `Referências:         ${data.referencias || '—'}`,
+    `Elementos a manter:  ${data.elementos_manter || '—'}`,
+    ``,
+    `[ APLICAÇÕES E ENTREGA ]`,
+    `Aplicações:          ${data.aplicacoes || '—'}`,
+    `Outros formatos:     ${data.outros_formatos || '—'}`,
+    `Prazo:               ${data.prazo || '—'}`,
+    `Investimento:        ${data.budget || '—'}`,
+    ``,
+    `[ CONTATO ]`,
+    `Nome:                ${data.cliente_nome || '—'}`,
+    `E-mail:              ${data.email || '—'}`,
+    `Observações:         ${data.observacoes || '—'}`,
+    ``,
+    `${'─'.repeat(44)}`,
+    `Gerado em: ${data.timestamp}`,
+  ].join('\n');
+
+  area.innerHTML = `
+    <div class="result-section">
+      <div class="result-header r">
+        <div class="label">// briefing gerado</div>
+        <h2>Tudo <em>pronto.</em></h2>
+        <p>${enviado ? 'O briefing foi salvo na planilha e você já pode copiar o texto abaixo.' : 'Seu briefing está pronto. Copie o texto e envie para o designer.'}</p>
+      </div>
+      ${enviado ? '<div class="success-banner show">✓ Respostas salvas na planilha com sucesso.</div>' : ''}
+      <div class="result-box" id="resultBox">${linhas}</div>
+      <div class="result-actions">
+        <button class="btn btn-primary" onclick="copyBriefing()">Copiar texto <span class="arrow">↗</span></button>
+        <button class="btn btn-secondary" onclick="restart()">Preencher novamente</button>
+      </div>
+    </div>
+  `;
+
+  actions.style.display = 'none';
+  setTimeout(() => area.querySelectorAll('.r').forEach(el => el.classList.add('in')), 30);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function copyBriefing() {
+  const txt = document.getElementById('resultBox').textContent;
+  navigator.clipboard.writeText(txt).then(() => showToast('Copiado para a área de transferência!'));
+}
+
+function restart() {
+  current = 0;
+  chipSelections = {};
+  colorSelections = [];
+  document.getElementById('formActions').style.display = '';
+  renderStep();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── TOAST ────────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ─── REVEAL ───────────────────────────────────────────────
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: .1 });
+document.querySelectorAll('.r').forEach(el => io.observe(el));
+
+// ─── INIT ─────────────────────────────────────────────────
+renderStep();
+</script>
+</body>
+</html>
