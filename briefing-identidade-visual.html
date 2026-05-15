@@ -275,6 +275,30 @@ const STEPS = [
 let current = 0;
 let chipSelections = {};
 let colorSelections = [];
+let fieldData = {};
+
+// IDs dos campos de texto por etapa
+const STEP_FIELDS = [
+  ['f_nome','f_segmento','f_oque','f_problema','f_tempo','f_site'],
+  ['f_publico','f_concorrentes','f_diferencial','f_percepcao'],
+  ['f_palavras','f_inspira','f_nao'],
+  ['f_refs','f_existente'],
+  ['f_outros','f_prazo','f_budget','f_cliente_nome','f_email','f_obs'],
+];
+
+function saveFields() {
+  (STEP_FIELDS[current] || []).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) fieldData[id] = el.value;
+  });
+}
+
+function restoreFields() {
+  (STEP_FIELDS[current] || []).forEach(id => {
+    const el = document.getElementById(id);
+    if (el && fieldData[id] !== undefined) el.value = fieldData[id];
+  });
+}
 
 // ─── RENDER STEPS ─────────────────────────────────────────
 function renderStep() {
@@ -297,6 +321,7 @@ function renderStep() {
   area.innerHTML = getStepHTML(current);
   restoreChips();
   restoreColors();
+  restoreFields();
 
   setTimeout(() => area.querySelectorAll('.r').forEach(el => el.classList.add('in')), 30);
 }
@@ -494,6 +519,7 @@ function validate() {
 
 function navigate(dir) {
   if (dir === 1 && !validate()) return;
+  saveFields();
   if (dir === 1 && current === STEPS.length - 1) { finalize(); return; }
   current = Math.max(0, Math.min(STEPS.length - 1, current + dir));
   renderStep();
@@ -501,34 +527,36 @@ function navigate(dir) {
 }
 
 // ─── FINALIZE ─────────────────────────────────────────────
+function fd(id) { return (fieldData[id] || getVal(id) || '').trim(); }
+
 function collectData() {
   return {
     timestamp: new Date().toLocaleString('pt-BR'),
-    nome: getVal('f_nome'),
-    segmento: getVal('f_segmento'),
-    o_que_faz: getVal('f_oque'),
-    problema: getVal('f_problema'),
-    tempo: getVal('f_tempo'),
-    site: getVal('f_site'),
-    publico: getVal('f_publico'),
-    concorrentes: getVal('f_concorrentes'),
-    diferencial: getVal('f_diferencial'),
-    percepcao: getVal('f_percepcao'),
+    nome: fd('f_nome'),
+    segmento: fd('f_segmento'),
+    o_que_faz: fd('f_oque'),
+    problema: fd('f_problema'),
+    tempo: fd('f_tempo'),
+    site: fd('f_site'),
+    publico: fd('f_publico'),
+    concorrentes: fd('f_concorrentes'),
+    diferencial: fd('f_diferencial'),
+    percepcao: fd('f_percepcao'),
     personalidade: (chipSelections['personalidade'] || []).join(', '),
-    palavras_chave: getVal('f_palavras'),
-    marcas_admira: getVal('f_inspira'),
-    o_que_nao_combina: getVal('f_nao'),
+    palavras_chave: fd('f_palavras'),
+    marcas_admira: fd('f_inspira'),
+    o_que_nao_combina: fd('f_nao'),
     direcao_visual: (chipSelections['visual'] || []).join(', '),
     cores: colorSelections.join(', '),
-    referencias: getVal('f_refs'),
-    elementos_manter: getVal('f_existente'),
+    referencias: fd('f_refs'),
+    elementos_manter: fd('f_existente'),
     aplicacoes: (chipSelections['aplicacoes'] || []).join(', '),
-    outros_formatos: getVal('f_outros'),
-    prazo: getVal('f_prazo'),
-    budget: getVal('f_budget'),
-    cliente_nome: getVal('f_cliente_nome'),
-    email: getVal('f_email'),
-    observacoes: getVal('f_obs'),
+    outros_formatos: fd('f_outros'),
+    prazo: fd('f_prazo'),
+    budget: fd('f_budget'),
+    cliente_nome: fd('f_cliente_nome'),
+    email: fd('f_email'),
+    observacoes: fd('f_obs'),
   };
 }
 
@@ -636,6 +664,7 @@ function restart() {
   current = 0;
   chipSelections = {};
   colorSelections = [];
+  fieldData = {};
   document.getElementById('formActions').style.display = '';
   renderStep();
   window.scrollTo({ top: 0, behavior: 'smooth' });
