@@ -465,15 +465,15 @@ section{position:relative;padding:140px 0}
     <div class="section-head r">
       <div class="eyebrow">
         <span class="label" data-i18n="pf.label">// projetos selecionados</span>
-        <span class="counter">(04 / 04)</span>
+        <span class="counter">(06 / 06)</span>
       </div>
       <h2 class="title" data-i18n="pf.title">Trabalho que<br><em>faz sentido.</em></h2>
     </div>
 
     <!-- FILTER -->
     <div class="filter-bar r">
-      <button class="filter-btn on" data-filter="all">Todos <span class="filter-count">4</span></button>
-      <button class="filter-btn" data-filter="web">Web Design <span class="filter-count">3</span></button>
+      <button class="filter-btn on" data-filter="all">Todos <span class="filter-count">6</span></button>
+      <button class="filter-btn" data-filter="web">Web Design <span class="filter-count">5</span></button>
       <button class="filter-btn" data-filter="branding">Branding <span class="filter-count">1</span></button>
       <button class="filter-btn" data-filter="ecommerce">E-commerce <span class="filter-count">1</span></button>
     </div>
@@ -560,6 +560,48 @@ section{position:relative;padding:140px 0}
           <p class="card-desc">Website para estúdio de audiovisual com linguagem visual editorial e experiência imersiva</p>
           <div class="card-footer-row">
             <span class="card-tag-sm">Figma · Framer</span>
+            <span class="card-cta">Ver case <span class="arr">↗</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 05 IHS ADVOGADOS -->
+      <a class="proj-card r" href="/ihs.html" data-cat="web">
+        <div class="card-img">
+          <img src="../assets/images/ihs-thumb.png" alt="IHS Advogados" loading="lazy">
+          <span class="card-badge">Web Design</span>
+          <span class="card-arrow-badge">↗</span>
+        </div>
+        <div class="card-body">
+          <div class="card-row-top">
+            <span class="card-num">05</span>
+            <span class="card-name">IHS Advogados</span>
+            <span class="card-yr">2026</span>
+          </div>
+          <p class="card-desc">Site institucional para escritório de advocacia, desenvolvido com Claude Code</p>
+          <div class="card-footer-row">
+            <span class="card-tag-sm">Claude Code</span>
+            <span class="card-cta">Ver case <span class="arr">↗</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 06 DR. RAFAEL NORA RESENDE -->
+      <a class="proj-card r" href="/drrafael.html" data-cat="web">
+        <div class="card-img">
+          <img src="../assets/images/drrafael-thumb.jpg" alt="Dr. Rafael Nora Resende" loading="lazy">
+          <span class="card-badge">Web Design</span>
+          <span class="card-arrow-badge">↗</span>
+        </div>
+        <div class="card-body">
+          <div class="card-row-top">
+            <span class="card-num">06</span>
+            <span class="card-name">Dr. Rafael Nora Resende</span>
+            <span class="card-yr">2026</span>
+          </div>
+          <p class="card-desc">Site institucional para cirurgião do aparelho digestivo, desenvolvido com Claude Code</p>
+          <div class="card-footer-row">
+            <span class="card-tag-sm">Claude Code</span>
             <span class="card-cta">Ver case <span class="arr">↗</span></span>
           </div>
         </div>
@@ -836,55 +878,4 @@ function setLang(lang){
     const k = el.dataset.i18n;
     if(I18N[lang] && I18N[lang][k]) el.innerHTML = I18N[lang][k];
   });
-  document.documentElement.lang = lang==='pt' ? 'pt-BR' : 'en';
-}
-document.querySelectorAll('.lang button').forEach(b=>{
-  b.addEventListener('click',()=>setLang(b.dataset.lang));
-});
-
-// TWEAKS
-let edit=false;
-window.addEventListener('message', e=>{
-  if(!e.data || !e.data.type) return;
-  if(e.data.type==='__activate_edit_mode'){ edit=true; document.getElementById('tweaks').classList.add('show'); }
-  if(e.data.type==='__deactivate_edit_mode'){ edit=false; document.getElementById('tweaks').classList.remove('show'); }
-});
-window.parent && window.parent.postMessage({type:'__edit_mode_available'},'*');
-
-function saveTweak(key,val){
-  TWEAKS[key]=val;
-  try{ window.parent.postMessage({type:'__edit_mode_set_keys', edits:{[key]:val}},'*'); }catch(e){}
-  applyTweaks(TWEAKS);
-}
-document.querySelectorAll('.tweaks .swatch').forEach(s=>{
-  s.addEventListener('click',()=>{
-    document.querySelectorAll('.tweaks .swatch').forEach(x=>x.classList.remove('on'));
-    s.classList.add('on');
-    saveTweak('accent', s.dataset.color);
-  });
-});
-document.querySelectorAll('.tweaks [data-grain]').forEach(s=>{
-  s.addEventListener('click',()=>{
-    s.parentElement.querySelectorAll('.opt').forEach(x=>x.classList.remove('on'));
-    s.classList.add('on');
-    saveTweak('grain', s.dataset.grain);
-  });
-});
-document.querySelectorAll('.tweaks [data-cur]').forEach(s=>{
-  s.addEventListener('click',()=>{
-    s.parentElement.querySelectorAll('[data-cur]').forEach(x=>x.classList.remove('on'));
-    s.classList.add('on');
-    saveTweak('cursor', s.dataset.cur);
-  });
-});
-document.querySelectorAll('.tweaks [data-hero]').forEach(s=>{
-  s.addEventListener('click',()=>{
-    s.parentElement.querySelectorAll('[data-hero]').forEach(x=>x.classList.remove('on'));
-    s.classList.add('on');
-    saveTweak('hero', s.dataset.hero);
-  });
-});
-</script>
-<script src="../components/layout.js"></script>
-</body>
-</html>
+  document.documentElement.lang = lang==='pt' 
