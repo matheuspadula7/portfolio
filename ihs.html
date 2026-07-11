@@ -44,12 +44,12 @@
   .hero-label::before { content:'';display:block;width:32px;height:1px;background:var(--muted); }
   .hero-title { font-family:var(--font-display);font-size:clamp(48px,8vw,110px);font-weight:800;line-height:.96;letter-spacing:-.03em;margin-bottom:48px; }
   .hero-title span { color:var(--accent); }
-  .hero-meta { display:grid;grid-template-columns:repeat(4,auto) 1fr;gap:0;border-top:1px solid var(--border);padding-top:32px;max-width:900px; }
+  .hero-meta { display:grid;grid-template-columns:repeat(4,auto) minmax(180px,1fr);gap:0;border-top:1px solid var(--border);padding-top:32px;max-width:1100px; }
   .meta-item { padding-right:48px;border-right:1px solid var(--border);margin-right:48px; }
   .meta-item:last-child { border:none;margin:0;padding:0; }
   .meta-label { font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px; }
-  .meta-value { font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--text); }
-  .hero-cta { display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#0a0a0a;font-family:var(--font-display);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:14px 24px;text-decoration:none;margin-top:12px;transition:transform .2s,box-shadow .2s; }
+  .meta-value { font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--text);white-space:nowrap; }
+  .hero-cta { display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#0a0a0a;font-family:var(--font-display);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:14px 24px;text-decoration:none;margin-top:12px;transition:transform .2s,box-shadow .2s;white-space:nowrap; }
   .hero-cta:hover { transform:translateY(-2px);box-shadow:0 8px 24px rgba(235,190,56,.25); }
   .hero-cta svg { transition:transform .2s; }
   .hero-cta:hover svg { transform:translateX(4px); }
@@ -161,7 +161,7 @@
 <!-- HERO IMAGE -->
 <div class="hero-image-section">
   <div class="hero-image-wrap">
-    <img src="assets/images/ihs-laptop.jpg" alt="IHS Advogados — Visão geral do site" loading="lazy">
+    <img src="assets/images/ihs-thumb.png" alt="IHS Advogados — Visão geral do site" loading="lazy">
   </div>
   <p class="image-caption">Visão geral — Homepage IHS Advogados</p>
 </div>
@@ -217,10 +217,10 @@
       <img src="assets/images/ihs-phone.jpg" alt="IHS Advogados — Versão mobile" loading="lazy">
     </div>
     <div class="gallery-item fade-up">
-      <img src="assets/images/ihs-tablet.jpg" alt="IHS Advogados — Versão tablet" loading="lazy">
+      <img src="assets/images/ihs-laptop.jpg" alt="IHS Advogados — Versão desktop" loading="lazy">
     </div>
     <div class="gallery-item full fade-up">
-      <img src="assets/images/ihs-laptop.jpg" alt="IHS Advogados — Layout completo" loading="lazy">
+      <img src="assets/images/ihs-tablet.jpg" alt="IHS Advogados — Layout completo" loading="lazy">
     </div>
   </div>
 </section>

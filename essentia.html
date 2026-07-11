@@ -165,11 +165,11 @@
 
   .hero-meta {
     display: grid;
-    grid-template-columns: repeat(4, auto) 1fr;
+    grid-template-columns: repeat(4, auto) minmax(180px, 1fr);
     gap: 0;
     border-top: 1px solid var(--border);
     padding-top: 32px;
-    max-width: 900px;
+    max-width: 1100px;
   }
   .meta-item {
     padding-right: 48px;
@@ -189,6 +189,7 @@
     font-size: 14px;
     font-weight: 600;
     color: var(--text);
+    white-space: nowrap;
   }
 
   .hero-cta {
@@ -206,6 +207,7 @@
     text-decoration: none;
     margin-top: 12px;
     transition: transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
   }
   .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(235,190,56,0.25); }
   .hero-cta svg { transition: transform 0.2s; }
