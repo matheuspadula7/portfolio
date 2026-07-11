@@ -11,8 +11,8 @@
     window.location.pathname.endsWith('/index.html')
   );
 
-  // Prefixo para links âncora: vazio na home, "index.html" nas pages filhas
-  const base = isHome ? '' : 'index.html';
+  // Prefixo para links âncora: vazio na home, "/" nas pages filhas
+  const base = isHome ? '' : '/';
 
   // ── NAV ──────────────────────────────────────────────────────────────────
   const navHTML = `
