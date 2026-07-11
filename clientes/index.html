@@ -878,4 +878,55 @@ function setLang(lang){
     const k = el.dataset.i18n;
     if(I18N[lang] && I18N[lang][k]) el.innerHTML = I18N[lang][k];
   });
-  document.documentElement.lang = lang==='pt' 
+  document.documentElement.lang = lang==='pt' ? 'pt-BR' : 'en';
+}
+document.querySelectorAll('.lang button').forEach(b=>{
+  b.addEventListener('click',()=>setLang(b.dataset.lang));
+});
+
+// TWEAKS
+let edit=false;
+window.addEventListener('message', e=>{
+  if(!e.data || !e.data.type) return;
+  if(e.data.type==='__activate_edit_mode'){ edit=true; document.getElementById('tweaks').classList.add('show'); }
+  if(e.data.type==='__deactivate_edit_mode'){ edit=false; document.getElementById('tweaks').classList.remove('show'); }
+});
+window.parent && window.parent.postMessage({type:'__edit_mode_available'},'*');
+
+function saveTweak(key,val){
+  TWEAKS[key]=val;
+  try{ window.parent.postMessage({type:'__edit_mode_set_keys', edits:{[key]:val}},'*'); }catch(e){}
+  applyTweaks(TWEAKS);
+}
+document.querySelectorAll('.tweaks .swatch').forEach(s=>{
+  s.addEventListener('click',()=>{
+    document.querySelectorAll('.tweaks .swatch').forEach(x=>x.classList.remove('on'));
+    s.classList.add('on');
+    saveTweak('accent', s.dataset.color);
+  });
+});
+document.querySelectorAll('.tweaks [data-grain]').forEach(s=>{
+  s.addEventListener('click',()=>{
+    s.parentElement.querySelectorAll('.opt').forEach(x=>x.classList.remove('on'));
+    s.classList.add('on');
+    saveTweak('grain', s.dataset.grain);
+  });
+});
+document.querySelectorAll('.tweaks [data-cur]').forEach(s=>{
+  s.addEventListener('click',()=>{
+    s.parentElement.querySelectorAll('[data-cur]').forEach(x=>x.classList.remove('on'));
+    s.classList.add('on');
+    saveTweak('cursor', s.dataset.cur);
+  });
+});
+document.querySelectorAll('.tweaks [data-hero]').forEach(s=>{
+  s.addEventListener('click',()=>{
+    s.parentElement.querySelectorAll('[data-hero]').forEach(x=>x.classList.remove('on'));
+    s.classList.add('on');
+    saveTweak('hero', s.dataset.hero);
+  });
+});
+</script>
+<script src="../components/layout.js"></script>
+</body>
+</html>
