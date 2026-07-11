@@ -1028,8 +1028,9 @@ function setLang_home(lang){
   });
   document.documentElement.lang = lang==='pt' ? 'pt-BR' : 'en';
 }
-document.querySelectorAll('.lang button').forEach(b=>{
-  b.addEventListener('click',()=>setLang_home(b.dataset.lang));
+document.addEventListener('click', e=>{
+  const b = e.target.closest('.lang button');
+  if (b) setLang_home(b.dataset.lang);
 });
 
 // TWEAKS
