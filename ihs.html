@@ -31,6 +31,7 @@
   .cursor-ring { width:36px;height:36px;border:1px solid rgba(235,190,56,.4);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transition:transform .08s ease;transform:translate(-50%,-50%); }
   body:has(a:hover) .cursor,body:has(button:hover) .cursor { width:6px;height:6px;background:#fff; }
   body:has(a:hover) .cursor-ring,body:has(button:hover) .cursor-ring { width:52px;height:52px;border-color:rgba(235,190,56,.7); }
+  @media (max-width:900px){ .cursor, .cursor-ring { display:none !important; } body { cursor:auto !important; } }
   .progress-bar { position:fixed;top:0;left:0;height:2px;background:var(--accent);z-index:1000;width:0%;transition:width .1s linear; }
   nav { position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:24px 48px;background:rgba(10,10,10,.85);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s; }
   nav.scrolled { border-color:var(--border); }
@@ -264,7 +265,7 @@
   // Cursor
   const cursor = document.getElementById('cursor');
   const cursorRing = document.getElementById('cursorRing');
-  if (cursor && cursorRing) {
+  if (cursor && cursorRing && window.matchMedia('(min-width: 900px)').matches) {
     let mx=0, my=0, rx=0, ry=0;
     document.addEventListener('mousemove', e => {
       mx = e.clientX; my = e.clientY;

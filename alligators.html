@@ -16,6 +16,7 @@
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="shortcut icon" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://framerusercontent.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,6 +32,7 @@
   .cursor-ring { width:36px;height:36px;border:1px solid rgba(235,190,56,.4);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transition:transform .08s ease;transform:translate(-50%,-50%); }
   body:has(a:hover) .cursor,body:has(button:hover) .cursor { width:6px;height:6px;background:#fff; }
   body:has(a:hover) .cursor-ring,body:has(button:hover) .cursor-ring { width:52px;height:52px;border-color:rgba(235,190,56,.7); }
+  @media (max-width:900px){ .cursor, .cursor-ring { display:none !important; } body { cursor:auto !important; } }
   .progress-bar { position:fixed;top:0;left:0;height:2px;background:var(--accent);z-index:1000;width:0%;transition:width .1s linear; }
   section { padding:120px 48px; }
   .section-number { font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-family:var(--font-display);margin-bottom:16px; }
@@ -271,7 +273,7 @@
   // Cursor
   const cursor = document.getElementById('cursor');
   const cursorRing = document.getElementById('cursorRing');
-  if (cursor && cursorRing) {
+  if (cursor && cursorRing && window.matchMedia('(min-width: 900px)').matches) {
     let mx=0, my=0, rx=0, ry=0;
     document.addEventListener('mousemove', e => {
       mx = e.clientX; my = e.clientY;
