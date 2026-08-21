@@ -292,6 +292,13 @@ section{position:relative;padding:140px 0}
 .card-cta .arr{display:inline-block;transition:transform .25s var(--ease)}
 .proj-card:hover .card-cta .arr{transform:translate(3px,-3px)}
 .proj-card.hidden{display:none}
+@media (min-width:1101px){
+  .proj-grid .card-body{padding:20px 20px 24px}
+  .proj-grid .card-row-top{margin-bottom:6px}
+  .proj-grid .card-name{font-size:clamp(19px,1.7vw,24px);line-height:1.08}
+  .proj-grid .card-desc{font-size:13px;line-height:1.45;margin-top:4px}
+  .proj-grid .card-footer-row{margin-top:16px;padding-top:14px}
+}
 
 /* GRAFICO & MOTION */
 .carousel-wrap{position:relative;overflow:hidden;border-radius:var(--radius);}
