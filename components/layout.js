@@ -209,6 +209,26 @@
       'menndel.res.d3': 'Atuação nacional e internacional representada com clareza na nova arquitetura do site',
       'menndel.res.text': 'O novo site do Menndel & Melo comunica com precisão o que o escritório é: uma boutique tributária de alto nível, com capacidade técnica para operações complexas em escala nacional e internacional. A implementação no Framer garantiu fidelidade total ao design e flexibilidade para a equipe manter o conteúdo atualizado.',
 
+      // Diálogos Estruturantes
+      'dialogos.scope': 'Dev / Framer',
+      'dialogos.caption': 'Visão geral — Landing Page Diálogos Estruturantes',
+      'dialogos.ch.title': 'Lançar uma nova identidade e um novo posicionamento em poucos dias',
+      'dialogos.ch.p1': 'A Diálogos Estruturantes nasceu como uma revista sobre tributação e está migrando para uma plataforma de conexão entre os setores de agro, infraestrutura e portos — reunindo conteúdo, podcast, eventos e networking em um só lugar. Com a nova identidade visual e o novo posicionamento já definidos, faltava um espaço para comunicar essa transição enquanto o site completo da plataforma não ficava pronto.',
+      'dialogos.ch.p2': 'O desafio era técnico e de prazo: entregar uma landing page institucional, fiel à nova marca, capaz de captar o interesse do público certo — e publicá-la em poucos dias, sem abrir mão de qualidade visual nem de uma experiência que já refletisse a ambição da nova proposta.',
+      'dialogos.sol.title': 'Da wireframe à landing page publicada em dias',
+      'dialogos.sol.tag1': 'Wireframe em IA',
+      'dialogos.sol.tag4': 'Responsivo',
+      'dialogos.sol.p1': 'O processo começou pela estruturação do wireframe direto no Claude, via artefato interativo — definindo hierarquia de conteúdo, blocos e fluxo de leitura antes de qualquer linha de código, o que acelerou a validação com o cliente logo no início.',
+      'dialogos.sol.p2': 'A partir dessa base, o desenvolvimento completo — layout visual e programação — foi feito em Framer, aplicando a nova identidade da marca em cada seção: do hero à apresentação dos três setores (agro, infraestrutura e portos) e dos formatos de conteúdo da plataforma.',
+      'dialogos.sol.p3': 'O formulário de captura foi codado para entregar o lead diretamente no RD Station do cliente, já preparando a base de contatos antes do lançamento oficial da plataforma completa.',
+      'dialogos.res.title': 'Landing page publicada dentro do prazo, já captando leads',
+      'dialogos.res.n1': 'dias',
+      'dialogos.res.d1': 'Do wireframe estruturado no Claude à landing page publicada e no ar',
+      'dialogos.res.d2': 'Captura de lead codada para entregar direto no RD Station do cliente',
+      'dialogos.res.n3': 'setores',
+      'dialogos.res.d3': 'Arquitetura de conteúdo já preparada para Agro, Infraestrutura e Portos',
+      'dialogos.res.text': 'A landing page colocou a nova proposta da Diálogos Estruturantes no ar dentro do prazo apertado do cliente, validando a base de captação antes da chegada do site completo da plataforma — sem comprometer identidade visual nem qualidade de implementação.',
+
       // Dr. Rafael Nora Resende
       'dr.scope': 'Design + Dev',
       'dr.caption': 'Visão geral — Homepage Dr. Rafael Nora Resende',
@@ -393,6 +413,26 @@
       'menndel.res.n3': 'countries',
       'menndel.res.d3': 'National and international reach clearly represented in the new site architecture',
       'menndel.res.text': 'The new Menndel & Melo site communicates precisely what the firm is: a high-level tax boutique, with the technical capacity for complex operations at national and international scale. The Framer implementation guaranteed full fidelity to the design and the flexibility for the team to keep content up to date.',
+
+      // Diálogos Estruturantes
+      'dialogos.scope': 'Development / Framer',
+      'dialogos.caption': 'Overview — Diálogos Estruturantes landing page',
+      'dialogos.ch.title': 'Launching a new identity and positioning in just a few days',
+      'dialogos.ch.p1': 'Diálogos Estruturantes started as a magazine about tax policy and is evolving into a platform connecting the agribusiness, infrastructure and ports sectors — bringing together content, a podcast, events and networking in one place. With the new visual identity and positioning already defined, the brand needed a page to communicate that shift while the full platform site was still in progress.',
+      'dialogos.ch.p2': 'The challenge was both technical and time-sensitive: deliver an institutional landing page, faithful to the new brand, capable of capturing interest from the right audience — and publish it within a few days, without compromising visual quality or an experience that already reflected the ambition of the new positioning.',
+      'dialogos.sol.title': 'From wireframe to published landing page in days',
+      'dialogos.sol.tag1': 'AI Wireframe',
+      'dialogos.sol.tag4': 'Responsive',
+      'dialogos.sol.p1': 'The process started by structuring the wireframe directly in Claude, via an interactive artifact — defining content hierarchy, blocks and reading flow before writing any code, which sped up client validation from the very start.',
+      'dialogos.sol.p2': 'From that foundation, full development — visual layout and coding — was done in Framer, applying the new brand identity across every section: from the hero to the presentation of the three sectors (agribusiness, infrastructure and ports) and the platform\'s content formats.',
+      'dialogos.sol.p3': 'The capture form was coded to deliver the lead directly into the client\'s RD Station, already building the contact base ahead of the full platform\'s official launch.',
+      'dialogos.res.title': 'Landing page published on time, already capturing leads',
+      'dialogos.res.n1': 'days',
+      'dialogos.res.d1': 'From the wireframe structured in Claude to the landing page published and live',
+      'dialogos.res.d2': 'Lead capture coded to deliver straight into the client\'s RD Station',
+      'dialogos.res.n3': 'sectors',
+      'dialogos.res.d3': 'Content architecture already set up for Agribusiness, Infrastructure and Ports',
+      'dialogos.res.text': 'The landing page put Diálogos Estruturantes\' new positioning live within the client\'s tight deadline, validating the lead capture base ahead of the full platform site — without compromising visual identity or implementation quality.',
 
       // Dr. Rafael Nora Resende
       'dr.scope': 'Design + Dev',
