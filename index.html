@@ -334,6 +334,14 @@ section{position:relative;padding:140px 0}
 .card-cta .arr{display:inline-block;transition:transform .25s var(--ease)}
 .proj-card:hover .card-cta .arr{transform:translate(3px,-3px)}
 .proj-card.hidden{display:none}
+.proj-card.full-row{grid-column:1 / -1;flex-direction:row}
+.proj-card.full-row .card-img{width:38%;aspect-ratio:auto;flex-shrink:0}
+.proj-card.full-row .card-body{width:62%}
+@media (max-width:720px){
+  .proj-card.full-row{flex-direction:column}
+  .proj-card.full-row .card-img{width:100%;aspect-ratio:4/3}
+  .proj-card.full-row .card-body{width:100%}
+}
 @media (min-width:1101px){
   .proj-grid .card-body{padding:20px 20px 24px}
   .proj-grid .card-row-top{margin-bottom:6px}
@@ -1019,6 +1027,22 @@ document.querySelectorAll('.r, .stats').forEach(el=>io.observe(el));
 // Portfolio grid filter
 const filterBtns = document.querySelectorAll('.filter-btn');
 const allCards = document.querySelectorAll('.proj-card');
+const portfolioGrids = [document.getElementById('featuredGrid'), document.getElementById('projGrid')].filter(Boolean);
+
+function fixOrphanRows(){
+  portfolioGrids.forEach(grid=>{
+    const visible = Array.from(grid.children).filter(c=>!c.classList.contains('hidden'));
+    visible.forEach(c=>{ c.classList.remove('full-row'); });
+    const cols = getComputedStyle(grid).gridTemplateColumns.split(' ').length;
+    if (cols > 1 && visible.length > cols){
+      const remainder = visible.length % cols;
+      if (remainder === 1){
+        visible[visible.length - 1].classList.add('full-row');
+      }
+    }
+  });
+}
+
 filterBtns.forEach(btn=>{
   btn.addEventListener('click',()=>{
     filterBtns.forEach(b=>b.classList.remove('on'));
@@ -1028,7 +1052,15 @@ filterBtns.forEach(btn=>{
       const cats = card.dataset.cat || '';
       card.classList.toggle('hidden', !(f==='all' || cats.includes(f)));
     });
+    fixOrphanRows();
   });
+});
+
+fixOrphanRows();
+let orphanResizeTimer;
+window.addEventListener('resize', ()=>{
+  clearTimeout(orphanResizeTimer);
+  orphanResizeTimer = setTimeout(fixOrphanRows, 150);
 });
 
 // i18n
