@@ -149,7 +149,7 @@
     </div>
     <div class="meta-item">
       <div class="meta-label" data-i18n="case.scope">Escopo</div>
-      <div class="meta-value">Identidade Visual + Site + LP</div>
+      <div class="meta-value" data-i18n="agro.scope">Identidade Visual + Site + LP</div>
     </div>
     <div class="meta-item">
       <div class="meta-label" data-i18n="case.stack">Stack</div>
@@ -171,20 +171,20 @@
   <div class="hero-image-wrap">
     <img src="assets/images/ribeiro-thumb.jpg" alt="Agro Ribeiro — Visão geral do site">
   </div>
-  <p class="image-caption">Visão geral — Homepage Agro Ribeiro</p>
+  <p class="image-caption" data-i18n="agro.caption">Visão geral — Homepage Agro Ribeiro</p>
 </div>
 
 <!-- CHALLENGE -->
 <section class="challenge-section fade-up">
   <div>
     <div class="section-number" data-i18n="s01">01 — O desafio</div>
-    <h2 class="section-title">Vender confiança antes de vender terra</h2>
+    <h2 class="section-title" data-i18n="agro.ch.title">Vender confiança antes de vender terra</h2>
   </div>
   <div>
-    <p class="section-body">
+    <p class="section-body" data-i18n="agro.ch.p1">
       A Agro Ribeiro atua na intermediação de fazendas de alto padrão, um mercado onde a decisão de compra envolve valores altos e exige confiança técnica antes de qualquer visita.
     </p>
-    <p class="section-body" style="margin-top:20px;">
+    <p class="section-body" style="margin-top:20px;" data-i18n="agro.ch.p2">
       O desafio foi duplo: criar uma identidade visual e um site que comunicassem seriedade documental e rigor técnico, e construir uma infraestrutura que desse ao cliente autonomia total para publicar novas fazendas no catálogo sem depender de desenvolvedor a cada atualização.
     </p>
   </div>
@@ -195,22 +195,22 @@
   <div class="solution-inner fade-up">
     <div>
       <div class="section-number" data-i18n="s02">02 — A solução</div>
-      <h2 class="section-title">Identidade de marca sobre uma stack headless de alta performance</h2>
+      <h2 class="section-title" data-i18n="agro.sol.title">Identidade de marca sobre uma stack headless de alta performance</h2>
       <div class="solution-tags">
-        <span class="tag">Identidade Visual</span>
+        <span class="tag" data-i18n="agro.sol.tag1">Identidade Visual</span>
         <span class="tag">Astro</span>
         <span class="tag">Sanity CMS</span>
         <span class="tag">CI/CD</span>
       </div>
     </div>
     <div>
-      <p class="section-body">
+      <p class="section-body" data-i18n="agro.sol.p1">
         Desenvolvemos a identidade visual completa da marca, com logotipo, paleta e sistema tipográfico, e implementamos o site com Astro como gerador de site estático, entregando performance e SEO otimizados por página pré-renderizada. A gestão do catálogo de fazendas é feita via Sanity, um CMS headless que dá ao cliente um painel dedicado para cadastrar, editar e publicar novas propriedades sem depender de código.
       </p>
-      <p class="section-body" style="margin-top:20px;">
+      <p class="section-body" style="margin-top:20px;" data-i18n="agro.sol.p2">
         A publicação de uma nova fazenda no Sanity dispara automaticamente um pipeline de CI/CD via GitHub Actions, que rebuilda o site estático e publica a nova versão na Hostinger sem intervenção manual. Do clique em "publicar" no CMS ao site atualizado em produção, todo o processo é automatizado.
       </p>
-      <p class="section-body" style="margin-top:20px;">
+      <p class="section-body" style="margin-top:20px;" data-i18n="agro.sol.p3">
         O restante do conteúdo institucional do site, como a seção "O que verificamos", foi desenvolvido diretamente no código, garantindo performance máxima nas páginas fixas do site.
       </p>
     </div>
@@ -236,22 +236,22 @@
 <!-- RESULTS -->
 <section class="results-section">
   <div class="section-number fade-up" data-i18n="s04">04 — O resultado</div>
-  <h2 class="section-title fade-up">Autonomia de conteúdo com performance de site estático</h2>
+  <h2 class="section-title fade-up" data-i18n="agro.res.title">Autonomia de conteúdo com performance de site estático</h2>
   <div class="results-grid">
     <div class="result-card fade-up">
       <div class="result-number">0<span style="font-size:0.5em;color:var(--muted)">dev</span></div>
-      <div class="result-desc">Cliente publica novas fazendas direto no CMS sem depender de desenvolvedor</div>
+      <div class="result-desc" data-i18n="agro.res.d1">Cliente publica novas fazendas direto no CMS sem depender de desenvolvedor</div>
     </div>
     <div class="result-card fade-up">
       <div class="result-number">100<span style="font-size:0.4em;color:var(--muted)">%</span></div>
-      <div class="result-desc">Deploy automatizado do CMS à produção via CI/CD, sem etapas manuais</div>
+      <div class="result-desc" data-i18n="agro.res.d2">Deploy automatizado do CMS à produção via CI/CD, sem etapas manuais</div>
     </div>
     <div class="result-card fade-up">
       <div class="result-number">SSG</div>
-      <div class="result-desc">Performance e SEO otimizados por geração estática de página</div>
+      <div class="result-desc" data-i18n="agro.res.d3">Performance e SEO otimizados por geração estática de página</div>
     </div>
   </div>
-  <p class="results-text fade-up">
+  <p class="results-text fade-up" data-i18n="agro.res.text">
     A stack Astro + Sanity entregou ao cliente uma combinação rara no mercado imobiliário rural: velocidade de carregamento de site estático com a flexibilidade de gestão de um CMS moderno. Cada nova fazenda publicada já nasce otimizada para SEO, e o pipeline de CI/CD elimina qualquer fricção entre a decisão de publicar e o conteúdo estar no ar.
   </p>
 </section>
