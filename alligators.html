@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSJHZ8GRJ0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CSJHZ8GRJ0');
-  </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alligators — Padula Design Studio</title>
@@ -60,7 +52,7 @@
   .hero-bg { position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 40%,rgba(235,190,56,.06) 0%,transparent 70%);pointer-events:none; }
   .hero-label { font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:12px; }
   .hero-label::before { content:'';display:block;width:32px;height:1px;background:var(--muted); }
-  .hero-title { font-family:var(--font-display);font-size:clamp(64px,10vw,140px);font-weight:800;line-height:.92;letter-spacing:-.03em;margin-bottom:48px; }
+  .hero-title { font-family:var(--font-display);font-size:clamp(64px,10vw,140px);font-weight:800;line-height:.92;letter-spacing:-.03em;margin-bottom:48px;overflow-wrap:anywhere;word-break:break-word; }
   .hero-title span { color:var(--accent); }
   .hero-meta { display:grid;grid-template-columns:repeat(4,auto) minmax(180px,1fr);gap:0;border-top:1px solid var(--border);padding-top:32px;max-width:1100px; }
   .meta-item { padding-right:48px;border-right:1px solid var(--border);margin-right:48px; }
@@ -131,6 +123,7 @@
   @media (max-width:768px) {
     section,.hero-image-section { padding-left:24px;padding-right:24px; }
     .hero { padding:0 24px 60px; }
+    .hero-title { font-size:clamp(34px,11vw,72px); }
     .hero-meta { grid-template-columns:1fr 1fr;gap:24px; }
     .meta-item { border:none;margin:0;padding:0; }
     .challenge-section,.solution-inner { grid-template-columns:1fr;gap:40px; }
