@@ -299,15 +299,13 @@ section{position:relative;padding:140px 0}
 .tweaks .opt.on{border-color:var(--accent);color:var(--accent)}
 
 /* PORTFOLIO GRID */
-.featured-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-bottom:56px}
-@media (max-width:900px){.featured-grid{grid-template-columns:1fr}}
 .filter-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:40px}
 .filter-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--fg-mute);transition:all .2s;background:transparent;cursor:none}
 .filter-btn:hover{border-color:var(--line-2);color:var(--fg-dim)}
 .filter-btn.on{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
 .filter-count{font-size:10px;background:var(--bg-2);padding:1px 5px;border-radius:99px;color:var(--fg-mute)}
 .filter-btn.on .filter-count{background:rgba(235,190,56,.15);color:var(--accent)}
-.proj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
 @media (max-width:1100px){.proj-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:720px){.proj-grid{grid-template-columns:1fr}}
 .proj-card{position:relative;background:var(--bg-1);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);transition:border-color .3s var(--ease);text-decoration:none;color:inherit}
@@ -589,10 +587,31 @@ section{position:relative;padding:140px 0}
       <button class="filter-btn" data-filter="ecommerce">E-commerce <span class="filter-count">1</span></button>
     </div>
 
-    <!-- FEATURED -->
-    <div class="featured-grid" id="featuredGrid">
+    <!-- GRID -->
+    <div class="proj-grid" id="projGrid">
 
-      <!-- 01 AGRO RIBEIRO -->
+      <!-- 01 DIÁLOGOS ESTRUTURANTES -->
+      <a class="proj-card r" href="dialogos" data-cat="web">
+        <div class="card-img">
+          <img src="assets/images/dialogos-hero.jpg" alt="Diálogos Estruturantes" loading="lazy">
+          <span class="card-badge">Web Design</span>
+          <span class="card-arrow-badge">↗</span>
+        </div>
+        <div class="card-body">
+          <div class="card-row-top">
+            <span class="card-num">01</span>
+            <span class="card-name">Diálogos Estruturantes</span>
+            <span class="card-yr">2026</span>
+          </div>
+          <p class="card-desc" data-i18n="pf.d9">Landing page de lançamento para plataforma de conexão dos setores de agro, infraestrutura e portos</p>
+          <div class="card-footer-row">
+            <span class="card-tag-sm">Framer</span>
+            <span class="card-cta"><span data-i18n="pf.cta">Ver case</span> <span class="arr">↗</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 02 AGRO RIBEIRO -->
       <a class="proj-card r" href="agroribeiro" data-cat="web branding">
         <div class="card-img">
           <img src="assets/images/ribeiro-thumb.jpg" alt="Agro Ribeiro" loading="lazy">
@@ -601,7 +620,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">01</span>
+            <span class="card-num">02</span>
             <span class="card-name">Agro Ribeiro</span>
             <span class="card-yr">2026</span>
           </div>
@@ -613,7 +632,7 @@ section{position:relative;padding:140px 0}
         </div>
       </a>
 
-      <!-- 02 HL WALLWONDERS -->
+      <!-- 03 HL WALLWONDERS -->
       <a class="proj-card r" href="hlwallwonders" data-cat="web">
         <div class="card-img">
           <img src="assets/images/hl-thumb.jpg" alt="HL Wallwonders" loading="lazy">
@@ -622,7 +641,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">02</span>
+            <span class="card-num">03</span>
             <span class="card-name">HL Wallwonders</span>
             <span class="card-yr">2026</span>
           </div>
@@ -634,7 +653,7 @@ section{position:relative;padding:140px 0}
         </div>
       </a>
 
-      <!-- 03 IHS ADVOGADOS -->
+      <!-- 04 IHS ADVOGADOS -->
       <a class="proj-card r" href="ihs" data-cat="web">
         <div class="card-img">
           <img src="assets/images/ihs-thumb.jpg" alt="IHS Advogados" loading="lazy">
@@ -643,7 +662,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">03</span>
+            <span class="card-num">04</span>
             <span class="card-name">IHS Advogados</span>
             <span class="card-yr">2026</span>
           </div>
@@ -655,7 +674,7 @@ section{position:relative;padding:140px 0}
         </div>
       </a>
 
-      <!-- 04 MENNDEL & MELO -->
+      <!-- 05 MENNDEL & MELO -->
       <a class="proj-card r" href="menndel" data-cat="web">
         <div class="card-img">
           <img src="https://framerusercontent.com/images/Q1ppDX5PUWT36ixaXQzQwJ6vU.png?width=800" alt="Menndel & Melo" loading="lazy">
@@ -664,7 +683,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">04</span>
+            <span class="card-num">05</span>
             <span class="card-name">Menndel &amp; Melo</span>
             <span class="card-yr">2025</span>
           </div>
@@ -676,12 +695,7 @@ section{position:relative;padding:140px 0}
         </div>
       </a>
 
-    </div>
-
-    <!-- GRID -->
-    <div class="proj-grid" id="projGrid">
-
-      <!-- 01 DR. RAFAEL NORA RESENDE -->
+      <!-- 06 DR. RAFAEL NORA RESENDE -->
       <a class="proj-card r" href="drrafael" data-cat="web">
         <div class="card-img">
           <img src="assets/images/drrafael-thumb.jpg" alt="Dr. Rafael Nora Resende" loading="lazy">
@@ -690,7 +704,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">01</span>
+            <span class="card-num">06</span>
             <span class="card-name">Dr. Rafael Nora Resende</span>
             <span class="card-yr">2026</span>
           </div>
@@ -702,7 +716,7 @@ section{position:relative;padding:140px 0}
         </div>
       </a>
 
-      <!-- 02 ALLIGATORS -->
+      <!-- 07 ALLIGATORS -->
       <a class="proj-card r" href="alligators" data-cat="ecommerce web">
         <div class="card-img">
           <img src="https://framerusercontent.com/images/i6tHqOw6mB4vfbIZJWxXqMWFPDQ.png?width=800" alt="Alligators" loading="lazy">
@@ -711,7 +725,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">02</span>
+            <span class="card-num">07</span>
             <span class="card-name">Alligators</span>
             <span class="card-yr">2026</span>
           </div>
@@ -723,7 +737,7 @@ section{position:relative;padding:140px 0}
         </div>
       </a>
 
-      <!-- 03 JHS STUDIO -->
+      <!-- 08 JHS STUDIO -->
       <a class="proj-card r" href="jhs" data-cat="web">
         <div class="card-img">
           <img src="assets/images/thumb_jhs.jpg" alt="JHS Studio" loading="lazy">
@@ -732,7 +746,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">03</span>
+            <span class="card-num">08</span>
             <span class="card-name">JHS Studio</span>
             <span class="card-yr">2024</span>
           </div>
@@ -744,7 +758,7 @@ section{position:relative;padding:140px 0}
         </div>
       </a>
 
-      <!-- 04 INSTITUTO OKA -->
+      <!-- 09 INSTITUTO OKA -->
       <a class="proj-card r" href="oka" data-cat="web">
         <div class="card-img">
           <img src="https://framerusercontent.com/images/ZpDTH5gU953HOyXIXFwDZi9NJg.png?width=800" alt="Instituto Oka" loading="lazy">
@@ -753,34 +767,13 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">04</span>
+            <span class="card-num">09</span>
             <span class="card-name">Instituto Oka</span>
             <span class="card-yr">2025</span>
           </div>
           <p class="card-desc" data-i18n="pf.d8">Site institucional para instituto de conservação ambiental na Serra da Mantiqueira</p>
           <div class="card-footer-row">
             <span class="card-tag-sm">Figma · Framer</span>
-            <span class="card-cta"><span data-i18n="pf.cta">Ver case</span> <span class="arr">↗</span></span>
-          </div>
-        </div>
-      </a>
-
-      <!-- 05 DIÁLOGOS ESTRUTURANTES -->
-      <a class="proj-card r" href="dialogos" data-cat="web">
-        <div class="card-img">
-          <img src="assets/images/dialogos-hero.jpg" alt="Diálogos Estruturantes" loading="lazy">
-          <span class="card-badge">Web Design</span>
-          <span class="card-arrow-badge">↗</span>
-        </div>
-        <div class="card-body">
-          <div class="card-row-top">
-            <span class="card-num">05</span>
-            <span class="card-name">Diálogos Estruturantes</span>
-            <span class="card-yr">2026</span>
-          </div>
-          <p class="card-desc" data-i18n="pf.d9">Landing page de lançamento para plataforma de conexão dos setores de agro, infraestrutura e portos</p>
-          <div class="card-footer-row">
-            <span class="card-tag-sm">Framer</span>
             <span class="card-cta"><span data-i18n="pf.cta">Ver case</span> <span class="arr">↗</span></span>
           </div>
         </div>
@@ -1027,7 +1020,7 @@ document.querySelectorAll('.r, .stats').forEach(el=>io.observe(el));
 // Portfolio grid filter
 const filterBtns = document.querySelectorAll('.filter-btn');
 const allCards = document.querySelectorAll('.proj-card');
-const portfolioGrids = [document.getElementById('featuredGrid'), document.getElementById('projGrid')].filter(Boolean);
+const portfolioGrids = [document.getElementById('projGrid')].filter(Boolean);
 
 function fixOrphanRows(){
   portfolioGrids.forEach(grid=>{
