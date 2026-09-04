@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /dialogos
+
+Sitemap: https://matheuspadula.com.br/sitemap.xml
