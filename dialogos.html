@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSJHZ8GRJ0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CSJHZ8GRJ0');
-  </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diálogos Estruturantes — Padula Design Studio</title>
@@ -25,7 +17,6 @@
 <meta property="og:url" content="https://matheuspadula.com.br/dialogos">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta name="robots" content="noindex, nofollow">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Diálogos Estruturantes — Padula Design Studio">
 <meta name="twitter:description" content="Landing page de lançamento para a Diálogos Estruturantes, plataforma de conexão entre os setores de agro, infraestrutura e portos.">
@@ -106,6 +97,15 @@
   .result-number { font-family:var(--font-display);font-size:clamp(48px,5vw,72px);font-weight:800;color:var(--accent);line-height:1;margin-bottom:12px;letter-spacing:-.03em; }
   .result-desc { font-size:14px;color:var(--muted);line-height:1.5; }
   .results-text { font-size:17px;line-height:1.75;color:#b0aea8;max-width:640px; }
+  .next-project { display:block;padding:80px 48px;background:var(--surface);border-top:1px solid var(--border);text-decoration:none;position:relative;overflow:hidden;transition:background .4s; }
+  .next-project:hover { background:#161616; }
+  .next-project::after { content:'';position:absolute;inset:0;background:radial-gradient(ellipse 40% 60% at 80% 50%,rgba(235,190,56,.04) 0%,transparent 70%);opacity:0;transition:opacity .4s; }
+  .next-project:hover::after { opacity:1; }
+  .next-label { font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:12px; }
+  .next-title { font-family:var(--font-display);font-size:clamp(36px,6vw,80px);font-weight:800;color:var(--text);line-height:1;letter-spacing:-.03em;display:flex;align-items:center;gap:24px;transition:gap .3s; }
+  .next-project:hover .next-title { gap:36px; }
+  .next-arrow { font-size:.6em;color:var(--accent);transition:transform .3s; }
+  .next-project:hover .next-arrow { transform:translateX(8px); }
   footer { padding:40px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center; }
   .footer-brand { font-family:var(--font-display);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted); }
   .footer-copy { font-size:12px;color:var(--muted); }
@@ -121,6 +121,7 @@
     .results-grid { grid-template-columns:1fr; }
     .gallery-grid { grid-template-columns:1fr; }
     .gallery-item.full { grid-column:1; }
+    .next-project { padding:60px 24px; }
     footer { flex-direction:column;gap:12px;text-align:center; }
   }
 </style>
@@ -256,6 +257,15 @@
     A landing page colocou a nova proposta da Diálogos Estruturantes no ar dentro do prazo apertado do cliente, validando a base de captação antes da chegada do site completo da plataforma — sem comprometer identidade visual nem qualidade de implementação.
   </p>
 </section>
+
+<!-- NEXT PROJECT -->
+<a href="drrafael" class="next-project">
+  <div class="next-label" data-i18n="case.next">Próximo projeto</div>
+  <div class="next-title">
+    Dr. Rafael Nora Resende
+    <span class="next-arrow">→</span>
+  </div>
+</a>
 
 <div id="footer-root"></div>
 
