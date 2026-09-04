@@ -20,6 +20,7 @@
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 0; background: transparent; transition: background .3s, border .3s, backdrop-filter .3s; border-bottom: 1px solid transparent; }
 .nav.scrolled { background: rgba(10,10,10,.72); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-bottom-color: var(--line); }
 .nav .row { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.logo, .nav-right { position: relative; z-index: 100; }
 .logo { font-family: 'Bricolage Grotesque', serif; font-weight: 600; font-size: 20px; letter-spacing: -.01em; display: flex; align-items: center; gap: 8px; color: var(--fg); text-decoration: none; }
 .logo .star { color: var(--accent); display: inline-block; transform-origin: center; animation: spin 12s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
