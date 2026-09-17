@@ -442,6 +442,26 @@
       'fireart.logo.2': 'Negativo — sobre escuro',
       'fireart.logo.3': 'Redução — colorido',
       'fireart.logo.4': 'Redução — sobre escuro',
+
+      // Agro Ribeiro — Identidade Visual
+      'agro2.caption': 'Placa de entrada — aplicação em metal e madeira',
+      'agro2.ch.title': 'Vender terra exige parecer perito, não corretor',
+      'agro2.ch.p1': 'A Agro Ribeiro atua na negociação de fazendas de alto padrão — um mercado em que a decisão de compra passa por histórico, documentação e avaliação técnica antes de qualquer visita ao terreno.',
+      'agro2.ch.p2': 'O desafio foi construir uma identidade que comunicasse os quatro pilares da marca — confiança, sofisticação, precisão e herança — sem depender de clichês visuais do agronegócio.',
+      'agro2.co.title': 'Um selo, não um logotipo',
+      'agro2.co.p1': 'O símbolo é uma moldura oval que funciona como marca de autenticidade e precisão — a mesma lógica de um carimbo ou brasão. Dentro dela, uma espiga estilizada nasce de um único ponto, com folhas douradas se abrindo; na base, uma linha em creme representa o relevo do terreno.',
+      'agro2.co.p2': 'O resultado é reconhecível mesmo isolado — como ícone de aplicativo, carimbo em couro ou bordado —, ancorando a marca no território em vez de recorrer a um ícone genérico de agronegócio.',
+      'agro2.pal.title': 'Verde-floresta, dourado, off-white e grafite',
+      'agro2.typ.title': 'Serifa editorial com apoio grotesco contemporâneo',
+      'agro2.res.title': 'Um selo de autenticidade em cada ponto de contato',
+      'agro2.res.d1': 'Versões de logotipo cobrindo claro, escuro, verde e selo isolado',
+      'agro2.res.d2': 'Cores fixas definidas, com paleta de apoio para gráficos e materiais',
+      'agro2.res.d3': 'De papelaria a bordado, couro e sinalização — o mesmo selo em cada superfície',
+      'agro2.res.text': 'A Agro Ribeiro ganhou um manual de marca que funciona como referência única para qualquer fornecedor — gráfica, bordadeira ou comunicação visual — garantindo que o selo de autenticidade da marca chegue idêntico a cada ponto de contato com o cliente.',
+      'agro2.logo.1': 'Principal — sobre claro',
+      'agro2.logo.2': 'Off-white — sobre escuro',
+      'agro2.logo.3': 'Dourada — sobre verde',
+      'agro2.logo.4': 'Selo isolado',
     },
     en: {
       'nav.portfolio': 'Work',
@@ -771,6 +791,26 @@
       'fireart.logo.2': 'Negative — on dark',
       'fireart.logo.3': 'Reduced — color',
       'fireart.logo.4': 'Reduced — on dark',
+
+      // Agro Ribeiro — Brand Identity
+      'agro2.caption': 'Entrance sign — metal and wood application',
+      'agro2.ch.title': 'Selling land means looking like an expert, not a broker',
+      'agro2.ch.p1': 'Agro Ribeiro negotiates high-end farm properties — a market where the purchase decision runs through track record, documentation and technical appraisal before any visit to the land.',
+      'agro2.ch.p2': 'The challenge was to build an identity that conveyed the brand\'s four pillars — trust, sophistication, precision and heritage — without relying on agribusiness visual clichés.',
+      'agro2.co.title': 'A seal, not a logo',
+      'agro2.co.p1': 'The symbol is an oval frame that works as a mark of authenticity and precision — the same logic as a stamp or coat of arms. Inside it, a stylized wheat spike grows from a single point, its golden leaves opening; at the base, a cream line represents the terrain\'s relief.',
+      'agro2.co.p2': 'The result is recognizable even in isolation — as an app icon, a leather stamp or embroidery — anchoring the brand in the land itself instead of relying on a generic agribusiness icon.',
+      'agro2.pal.title': 'Forest green, gold, off-white and graphite',
+      'agro2.typ.title': 'Editorial serif with a contemporary grotesque support face',
+      'agro2.res.title': 'A seal of authenticity at every touchpoint',
+      'agro2.res.d1': 'Logo versions covering light, dark, green and standalone seal',
+      'agro2.res.d2': 'Fixed brand colors defined, with a support palette for graphics and materials',
+      'agro2.res.d3': 'From stationery to embroidery, leather and signage — the same seal on every surface',
+      'agro2.res.text': 'Agro Ribeiro gained a brand manual that works as the single reference for any supplier — print shop, embroiderer or visual communication — ensuring the brand\'s seal of authenticity arrives identical at every client touchpoint.',
+      'agro2.logo.1': 'Primary — on light',
+      'agro2.logo.2': 'Off-white — on dark',
+      'agro2.logo.3': 'Gold — on green',
+      'agro2.logo.4': 'Standalone seal',
     }
   };
 
