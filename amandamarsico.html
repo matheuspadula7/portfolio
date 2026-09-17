@@ -18,29 +18,28 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menndel & Melo — Padula Design Studio</title>
-<meta name="description" content="Site institucional para o Menndel & Melo, boutique tributária de atuação nacional e internacional, implementado em Framer com fidelidade total ao design.">
+<title>Drª Amanda Mársico — Padula Design Studio</title>
+<meta name="description" content="Identidade visual para a Drª Amanda Mársico, cirurgiã-dentista em Cruzeiro-SP. Branding por Matheus Padula.">
 <meta name="author" content="Matheus Padula">
-<link rel="canonical" href="https://matheuspadula.com.br/menndel">
+<link rel="canonical" href="https://matheuspadula.com.br/amandamarsico">
 <meta property="og:site_name" content="Padula Design Studio">
-<meta property="og:title" content="Menndel & Melo — Padula Design Studio">
-<meta property="og:description" content="Site institucional para o Menndel & Melo, boutique tributária de atuação nacional e internacional, implementado em Framer com fidelidade total ao design.">
+<meta property="og:title" content="Drª Amanda Mársico — Padula Design Studio">
+<meta property="og:description" content="Identidade visual para a Drª Amanda Mársico, cirurgiã-dentista em Cruzeiro-SP. Branding por Matheus Padula.">
 <meta property="og:image" content="https://matheuspadula.com.br/assets/social_preview.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/jpeg">
-<meta property="og:url" content="https://matheuspadula.com.br/menndel">
+<meta property="og:url" content="https://matheuspadula.com.br/amandamarsico">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Menndel & Melo — Padula Design Studio">
-<meta name="twitter:description" content="Site institucional para o Menndel & Melo, boutique tributária de atuação nacional e internacional, implementado em Framer com fidelidade total ao design.">
+<meta name="twitter:title" content="Drª Amanda Mársico — Padula Design Studio">
+<meta name="twitter:description" content="Identidade visual para a Drª Amanda Mársico, cirurgiã-dentista em Cruzeiro-SP. Branding por Matheus Padula.">
 <meta name="twitter:image" content="https://matheuspadula.com.br/assets/social_preview.jpg">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="shortcut icon" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://framerusercontent.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Mulish:wght@400;500;600&family=Courgette&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -57,42 +56,60 @@
   body:has(a:hover) .cursor-ring,body:has(button:hover) .cursor-ring { width:52px;height:52px;border-color:rgba(235,190,56,.7); }
   @media (max-width:900px){ .cursor, .cursor-ring { display:none !important; } body { cursor:auto !important; } }
   .progress-bar { position:fixed;top:0;left:0;height:2px;background:var(--accent);z-index:1000;width:0%;transition:width .1s linear; }
-  nav { position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:24px 48px;background:rgba(10,10,10,.85);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s; }
-  nav.scrolled { border-color:var(--border); }
-  .nav-logo { font-family:var(--font-display);font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);text-decoration:none; }
-  .nav-links { display:flex;gap:32px;list-style:none; }
-  .nav-links a { font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:.04em;transition:color .2s; }
-  .nav-links a:hover { color:var(--text); }
+  section { padding:120px 48px; }
+  .section-number { font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-family:var(--font-display);margin-bottom:16px; }
+  .section-title { font-family:var(--font-display);font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin-bottom:32px; }
+  .section-body { font-size:17px;line-height:1.75;color:#b0aea8;max-width:640px; }
+
+  /* HERO */
   .hero { min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px;position:relative;overflow:hidden; }
   .hero-bg { position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 40%,rgba(235,190,56,.06) 0%,transparent 70%);pointer-events:none; }
   .hero-label { font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:12px; }
   .hero-label::before { content:'';display:block;width:32px;height:1px;background:var(--muted); }
-  .hero-title { font-family:var(--font-display);font-size:clamp(52px,9vw,120px);font-weight:800;line-height:.92;letter-spacing:-.03em;margin-bottom:48px;overflow-wrap:anywhere;word-break:break-word; }
+  .hero-title { font-family:var(--font-display);font-size:clamp(56px,9vw,120px);font-weight:800;line-height:.98;letter-spacing:-.03em;margin-bottom:48px;overflow-wrap:anywhere;word-break:break-word; }
   .hero-title span { color:var(--accent); }
   .hero-meta { display:grid;grid-template-columns:repeat(4,auto) minmax(180px,1fr);gap:0;border-top:1px solid var(--border);padding-top:32px;max-width:1100px; }
   .meta-item { padding-right:48px;border-right:1px solid var(--border);margin-right:48px; }
   .meta-item:last-child { border:none;margin:0;padding:0; }
   .meta-label { font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px; }
   .meta-value { font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--text);white-space:nowrap; }
-  .hero-cta { display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#0a0a0a;font-family:var(--font-display);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:14px 24px;text-decoration:none;margin-top:12px;transition:transform .2s,box-shadow .2s;white-space:nowrap; }
-  .hero-cta:hover { transform:translateY(-2px);box-shadow:0 8px 24px rgba(235,190,56,.25); }
-  .hero-cta svg { transition:transform .2s; }
-  .hero-cta:hover svg { transform:translateX(4px); }
-  section { padding:120px 48px; }
-  .section-number { font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-family:var(--font-display);margin-bottom:16px; }
-  .section-title { font-family:var(--font-display);font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin-bottom:32px; }
-  .section-body { font-size:17px;line-height:1.75;color:#b0aea8;max-width:640px; }
+
+  /* HERO IMAGE */
   .hero-image-section { padding:0 48px 120px; }
   .hero-image-wrap { width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;background:var(--surface); }
   .hero-image-wrap img { width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.92);transition:filter .6s,transform .6s; }
   .hero-image-wrap:hover img { filter:brightness(1);transform:scale(1.01); }
-  .hero-image-placeholder { width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:160px;font-weight:800;color:var(--border);letter-spacing:-.06em; }
   .image-caption { font-size:12px;color:var(--muted);letter-spacing:.06em;margin-top:12px; }
+
+  /* CHALLENGE / CONCEPT */
   .challenge-section { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;border-top:1px solid var(--border); }
   .solution-section { background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border); }
   .solution-inner { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start; }
   .solution-tags { display:flex;flex-wrap:wrap;gap:8px;margin-top:32px; }
   .tag { font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border:1px solid var(--border);color:var(--muted);font-family:var(--font-display); }
+
+  /* LOGO SHOWCASE */
+  .identity-section { border-top:1px solid var(--border); }
+  .logo-showcase { display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:64px; }
+  .logo-tile { aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:32px;position:relative;background:var(--surface); }
+  .logo-tile img { max-width:75%;max-height:75%;object-fit:contain; }
+  .logo-tile.light-img img { background:#fff;border-radius:8px;padding:16px;max-width:70%;max-height:70%; }
+  .logo-tile-label { position:absolute;bottom:18px;left:22px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-display);color:rgba(232,230,224,.45); }
+
+  /* PALETTE */
+  .palette-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;margin-top:64px; }
+  .swatch-card { aspect-ratio:1;display:flex;flex-direction:column;justify-content:flex-end;padding:22px; }
+  .swatch-name { font-family:var(--font-display);font-size:14px;font-weight:700; }
+  .swatch-hex { font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.75;margin-top:4px;text-transform:uppercase; }
+
+  /* TYPOGRAPHY SPECIMEN */
+  .type-specimen { margin-top:64px;border-top:1px solid var(--border); }
+  .type-row { padding:40px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:160px 1fr;gap:32px;align-items:baseline; }
+  .type-row-label { font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em; }
+  .type-row-sample { font-size:clamp(28px,4vw,56px);line-height:1.1; }
+  .type-row-meta { font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);margin-top:10px; }
+
+  /* APPLICATIONS GALLERY */
   .gallery-section { border-top:1px solid var(--border); }
   .gallery-grid { display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:64px; }
   .gallery-item { position:relative;overflow:hidden;background:var(--surface); }
@@ -100,18 +117,19 @@
   .gallery-item img { width:100%;display:block;aspect-ratio:4/3;object-fit:cover;filter:brightness(.9);transition:filter .5s,transform .5s; }
   .gallery-item.full img { aspect-ratio:16/7; }
   .gallery-item:hover img { filter:brightness(1);transform:scale(1.02); }
-  .gallery-placeholder { width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:80px;font-weight:800;color:var(--border); }
-  .gallery-item.full .gallery-placeholder { aspect-ratio:16/7; }
-  .gallery-label { position:absolute;bottom:16px;left:20px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);background:rgba(0,0,0,.5);padding:4px 10px;backdrop-filter:blur(6px); }
+
+  /* RESULTS */
   .results-section { border-top:1px solid var(--border); }
   .results-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:64px 0; }
   .result-card { background:var(--surface);padding:48px 40px;border:1px solid var(--border);position:relative;overflow:hidden;transition:border-color .3s; }
   .result-card:hover { border-color:rgba(235,190,56,.3); }
   .result-card::before { content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s; }
   .result-card:hover::before { transform:scaleX(1); }
-  .result-number { font-family:var(--font-display);font-size:clamp(48px,5vw,72px);font-weight:800;color:var(--accent);line-height:1;margin-bottom:12px;letter-spacing:-.03em; }
+  .result-number { font-family:var(--font-display);font-size:clamp(40px,5vw,64px);font-weight:800;color:var(--accent);line-height:1;margin-bottom:12px;letter-spacing:-.03em; }
   .result-desc { font-size:14px;color:var(--muted);line-height:1.5; }
   .results-text { font-size:17px;line-height:1.75;color:#b0aea8;max-width:640px; }
+
+  /* NEXT PROJECT */
   .next-project { display:block;padding:80px 48px;background:var(--surface);border-top:1px solid var(--border);text-decoration:none;position:relative;overflow:hidden;transition:background .4s; }
   .next-project:hover { background:#161616; }
   .next-project::after { content:'';position:absolute;inset:0;background:radial-gradient(ellipse 40% 60% at 80% 50%,rgba(235,190,56,.04) 0%,transparent 70%);opacity:0;transition:opacity .4s; }
@@ -121,23 +139,25 @@
   .next-project:hover .next-title { gap:36px; }
   .next-arrow { font-size:.6em;color:var(--accent);transition:transform .3s; }
   .next-project:hover .next-arrow { transform:translateX(8px); }
-  footer { padding:40px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center; }
-  .footer-brand { font-family:var(--font-display);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted); }
-  .footer-copy { font-size:12px;color:var(--muted); }
+
+  /* ANIMATIONS */
   .fade-up { opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease; }
   .fade-up.visible { opacity:1;transform:translateY(0); }
+
+  /* MOBILE */
   @media (max-width:768px) {
-    nav { padding:20px 24px; } .nav-links { display:none; }
     section,.hero-image-section { padding-left:24px;padding-right:24px; }
     .hero { padding:0 24px 60px; }
     .hero-title { font-size:clamp(34px,11vw,72px); }
     .hero-meta { grid-template-columns:1fr 1fr;gap:24px; }
     .meta-item { border:none;margin:0;padding:0; }
     .challenge-section,.solution-inner { grid-template-columns:1fr;gap:40px; }
+    .logo-showcase { grid-template-columns:1fr; }
+    .palette-grid { grid-template-columns:repeat(2,1fr); }
+    .type-row { grid-template-columns:1fr;gap:8px; }
     .results-grid { grid-template-columns:1fr; }
     .gallery-grid { grid-template-columns:1fr; }
     .gallery-item.full { grid-column:1; }
-    footer { flex-direction:column;gap:12px;text-align:center; }
     .next-project { padding:60px 24px; }
   }
 </style>
@@ -154,12 +174,12 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-label" data-i18n="case.label.web">Case Study — Web Design</div>
-  <h1 class="hero-title">Menndel<span>&</span> Melo</h1>
+  <div class="hero-label">Case Study — Identidade Visual</div>
+  <h1 class="hero-title">Amanda <span>Mársico</span></h1>
   <div class="hero-meta">
     <div class="meta-item">
       <div class="meta-label" data-i18n="case.client">Cliente</div>
-      <div class="meta-value">Menndel & Melo</div>
+      <div class="meta-value">Drª Amanda Mársico</div>
     </div>
     <div class="meta-item">
       <div class="meta-label" data-i18n="case.year">Ano</div>
@@ -167,19 +187,11 @@
     </div>
     <div class="meta-item">
       <div class="meta-label" data-i18n="case.scope">Escopo</div>
-      <div class="meta-value" data-i18n="menndel.scope">Dev / Framer</div>
+      <div class="meta-value">Identidade Visual</div>
     </div>
     <div class="meta-item">
       <div class="meta-label" data-i18n="case.stack">Stack</div>
-      <div class="meta-value">Figma / Framer</div>
-    </div>
-    <div class="meta-item" style="display:flex;align-items:flex-end;">
-      <a href="https://menndel.com/" target="_blank" rel="noopener noreferrer" class="hero-cta">
-        <span data-i18n="case.live">Ver site ao vivo</span>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
+      <div class="meta-value">Figma / Illustrator</div>
     </div>
   </div>
 </section>
@@ -187,98 +199,168 @@
 <!-- HERO IMAGE -->
 <div class="hero-image-section">
   <div class="hero-image-wrap">
-    <img src="https://framerusercontent.com/images/Q1ppDX5PUWT36ixaXQzQwJ6vU.png?width=1920" alt="Menndel & Melo — Homepage" loading="lazy">
+    <img src="assets/images/amandamarsico-cover.jpg" alt="Drª Amanda Mársico — Sinalização de recepção do consultório" loading="lazy">
   </div>
-  <p class="image-caption" data-i18n="menndel.caption">Visão geral — Homepage Menndel & Melo</p>
+  <p class="image-caption">Sinalização de parede — recepção do consultório</p>
 </div>
 
-<!-- CHALLENGE -->
+<!-- 01 — DESAFIO -->
 <section class="challenge-section fade-up">
   <div>
-    <div class="section-number" data-i18n="s01">01 — O desafio</div>
-    <h2 class="section-title" data-i18n="menndel.ch.title">Posicionar um escritório como boutique tributária de alto padrão</h2>
+    <div class="section-number">01 — O desafio</div>
+    <h2 class="section-title">Traduzir sofisticação e cuidado em uma marca de saúde</h2>
   </div>
   <div>
-    <p class="section-body" data-i18n="menndel.ch.p1">
-      O Menndel & Melo não é um escritório de advocacia comum. Com atuação nacional e internacional na área tributária, o escritório opera como uma boutique especializada — seleto, técnico e de alta complexidade. O problema: o site anterior comunicava generalismo quando o diferencial é exatamente o oposto.
+    <p class="section-body">
+      Amanda Mársico é cirurgiã-dentista em Cruzeiro-SP, com estilo sofisticado e minimalista, atuação em clínica geral, ortodontia, odontologia estética e harmonização facial — além de trabalho voluntário na Amazônia.
     </p>
-    <p class="section-body" style="margin-top:20px;" data-i18n="menndel.ch.p2">
-      O desafio foi redesenhar a presença digital para refletir esse posicionamento com precisão: um escritório que atende grandes operações, não qualquer demanda. O site precisava transmitir sofisticação e autoridade técnica para um público exigente de executivos e gestores financeiros.
+    <p class="section-body" style="margin-top:20px;">
+      O desafio foi criar uma identidade que equilibrasse a delicadeza e a docilidade da profissional com a confiança técnica que a área da saúde exige, sem cair em clichês do setor odontológico.
     </p>
   </div>
 </section>
 
-<!-- SOLUTION -->
+<!-- 02 — CONCEITO -->
 <section class="solution-section">
   <div class="solution-inner fade-up">
     <div>
-      <div class="section-number" data-i18n="s02">02 — A solução</div>
-      <h2 class="section-title" data-i18n="menndel.sol.title">Implementação fiel à identidade de boutique</h2>
+      <div class="section-number">02 — O conceito</div>
+      <h2 class="section-title">Diamante, dente e as iniciais do nome</h2>
       <div class="solution-tags">
-        <span class="tag">Framer Dev</span>
-        <span class="tag">UI Implementation</span>
-        <span class="tag">Motion</span>
-        <span class="tag" data-i18n="menndel.sol.tag4">Responsivo</span>
+        <span class="tag">Identidade Visual</span>
+        <span class="tag">Naming</span>
+        <span class="tag">Brand Guidelines</span>
       </div>
     </div>
     <div>
-      <p class="section-body" data-i18n="menndel.sol.p1">
-        O trabalho foi desenvolvido em colaboração com a equipe interna de marketing e design do escritório, que trouxe a direção visual e estratégica. Minha responsabilidade foi a implementação completa no Framer, garantindo que cada detalhe do design fosse traduzido com precisão para o ambiente digital.
+      <p class="section-body">
+        O símbolo da marca é baseado em quatro elementos sobrepostos: um diamante, que representa a preciosidade do cuidado da Amanda com seus pacientes; a letra "A", inicial de Amanda; a letra "M", inicial de Mársico; e uma malha 3D que desenha a silhueta de um dente e remete à tecnologia usada em seus procedimentos.
       </p>
-      <p class="section-body" style="margin-top:20px;" data-i18n="menndel.sol.p2">
-        A linguagem visual adotada — tipografia refinada, muito espaço negativo e hierarquia clara — foi implementada com atenção a animações de scroll sutis e interações que reforçam a sensação de premium sem recorrer a excessos visuais.
-      </p>
-      <p class="section-body" style="margin-top:20px;" data-i18n="menndel.sol.p3">
-        A estrutura do Framer foi organizada com componentes reutilizáveis e CMS ativo, permitindo que a equipe do escritório atualize conteúdo — casos, publicações e team — de forma autônoma, sem depender de dev para cada alteração.
+      <p class="section-body" style="margin-top:20px;">
+        Os tons de azul comunicam cuidado, higiene e modernidade, enquanto o rosa funciona como contraponto, trazendo a docilidade e a delicadeza da marca.
       </p>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- 03 — MARCA -->
+<section class="identity-section">
+  <div class="section-number fade-up">03 — A marca</div>
+  <h2 class="section-title fade-up">Logotipo e variações</h2>
+  <div class="logo-showcase">
+    <div class="logo-tile light-img fade-up">
+      <img src="assets/images/amandamarsico-logo-light.png" alt="Amanda Mársico — logotipo horizontal colorido">
+      <span class="logo-tile-label">Principal — colorido</span>
+    </div>
+    <div class="logo-tile fade-up">
+      <img src="assets/images/amandamarsico-logo-dark.png" alt="Amanda Mársico — versão negativa sobre fundo escuro">
+      <span class="logo-tile-label">Negativo — sobre escuro</span>
+    </div>
+    <div class="logo-tile light-img fade-up">
+      <img src="assets/images/amandamarsico-logo-symbol.png" alt="Amanda Mársico — logotipo vertical">
+      <span class="logo-tile-label">Versão vertical</span>
+    </div>
+    <div class="logo-tile light-img fade-up">
+      <img src="assets/images/amandamarsico-logo-badge.png" alt="Amanda Mársico — selo circular">
+      <span class="logo-tile-label">Selo</span>
+    </div>
+  </div>
+</section>
+
+<!-- 04 — PALETA -->
+<section class="identity-section" style="border-top:none;">
+  <div class="section-number fade-up">04 — Paleta de cores</div>
+  <h2 class="section-title fade-up">Azul e rosa — cuidado com um toque de delicadeza</h2>
+  <div class="palette-grid">
+    <div class="swatch-card fade-up" style="background:#84dade;color:#1a1a1a;">
+      <div class="swatch-name">Azul Primário</div>
+      <div class="swatch-hex">#84DADE</div>
+    </div>
+    <div class="swatch-card fade-up" style="background:#62cbc9;color:#1a1a1a;">
+      <div class="swatch-name">Azul Secundário</div>
+      <div class="swatch-hex">#62CBC9</div>
+    </div>
+    <div class="swatch-card fade-up" style="background:#e81f76;color:#fff;">
+      <div class="swatch-name">Rosa</div>
+      <div class="swatch-hex">#E81F76</div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 — TIPOGRAFIA -->
+<section class="identity-section" style="border-top:none;">
+  <div class="section-number fade-up">05 — Tipografia</div>
+  <h2 class="section-title fade-up">Docilidade, elegância e modernidade</h2>
+  <div class="type-specimen">
+    <div class="type-row fade-up">
+      <div class="type-row-label">Logotipo</div>
+      <div>
+        <div class="type-row-sample" style="font-family:var(--font-display);font-weight:700;">Arbotek</div>
+        <div class="type-row-meta">Uso exclusivo no logotipo</div>
+      </div>
+    </div>
+    <div class="type-row fade-up">
+      <div class="type-row-label">Corpo de texto</div>
+      <div>
+        <div class="type-row-sample" style="font-family:'Mulish',sans-serif;font-weight:500;">Mulish — Aa Bb Cc</div>
+        <div class="type-row-meta">Peças de comunicação e site</div>
+      </div>
+    </div>
+    <div class="type-row fade-up">
+      <div class="type-row-label">Destaques</div>
+      <div>
+        <div class="type-row-sample" style="font-family:'Courgette',cursive;font-weight:400;">Courgette</div>
+        <div class="type-row-meta">Detalhes manuscritos e frases de efeito</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 — APLICAÇÕES -->
 <section class="gallery-section">
-  <div class="section-number fade-up" data-i18n="s03">03 — Capturas do projeto</div>
+  <div class="section-number fade-up">06 — Aplicações</div>
+  <h2 class="section-title fade-up">A marca em contexto real</h2>
   <div class="gallery-grid">
     <div class="gallery-item fade-up">
-      <img src="https://framerusercontent.com/images/rtwRyA9LFWXKsqxaaVAeF4xvG1c.png?width=1020" alt="Menndel & Melo — Hero section" loading="lazy">
+      <img src="assets/images/amandamarsico-app1.jpg" alt="Drª Amanda Mársico — Sinalização de ambiente com plantas" loading="lazy">
     </div>
     <div class="gallery-item fade-up">
-      <img src="https://framerusercontent.com/images/XVOEx8VSzif9FY8wSFvIQAfLk.png?width=1020" alt="Menndel & Melo — Área de atuação" loading="lazy">
+      <img src="assets/images/amandamarsico-app2.jpg" alt="Drª Amanda Mársico — Aplicativo de agendamento" loading="lazy">
     </div>
     <div class="gallery-item full fade-up">
-      <img src="https://framerusercontent.com/images/v1r0XSOhOhYgukhL7LmqgnhVLQ.png?width=1589" alt="Menndel & Melo — Visão completa" loading="lazy">
+      <img src="assets/images/amandamarsico-app3.jpg" alt="Drª Amanda Mársico — Post de redes sociais" loading="lazy">
     </div>
   </div>
 </section>
 
-<!-- RESULTS -->
+<!-- 07 — RESULTADO -->
 <section class="results-section">
-  <div class="section-number fade-up" data-i18n="s04">04 — O resultado</div>
-  <h2 class="section-title fade-up" data-i18n="menndel.res.title">Presença digital alinhada ao padrão boutique</h2>
+  <div class="section-number fade-up">07 — O resultado</div>
+  <h2 class="section-title fade-up">Uma marca de saúde com personalidade própria</h2>
   <div class="results-grid">
     <div class="result-card fade-up">
-      <div class="result-number">4<span style="font-size:0.5em;color:var(--muted)" data-i18n="menndel.res.n1">sem</span></div>
-      <div class="result-desc" data-i18n="menndel.res.d1">Do alinhamento com a equipe ao site publicado e funcionando em produção</div>
+      <div class="result-number">4<span style="font-size:0.5em;color:var(--muted)">var.</span></div>
+      <div class="result-desc">Versões de logotipo para horizontal, vertical, selo e negativo</div>
     </div>
     <div class="result-card fade-up">
-      <div class="result-number">100<span style="font-size:0.4em;color:var(--muted)">%</span></div>
-      <div class="result-desc" data-i18n="menndel.res.d2">Editável via CMS do Framer, com autonomia total para a equipe interna do escritório</div>
+      <div class="result-number">3<span style="font-size:0.4em;color:var(--muted)">cores</span></div>
+      <div class="result-desc">Paleta enxuta e memorável, fácil de aplicar em qualquer material</div>
     </div>
     <div class="result-card fade-up">
-      <div class="result-number">2<span style="font-size:0.5em;color:var(--muted)" data-i18n="menndel.res.n3">países</span></div>
-      <div class="result-desc" data-i18n="menndel.res.d3">Atuação nacional e internacional representada com clareza na nova arquitetura do site</div>
+      <div class="result-number">1<span style="font-size:0.5em;color:var(--muted)">pattern</span></div>
+      <div class="result-desc">Padrão gráfico próprio para uso em ambientes e materiais de apoio</div>
     </div>
   </div>
-  <p class="results-text fade-up" data-i18n="menndel.res.text">
-    O novo site do Menndel & Melo comunica com precisão o que o escritório é: uma boutique tributária de alto nível, com capacidade técnica para operações complexas em escala nacional e internacional. A implementação no Framer garantiu fidelidade total ao design e flexibilidade para a equipe manter o conteúdo atualizado.
+  <p class="results-text fade-up">
+    A identidade da Drª Amanda Mársico une delicadeza e confiança técnica — do letreiro na recepção do consultório ao aplicativo de agendamento, comunicando com consistência o cuidado que é a marca registrada do seu atendimento.
   </p>
 </section>
 
 <!-- NEXT PROJECT -->
-<a href="blended" class="next-project">
+<a href="raphaelrio" class="next-project">
   <div class="next-label" data-i18n="case.next">Próximo projeto</div>
   <div class="next-title">
-    Blended
+    Raphael Rio
     <span class="next-arrow">→</span>
   </div>
 </a>
