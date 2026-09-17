@@ -91,9 +91,11 @@
   /* LOGO SHOWCASE */
   .identity-section { border-top:1px solid var(--border); }
   .logo-showcase { display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:64px; }
-  .logo-tile { aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:32px;position:relative;background:var(--surface); }
-  .logo-tile img { max-width:75%;max-height:75%;object-fit:contain; }
+  .logo-tile { aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:48px;position:relative;background:var(--surface); }
+  .logo-tile img { max-width:70%;max-height:60%;object-fit:contain; }
   .logo-tile-label { position:absolute;bottom:18px;left:22px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-display);color:rgba(232,230,224,.45); }
+  .logo-tile.tile-light { background:#f2f0ea; }
+  .logo-tile.tile-light .logo-tile-label { color:rgba(10,10,10,.35); }
 
   /* PALETTE */
   .palette-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;margin-top:64px; }
@@ -249,21 +251,21 @@
   <div class="section-number fade-up">03 — A marca</div>
   <h2 class="section-title fade-up">Logotipo e variações</h2>
   <div class="logo-showcase">
-    <div class="logo-tile fade-up">
-      <img src="assets/images/blended-logo-light.png" alt="Blended — logotipo colorido">
+    <div class="logo-tile tile-light fade-up">
+      <img src="assets/images/blended-logo-light.svg" alt="Blended — logotipo colorido">
       <span class="logo-tile-label">Principal — colorido</span>
     </div>
     <div class="logo-tile fade-up">
-      <img src="assets/images/blended-logo-dark.png" alt="Blended — logotipo sobre fundo escuro">
+      <img src="assets/images/blended-logo-dark.svg" alt="Blended — logotipo sobre fundo escuro">
       <span class="logo-tile-label">Sobre fundo escuro</span>
     </div>
-    <div class="logo-tile fade-up">
-      <img src="assets/images/blended-logo-mono.png" alt="Blended — versão monocromática">
-      <span class="logo-tile-label">Monocromática</span>
+    <div class="logo-tile tile-light fade-up">
+      <img src="assets/images/blended-logo-symbol.svg" alt="Blended — símbolo reduzido colorido">
+      <span class="logo-tile-label">Redução — colorido</span>
     </div>
     <div class="logo-tile fade-up">
-      <img src="assets/images/blended-logo-symbol.png" alt="Blended — monograma isolado">
-      <span class="logo-tile-label">Monograma isolado</span>
+      <img src="assets/images/blended-logo-mono.svg" alt="Blended — símbolo reduzido sobre fundo escuro">
+      <span class="logo-tile-label">Redução — sobre escuro</span>
     </div>
   </div>
 </section>

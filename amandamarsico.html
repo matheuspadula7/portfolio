@@ -91,10 +91,11 @@
   /* LOGO SHOWCASE */
   .identity-section { border-top:1px solid var(--border); }
   .logo-showcase { display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:64px; }
-  .logo-tile { aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:32px;position:relative;background:var(--surface); }
-  .logo-tile img { max-width:75%;max-height:75%;object-fit:contain; }
-  .logo-tile.light-img img { background:#fff;border-radius:8px;padding:16px;max-width:70%;max-height:70%; }
+  .logo-tile { aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:48px;position:relative;background:var(--surface); }
+  .logo-tile img { max-width:70%;max-height:60%;object-fit:contain; }
   .logo-tile-label { position:absolute;bottom:18px;left:22px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-display);color:rgba(232,230,224,.45); }
+  .logo-tile.tile-light { background:#f2f0ea; }
+  .logo-tile.tile-light .logo-tile-label { color:rgba(10,10,10,.35); }
 
   /* PALETTE */
   .palette-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;margin-top:64px; }
@@ -248,7 +249,7 @@
   <div class="section-number fade-up">03 — A marca</div>
   <h2 class="section-title fade-up">Logotipo e variações</h2>
   <div class="logo-showcase">
-    <div class="logo-tile light-img fade-up">
+    <div class="logo-tile tile-light fade-up">
       <img src="assets/images/amandamarsico-logo-light.png" alt="Amanda Mársico — logotipo horizontal colorido">
       <span class="logo-tile-label">Principal — colorido</span>
     </div>
@@ -256,11 +257,11 @@
       <img src="assets/images/amandamarsico-logo-dark.png" alt="Amanda Mársico — versão negativa sobre fundo escuro">
       <span class="logo-tile-label">Negativo — sobre escuro</span>
     </div>
-    <div class="logo-tile light-img fade-up">
+    <div class="logo-tile tile-light fade-up">
       <img src="assets/images/amandamarsico-logo-symbol.png" alt="Amanda Mársico — logotipo vertical">
       <span class="logo-tile-label">Versão vertical</span>
     </div>
-    <div class="logo-tile light-img fade-up">
+    <div class="logo-tile tile-light fade-up">
       <img src="assets/images/amandamarsico-logo-badge.png" alt="Amanda Mársico — selo circular">
       <span class="logo-tile-label">Selo</span>
     </div>
