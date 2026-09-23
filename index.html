@@ -300,6 +300,17 @@ section{position:relative;padding:140px 0}
 /* reveal */
 .r{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .r.in{opacity:1;transform:none}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+.testi{border:1px solid var(--line-2);border-radius:14px;padding:28px;background:var(--bg-1);display:flex;flex-direction:column;gap:18px}
+.testi .stars{color:var(--accent);letter-spacing:3px;font-size:14px}
+.testi blockquote{color:var(--fg);font-size:15.5px;line-height:1.6}
+.testi .who{display:flex;flex-direction:column;gap:2px;margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+.testi .who b{font-family:'Bricolage Grotesque',serif;font-weight:500;font-size:16px}
+.testi .who span{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--fg-mute)}
+.testi-src{margin-top:32px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--fg-mute)}
+.testi-src a{color:var(--accent)}
+@media(max-width:900px){.testi-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.testi-grid{grid-template-columns:1fr}}
 @media print{.r{opacity:1!important;transform:none!important}}
 
 /* Tweaks panel */
@@ -973,6 +984,30 @@ section{position:relative;padding:140px 0}
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section id="depoimentos" style="border-top:1px solid var(--line)">
+  <div class="container">
+    <div class="section-head r">
+      <div class="eyebrow">
+        <span class="label" data-i18n="ts.label">// depoimentos</span>
+        <span class="counter">(8)</span>
+      </div>
+      <h2 class="title" data-i18n="ts.title">O que dizem <em>os clientes.</em></h2>
+    </div>
+    <div class="testi-grid">
+      <figure class="testi r"><div class="stars" aria-label="5/5">★★★★★</div><blockquote>A melhor que tivemos! Além da entrega nos prazos estipulados, Matheus foi muito atencioso, e prestativo. Atendeu além das nossas expectativas no criativo como também na postura profissional. Recomendamos muito.</blockquote><figcaption class="who"><b>Victória Lombardi</b><span>Rede UltraObra</span></figcaption></figure>
+      <figure class="testi r"><div class="stars" aria-label="5/5">★★★★★</div><blockquote>Ele é o tipo de profissional que faz a diferença em qualquer projeto. As landing pages que ele cria são sempre de altíssima qualidade, com um design moderno e intuitivo. Além disso, o Matheus é super prestativo e sempre está pronto para ajudar, mesmo nas situações mais desafiadoras. Sinceramente, ele é o melhor designer com quem já tive o prazer de trabalhar. Recomendo de olhos fechados!</blockquote><figcaption class="who"><b>Otávio Janoski</b><span>Essentia</span></figcaption></figure>
+      <figure class="testi r"><div class="stars" aria-label="5/5">★★★★★</div><blockquote>Matheus trabalha muito bem com o briefing do cliente, e traz boas ideias para aprimorar os resultados. Como proprietário da "Nuestra Casa - empanadas", de Passa Quatro (MG), estou bastante satisfeito com o Padula Design Studio... e recomendo!</blockquote><figcaption class="who"><b>José Luiz Maio</b><span>Nuestra Casa Empanadas</span></figcaption></figure>
+      <figure class="testi r"><div class="stars" aria-label="5/5">★★★★★</div><blockquote>Muito satisfeito com os serviços prestados, atendimento e competência para concluir as tarefas programadas, foram o destaque da prestação executada.</blockquote><figcaption class="who"><b>Eduardo Faria</b><span>5º Set</span></figcaption></figure>
+      <figure class="testi r"><div class="stars" aria-label="5/5">★★★★★</div><blockquote>Atendimento excelente, bom preço, entrega impecável e prazo cumprido. Recomendo!</blockquote><figcaption class="who"><b>Renan Rocha</b><span>Google</span></figcaption></figure>
+      <figure class="testi r"><div class="stars" aria-label="5/5">★★★★★</div><blockquote>Matheus é um excelente profissional e o trabalho é desenvolvido com foco nas demandas do cliente.</blockquote><figcaption class="who"><b>Andressa Almeida</b><span>Google</span></figcaption></figure>
+      <figure class="testi r"><div class="stars" aria-label="5/5">★★★★★</div><blockquote>Super aprovo! Competência e qualidade, além de cumprir todos os prazos.</blockquote><figcaption class="who"><b>Otavio James</b><span>Alavanka - Negócios Digitais</span></figcaption></figure>
+      <figure class="testi r"><div class="stars" aria-label="5/5">★★★★★</div><blockquote>Trabalho excelente. Bom atendimento.</blockquote><figcaption class="who"><b>Francisco Gomes</b><span>Google</span></figcaption></figure>
+    </div>
+    <p class="testi-src" data-i18n="ts.src">Avaliações 5★ de clientes, originais em português.</p>
+  </div>
+</section>
+
 <!-- EXPERIENCE -->
 <section id="experiencia">
   <div class="container">
@@ -1277,6 +1312,7 @@ const I18N = {
     "ex.l4a":"Identidades visuais completas para marcas de diversos setores.",
     "ex.l4b":"Sites e landing pages de alta performance.",
     "ex.l4c":"Gestão técnica: migrações, Core Web Vitals, manutenção WordPress.",
+    "ts.label":"// depoimentos","ts.title":"O que dizem <em>os clientes.</em>","ts.src":"Avaliações 5★ de clientes.",
     "ct.label":"// vamos conversar","ct.title":"Vamos construir<br>algo <em>juntos?</em>",
     "ct.sub":"Web designer que vai do briefing ao ar sem depender de ninguém.<br>Respondo no mesmo dia.",
     "ft.by":"Design + Dev por Matheus Padula"
@@ -1338,6 +1374,7 @@ const I18N = {
     "ex.l4a":"Full visual identities for brands across sectors.",
     "ex.l4b":"High-performance websites and landing pages.",
     "ex.l4c":"Technical ops: migrations, Core Web Vitals, WordPress maintenance.",
+    "ts.label":"// testimonials","ts.title":"What <em>clients say.</em>","ts.src":"5★ client reviews, quoted in their original Portuguese.",
     "ct.label":"// let's talk","ct.title":"Let's build<br>something <em>together?</em>",
     "ct.sub":"Web designer who takes projects from brief to launch solo.<br>Same-day replies.",
     "ft.by":"Design + Dev by Matheus Padula"
