@@ -538,6 +538,13 @@ dialog.vid[open]::backdrop{animation:fi .5s}
 .mono-s{font-size:9.5px;letter-spacing:.14em;line-height:1.5}
 .phl{top:16px;right:16px}
 .g3,.g4{grid-template-columns:minmax(0,1fr)}
+.snap-row{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px!important;margin:0 calc(var(--gut)*-1);padding:0 var(--gut) 12px;scroll-padding-inline:var(--gut);scrollbar-width:none}
+.snap-row::-webkit-scrollbar{display:none}
+.snap-row>*{flex:0 0 82%;scroll-snap-align:start}
+.tphoto{aspect-ratio:1/1}
+.art-feat>img{object-position:50% 18%}
+.gf{grid-template-columns:1fr 1fr!important;gap:48px 24px!important}
+.gf>div:first-child,.gf>div:last-child{grid-column:1/-1}
 .stats{grid-template-columns:minmax(0,1fr);row-gap:32px}
 .stat,.stat:nth-child(3){border-left:0;padding-left:0;border-top:1px solid rgba(16,32,28,.18);padding-top:28px}
 .stat::before{display:none}
@@ -561,7 +568,6 @@ dialog.vid[open]::backdrop{animation:fi .5s}
 .faq-q{font-size:22px}
 .faq-a{padding:0 8px 24px 48px}
 .frow{grid-template-columns:minmax(0,1fr);gap:0}
-.gf{grid-template-columns:minmax(0,1fr);gap:40px}
 .wafab{right:16px;bottom:16px;height:56px;min-width:56px}
 .wafab .ic{width:56px;height:56px}
 .wafab .tx{display:none}
@@ -787,7 +793,7 @@ html{scroll-behavior:auto}
       </div>
       <p class="body rv" style="--d:.15s">Três sócios com formações complementares e uma rotina de trabalho baseada em revisão conjunta e diálogo com o cliente.</p>
     </div>
-    <div class="g3" style="gap:28px" data-stagger>
+    <div class="g3 snap-row" style="gap:28px" data-stagger>
       <article class="tcard rv">
         <div class="tphoto">
           <img src="assets/images/modelo-adv-henrique.jpg" alt="Retrato de Dr. Henrique Vasconcelos" loading="lazy" decoding="async">
@@ -844,7 +850,7 @@ html{scroll-behavior:auto}
       </div>
       <p class="body dk rv" style="--d:.15s">O que você pode esperar do escritório, desde o primeiro contato até o encerramento do caso.</p>
     </div>
-    <div class="g4" data-stagger>
+    <div class="g4 snap-row" data-stagger>
       <div class="pcard spot rv"><div class="n">01</div><h3>Atendimento direto com o sócio</h3><p>Quem analisa o caso é quem o conduz. Você conversa com um sócio desde o primeiro contato.</p><div class="mf">Atendimento · Sócio responsável</div></div>
       <div class="pcard spot rv"><div class="n">02</div><h3>Transparência</h3><p>Etapas, prazos e honorários explicados com clareza, por escrito, antes de qualquer providência.</p><div class="mf">Contrato · Honorários por escrito</div></div>
       <div class="pcard spot rv"><div class="n">03</div><h3>Comunicação clara</h3><p>Traduzimos termos técnicos em linguagem objetiva, para que você decida com segurança.</p><div class="mf">Linguagem · Sem jargão excessivo</div></div>
