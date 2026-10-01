@@ -50,6 +50,53 @@
   </div>
 </footer>`;
 
+  // ── TESTEMUNHOS ───────────────────────────────────────────────────────────
+  // Depoimentos reais (Google + Framer). Compartilhado entre a home e todas
+  // as páginas de case via injeção no elemento #testi-root.
+  const TESTIMONIALS = [
+    { q: 'A melhor que tivemos! Além da entrega nos prazos estipulados, Matheus foi muito atencioso, e prestativo. Atendeu além das nossas expectativas no criativo como também na postura profissional. Recomendamos muito.', n: 'Victória Lombardi', c: 'Rede UltraObra' },
+    { q: 'Ele é o tipo de profissional que faz a diferença em qualquer projeto. As landing pages que ele cria são sempre de altíssima qualidade, com um design moderno e intuitivo. Além disso, o Matheus é super prestativo e sempre está pronto para ajudar, mesmo nas situações mais desafiadoras. Sinceramente, ele é o melhor designer com quem já tive o prazer de trabalhar. Recomendo de olhos fechados!', n: 'Otávio Janoski', c: 'Essentia' },
+    { q: 'Excelente profissional! Desenvolveu minha logo e meu site com muita qualidade, atenção aos detalhes e total comprometimento. Todo o trabalho foi entregue dentro do prazo combinado, com ótima comunicação durante o processo e sempre aberto a ajustes e sugestões. Fiquei muito satisfeito com o resultado final e recomendo para quem procura um serviço profissional, criativo e confiável.', n: 'Felipe Eduardo', c: 'Google' },
+    { q: 'Matheus trabalha muito bem com o briefing do cliente, e traz boas ideias para aprimorar os resultados. Como proprietário da "Nuestra Casa - empanadas", de Passa Quatro (MG), estou bastante satisfeito com o Padula Design Studio... e recomendo!', n: 'José Luiz Maio', c: 'Nuestra Casa Empanadas' },
+    { q: 'Muito satisfeito com os serviços prestados, atendimento e competência para concluir as tarefas programadas, foram o destaque da prestação executada.', n: 'Eduardo Faria', c: '5º Set' },
+    { q: 'Adoro o serviço do Padulo Design, já contratei várias vezes e indico muito. Ágil, educado, muito bom.', n: 'Janaina Oliveira', c: 'M&M' },
+    { q: 'Atendimento excelente, bom preço, entrega impecável e prazo cumprido. Recomendo!', n: 'Renan Rocha', c: 'Google' },
+    { q: 'Matheus é um excelente profissional e o trabalho é desenvolvido com foco nas demandas do cliente.', n: 'Andressa Almeida', c: 'Google' },
+    { q: 'Super aprovo! Competência e qualidade, além de cumprir todos os prazos.', n: 'Otavio James', c: 'Alavanka - Negócios Digitais' },
+    { q: 'Trabalho excelente. Bom atendimento.', n: 'Francisco Gomes', c: 'Google' },
+  ];
+
+  function esc(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  const testiCardsHTML = TESTIMONIALS.map(t => `
+      <figure class="testi"><div class="stars" aria-label="5/5">★★★★★</div><blockquote>${esc(t.q)}</blockquote><figcaption class="who"><b>${esc(t.n)}</b><span>${esc(t.c)}</span></figcaption></figure>`).join('');
+
+  const testiHTML = `
+<section class="testi-section" id="depoimentos">
+  <div class="container">
+    <div class="testi-head">
+      <span class="testi-eyebrow" data-i18n="ts.label">// depoimentos</span>
+      <h2 class="testi-title" data-i18n="ts.title">O que dizem <em>os clientes.</em></h2>
+    </div>
+    <div class="testi-marquee"><div class="testi-track" id="testiTrack">${testiCardsHTML}
+    </div></div>
+    <p class="testi-src" data-i18n="ts.src">Avaliações 5★ de clientes.</p>
+  </div>
+</section>`;
+
+  function initTesti() {
+    const t = document.getElementById('testiTrack');
+    if (!t || t.dataset.duped) return;
+    t.dataset.duped = '1';
+    Array.from(t.children).forEach(c => {
+      const k = c.cloneNode(true);
+      k.setAttribute('aria-hidden', 'true');
+      t.appendChild(k);
+    });
+  }
+
   // ── INJECT ────────────────────────────────────────────────────────────────
   function inject(id, html) {
     const el = document.getElementById(id);
@@ -60,14 +107,18 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       inject('nav-root', navHTML);
+      inject('testi-root', testiHTML);
       inject('footer-root', footerHTML);
       initNav();
+      initTesti();
       initLang();
     });
   } else {
     inject('nav-root', navHTML);
+    inject('testi-root', testiHTML);
     inject('footer-root', footerHTML);
     initNav();
+    initTesti();
     initLang();
   }
 
@@ -462,6 +513,10 @@
       'agro2.logo.2': 'Off-white — sobre escuro',
       'agro2.logo.3': 'Dourada — sobre verde',
       'agro2.logo.4': 'Selo isolado',
+
+      'ts.label': '// depoimentos',
+      'ts.title': 'O que dizem <em>os clientes.</em>',
+      'ts.src': 'Avaliações 5★ de clientes.',
     },
     en: {
       'nav.portfolio': 'Work',
@@ -811,6 +866,10 @@
       'agro2.logo.2': 'Off-white — on dark',
       'agro2.logo.3': 'Gold — on green',
       'agro2.logo.4': 'Standalone seal',
+
+      'ts.label': '// testimonials',
+      'ts.title': 'What <em>clients say.</em>',
+      'ts.src': '5★ client reviews, quoted in their original Portuguese.',
     }
   };
 
