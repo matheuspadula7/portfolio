@@ -56,16 +56,16 @@
   // Depoimentos reais (Google + Framer). Compartilhado entre a home e todas
   // as páginas de case via injeção no elemento #testi-root.
   const TESTIMONIALS = [
-    { q: 'A melhor que tivemos! Além da entrega nos prazos estipulados, Matheus foi muito atencioso, e prestativo. Atendeu além das nossas expectativas no criativo como também na postura profissional. Recomendamos muito.', n: 'Victória Lombardi', c: 'Rede UltraObra' },
-    { q: 'Ele é o tipo de profissional que faz a diferença em qualquer projeto. As landing pages que ele cria são sempre de altíssima qualidade, com um design moderno e intuitivo. Além disso, o Matheus é super prestativo e sempre está pronto para ajudar, mesmo nas situações mais desafiadoras. Sinceramente, ele é o melhor designer com quem já tive o prazer de trabalhar. Recomendo de olhos fechados!', n: 'Otávio Janoski', c: 'Essentia' },
-    { q: 'Excelente profissional! Desenvolveu minha logo e meu site com muita qualidade, atenção aos detalhes e total comprometimento. Todo o trabalho foi entregue dentro do prazo combinado, com ótima comunicação durante o processo e sempre aberto a ajustes e sugestões. Fiquei muito satisfeito com o resultado final e recomendo para quem procura um serviço profissional, criativo e confiável.', n: 'Felipe Eduardo', c: 'Agro Ribeiro' },
-    { q: 'Matheus trabalha muito bem com o briefing do cliente, e traz boas ideias para aprimorar os resultados. Como proprietário da "Nuestra Casa - empanadas", de Passa Quatro (MG), estou bastante satisfeito com o Padula Design Studio... e recomendo!', n: 'José Luiz Maio', c: 'Nuestra Casa Empanadas' },
-    { q: 'Muito satisfeito com os serviços prestados, atendimento e competência para concluir as tarefas programadas, foram o destaque da prestação executada.', n: 'Eduardo Faria', c: '5º Set' },
-    { q: 'Adoro o serviço do Padulo Design, já contratei várias vezes e indico muito. Ágil, educado, muito bom.', n: 'Janaina Oliveira', c: 'Menndel & Melo' },
-    { q: 'Atendimento excelente, bom preço, entrega impecável e prazo cumprido. Recomendo!', n: 'Renan Rocha', c: 'Fullzion' },
-    { q: 'Matheus é um excelente profissional e o trabalho é desenvolvido com foco nas demandas do cliente.', n: 'Andressa Almeida', c: 'Instituto Oka' },
-    { q: 'Super aprovo! Competência e qualidade, além de cumprir todos os prazos.', n: 'Otavio James', c: 'Alavanka - Negócios Digitais' },
-    { q: 'Trabalho excelente. Bom atendimento.', n: 'Francisco Gomes', c: 'Google' },
+    { key: 't1', q: 'A melhor que tivemos! Além da entrega nos prazos estipulados, Matheus foi muito atencioso, e prestativo. Atendeu além das nossas expectativas no criativo como também na postura profissional. Recomendamos muito.', n: 'Victória Lombardi', c: 'Rede UltraObra' },
+    { key: 't2', q: 'Ele é o tipo de profissional que faz a diferença em qualquer projeto. As landing pages que ele cria são sempre de altíssima qualidade, com um design moderno e intuitivo. Além disso, o Matheus é super prestativo e sempre está pronto para ajudar, mesmo nas situações mais desafiadoras. Sinceramente, ele é o melhor designer com quem já tive o prazer de trabalhar. Recomendo de olhos fechados!', n: 'Otávio Janoski', c: 'Essentia' },
+    { key: 't3', q: 'Excelente profissional! Desenvolveu minha logo e meu site com muita qualidade, atenção aos detalhes e total comprometimento. Todo o trabalho foi entregue dentro do prazo combinado, com ótima comunicação durante o processo e sempre aberto a ajustes e sugestões. Fiquei muito satisfeito com o resultado final e recomendo para quem procura um serviço profissional, criativo e confiável.', n: 'Felipe Eduardo', c: 'Agro Ribeiro' },
+    { key: 't4', q: 'Matheus trabalha muito bem com o briefing do cliente, e traz boas ideias para aprimorar os resultados. Como proprietário da "Nuestra Casa - empanadas", de Passa Quatro (MG), estou bastante satisfeito com o Padula Design Studio... e recomendo!', n: 'José Luiz Maio', c: 'Nuestra Casa Empanadas' },
+    { key: 't5', q: 'Muito satisfeito com os serviços prestados, atendimento e competência para concluir as tarefas programadas, foram o destaque da prestação executada.', n: 'Eduardo Faria', c: '5º Set' },
+    { key: 't6', q: 'Adoro o serviço do Padulo Design, já contratei várias vezes e indico muito. Ágil, educado, muito bom.', n: 'Janaina Oliveira', c: 'Menndel & Melo' },
+    { key: 't7', q: 'Atendimento excelente, bom preço, entrega impecável e prazo cumprido. Recomendo!', n: 'Renan Rocha', c: 'Fullzion' },
+    { key: 't8', q: 'Matheus é um excelente profissional e o trabalho é desenvolvido com foco nas demandas do cliente.', n: 'Andressa Almeida', c: 'Instituto Oka' },
+    { key: 't9', q: 'Super aprovo! Competência e qualidade, além de cumprir todos os prazos.', n: 'Otavio James', c: 'Alavanka - Negócios Digitais' },
+    { key: 't10', q: 'Trabalho excelente. Bom atendimento.', n: 'Francisco Gomes', c: 'Google' },
   ];
 
   function esc(s) {
@@ -73,7 +73,7 @@
   }
 
   const testiCardsHTML = TESTIMONIALS.map(t => `
-      <figure class="testi"><div class="stars" aria-label="5/5">★★★★★</div><blockquote>${esc(t.q)}</blockquote><figcaption class="who"><b>${esc(t.n)}</b><span>${esc(t.c)}</span></figcaption></figure>`).join('');
+      <figure class="testi"><div class="stars" aria-label="5/5">★★★★★</div><blockquote data-i18n="ts.q.${t.key}">${esc(t.q)}</blockquote><figcaption class="who"><b>${esc(t.n)}</b><span>${esc(t.c)}</span></figcaption></figure>`).join('');
 
   const testiHTML = `
 <section class="testi-section" id="depoimentos">
@@ -520,6 +520,16 @@
       'ts.label': '// depoimentos',
       'ts.title': 'O que dizem <em>os clientes.</em>',
       'ts.src': 'Avaliações 5★ de clientes.',
+      'ts.q.t1': 'A melhor que tivemos! Além da entrega nos prazos estipulados, Matheus foi muito atencioso, e prestativo. Atendeu além das nossas expectativas no criativo como também na postura profissional. Recomendamos muito.',
+      'ts.q.t2': 'Ele é o tipo de profissional que faz a diferença em qualquer projeto. As landing pages que ele cria são sempre de altíssima qualidade, com um design moderno e intuitivo. Além disso, o Matheus é super prestativo e sempre está pronto para ajudar, mesmo nas situações mais desafiadoras. Sinceramente, ele é o melhor designer com quem já tive o prazer de trabalhar. Recomendo de olhos fechados!',
+      'ts.q.t3': 'Excelente profissional! Desenvolveu minha logo e meu site com muita qualidade, atenção aos detalhes e total comprometimento. Todo o trabalho foi entregue dentro do prazo combinado, com ótima comunicação durante o processo e sempre aberto a ajustes e sugestões. Fiquei muito satisfeito com o resultado final e recomendo para quem procura um serviço profissional, criativo e confiável.',
+      'ts.q.t4': 'Matheus trabalha muito bem com o briefing do cliente, e traz boas ideias para aprimorar os resultados. Como proprietário da "Nuestra Casa - empanadas", de Passa Quatro (MG), estou bastante satisfeito com o Padula Design Studio... e recomendo!',
+      'ts.q.t5': 'Muito satisfeito com os serviços prestados, atendimento e competência para concluir as tarefas programadas, foram o destaque da prestação executada.',
+      'ts.q.t6': 'Adoro o serviço do Padulo Design, já contratei várias vezes e indico muito. Ágil, educado, muito bom.',
+      'ts.q.t7': 'Atendimento excelente, bom preço, entrega impecável e prazo cumprido. Recomendo!',
+      'ts.q.t8': 'Matheus é um excelente profissional e o trabalho é desenvolvido com foco nas demandas do cliente.',
+      'ts.q.t9': 'Super aprovo! Competência e qualidade, além de cumprir todos os prazos.',
+      'ts.q.t10': 'Trabalho excelente. Bom atendimento.',
     },
     en: {
       'nav.portfolio': 'Work',
@@ -873,7 +883,17 @@
 
       'ts.label': '// testimonials',
       'ts.title': 'What <em>clients say.</em>',
-      'ts.src': '5★ client reviews, quoted in their original Portuguese.',
+      'ts.src': '5★ client reviews.',
+      'ts.q.t1': "The best we've worked with! Besides delivering on the agreed deadlines, Matheus was very attentive and helpful. He exceeded our expectations both creatively and in professional conduct. We highly recommend him.",
+      'ts.q.t2': "He's the kind of professional who makes a real difference on any project. The landing pages he builds are always top quality, with a modern, intuitive design. On top of that, Matheus is super helpful and always ready to assist, even in the most challenging situations. Honestly, he's the best designer I've ever had the pleasure of working with. I recommend him with my eyes closed!",
+      'ts.q.t3': 'Excellent professional! He built my logo and website with great quality, attention to detail and full commitment. All the work was delivered within the agreed deadline, with great communication throughout the process and always open to adjustments and suggestions. I was very happy with the final result and recommend him to anyone looking for a professional, creative and reliable service.',
+      'ts.q.t4': 'Matheus works really well from the client\'s brief, and brings good ideas to improve the results. As the owner of "Nuestra Casa - empanadas", in Passa Quatro (MG), I\'m very satisfied with Padula Design Studio... and I recommend it!',
+      'ts.q.t5': 'Very satisfied with the services provided — the attentiveness and competence in completing the planned tasks were the highlight of the work delivered.',
+      'ts.q.t6': "I love Padula Design's work, I've hired them several times and recommend them a lot. Fast, polite, very good.",
+      'ts.q.t7': 'Excellent service, good price, flawless delivery and the deadline was met. Recommended!',
+      'ts.q.t8': "Matheus is an excellent professional and the work is developed with a focus on the client's needs.",
+      'ts.q.t9': 'Highly approve! Competence and quality, plus meeting every deadline.',
+      'ts.q.t10': 'Excellent work. Good service.',
     }
   };
 
