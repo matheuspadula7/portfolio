@@ -22,6 +22,7 @@
     <div class="nav-links">
       <a href="${base}#portfolio" data-i18n="nav.portfolio">Portfolio</a>
       <a href="${base}#sobre" data-i18n="nav.about">Sobre</a>
+      <a href="${base}#depoimentos" data-i18n="nav.testimonials">Depoimentos</a>
       <a href="${base}#contato" data-i18n="nav.contact">Contato</a>
     </div>
     <div class="nav-right">
@@ -45,6 +46,7 @@
     <div class="links">
       <a href="${base}#portfolio" data-i18n="nav.portfolio">Portfolio</a>
       <a href="${base}#sobre" data-i18n="nav.about">Sobre</a>
+      <a href="${base}#depoimentos" data-i18n="nav.testimonials">Depoimentos</a>
       <a href="${base}#contato" data-i18n="nav.contact">Contato</a>
     </div>
   </div>
@@ -56,12 +58,12 @@
   const TESTIMONIALS = [
     { q: 'A melhor que tivemos! Além da entrega nos prazos estipulados, Matheus foi muito atencioso, e prestativo. Atendeu além das nossas expectativas no criativo como também na postura profissional. Recomendamos muito.', n: 'Victória Lombardi', c: 'Rede UltraObra' },
     { q: 'Ele é o tipo de profissional que faz a diferença em qualquer projeto. As landing pages que ele cria são sempre de altíssima qualidade, com um design moderno e intuitivo. Além disso, o Matheus é super prestativo e sempre está pronto para ajudar, mesmo nas situações mais desafiadoras. Sinceramente, ele é o melhor designer com quem já tive o prazer de trabalhar. Recomendo de olhos fechados!', n: 'Otávio Janoski', c: 'Essentia' },
-    { q: 'Excelente profissional! Desenvolveu minha logo e meu site com muita qualidade, atenção aos detalhes e total comprometimento. Todo o trabalho foi entregue dentro do prazo combinado, com ótima comunicação durante o processo e sempre aberto a ajustes e sugestões. Fiquei muito satisfeito com o resultado final e recomendo para quem procura um serviço profissional, criativo e confiável.', n: 'Felipe Eduardo', c: 'Google' },
+    { q: 'Excelente profissional! Desenvolveu minha logo e meu site com muita qualidade, atenção aos detalhes e total comprometimento. Todo o trabalho foi entregue dentro do prazo combinado, com ótima comunicação durante o processo e sempre aberto a ajustes e sugestões. Fiquei muito satisfeito com o resultado final e recomendo para quem procura um serviço profissional, criativo e confiável.', n: 'Felipe Eduardo', c: 'Agro Ribeiro' },
     { q: 'Matheus trabalha muito bem com o briefing do cliente, e traz boas ideias para aprimorar os resultados. Como proprietário da "Nuestra Casa - empanadas", de Passa Quatro (MG), estou bastante satisfeito com o Padula Design Studio... e recomendo!', n: 'José Luiz Maio', c: 'Nuestra Casa Empanadas' },
     { q: 'Muito satisfeito com os serviços prestados, atendimento e competência para concluir as tarefas programadas, foram o destaque da prestação executada.', n: 'Eduardo Faria', c: '5º Set' },
-    { q: 'Adoro o serviço do Padulo Design, já contratei várias vezes e indico muito. Ágil, educado, muito bom.', n: 'Janaina Oliveira', c: 'M&M' },
-    { q: 'Atendimento excelente, bom preço, entrega impecável e prazo cumprido. Recomendo!', n: 'Renan Rocha', c: 'Google' },
-    { q: 'Matheus é um excelente profissional e o trabalho é desenvolvido com foco nas demandas do cliente.', n: 'Andressa Almeida', c: 'Google' },
+    { q: 'Adoro o serviço do Padulo Design, já contratei várias vezes e indico muito. Ágil, educado, muito bom.', n: 'Janaina Oliveira', c: 'Menndel & Melo' },
+    { q: 'Atendimento excelente, bom preço, entrega impecável e prazo cumprido. Recomendo!', n: 'Renan Rocha', c: 'Fullzion' },
+    { q: 'Matheus é um excelente profissional e o trabalho é desenvolvido com foco nas demandas do cliente.', n: 'Andressa Almeida', c: 'Instituto Oka' },
     { q: 'Super aprovo! Competência e qualidade, além de cumprir todos os prazos.', n: 'Otavio James', c: 'Alavanka - Negócios Digitais' },
     { q: 'Trabalho excelente. Bom atendimento.', n: 'Francisco Gomes', c: 'Google' },
   ];
@@ -169,6 +171,7 @@
       'nav.portfolio': 'Portfolio',
       'nav.about': 'Sobre',
       'nav.contact': 'Contato',
+      'nav.testimonials': 'Depoimentos',
       'nav.cta': 'Falar comigo',
       'nav.menu': 'MENU',
       'ft.by': '© 2026 Matheus Padula · Design + Dev por Matheus Padula',
@@ -522,6 +525,7 @@
       'nav.portfolio': 'Work',
       'nav.about': 'About',
       'nav.contact': 'Contact',
+      'nav.testimonials': 'Testimonials',
       'nav.cta': 'Talk to me',
       'nav.menu': 'MENU',
       'ft.by': '© 2026 Matheus Padula · Design + Dev by Matheus Padula',
