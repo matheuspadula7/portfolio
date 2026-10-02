@@ -165,11 +165,16 @@ body:not(.js) .rv{opacity:1;translate:0;filter:none}
 .float span{font:400 12.5px/1.4 var(--f-mono);color:var(--ink-2)}
 
 /* ═══ FATOS ═══ */
-.facts{padding-block:clamp(36px,5vw,64px);border-block:1px solid var(--line)}
-.facts dl{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.facts div{display:flex;align-items:baseline;gap:16px}
-.facts dd{flex:none;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--acc-soft);color:var(--acc-ink)}
-.facts dt{font-size:15px;line-height:1.4;color:var(--ink-2);max-width:18ch}
+.facts{margin-top:clamp(-30px,-3vw,-46px);position:relative;z-index:2}
+.facts dl{display:grid;grid-template-columns:repeat(3,1fr)}
+.facts div{position:relative;display:flex;align-items:center;gap:16px;padding:clamp(22px,2.6vw,30px) clamp(16px,2.6vw,32px)}
+.facts div+div::before{content:"";position:absolute;left:0;top:18%;bottom:18%;width:1px;background:var(--line)}
+.facts dd{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--acc-soft);color:var(--acc-ink)}
+.facts dt{font-size:14.5px;line-height:1.4;color:var(--ink-2);max-width:18ch}
+@media (max-width:700px){
+  .facts dl{grid-template-columns:1fr}
+  .facts div+div::before{left:18%;right:18%;top:0;bottom:auto;width:auto;height:1px}
+}
 
 /* ═══ FILOSOFIA ═══ */
 .philo{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(40px,6vw,96px);align-items:center}
@@ -196,12 +201,12 @@ body:not(.js) .rv{opacity:1;translate:0;filter:none}
 .list span{font-size:14px;color:rgba(255,255,255,.85)}
 .cell:not(.img) .list span{color:var(--ink-2)}
 .cell:not(.img) .list{max-height:140px;opacity:1}
-.cell.acc{background:var(--acc)}
+.cell.acc{background:linear-gradient(155deg,#E39A89,var(--acc) 55%,#C56E5B)}
 .cell.acc .cell-in{color:#fff}
-.cell.acc p{color:rgba(255,255,255,.85)}
-.cell.acc .btn{background:#fff;color:var(--acc-ink)}
-.cell.acc .btn .ic{background:var(--ink);color:#fff}
-.cell.acc .btn:hover{background:#fff;box-shadow:0 16px 36px -18px rgba(0,0,0,.4)}
+.cell.acc p{color:rgba(255,255,255,.88)}
+.cell.acc .btn{background:rgba(255,255,255,.14);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.4)}
+.cell.acc .btn .ic{background:#fff;color:var(--acc-ink)}
+.cell.acc .btn:hover{background:rgba(255,255,255,.22);box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
 
 /* ═══ MÉTODO (pilha ao rolar) ═══ */
 .flowstack{display:grid;gap:18px}
@@ -214,16 +219,26 @@ body:not(.js) .rv{opacity:1;translate:0;filter:none}
 .fthumb img{width:100%;height:100%;object-fit:cover}
 
 /* ═══ EQUIPE ═══ */
-.team{display:grid;grid-template-columns:1.6fr 1fr;gap:clamp(16px,2.4vw,28px)}
-.team .col{display:grid;gap:clamp(16px,2.4vw,28px)}
-.team .photo{aspect-ratio:4/5}
-.team .photo.tall{aspect-ratio:3/4}
+.team{display:grid;gap:clamp(16px,2.4vw,28px)}
+.feature .core{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr)}
+.feature .photo{aspect-ratio:4/5}
+.feature .cap{padding:clamp(28px,3.4vw,44px);display:flex;flex-direction:column;justify-content:center;gap:4px}
+.feature h3{font-size:clamp(1.5rem,2.4vw,2rem)}
+.feature .cap p:last-child{margin-top:10px;max-width:42ch}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,28px)}
 .team .photo img{filter:grayscale(.7) contrast(1.04);transition:filter .9s var(--ease),scale 1.4s var(--ease)}
 .team article:hover .photo img{filter:none;scale:1.04}
-.team .cap{padding:22px 22px 24px}
+.pair .photo{aspect-ratio:3/4}
+.pair .cap{padding:22px 22px 24px}
 .team h3{font-size:1.5rem}
 .team .r{font:500 11px/1.4 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin:8px 0 10px}
 .team .cap p{color:var(--ink-2);font-size:15px}
+@media (max-width:1000px){
+  .feature .core{grid-template-columns:1fr}
+  .feature .photo{aspect-ratio:4/3}
+  .pair{grid-template-columns:1fr 1fr}
+}
+@media (max-width:700px){.pair{grid-template-columns:1fr}}
 
 /* ═══ ESPAÇO (acordeão) ═══ */
 .accgal{display:flex;gap:10px;height:clamp(320px,52vw,560px)}
@@ -362,7 +377,7 @@ footer{padding-block:48px 56px;margin-top:clamp(64px,8vw,120px);border-top:1px s
   .ft,.legal{flex-direction:column;align-items:flex-start}
   .night{margin-inline:6px}
 }
-@media (hover:none){.faq-b:hover{translate:0 0}.strip-lb span{display:inline!important}.strip:hover img{scale:1}}
+@media (hover:none){.faq-b:hover{translate:0 0}.strip-lb span{display:inline!important}.strip:hover img{scale:1}.cell.img .list{max-height:140px;opacity:1}}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;transition-delay:0s!important}
@@ -433,11 +448,11 @@ footer{padding-block:48px 56px;margin-top:clamp(64px,8vw,120px);border-top:1px s
 <!-- ═══ FATOS ═══ -->
 <section class="facts" aria-label="O que diferencia o atendimento">
   <div class="wrap">
-    <dl data-stagger>
-      <div class="rv"><dd aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4"/></svg></dd><dt>Médicos em todos os procedimentos</dt></div>
-      <div class="rv"><dd aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></dd><dt>Avaliação antes do primeiro tratamento</dt></div>
-      <div class="rv"><dd aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3M12 2a10 10 0 1 0 .001 0z"/></svg></dd><dt>Retorno de revisão incluso</dt></div>
-    </dl>
+    <div class="bz rv" style="--d:.85s"><div class="core"><dl data-stagger>
+      <div><dd aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4"/></svg></dd><dt>Médicos em todos os procedimentos</dt></div>
+      <div><dd aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></dd><dt>Avaliação antes do primeiro tratamento</dt></div>
+      <div><dd aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3M12 2a10 10 0 1 0 .001 0z"/></svg></dd><dt>Retorno de revisão incluso</dt></div>
+    </dl></div></div>
   </div>
 </section>
 
@@ -478,15 +493,19 @@ footer{padding-block:48px 56px;margin-top:clamp(64px,8vw,120px);border-top:1px s
         </div>
       </div></div></div>
 
-      <div class="bz b-corpo rv"><div class="core"><div class="cell"><div class="cell-in">
-        <div><h3>Corpo</h3><p>Flacidez, gordura localizada e celulite, com técnica indicada por avaliação.</p></div>
-        <div class="list"><span>Flacidez</span><span>Gordura localizada</span><span>Estrias e celulite</span></div>
-      </div></div></div></div>
+      <div class="bz b-corpo rv"><div class="core"><div class="cell img">
+        <img src="assets/images/est-bento-corpo.jpg" alt="" loading="lazy" decoding="async">
+        <div class="cell-in"><h3>Corpo</h3><p>Flacidez, gordura localizada e celulite, com técnica indicada por avaliação.</p>
+          <div class="list"><span>Flacidez</span><span>Gordura localizada</span><span>Estrias e celulite</span></div>
+        </div>
+      </div></div></div>
 
-      <div class="bz b-cabelo rv"><div class="core"><div class="cell"><div class="cell-in">
-        <div><h3>Cabelo</h3><p>Queda e saúde do couro cabeludo, acompanhadas ao longo do tratamento.</p></div>
-        <div class="list"><span>Queda capilar</span><span>Couro cabeludo</span></div>
-      </div></div></div></div>
+      <div class="bz b-cabelo rv"><div class="core"><div class="cell img">
+        <img src="assets/images/est-bento-cabelo.jpg" alt="" loading="lazy" decoding="async">
+        <div class="cell-in"><h3>Cabelo</h3><p>Queda e saúde do couro cabeludo, acompanhadas ao longo do tratamento.</p>
+          <div class="list"><span>Queda capilar</span><span>Couro cabeludo</span></div>
+        </div>
+      </div></div></div>
 
       <div class="bz b-aval rv"><div class="core"><div class="cell acc"><div class="cell-in">
         <div><h3>Não sabe por onde começar?</h3><p>Comece pela avaliação. A indicação vem depois da conversa.</p></div>
@@ -535,17 +554,17 @@ footer{padding-block:48px 56px;margin-top:clamp(64px,8vw,120px);border-top:1px s
       <p class="lead rv">Três profissionais, um plano só, conduzido sempre por médicos.</p>
     </div>
     <div class="team">
-      <article class="bz rv"><div class="core">
+      <article class="bz feature rv"><div class="core">
         <div class="photo"><img src="assets/images/est-beatriz.jpg" alt="Retrato de Dra. Beatriz Nogueira" loading="lazy" decoding="async"></div>
-        <div class="cap"><h3>Dra. Beatriz Nogueira</h3><p class="r">Dermatologista, fundadora</p><p>Conduz as avaliações de rosto e pele e a revisão de cada plano.</p></div>
+        <div class="cap"><p class="r">Dermatologista, fundadora</p><h3>Dra. Beatriz Nogueira</h3><p>Conduz as avaliações de rosto e pele e a revisão de cada plano.</p></div>
       </div></article>
-      <div class="col">
+      <div class="pair">
         <article class="bz rv"><div class="core">
-          <div class="photo tall"><img src="assets/images/est-caio.jpg" alt="Retrato de Dr. Caio Menezes" loading="lazy" decoding="async"></div>
+          <div class="photo"><img src="assets/images/est-caio.jpg" alt="Retrato de Dr. Caio Menezes" loading="lazy" decoding="async"></div>
           <div class="cap"><h3>Dr. Caio Menezes</h3><p class="r">Médico, procedimentos corporais</p></div>
         </div></article>
         <article class="bz rv"><div class="core">
-          <div class="photo tall"><img src="assets/images/est-larissa.jpg" alt="Retrato de Larissa Prado" loading="lazy" decoding="async"></div>
+          <div class="photo"><img src="assets/images/est-larissa.jpg" alt="Retrato de Larissa Prado" loading="lazy" decoding="async"></div>
           <div class="cap"><h3>Larissa Prado</h3><p class="r">Enfermeira, acompanhamento</p></div>
         </div></article>
       </div>
