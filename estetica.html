@@ -1,0 +1,866 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- ═════════════════════════════════════════════════════════════════════
+     MODELO: CLÍNICA DE ESTÉTICA (Valverde Estética, empresa fictícia)
+     Duplique como "<slug-do-cliente>.html" e troque:
+     1. <title>, description, og:* e REMOVA o <meta name="robots" content="noindex">
+     2. Paleta: variáveis em :root. Um único acento (--acc). Fonte: Plus Jakarta Sans + Geist Mono
+     3. Dados do cliente: objeto SITE no fim do arquivo (WhatsApp, endpoint do formulário)
+     4. Fotos: Unsplash (licença livre) em assets/images/est-*.jpg; troque pelas do cliente
+     5. Analytics (GA / Clarity) do cliente no <head>
+     6. Publicidade médica: evite antes/depois, promessa de resultado e preço promocional
+        (restrito pelo CFM). Revise com o responsável técnico da clínica antes de publicar.
+     Regras do sistema: cards em "bezel" duplo (casca + miolo); botões em pílula com ilha de
+     ícone; raio 28/22; um único tema claro com uma faixa escura (segurança); sem antes/depois.
+     ═════════════════════════════════════════════════════════════════════ -->
+
+<title>Valverde Estética</title>
+<meta name="description" content="Estética médica com avaliação individual, procedimentos conduzidos por médicos e acompanhamento depois de cada sessão.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F6F4F2">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Valverde Estética">
+<meta property="og:description" content="Estética que respeita o seu rosto.">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='20' fill='%231E2430'/%3E%3Ccircle cx='32' cy='32' r='13' fill='none' stroke='%23D98471' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+
+<style>
+/* ═══ TOKENS ═══ */
+:root{
+  --paper:#F6F4F2;
+  --paper-2:#FBFAF8;
+  --ink:#1E2430; --ink-rgb:30,36,48;
+  --ink-2:#656B63;
+  --line:rgba(var(--ink-rgb),.1);
+  --acc:#D98471;           /* único acento: terracota rosado */
+  --acc-rgb:217,132,113;
+  --acc-ink:#3A160D;
+  --acc-soft:#F3DCD5;
+  --night:#151A22;
+  --on-night:#ECE9E5; --on-night-2:#9CA3AE;
+  --f-sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"Geist Mono",ui-monospace,Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.32,.72,0,1);
+  --gut:clamp(20px,5vw,64px);
+  --sp:clamp(100px,12vw,180px);
+  --r-out:28px; --r-in:22px; --r-field:14px;
+  color-scheme:light;
+}
+
+/* ═══ BASE ═══ */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.lock{overflow:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p,ul,dl,dd,figure{margin:0}
+ul{padding:0;list-style:none}
+button{font:inherit;color:inherit}
+img{display:block;max-width:100%}
+::selection{background:var(--acc);color:#fff}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{width:min(1240px,100% - var(--gut)*2);margin-inline:auto}
+.sec{position:relative;padding-block:var(--sp)}
+.skip{position:fixed;left:16px;top:-80px;z-index:100;background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:99px;transition:top .3s var(--ease)}
+.skip:focus{top:16px}
+
+.amb{position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+  radial-gradient(640px 520px at 86% 4%,rgba(var(--acc-rgb),.20),transparent 70%),
+  radial-gradient(720px 560px at 0% 96%,rgba(var(--ink-rgb),.05),transparent 70%);
+  animation:amb 28s ease-in-out infinite alternate}
+@keyframes amb{to{transform:translate3d(-3%,2%,0) scale(1.06)}}
+
+/* ═══ TIPO ═══ */
+h1,h2,h3{font-weight:400;letter-spacing:-.03em;text-wrap:balance}
+h1{font-size:clamp(2.4rem,4.9vw,4.4rem);line-height:1.04;letter-spacing:-.035em;font-weight:300}
+h2{font-size:clamp(1.9rem,3.6vw,3.1rem);line-height:1.1;letter-spacing:-.03em;max-width:19ch;font-weight:300}
+h3{font-size:1.3rem;line-height:1.3;letter-spacing:-.015em;font-weight:500}
+.lead{font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.6;color:var(--ink-2);max-width:46ch}
+.mono{font-family:var(--f-mono)}
+.tag{justify-self:start;width:max-content;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:99px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);font:500 10.5px/1 var(--f-mono);letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2)}
+mark{background:linear-gradient(var(--acc-soft),var(--acc-soft)) 0 88%/0% .5em no-repeat;color:inherit;padding:0 .05em;margin:0 -.05em;transition:background-size 1.1s var(--ease) .7s}
+.in mark{background-size:100% .5em}
+.sec-head{display:grid;gap:22px;margin-bottom:clamp(48px,6vw,88px)}
+.sec-head .lead{max-width:52ch}
+
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding:.04em .06em .12em;margin:-.04em -.06em -.12em}
+.wi{display:inline-block}
+.js [data-split] .wi{translate:0 110%;transition:translate 1s var(--ease) calc(var(--i)*40ms + var(--sd,0s))}
+.js [data-split].in .wi{translate:0 0}
+
+.rv{opacity:0;translate:0 28px;filter:blur(8px);transition:opacity .9s var(--ease) var(--d,0s),translate 1s var(--ease) var(--d,0s),filter .9s var(--ease) var(--d,0s)}
+.js .rv.in{opacity:1;translate:0 0;filter:blur(0)}
+.js .rv{opacity:0}
+body:not(.js) .rv{opacity:1;translate:0;filter:none}
+
+/* ═══ BOTÕES ═══ */
+.btn{display:inline-flex;align-items:center;gap:14px;min-height:52px;padding:6px 6px 6px 26px;border-radius:99px;background:var(--ink);color:var(--paper-2);font:500 15px/1 var(--f-sans);letter-spacing:-.005em;border:0;cursor:pointer;transition:background .4s var(--ease),transform .4s var(--ease),box-shadow .4s var(--ease)}
+.btn .ic{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--acc);color:#fff;transition:transform .5s var(--ease)}
+.btn .ic svg{transition:transform .5s var(--ease)}
+.btn:hover{background:#2b3140;box-shadow:0 16px 40px -18px rgba(var(--ink-rgb),.45)}
+.btn:hover .ic{transform:scale(1.08)}
+.btn:hover .ic svg{transform:translate(2px,-2px)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px rgba(var(--ink-rgb),.2);padding:0 26px}
+.btn.ghost:hover{background:rgba(var(--ink-rgb),.06)}
+.btn.sm{min-height:44px;padding:4px 4px 4px 20px;font-size:14px;gap:10px}
+.btn.sm .ic{width:36px;height:36px}
+.btn.is-loading{pointer-events:none}
+.btn .spin{display:none;width:18px;height:18px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+.btn.is-loading .spin{display:block}
+.btn.is-loading .ar{display:none}
+@keyframes spin{to{rotate:360deg}}
+
+/* ═══ BEZEL DUPLO ═══ */
+.bz{padding:6px;border-radius:var(--r-out);background:rgba(var(--ink-rgb),.045);box-shadow:inset 0 0 0 1px var(--line)}
+.bz>.core{border-radius:var(--r-in);background:#fff;box-shadow:inset 0 1px 0 #fff,0 1px 2px rgba(var(--ink-rgb),.04);overflow:hidden;height:100%}
+
+/* ═══ NAV ═══ */
+.nav{position:fixed;top:14px;left:50%;translate:-50% 0;z-index:50;width:min(1120px,100% - 28px);height:62px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 8px 0 18px;border-radius:99px;background:rgba(251,250,248,.72);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);box-shadow:inset 0 0 0 1px rgba(var(--ink-rgb),.08);transition:background .5s var(--ease),box-shadow .5s var(--ease)}
+.nav.scrolled{background:rgba(251,250,248,.88);box-shadow:inset 0 0 0 1px rgba(var(--ink-rgb),.08),0 18px 44px -24px rgba(var(--ink-rgb),.3)}
+.brand{display:flex;align-items:center;gap:11px;font-weight:500;letter-spacing:-.015em;white-space:nowrap}
+.mark{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:var(--ink);color:var(--acc);font:500 12px/1 serif}
+.mark svg{width:16px;height:16px}
+.links{display:flex;gap:4px}
+.links a{position:relative;padding:9px 14px;border-radius:99px;font-size:14px;color:var(--ink-2);transition:color .3s,background .3s}
+.links a:hover{color:var(--ink);background:rgba(var(--ink-rgb),.05)}
+.links a.on{color:var(--ink);background:rgba(var(--ink-rgb),.07)}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:0;background:rgba(var(--ink-rgb),.06);position:relative;cursor:pointer}
+.burger i{position:absolute;left:14px;right:14px;height:1.5px;background:var(--ink);border-radius:2px;transition:transform .6s var(--ease),top .6s var(--ease)}
+.burger i:nth-child(1){top:19px}.burger i:nth-child(2){top:26px}
+.burger[aria-expanded="true"] i:nth-child(1){top:22.5px;transform:rotate(45deg)}
+.burger[aria-expanded="true"] i:nth-child(2){top:22.5px;transform:rotate(-45deg)}
+.sheet{position:fixed;inset:0;z-index:45;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:100px var(--gut) 40px;background:rgba(246,244,242,.92);backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);opacity:0;visibility:hidden;transition:opacity .6s var(--ease),visibility 0s .6s}
+.sheet.open{opacity:1;visibility:visible;transition:opacity .6s var(--ease),visibility 0s}
+.sheet a:not(.btn){display:block;padding:12px 0;font-size:clamp(2rem,9vw,3rem);letter-spacing:-.03em;line-height:1.1;font-weight:300;border-bottom:1px solid var(--line);translate:0 40px;opacity:0;transition:translate .8s var(--ease),opacity .6s}
+.sheet.open a:not(.btn){translate:0 0;opacity:1;transition-delay:calc(var(--i)*70ms + .15s)}
+.sheet .btn{margin-top:28px;align-self:flex-start;opacity:0;translate:0 30px;transition:opacity .6s,translate .8s var(--ease),background .4s,transform .4s var(--ease)}
+.sheet.open .btn{opacity:1;translate:0 0;transition-delay:.6s,.6s,0s,0s}
+
+/* ═══ HERO ═══ */
+.hero{min-height:100dvh;display:flex;align-items:center;padding:110px 0 64px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(40px,6vw,96px);align-items:center}
+.hero h1{margin:24px 0 24px}
+.hero .lead{max-width:40ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.vis{position:relative}
+.photo{position:relative;overflow:hidden;border-radius:var(--r-in);background:var(--acc-soft)}
+.photo img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover}
+.vis .photo{aspect-ratio:4/5;max-height:min(70dvh,640px)}
+.vis .photo img{animation:par linear both;animation-timeline:scroll(root);animation-range:0 90vh}
+@keyframes par{to{translate:0 7%}}
+
+.float{position:absolute;left:clamp(-64px,-5vw,-16px);bottom:-26px;width:min(260px,74%)}
+.float .core{padding:18px 20px;display:flex;align-items:center;gap:14px}
+.float .dot{flex:none;width:11px;height:11px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px var(--acc-soft)}
+.float b{display:block;font-weight:500;font-size:15px;letter-spacing:-.01em}
+.float span{font:400 12.5px/1.4 var(--f-mono);color:var(--ink-2)}
+
+/* ═══ FATOS ═══ */
+.facts{margin-top:clamp(-30px,-3vw,-46px);position:relative;z-index:2}
+.facts dl{display:grid;grid-template-columns:repeat(3,1fr)}
+.facts div{position:relative;display:flex;align-items:center;gap:16px;padding:clamp(22px,2.6vw,30px) clamp(16px,2.6vw,32px)}
+.facts div+div::before{content:"";position:absolute;left:0;top:18%;bottom:18%;width:1px;background:var(--line)}
+.facts dd{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--acc-soft);color:var(--acc-ink)}
+.facts dt{font-size:14.5px;line-height:1.4;color:var(--ink-2);max-width:18ch}
+@media (max-width:700px){
+  .facts dl{grid-template-columns:1fr}
+  .facts div+div::before{left:18%;right:18%;top:0;bottom:auto;width:auto;height:1px}
+}
+
+/* ═══ FILOSOFIA ═══ */
+.philo{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(40px,6vw,96px);align-items:center}
+.philo h2{font-size:clamp(1.9rem,3.6vw,3rem);max-width:17ch}
+.philo p.lead{margin-top:24px}
+.philo .photo{aspect-ratio:3/4;position:relative}
+
+/* ═══ BENTO TRATAMENTOS ═══ */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.bento .bz{min-height:280px}
+.b-rosto{grid-column:span 7}.b-pele{grid-column:span 5}
+.b-corpo{grid-column:span 4}.b-cabelo{grid-column:span 4}.b-aval{grid-column:span 4}
+.cell{position:relative;height:100%;overflow:hidden}
+.cell.img{color:#fff}
+.cell.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.82) brightness(.78);transition:scale 1.4s var(--ease)}
+.cell.img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(21,26,34,.86),rgba(21,26,34,.08) 60%)}
+.bz:hover .cell.img img{scale:1.05}
+.cell-in{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:14px;padding:clamp(24px,3vw,32px)}
+.cell:not(.img) .cell-in{justify-content:space-between}
+.cell p{color:var(--ink-2);font-size:15.5px;max-width:34ch}
+.cell.img p{color:rgba(255,255,255,.82)}
+.list{display:grid;gap:7px;max-height:0;opacity:0;overflow:hidden;transition:max-height .6s var(--ease),opacity .4s}
+.bz:hover .list{max-height:140px;opacity:1}
+.list span{font-size:14px;color:rgba(255,255,255,.85)}
+.cell:not(.img) .list span{color:var(--ink-2)}
+.cell:not(.img) .list{max-height:140px;opacity:1}
+.cell.acc{background:linear-gradient(155deg,#E39A89,var(--acc) 55%,#C56E5B)}
+.cell.acc .cell-in{color:#fff}
+.cell.acc p{color:rgba(255,255,255,.88)}
+.cell.acc .btn{background:rgba(255,255,255,.14);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.4)}
+.cell.acc .btn .ic{background:#fff;color:var(--acc-ink)}
+.cell.acc .btn:hover{background:rgba(255,255,255,.22);box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+
+/* ═══ MÉTODO (pilha ao rolar) ═══ */
+.flowstack{display:grid;gap:18px}
+.fstep{position:sticky;top:96px}
+.fstep .bz{transform-origin:top center}
+.fcore{display:grid;grid-template-columns:72px minmax(0,1fr) 120px;gap:24px;align-items:center;padding:clamp(22px,3vw,34px)}
+.fnum{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--acc-soft);color:var(--acc-ink);font:500 18px/1 var(--f-mono)}
+.fstep p{color:var(--ink-2);margin-top:8px;max-width:50ch}
+.fthumb{aspect-ratio:1/1;border-radius:16px;overflow:hidden}
+.fthumb img{width:100%;height:100%;object-fit:cover}
+
+/* ═══ EQUIPE ═══ */
+.team{display:grid;gap:clamp(16px,2.4vw,28px)}
+.feature .core{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr)}
+.feature .photo{aspect-ratio:4/5}
+.feature .cap{padding:clamp(28px,3.4vw,44px);display:flex;flex-direction:column;justify-content:center;gap:4px}
+.feature h3{font-size:clamp(1.5rem,2.4vw,2rem)}
+.feature .cap p:last-child{margin-top:10px;max-width:42ch}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,28px)}
+.team .photo img{filter:grayscale(.7) contrast(1.04);transition:filter .9s var(--ease),scale 1.4s var(--ease)}
+.team article:hover .photo img{filter:none;scale:1.04}
+.pair .photo{aspect-ratio:3/4}
+.pair .cap{padding:22px 22px 24px}
+.team h3{font-size:1.5rem}
+.team .r{font:500 11px/1.4 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin:8px 0 10px}
+.team .cap p{color:var(--ink-2);font-size:15px}
+@media (max-width:1000px){
+  .feature .core{grid-template-columns:1fr}
+  .feature .photo{aspect-ratio:4/3}
+  .pair{grid-template-columns:1fr 1fr}
+}
+@media (max-width:700px){.pair{grid-template-columns:1fr}}
+
+/* ═══ ESPAÇO (acordeão) ═══ */
+.accgal{display:flex;gap:10px;height:clamp(320px,52vw,560px)}
+.strip{position:relative;flex:1;border-radius:20px;overflow:hidden;cursor:pointer;transition:flex 1s var(--ease)}
+.strip.on{flex:3.4}
+.strip img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85);transition:scale 1.1s var(--ease)}
+.strip:hover img{scale:1.04}
+.strip::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(21,26,34,.72),transparent 55%)}
+.strip-lb{position:absolute;left:16px;bottom:16px;z-index:1;color:#fff;font-size:15px;font-weight:500;letter-spacing:-.01em;white-space:nowrap;display:flex;align-items:center;gap:10px}
+.strip-lb i{width:8px;height:8px;border-radius:50%;background:var(--acc);flex:none}
+.strip:not(.on) .strip-lb span{display:none}
+@media (max-width:700px){.accgal{height:auto;flex-direction:column;gap:10px}.strip{flex:none;height:72px}.strip.on{flex:none;height:280px}}
+
+/* ═══ SEGURANÇA (faixa escura) ═══ */
+.night{background:var(--night);color:var(--on-night);border-radius:clamp(28px,4vw,56px);margin-inline:clamp(8px,1.6vw,20px);overflow:hidden;position:relative;isolation:isolate}
+.night::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(620px 420px at 100% 0%,rgba(var(--acc-rgb),.18),transparent 70%)}
+.night .tag{background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);color:var(--on-night-2)}
+.night h2{color:var(--on-night)}
+.safe-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(40px,6vw,96px);align-items:start}
+.safe-items{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.1);border-radius:18px;overflow:hidden}
+.safe-items li{background:var(--night);padding:28px;display:grid;gap:14px}
+.safe-items .ic{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.08);color:var(--acc)}
+.safe-items span{font-size:15.5px;line-height:1.5;color:var(--on-night-2)}
+@media (max-width:700px){.safe-items{grid-template-columns:1fr}}
+
+/* ═══ DEPOIMENTOS ═══ */
+.quotes{position:relative;max-width:820px}
+.qslide{display:none}
+.qslide.on{display:block;animation:pin .8s var(--ease)}
+@keyframes pin{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}
+.qm{font-size:72px;line-height:.6;height:40px;color:var(--acc-soft);font-family:Georgia,serif}
+.qslide blockquote{font-size:clamp(1.3rem,2.4vw,1.8rem);line-height:1.42;font-weight:300;letter-spacing:-.01em;max-width:34ch}
+.qslide figcaption{margin-top:20px;font-size:14.5px;color:var(--ink-2)}
+.qslide figcaption b{display:block;font-weight:500;color:var(--ink);font-size:16px}
+.qnav{display:flex;align-items:center;gap:18px;margin-top:40px}
+.qdots{display:flex;gap:8px}
+.qdots button{width:8px;height:8px;border:0;border-radius:99px;padding:0;background:var(--ink);opacity:.2;cursor:pointer;transition:width .5s var(--ease),opacity .3s}
+.qdots button.on{width:30px;opacity:1}
+.qarrows{display:flex;gap:8px;margin-left:auto}
+.qarrows button{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;border:0;background:rgba(var(--ink-rgb),.06);cursor:pointer;transition:background .3s}
+.qarrows button:hover{background:rgba(var(--ink-rgb),.1)}
+.fine-note{margin-top:28px;font-size:13.5px;color:var(--ink-2)}
+
+/* ═══ FAQ ═══ */
+.faqs{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(40px,6vw,96px);align-items:start}
+.faqs .stick{position:sticky;top:120px;display:grid;gap:22px}
+.faqs .stick a.lk{color:var(--ink);box-shadow:inset 0 -1px 0 var(--ink);width:max-content;transition:box-shadow .4s var(--ease)}
+.faqs .stick a.lk:hover{box-shadow:inset 0 -1.2em 0 var(--acc-soft)}
+.faq{border-top:1px solid var(--line)}
+.faq:last-child{border-bottom:1px solid var(--line)}
+.faq-b{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;min-height:80px;padding:18px 0;font-size:clamp(1.05rem,1.6vw,1.3rem);letter-spacing:-.015em;line-height:1.3;transition:translate .5s var(--ease)}
+.faq-b:hover{translate:6px 0}
+.faq-i{position:relative;flex:none;width:36px;height:36px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(var(--ink-rgb),.2);transition:background .4s,box-shadow .4s,rotate .6s var(--ease)}
+.faq-i::before,.faq-i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;margin:-.75px 0 0 -6px;background:var(--ink);transition:transform .6s var(--ease)}
+.faq-i::after{transform:rotate(90deg)}
+.faq.open .faq-i{background:var(--acc);box-shadow:inset 0 0 0 1px var(--acc);rotate:180deg}
+.faq.open .faq-i::before,.faq.open .faq-i::after{background:#fff}
+.faq.open .faq-i::after{transform:rotate(0)}
+.faq-p{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .7s var(--ease),visibility 0s .7s}
+.faq.open .faq-p{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .7s var(--ease),visibility 0s}
+.faq-in{overflow:hidden;min-height:0}
+.faq-in p{padding:0 56px 28px 0;color:var(--ink-2);max-width:60ch;opacity:0;translate:0 -8px;transition:opacity .5s,translate .7s var(--ease)}
+.faq.open .faq-in p{opacity:1;translate:0 0;transition-delay:.12s}
+
+/* ═══ CONTATO ═══ */
+.contact h2{max-width:16ch;font-size:clamp(2.1rem,4.6vw,3.6rem)}
+.ct-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);align-items:start;margin-top:clamp(44px,6vw,80px)}
+.info{display:grid;gap:24px;margin-bottom:32px}
+.info dt{font:500 11px/1.4 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.info dd{margin-top:5px;font-size:18px;letter-spacing:-.01em}
+.info a{box-shadow:inset 0 -1px 0 rgba(var(--ink-rgb),.4);transition:box-shadow .4s var(--ease)}
+.info a:hover{box-shadow:inset 0 -1.2em 0 var(--acc-soft)}
+form{padding:clamp(24px,3.4vw,44px);display:grid;gap:18px}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.field{position:relative;display:grid;gap:8px;min-width:0}
+.field label{font:500 11px/1.4 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--paper-2);border:0;border-radius:var(--r-field);padding:15px 16px;box-shadow:inset 0 0 0 1px rgba(var(--ink-rgb),.16);transition:box-shadow .3s}
+.field input::placeholder,.field textarea::placeholder{color:#8b9088}
+.field input:hover,.field select:hover,.field textarea:hover{box-shadow:inset 0 0 0 1px rgba(var(--ink-rgb),.34)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;background:#fff;box-shadow:inset 0 0 0 1.5px var(--ink),0 0 0 4px var(--acc-soft)}
+.field textarea{min-height:110px;resize:vertical}
+.field select{appearance:none;-webkit-appearance:none;padding-right:44px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%231E2430' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.err{font-size:13.5px;line-height:1.3;color:#A63B22;max-height:0;opacity:0;overflow:hidden;transition:max-height .35s var(--ease),opacity .3s}
+.field.bad input,.field.bad select,.field.bad textarea{box-shadow:inset 0 0 0 1.5px #C4492C}
+.field.bad .err{max-height:30px;opacity:1}
+.check{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;line-height:1.5;color:var(--ink-2);cursor:pointer}
+.check input{margin-top:3px;width:18px;height:18px;accent-color:var(--ink);flex:none}
+.check.bad{color:#A63B22}
+.fine{font-size:13.5px;color:var(--ink-2)}
+.ok-box{min-height:400px;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:clamp(24px,3.4vw,44px)}
+.ok-box[hidden],form[hidden]{display:none}
+.ok-box .tick{display:grid;place-items:center;width:60px;height:60px;border-radius:50%;background:var(--acc-soft);color:var(--acc-ink)}
+.ok-box svg path{stroke-dasharray:1;stroke-dashoffset:1}
+.ok-box.show svg path{animation:drw .9s var(--ease) .2s forwards}
+.ok-box.show>*{animation:pin .8s var(--ease) both}
+.ok-box.show>:nth-child(2){animation-delay:.1s}.ok-box.show>:nth-child(3){animation-delay:.2s}.ok-box.show>:nth-child(4){animation-delay:.3s}
+@keyframes drw{to{stroke-dashoffset:0}}
+.shake{animation:shake .45s}
+@keyframes shake{20%,60%{translate:-6px 0}40%,80%{translate:6px 0}}
+
+/* ═══ FOOTER ═══ */
+footer{padding-block:48px 56px;margin-top:clamp(64px,8vw,120px);border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+.ft{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 40px}
+.ft nav{display:flex;flex-wrap:wrap;gap:6px 22px}
+.ft nav a{transition:color .3s}
+.ft nav a:hover{color:var(--ink)}
+.legal{width:100%;font:400 12px/1.7 var(--f-mono);display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px;padding-top:24px;margin-top:8px;border-top:1px solid var(--line)}
+
+/* ═══ RESPONSIVO ═══ */
+@media (max-width:1000px){
+  .links{display:none}
+  .nav>.btn{display:none}
+  .burger{display:block}
+  .hero{padding-top:104px}
+  .hero-grid,.philo,.safe-grid,.faqs,.ct-grid{grid-template-columns:minmax(0,1fr)}
+  .philo{gap:40px}
+  .philo .photo{order:-1;aspect-ratio:16/10}
+  .faqs .stick{position:static}
+  .float{left:12px;bottom:-22px;width:min(260px,calc(100% - 24px))}
+  .vis{padding-bottom:26px}
+  .b-rosto,.b-pele,.b-corpo,.b-cabelo,.b-aval{grid-column:1/-1}
+  .bento .bz{min-height:0}
+  .cell.img{min-height:320px}
+  .cell:not(.img){min-height:220px}
+  .team{grid-template-columns:1fr}
+  .team .col{grid-template-columns:1fr 1fr;display:grid}
+  .fcore{grid-template-columns:56px minmax(0,1fr);gap:16px}
+  .fthumb{display:none}
+  .fstep{position:relative;top:0!important}
+}
+@media (max-width:700px){
+  .facts dl{grid-template-columns:1fr;gap:20px}
+  .row{grid-template-columns:minmax(0,1fr)}
+  .team .col{grid-template-columns:1fr}
+  .qarrows{display:none}
+  .ft,.legal{flex-direction:column;align-items:flex-start}
+  .night{margin-inline:6px}
+}
+@media (hover:none){.faq-b:hover{translate:0 0}.strip-lb span{display:inline!important}.strip:hover img{scale:1}.cell.img .list{max-height:140px;opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;transition-delay:0s!important}
+  .amb{animation:none}
+  .js .rv,.js [data-split] .wi{opacity:1;translate:0 0;filter:none}
+  mark{background-size:100% .5em}
+}
+</style>
+<noscript><style>.rv{opacity:1!important;translate:none!important;filter:none!important}.js [data-split] .wi{translate:none!important}mark{background-size:100% .5em!important}</style></noscript>
+</head>
+
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="amb" aria-hidden="true"></div>
+
+<!-- ═══ NAV ═══ -->
+<header class="nav" id="nav">
+  <a class="brand" href="#inicio" aria-label="Valverde Estética, início">
+    <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="7"/></svg></span>
+    <span>Valverde</span>
+  </a>
+  <nav class="links" aria-label="Seções">
+    <a href="#tratamentos">Tratamentos</a>
+    <a href="#metodo">Método</a>
+    <a href="#equipe">Equipe</a>
+    <a href="#espaco">Espaço</a>
+    <a href="#duvidas">Dúvidas</a>
+  </nav>
+  <a class="btn sm" data-wa href="#contato"><span>Agendar avaliação</span><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
+  <button class="burger" id="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sheet"><i></i><i></i></button>
+</header>
+<div class="sheet" id="sheet" aria-hidden="true">
+  <a href="#tratamentos" style="--i:0">Tratamentos</a>
+  <a href="#metodo" style="--i:1">Método</a>
+  <a href="#equipe" style="--i:2">Equipe</a>
+  <a href="#espaco" style="--i:3">Espaço</a>
+  <a href="#duvidas" style="--i:4">Dúvidas</a>
+  <a class="btn" href="#contato"><span>Agendar avaliação</span><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
+</div>
+
+<main id="conteudo">
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag rv">Clínica de estética médica</span>
+      <h1 data-split style="--sd:.1s">Estética que respeita o seu rosto.</h1>
+      <p class="lead rv" style="--d:.55s">Avaliação individual, procedimentos conduzidos por médicos e acompanhamento depois de cada sessão.</p>
+      <div class="hero-actions rv" style="--d:.7s">
+        <a class="btn" href="#contato"><span>Agendar avaliação</span><span class="ic"><svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
+        <a class="btn ghost" href="#tratamentos">Ver tratamentos</a>
+      </div>
+    </div>
+
+    <div class="vis rv" style="--d:.35s">
+      <div class="bz"><div class="core"><div class="photo">
+        <!-- FOTO: retrato natural (4:5). Troque em assets/images/est-hero.jpg -->
+        <img src="assets/images/est-hero.jpg" alt="Retrato natural de uma paciente, pele sem retoque" fetchpriority="high" decoding="async">
+      </div></div></div>
+      <div class="float bz" aria-hidden="true">
+        <div class="core"><span class="dot"></span><div><b>Avaliação inicial</b><span>40 min com a médica responsável</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FATOS ═══ -->
+<section class="facts" aria-label="O que diferencia o atendimento">
+  <div class="wrap">
+    <div class="bz rv" style="--d:.85s"><div class="core"><dl data-stagger>
+      <div><dd aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4"/></svg></dd><dt>Médicos em todos os procedimentos</dt></div>
+      <div><dd aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></dd><dt>Avaliação antes do primeiro tratamento</dt></div>
+      <div><dd aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3M12 2a10 10 0 1 0 .001 0z"/></svg></dd><dt>Retorno de revisão incluso</dt></div>
+    </dl></div></div>
+  </div>
+</section>
+
+<!-- ═══ FILOSOFIA ═══ -->
+<section class="sec" id="filosofia">
+  <div class="wrap philo">
+    <div>
+      <span class="tag rv">Como pensamos</span>
+      <h2 data-split style="margin-top:22px">Resultado bom é o que ninguém <mark>precisa explicar</mark>.</h2>
+      <p class="lead rv" style="--d:.15s">Antes de indicar qualquer procedimento, conversamos sobre o que incomoda e o que você quer manter. Se não for necessário, dizemos.</p>
+    </div>
+    <div class="bz rv" style="--d:.1s"><div class="core"><div class="photo">
+      <!-- FOTO: retrato close, luz suave (3:4) -->
+      <img src="assets/images/est-filosofia.jpg" alt="Retrato próximo, expressão tranquila" loading="lazy" decoding="async">
+    </div></div></div>
+  </div>
+</section>
+
+<!-- ═══ TRATAMENTOS ═══ -->
+<section class="sec" id="tratamentos" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-split>Cuidado com indicação, não com pacote</h2>
+      <p class="lead rv">Cada área é avaliada separadamente. O plano reúne só o que faz sentido para o seu caso.</p>
+    </div>
+    <div class="bento" data-stagger>
+      <div class="bz b-rosto rv"><div class="core"><div class="cell img">
+        <img src="assets/images/est-bento-rosto.jpg" alt="" loading="lazy" decoding="async">
+        <div class="cell-in"><h3>Rosto</h3><p>Harmonização, preenchimento e bioestimulador, sempre a partir da estrutura de cada rosto.</p>
+          <div class="list"><span>Toxina botulínica</span><span>Preenchimento</span><span>Bioestimulador de colágeno</span><span>Skinbooster</span></div>
+        </div>
+      </div></div></div>
+
+      <div class="bz b-pele rv"><div class="core"><div class="cell img">
+        <img src="assets/images/est-bento-pele.jpg" alt="" loading="lazy" decoding="async">
+        <div class="cell-in"><h3>Pele</h3><p>Textura, manchas e cicatrizes, com protocolo definido na avaliação.</p>
+          <div class="list"><span>Peelings</span><span>Laser</span><span>Microagulhamento</span><span>Manchas e cicatrizes</span></div>
+        </div>
+      </div></div></div>
+
+      <div class="bz b-corpo rv"><div class="core"><div class="cell img">
+        <img src="assets/images/est-bento-corpo.jpg" alt="" loading="lazy" decoding="async">
+        <div class="cell-in"><h3>Corpo</h3><p>Flacidez, gordura localizada e celulite, com técnica indicada por avaliação.</p>
+          <div class="list"><span>Flacidez</span><span>Gordura localizada</span><span>Estrias e celulite</span></div>
+        </div>
+      </div></div></div>
+
+      <div class="bz b-cabelo rv"><div class="core"><div class="cell img">
+        <img src="assets/images/est-bento-cabelo.jpg" alt="" loading="lazy" decoding="async">
+        <div class="cell-in"><h3>Cabelo</h3><p>Queda e saúde do couro cabeludo, acompanhadas ao longo do tratamento.</p>
+          <div class="list"><span>Queda capilar</span><span>Couro cabeludo</span></div>
+        </div>
+      </div></div></div>
+
+      <div class="bz b-aval rv"><div class="core"><div class="cell acc"><div class="cell-in">
+        <div><h3>Não sabe por onde começar?</h3><p>Comece pela avaliação. A indicação vem depois da conversa.</p></div>
+        <a class="btn sm" href="#contato"><span>Agendar avaliação</span><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
+      </div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MÉTODO ═══ -->
+<section class="sec" id="metodo" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-split>Como é a primeira consulta</h2>
+    </div>
+    <div class="flowstack">
+      <div class="fstep" style="top:96px"><div class="bz rv"><div class="core"><div class="fcore">
+        <div class="fnum">01</div>
+        <div><h3>Conversa</h3><p>Você conta o que incomoda, sua rotina e o que já fez.</p></div>
+        <div class="fthumb"><img src="assets/images/est-esp-recepcao.jpg" alt="" loading="lazy"></div>
+      </div></div></div></div>
+      <div class="fstep" style="top:112px"><div class="bz rv"><div class="core"><div class="fcore">
+        <div class="fnum">02</div>
+        <div><h3>Avaliação</h3><p>A médica examina pele e estrutura e explica o que vê.</p></div>
+        <div class="fthumb"><img src="assets/images/est-esp-avaliacao.jpg" alt="" loading="lazy"></div>
+      </div></div></div></div>
+      <div class="fstep" style="top:128px"><div class="bz rv"><div class="core"><div class="fcore">
+        <div class="fnum">03</div>
+        <div><h3>Plano</h3><p>Você recebe opções por escrito, com prazos e cuidados. Decide sem pressa.</p></div>
+        <div class="fthumb"><img src="assets/images/est-esp-procedimentos.jpg" alt="" loading="lazy"></div>
+      </div></div></div></div>
+      <div class="fstep" style="top:144px"><div class="bz rv"><div class="core"><div class="fcore">
+        <div class="fnum">04</div>
+        <div><h3>Cuidado depois</h3><p>Contato após cada sessão e revisão marcada.</p></div>
+        <div class="fthumb"><img src="assets/images/est-esp-recuperacao.jpg" alt="" loading="lazy"></div>
+      </div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EQUIPE ═══ -->
+<section class="sec" id="equipe" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-split>Quem cuida de você</h2>
+      <p class="lead rv">Três profissionais, um plano só, conduzido sempre por médicos.</p>
+    </div>
+    <div class="team">
+      <article class="bz feature rv"><div class="core">
+        <div class="photo"><img src="assets/images/est-beatriz.jpg" alt="Retrato de Dra. Beatriz Nogueira" loading="lazy" decoding="async"></div>
+        <div class="cap"><p class="r">Dermatologista, fundadora</p><h3>Dra. Beatriz Nogueira</h3><p>Conduz as avaliações de rosto e pele e a revisão de cada plano.</p></div>
+      </div></article>
+      <div class="pair">
+        <article class="bz rv"><div class="core">
+          <div class="photo"><img src="assets/images/est-caio.jpg" alt="Retrato de Dr. Caio Menezes" loading="lazy" decoding="async"></div>
+          <div class="cap"><h3>Dr. Caio Menezes</h3><p class="r">Médico, procedimentos corporais</p></div>
+        </div></article>
+        <article class="bz rv"><div class="core">
+          <div class="photo"><img src="assets/images/est-larissa.jpg" alt="Retrato de Larissa Prado" loading="lazy" decoding="async"></div>
+          <div class="cap"><h3>Larissa Prado</h3><p class="r">Enfermeira, acompanhamento</p></div>
+        </div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ESPAÇO ═══ -->
+<section class="sec" id="espaco" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-split>Um lugar para ir sem pressa</h2>
+    </div>
+    <div class="accgal rv" id="gallery">
+      <div class="strip on" data-i="0"><img src="assets/images/est-esp-recepcao.jpg" alt="Recepção da clínica" loading="lazy"><span class="strip-lb"><i></i><span>Recepção</span></span></div>
+      <div class="strip" data-i="1"><img src="assets/images/est-esp-avaliacao.jpg" alt="Sala de avaliação" loading="lazy"><span class="strip-lb"><i></i><span>Avaliação</span></span></div>
+      <div class="strip" data-i="2"><img src="assets/images/est-esp-procedimentos.jpg" alt="Sala de procedimentos" loading="lazy"><span class="strip-lb"><i></i><span>Procedimentos</span></span></div>
+      <div class="strip" data-i="3"><img src="assets/images/est-esp-recuperacao.jpg" alt="Sala de recuperação" loading="lazy"><span class="strip-lb"><i></i><span>Recuperação</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SEGURANÇA (faixa escura) ═══ -->
+<section class="sec night">
+  <div class="wrap safe-grid">
+    <div>
+      <span class="tag rv">Segurança</span>
+      <h2 data-split style="margin-top:22px">Cuidado que você pode conferir</h2>
+    </div>
+    <ul class="safe-items" data-stagger>
+      <li class="rv"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg></span><span>Produtos com registro na Anvisa e rastreio de lote.</span></li>
+      <li class="rv"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg></span><span>Materiais descartáveis e esterilização documentada.</span></li>
+      <li class="rv"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></span><span>Termo de consentimento explicado antes de assinar.</span></li>
+      <li class="rv"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.5 7.3L4 20l1.3-4.2A8.4 8.4 0 1 1 21 11.5z"/></svg></span><span>Canal direto com a equipe nos dias seguintes.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ DEPOIMENTOS ═══ -->
+<section class="sec" id="depoimentos">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-split>O que dizem sobre o atendimento</h2>
+      <p class="lead rv">Relatos sobre a experiência de atendimento. Não representam garantia de resultado.</p>
+    </div>
+    <div class="quotes rv" id="quotes">
+      <div class="qslide on" data-i="0"><div class="qm" aria-hidden="true">&ldquo;</div><blockquote>Ninguém me empurrou procedimento. Saí com um plano e com tempo para pensar.</blockquote><figcaption><b>Marina T.</b>Advogada</figcaption></div>
+      <div class="qslide" data-i="1"><div class="qm" aria-hidden="true">&ldquo;</div><blockquote>A médica explicou cada etapa antes de eu decidir. Nunca me senti apressada.</blockquote><figcaption><b>Juliana R.</b>Arquiteta</figcaption></div>
+      <div class="qslide" data-i="2"><div class="qm" aria-hidden="true">&ldquo;</div><blockquote>Fui atendido por quem ia de fato me acompanhar depois, não só no dia do procedimento.</blockquote><figcaption><b>Pedro A.</b>Professor</figcaption></div>
+      <div class="qnav">
+        <div class="qdots" id="qdots"></div>
+        <div class="qarrows">
+          <button type="button" id="qprev" aria-label="Depoimento anterior"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button type="button" id="qnext" aria-label="Próximo depoimento"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <p class="fine-note">Depoimentos fictícios, criados para fins de demonstração.</p>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="sec" id="duvidas" style="padding-top:0">
+  <div class="wrap faqs">
+    <div class="stick">
+      <h2 data-split>Dúvidas antes de agendar</h2>
+      <p class="lead rv">Não achou a sua? <a class="lk" href="#contato">Escreva no formulário</a> e respondemos em 1 dia útil.</p>
+    </div>
+    <div class="rv" id="faqList">
+      <div class="faq open"><h3><button class="faq-b" id="fq1" aria-expanded="true" aria-controls="fp1"><span>Dói?</span><span class="faq-i" aria-hidden="true"></span></button></h3><div class="faq-p" id="fp1" role="region" aria-labelledby="fq1"><div class="faq-in"><p>A sensação varia por procedimento e por pessoa. Usamos anestésico tópico quando indicado e explicamos o que esperar antes de começar.</p></div></div></div>
+      <div class="faq"><h3><button class="faq-b" id="fq2" aria-expanded="false" aria-controls="fp2"><span>Quanto tempo dura cada sessão?</span><span class="faq-i" aria-hidden="true"></span></button></h3><div class="faq-p" id="fp2" role="region" aria-labelledby="fq2"><div class="faq-in"><p>De 30 minutos a 2 horas, dependendo do procedimento. O tempo exato fica claro já na avaliação.</p></div></div></div>
+      <div class="faq"><h3><button class="faq-b" id="fq3" aria-expanded="false" aria-controls="fp3"><span>Posso voltar ao trabalho no mesmo dia?</span><span class="faq-i" aria-hidden="true"></span></button></h3><div class="faq-p" id="fp3" role="region" aria-labelledby="fq3"><div class="faq-in"><p>Na maioria dos casos, sim. Procedimentos com tempo de recuperação maior são avisados com antecedência, para você organizar a agenda.</p></div></div></div>
+      <div class="faq"><h3><button class="faq-b" id="fq4" aria-expanded="false" aria-controls="fp4"><span>Como funciona o valor?</span><span class="faq-i" aria-hidden="true"></span></button></h3><div class="faq-p" id="fp4" role="region" aria-labelledby="fq4"><div class="faq-in"><p>Cada plano é orçado depois da avaliação, conforme o procedimento indicado. Você recebe o valor por escrito antes de agendar.</p></div></div></div>
+      <div class="faq"><h3><button class="faq-b" id="fq5" aria-expanded="false" aria-controls="fp5"><span>Há idade mínima?</span><span class="faq-i" aria-hidden="true"></span></button></h3><div class="faq-p" id="fp5" role="region" aria-labelledby="fq5"><div class="faq-in"><p>Sim, a maioria dos procedimentos é indicada a partir da maioridade. Casos específicos são avaliados com acompanhamento de um responsável.</p></div></div></div>
+      <div class="faq"><h3><button class="faq-b" id="fq6" aria-expanded="false" aria-controls="fp6"><span>E se eu desistir depois da avaliação?</span><span class="faq-i" aria-hidden="true"></span></button></h3><div class="faq-p" id="fp6" role="region" aria-labelledby="fq6"><div class="faq-in"><p>Sem problema. A avaliação não obriga a nenhum procedimento. Você decide no seu tempo.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTATO ═══ -->
+<section class="sec contact" id="contato" style="padding-top:0">
+  <div class="wrap">
+    <h2 data-split>Marque sua avaliação</h2>
+    <div class="ct-grid">
+      <div class="rv">
+        <dl class="info">
+          <div><dt>Endereço</dt><dd>Avenida das Orquídeas, 480, sala 3, Jardins</dd></div>
+          <div><dt>Telefone e WhatsApp</dt><dd><a data-wa href="https://wa.me/5500000000000" target="_blank" rel="noopener">(00) 00000-0000</a></dd></div>
+          <div><dt>E-mail</dt><dd><a href="mailto:contato@exemplo.com.br">contato@exemplo.com.br</a></dd></div>
+          <div><dt>Horário</dt><dd>Segunda a sábado, das 9h às 19h</dd></div>
+        </dl>
+        <div class="bz"><div class="core"><div class="photo" style="aspect-ratio:4/3">
+          <!-- FOTO: recepção ou fachada (4:3) -->
+          <img src="assets/images/est-esp-recepcao.jpg" alt="Recepção clara da clínica, com plantas" loading="lazy" decoding="async">
+        </div></div></div>
+      </div>
+
+      <div class="bz rv" style="--d:.12s"><div class="core">
+        <form id="form" novalidate>
+          <div class="row">
+            <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" autocomplete="name" placeholder="Seu nome" required aria-describedby="e-nome"><span class="err" id="e-nome" role="alert"></span></div>
+            <div class="field"><label for="f-whats">WhatsApp</label><input id="f-whats" name="whatsapp" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" required aria-describedby="e-whats"><span class="err" id="e-whats" role="alert"></span></div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="f-interesse">Interesse</label>
+              <select id="f-interesse" name="interesse"><option>Rosto</option><option>Pele</option><option>Corpo</option><option>Cabelo</option><option>Ainda não sei</option></select>
+            </div>
+            <div class="field"><label for="f-periodo">Melhor período</label>
+              <select id="f-periodo" name="periodo"><option>Manhã</option><option>Tarde</option><option>Noite</option></select>
+            </div>
+          </div>
+          <div class="field"><label for="f-msg">Mensagem (opcional)</label><textarea id="f-msg" name="mensagem" placeholder="Conte em poucas linhas o que você procura"></textarea></div>
+          <label class="check" for="f-lgpd" id="chk"><input id="f-lgpd" type="checkbox"><span>Concordo com o uso dos meus dados para retorno deste contato, conforme a Política de Privacidade.</span></label>
+          <button class="btn" id="submit" type="submit" style="justify-self:start"><span class="lbl">Enviar pedido</span><span class="ic"><span class="spin" aria-hidden="true"></span><svg class="ar" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></button>
+          <p class="fine">Não envie fotos nem informações de saúde por aqui. Tratamos isso na avaliação.</p>
+        </form>
+        <div class="ok-box" id="ok" hidden role="status">
+          <span class="tick"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+          <h3 tabindex="-1" style="font-size:1.9rem;font-weight:300;letter-spacing:-.02em">Pedido recebido</h3>
+          <p style="color:var(--ink-2)">A equipe responde pelo WhatsApp em até 1 dia útil para combinar o horário.</p>
+          <button class="btn ghost" id="reset" type="button" style="justify-self:start;width:max-content">Enviar outro pedido</button>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap ft">
+    <a class="brand" href="#inicio"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="7"/></svg></span><span>Valverde Estética</span></a>
+    <nav aria-label="Rodapé"><a href="#tratamentos">Tratamentos</a><a href="#metodo">Método</a><a href="#equipe">Equipe</a><a href="#espaco">Espaço</a><a href="#duvidas">Dúvidas</a><a href="#contato">Contato</a></nav>
+    <div class="legal">
+      <span>Resultados variam de pessoa para pessoa. Todo procedimento exige avaliação médica.</span>
+      <span>Clínica fictícia, criada para demonstração. RT: Dra. Beatriz Nogueira, CRM 00000. Design e desenvolvimento: Padula Design Studio</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+'use strict';
+
+/* ═══ CONFIGURAÇÃO DO CLIENTE ═══ */
+const SITE = {
+  whatsapp: '5500000000000',
+  waMessage: 'Olá, gostaria de agendar uma avaliação.',
+  formEndpoint: ''
+};
+
+const $  = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const wa = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.waMessage)}`;
+$$('[data-wa]').forEach(a => { if (a.target === '_blank') a.href = wa; });
+
+/* split de palavras */
+$$('[data-split]').forEach(el => {
+  let i = 0;
+  (function walk(n) {
+    [...n.childNodes].forEach(ch => {
+      if (ch.nodeType === 3) {
+        const f = document.createDocumentFragment();
+        ch.textContent.split(/(\s+)/).forEach(t => {
+          if (!t) return;
+          if (/^\s+$/.test(t)) { f.appendChild(document.createTextNode(' ')); return; }
+          const w = document.createElement('span'); w.className = 'w';
+          const wi = document.createElement('span'); wi.className = 'wi'; wi.textContent = t; wi.style.setProperty('--i', i++);
+          w.appendChild(wi); f.appendChild(w);
+        });
+        ch.replaceWith(f);
+      } else if (ch.nodeType === 1) walk(ch);
+    });
+  })(el);
+});
+
+/* reveal */
+$$('[data-stagger]').forEach(g => $$(':scope > .rv', g).forEach((c, i) => c.style.setProperty('--d', (i * 0.09) + 's')));
+const revealables = $$('.rv, [data-split]');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: 0.01, rootMargin: '0px 0px -6% 0px' });
+  revealables.forEach(el => io.observe(el));
+} else revealables.forEach(el => el.classList.add('in'));
+
+/* nav: estado de rolagem e link ativo, sem scroll listener */
+const nav = $('#nav');
+const sentinel = document.createElement('i');
+sentinel.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:48px;pointer-events:none';
+document.body.prepend(sentinel);
+new IntersectionObserver(([e]) => nav.classList.toggle('scrolled', !e.isIntersecting)).observe(sentinel);
+const links = $$('.links a');
+const byId = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+const alias = { filosofia: 'tratamentos', depoimentos: 'duvidas' };
+const spy = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  const id = alias[e.target.id] || e.target.id;
+  links.forEach(l => l.classList.toggle('on', l === byId.get(id)));
+}), { rootMargin: '-45% 0px -50% 0px' });
+$$('main section[id]').forEach(s => spy.observe(s));
+
+/* menu mobile */
+const burger = $('#burger'), sheet = $('#sheet');
+const setMenu = open => {
+  burger.setAttribute('aria-expanded', open);
+  burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  sheet.classList.toggle('open', open);
+  sheet.setAttribute('aria-hidden', !open);
+  document.body.classList.toggle('lock', open);
+};
+burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
+sheet.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+matchMedia('(min-width:1001px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+
+/* galeria em acordeão */
+const strips = $$('.strip', $('#gallery'));
+strips.forEach(s => s.addEventListener('click', () => strips.forEach(o => o.classList.toggle('on', o === s))));
+
+/* depoimentos */
+const slides = $$('.qslide', $('#quotes'));
+const qdots = $('#qdots');
+slides.forEach((_, i) => { const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Depoimento ' + (i + 1)); b.addEventListener('click', () => showQ(i)); qdots.appendChild(b); });
+let qi = 0;
+function showQ(i) {
+  qi = (i + slides.length) % slides.length;
+  slides.forEach((s, j) => s.classList.toggle('on', j === qi));
+  [...qdots.children].forEach((d, j) => d.classList.toggle('on', j === qi));
+}
+showQ(0);
+$('#qprev').addEventListener('click', () => showQ(qi - 1));
+$('#qnext').addEventListener('click', () => showQ(qi + 1));
+if (!reduce) {
+  let seen = false;
+  new IntersectionObserver(([e]) => { seen = e.isIntersecting; }).observe($('#quotes'));
+  setInterval(() => { if (seen && !document.hidden) showQ(qi + 1); }, 6000);
+}
+
+/* FAQ */
+const faqs = $$('.faq');
+faqs.forEach(f => $('.faq-b', f).addEventListener('click', () => {
+  const open = !f.classList.contains('open');
+  faqs.forEach(o => { o.classList.remove('open'); $('.faq-b', o).setAttribute('aria-expanded', 'false'); });
+  if (open) { f.classList.add('open'); $('.faq-b', f).setAttribute('aria-expanded', 'true'); }
+}));
+
+/* formulário */
+const form = $('#form'), ok = $('#ok'), submit = $('#submit');
+const rules = {
+  'f-nome': v => v.trim().length >= 3 || 'Informe seu nome.',
+  'f-whats': v => v.replace(/\D/g, '').length >= 10 || 'Informe um WhatsApp com DDD.'
+};
+const check = id => {
+  const el = $('#' + id), r = rules[id](el.value), f = el.closest('.field'), bad = r !== true;
+  f.classList.toggle('bad', bad); el.setAttribute('aria-invalid', bad); $('.err', f).textContent = bad ? r : '';
+  return !bad;
+};
+Object.keys(rules).forEach(id => {
+  const el = $('#' + id);
+  el.addEventListener('blur', () => { if (el.value) check(id); });
+  el.addEventListener('input', () => { if (el.closest('.field').classList.contains('bad')) check(id); });
+});
+$('#f-whats').addEventListener('input', e => {
+  const d = e.target.value.replace(/\D/g, '').slice(0, 11);
+  e.target.value = d.length > 10 ? `(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}` : d.length > 6 ? `(${d.slice(0,2)}) ${d.slice(2,6)}-${d.slice(6)}` : d.length > 2 ? `(${d.slice(0,2)}) ${d.slice(2)}` : d;
+});
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const res = Object.keys(rules).map(check), lg = $('#f-lgpd');
+  $('#chk').classList.toggle('bad', !lg.checked);
+  if (res.includes(false) || !lg.checked) {
+    form.classList.remove('shake'); void form.offsetWidth; form.classList.add('shake');
+    const first = Object.keys(rules).find((id, i) => !res[i]);
+    (first ? $('#' + first) : lg).focus();
+    return;
+  }
+  submit.classList.add('is-loading');
+  try {
+    if (SITE.formEndpoint) {
+      const r = await fetch(SITE.formEndpoint, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
+      if (!r.ok) throw new Error(r.status);
+    } else await new Promise(r => setTimeout(r, 1000));
+    form.hidden = true; ok.hidden = false; void ok.offsetWidth; ok.classList.add('show');
+    $('h3', ok).focus({ preventScroll: true });
+  } catch {
+    form.classList.remove('shake'); void form.offsetWidth; form.classList.add('shake');
+    alert('Não foi possível enviar agora. Tente novamente ou fale conosco pelo WhatsApp.');
+  } finally { submit.classList.remove('is-loading'); }
+});
+$('#reset').addEventListener('click', () => {
+  form.reset(); $$('.field.bad', form).forEach(f => f.classList.remove('bad'));
+  ok.classList.remove('show'); ok.hidden = true; form.hidden = false;
+});
+})();
+</script>
+</body>
+</html>
