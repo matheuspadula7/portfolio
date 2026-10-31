@@ -1,0 +1,22 @@
+/* Paginas de case: menos respiro vertical no celular.
+   O modelo das paginas so reduzia as laterais (24px) e mantinha 120px em cima e embaixo de cada secao.
+   Este arquivo e carregado depois do CSS inline de cada pagina, entao os valores abaixo prevalecem. */
+@media (max-width:768px){
+  .hero{min-height:0;padding-top:128px;padding-bottom:36px}
+  .hero-title{margin-bottom:28px}
+  .hero-meta{padding-top:22px}
+  section{padding-top:52px;padding-bottom:52px}
+  .hero-image-section{padding-top:0;padding-bottom:52px}
+  .section-title{margin-bottom:20px}
+  .challenge-section,.solution-inner{gap:24px}
+  .solution-tags{margin-top:20px}
+  .gallery-grid{margin-top:32px}
+  .results-grid{margin:28px 0}
+  .result-card{padding:26px 22px}
+  .next-project{padding:44px 24px}
+  .next-label{margin-bottom:12px}
+  .testi-section{padding:48px 0}
+  .testi-head{margin-bottom:28px}
+  .testi-src{margin-top:20px}
+  footer{padding-top:28px;padding-bottom:36px}
+}

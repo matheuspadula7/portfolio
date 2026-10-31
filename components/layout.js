@@ -6,27 +6,37 @@
  */
 
 (function () {
-  const isCV = /^\/curriculo(\.html)?\/?$/.test(window.location.pathname);
+  const path = window.location.pathname;
+  const isCV = /^\/curriculo(\.html)?\/?$/.test(path);
+  const isMainHome = ['/', '/index.html', ''].some(p => path === p) || path.endsWith('/index.html');
   // /curriculo tem as mesmas seções ancoradas da home (sobre, portfolio, contato)
-  const isHome = isCV || ['/', '/index.html', ''].some(p =>
-    window.location.pathname === p ||
-    window.location.pathname.endsWith('/index.html')
-  );
+  const isHome = isCV || isMainHome;
 
-  // Prefixo para links âncora: vazio na home, "/" nas pages filhas
-  const base = isHome ? '' : '/';
+  // Quem chegou pelo currículo continua no fluxo do currículo ao navegar pelos cases:
+  // o logo e os links do menu voltam para /curriculo, e não para a home de clientes.
+  let fromCV = isCV;
+  try {
+    if (isCV) sessionStorage.setItem('padula_ctx', 'cv');
+    else if (isMainHome) sessionStorage.removeItem('padula_ctx');
+    fromCV = sessionStorage.getItem('padula_ctx') === 'cv';
+  } catch (e) {}
+  const homeHref = fromCV ? '/curriculo' : '/';
+  const logoHref = isCV ? '/curriculo' : (isMainHome ? '/' : homeHref);
+
+  // Prefixo para links âncora: vazio na home e no currículo; nas páginas filhas, a página de origem
+  const base = isHome ? '' : homeHref;
 
   // ── NAV ──────────────────────────────────────────────────────────────────
   const navHTML = `
 <nav class="nav" id="nav">
   <div class="container row">
-    <a href="${base}#top" class="logo"><img src="${isHome ? '' : '../'}assets/logo.png" alt="Padula" style="height:28px;display:block;"></a>
+    <a href="${logoHref}" class="logo"><img src="${isHome ? '' : '../'}assets/logo.png" alt="Padula" style="height:28px;display:block;"></a>
     <div class="nav-links">
       <a href="${base}#portfolio" data-i18n="nav.portfolio">Portfolio</a>
       <a href="${base}#sobre" data-i18n="nav.about">Sobre</a>
       <a href="${base}#depoimentos" data-i18n="nav.testimonials">Depoimentos</a>
       <a href="${base}#contato" data-i18n="nav.contact">Contato</a>
-      ${isCV
+      ${fromCV
         ? '<a href="/" data-i18n="nav.forclients">Para clientes</a>'
         : '<a href="/curriculo" data-i18n="nav.resume">Currículo</a>'}
     </div>
