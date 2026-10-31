@@ -120,6 +120,36 @@
     if (el) el.outerHTML = html;
   }
 
+  // ── TÍTULO DO HERO (cases) NO CELULAR ─────────────────────────────────────
+  // O CSS das páginas quebra palavras no meio (overflow-wrap:anywhere), o que deixa
+  // nomes longos como "Estruturantes" cortados. No celular, a palavra passa a ficar
+  // inteira e a fonte diminui só até a palavra mais longa caber.
+  function fitHeroTitle() {
+    const t = document.querySelector('.hero-title');
+    if (!t) return;
+    t.style.fontSize = '';
+    if (window.innerWidth > 768) {
+      t.style.overflowWrap = '';
+      t.style.wordBreak = '';
+      return;
+    }
+    t.style.overflowWrap = 'normal';
+    t.style.wordBreak = 'normal';
+    let size = parseFloat(getComputedStyle(t).fontSize);
+    let guard = 0;
+    while (t.scrollWidth > t.clientWidth + 1 && size > 22 && guard++ < 60) {
+      size -= 1;
+      t.style.fontSize = size + 'px';
+    }
+  }
+  function initFitTitle() {
+    fitHeroTitle();
+    window.addEventListener('load', fitHeroTitle);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitHeroTitle);
+    let timer;
+    window.addEventListener('resize', () => { clearTimeout(timer); timer = setTimeout(fitHeroTitle, 120); });
+  }
+
   // Injeta imediatamente se o DOM já estiver pronto, senão aguarda
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
@@ -129,6 +159,7 @@
       initNav();
       initTesti();
       initLang();
+      initFitTitle();
     });
   } else {
     inject('nav-root', navHTML);
@@ -137,6 +168,7 @@
     initNav();
     initTesti();
     initLang();
+    initFitTitle();
   }
 
   // ── NAV SCROLL BEHAVIOR ───────────────────────────────────────────────────
