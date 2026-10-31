@@ -10,9 +10,14 @@ jobs:
   listar:
     runs-on: ubuntu-latest
     steps:
+      - name: Apontar nome do certificado para o IP do servidor
+        # O certificado do Hostinger vale para *.hstgr.io. Mapeamos um nome desse
+        # dominio para o IP do FTP, mantendo a verificacao do certificado ativa.
+        run: echo "77.37.127.224 deploy.hstgr.io" | sudo tee -a /etc/hosts
+
       - name: Listar pastas (FTPS, certificado validado)
         env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_SERVER: deploy.hstgr.io
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
