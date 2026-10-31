@@ -1,0 +1,24 @@
+name: Diagnostico FTP (so lista pastas)
+
+# Workflow temporario: apenas LISTA as pastas visiveis pela conta FTP.
+# Nao envia nem apaga nada. Pode ser removido depois que o deploy funcionar.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  listar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Listar pastas (FTPS, certificado validado)
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          for dir in "" "public_html/" "domains/" "domains/matheuspadula.com.br/" "domains/matheuspadula.com.br/public_html/"; do
+            echo "================ /$dir"
+            curl --silent --show-error --ssl-reqd --connect-timeout 20 --max-time 60 \
+              --user "$FTP_USERNAME:$FTP_PASSWORD" \
+              "ftp://$FTP_SERVER/$dir" | head -40 || echo "(falhou ou nao existe)"
+          done
