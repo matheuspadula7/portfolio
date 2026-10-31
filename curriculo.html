@@ -200,6 +200,114 @@ section{position:relative;padding:140px 0}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
 .chip{padding:7px 13px;border:1px solid var(--line-2);border-radius:999px;font-size:12.5px;color:var(--fg-dim);font-family:'JetBrains Mono',monospace;transition:all .2s}
 .chip:hover{border-color:var(--accent);color:var(--accent)}
+/* ===== HERO v2: texto + vitrine ===== */
+.hero[data-variant="center"] .hero-center{max-width:none;margin:0;text-align:left;padding-top:0;justify-content:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:56px;align-items:center}
+.hero-eyebrow{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line-2);border-radius:999px;padding:7px 14px;margin-bottom:26px}
+.hero-grid .display-c{font-size:clamp(40px,4.5vw,72px);line-height:1.04;color:var(--fg);text-wrap:balance}
+.hero-grid .display-c .ital{color:var(--accent)}
+.hero-grid .sub-c{margin:28px 0 0;max-width:52ch}
+.hero-grid .hero-ctas-c{justify-content:flex-start;margin-top:32px}
+.hero-proof{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-size:13.5px;color:var(--fg-dim)}
+.hero-proof .stars{color:var(--accent);letter-spacing:2px;font-size:14px}
+.hero-proof:hover{color:var(--fg)}
+.hero-visual{position:relative;width:100%;aspect-ratio:1/.92}
+.hv-layer{position:absolute;will-change:transform}
+.hv-l-main{left:0;top:3%;width:88%;z-index:1}
+.bf-wrap{width:100%}
+.bf{display:block;border-radius:14px;overflow:hidden;background:#0d0d0d;border:1px solid var(--line-2);box-shadow:0 40px 80px -30px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.02) inset;transition:border-color .3s}
+.bf:hover{border-color:rgba(235,190,56,.45)}
+.bf-bar{display:flex;align-items:center;gap:6px;height:30px;padding:0 12px;background:#141414;border-bottom:1px solid var(--line)}
+.bf-dot{width:8px;height:8px;border-radius:50%;background:#34342f}
+.bf-url{margin-left:10px;flex:1;max-width:260px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--fg-mute);background:#0b0b0b;border:1px solid var(--line);border-radius:999px;padding:3px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bf-screen{position:relative;aspect-ratio:16/10;overflow:hidden;background:#fff}
+.bf-page{position:absolute;left:0;top:0;width:100%;height:auto;display:block;opacity:0;transition:opacity .7s var(--ease);will-change:transform;user-select:none;-webkit-user-drag:none}
+.bf-page.is-active{opacity:1;animation:bfscroll var(--dur,11s) cubic-bezier(.45,.05,.35,1) forwards}
+.bf-page.is-leaving{transform:translate3d(0,calc(var(--dist,0px)*-1),0)}
+.bf:hover .bf-page.is-active{animation-play-state:paused}
+.hero.is-off .bf-page.is-active{animation-play-state:paused}
+@keyframes bfscroll{0%,9%{transform:translate3d(0,0,0)}91%,100%{transform:translate3d(0,calc(var(--dist,0px)*-1),0)}}
+.bf-meta{display:flex;align-items:center;justify-content:flex-start;gap:22px;margin-top:14px;padding:0 4px}
+.bf-name{display:flex;flex-direction:column;gap:2px;font-size:13px;font-weight:500;color:var(--fg)}
+.bf-name small{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--fg-mute);font-weight:400;letter-spacing:.03em}
+.bf-dots{display:flex;gap:8px}
+.bf-dots button{width:26px;height:4px;border:0;border-radius:4px;background:var(--line-2);cursor:pointer;padding:0;position:relative;overflow:hidden}
+.bf-dots button.on{background:rgba(235,190,56,.35)}
+.bf-dots button.on::after{content:"";position:absolute;inset:0;background:var(--accent);transform-origin:left;animation:bfprog var(--dur,11s) linear forwards}
+.bf:hover~.bf-meta .bf-dots button.on::after,.bf-wrap:hover .bf-dots button.on::after{animation-play-state:paused}
+.hero.is-off .bf-dots button.on::after{animation-play-state:paused}
+@keyframes bfprog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.hv-sat{display:block;position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line-2);background:var(--bg-2);box-shadow:0 30px 60px -20px rgba(0,0,0,.75);transition:border-color .3s}
+.hv-sat:hover{border-color:rgba(235,190,56,.5)}
+.hv-l-a{right:0;top:0;width:34%;z-index:3}
+.hv-l-a .hv-sat{aspect-ratio:4/3;animation:hvfloat 7s ease-in-out infinite}
+.hv-l-a img{display:block;width:100%;height:100%;object-fit:cover}
+.hv-l-b{right:3%;bottom:2%;width:36%;z-index:4}
+.hv-score{padding:16px 18px;display:flex;flex-direction:column;gap:10px;background:rgba(14,14,14,.86);backdrop-filter:blur(10px);animation:hvfloat 8.5s ease-in-out -3s infinite}
+.hv-score-row{display:flex;align-items:baseline;gap:10px}
+.hv-score-row b{font-family:'Bricolage Grotesque',serif;font-weight:500;font-size:34px;letter-spacing:-.03em;line-height:1;color:var(--accent);min-width:2.3ch}
+.hv-score-row span{font-size:12.5px;color:var(--fg-dim)}
+.hv-score small{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--fg-mute);line-height:1.4;border-top:1px solid var(--line);padding-top:9px}
+@keyframes hvfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.hv-chip{position:absolute;left:10px;bottom:10px;background:rgba(10,10,10,.82);backdrop-filter:blur(8px);border:1px solid var(--line-2);border-radius:10px;padding:5px 10px;font-size:11.5px;font-weight:500;color:var(--fg);line-height:1.25}
+@media (prefers-reduced-motion:reduce){.bf-page.is-active{animation:none}.hv-l-a .hv-sat,.hv-score{animation:none}.bf-dots button.on::after{animation:none;transform:scaleX(1)}}
+@media (max-width:980px){
+  .hero{min-height:0;padding:120px 0 60px}
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-visual{max-width:560px;margin:0 auto}
+}
+@media (max-width:560px){
+  .hero-eyebrow{font-size:9.5px;letter-spacing:.03em;padding:6px 11px}
+  .hv-l-a{width:38%}
+  .hv-score{padding:12px 13px;gap:7px}
+  .hv-score-row b{font-size:26px}
+  .hv-score small{display:none}
+  .bf-name small{display:none}
+  .hv-chip small{display:none}
+  .hv-chip{font-size:11px;padding:5px 9px}
+}
+
+/* ===== SOBRE v2: foto e texto lado a lado ===== */
+.about-wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:center}
+.about-photo{position:relative;padding:0 18px 18px 0}
+.about-photo::before{content:"";position:absolute;right:0;bottom:0;width:86%;height:86%;border:1px solid rgba(235,190,56,.45);border-radius:20px;z-index:0}
+.ap-frame{position:relative;z-index:1;aspect-ratio:6/7;border-radius:20px;overflow:hidden;background:var(--bg-2);border:1px solid var(--line)}
+.ap-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.about-copy .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.about-copy .eyebrow .counter{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--fg-mute)}
+.about-title{font-family:'Bricolage Grotesque',serif;font-weight:500;font-size:clamp(34px,3.6vw,54px);line-height:1.04;letter-spacing:-.03em;margin-bottom:28px;max-width:16ch}
+.about-title em{font-style:italic;font-weight:400;color:var(--accent)}
+.about-copy p{color:var(--fg-dim);font-size:16px;line-height:1.65;margin-bottom:16px;max-width:60ch}
+.about-copy p strong{color:var(--fg);font-weight:500}
+.about-facts{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:30px 0 26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-facts li{padding:18px 18px 18px 0;display:flex;flex-direction:column;gap:5px}
+.about-facts li+li{padding-left:18px;border-left:1px solid var(--line)}
+.about-facts b{font-family:'Bricolage Grotesque',serif;font-weight:500;font-size:19px;letter-spacing:-.02em;color:var(--fg)}
+.about-facts span{font-size:13px;line-height:1.45;color:var(--fg-mute)}
+@media (max-width:980px){
+  .about-wrap{grid-template-columns:1fr;gap:48px}
+  .about-photo{max-width:440px}
+  .about-title{max-width:none}
+}
+@media (max-width:560px){
+  .about-facts{grid-template-columns:1fr}
+  .about-facts li+li{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+}
+
+/* ===== CURRICULO: habilidades em grupos, formacao e idiomas ===== */
+.skills-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:44px 56px}
+.skill-group .chips{margin-top:0}
+.edu-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:72px}
+.edu-item{display:flex;flex-direction:column;gap:5px;padding:20px 0;border-top:1px solid var(--line)}
+.edu-item b{font-family:'Bricolage Grotesque',serif;font-weight:500;font-size:19px;letter-spacing:-.02em;color:var(--fg)}
+.edu-item span{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--fg-mute);line-height:1.5}
+.edu-lang h5{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--accent);margin-bottom:18px;letter-spacing:.03em;font-weight:500}
+.edu-lang ul{list-style:none}
+.edu-lang li{display:flex;flex-direction:column;gap:4px;padding:18px 0;border-top:1px solid var(--line)}
+.edu-lang li b{font-family:'Bricolage Grotesque',serif;font-weight:500;font-size:19px;letter-spacing:-.02em;color:var(--fg)}
+.edu-lang li span{font-size:13.5px;color:var(--fg-dim);line-height:1.5}
+@media (max-width:900px){.edu-grid{grid-template-columns:1fr;gap:40px}}
+
 
 /* SERVICES */
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -375,208 +483,184 @@ section{position:relative;padding:140px 0}
 <!-- HERO -->
 <header class="hero" id="top" data-variant="center">
   <div class="container">
-    <!-- CENTERED VARIANT -->
     <div class="hero-center">
-      <div class="hero-center-badge">
-        <span class="badge">
-          <span data-i18n="hero.greet">Prazer, Matheus Padula</span>
-          <span class="wave">👋</span>
-        </span>
-      </div>
-      <h1 class="display-c">
-        <span data-i18n="hero.title-c">Web Designer especialista<br>em <em class="ital">Performance e Conversão</em></span>
-      </h1>
-      <p class="sub-c" data-i18n="hero.sub-c"><em>Há mais de 9 anos estruturando produtos digitais do zero até a implementação final.</em> Combino refinamento visual de interface com domínio técnico de ferramentas de IA e código — para criar experiências que realmente funcionam e vendem.</p>
-      <div class="hero-ctas-c">
-        <a href="#portfolio" class="btn btn-primary"><span data-i18n="hero.cta1">Ver projetos</span> <span class="arrow">↘</span></a>
-        <a href="https://wa.me/5512974054956" target="_blank" class="btn btn-secondary"><span data-i18n="hero.cta2">Falar comigo</span> <span class="arrow">↗</span></a>
-      </div>
-    </div>
-
-    <!-- SPLIT VARIANT (massive editorial, original) -->
-    <div class="hero-split">
-      <h1 class="display">
-        <span class="line"><span class="inner"><span data-i18n="hero.w1">Design</span><span class="dot">+</span></span></span>
-        <span class="line"><span class="inner"><span class="ital" data-i18n="hero.w2">Estratégia</span><span class="dot">.</span></span></span>
-      </h1>
-
-      <div class="hero-sub">
-        <p data-i18n="hero.sub"><em>9 anos estruturando produtos digitais do zero até conversão.</em> Design que funciona. IA e código que entregam. Métrica que importa.</p>
-        <div class="hero-ctas">
-          <a href="#portfolio" class="btn btn-primary"><span data-i18n="hero.cta1">Ver projetos</span> <span class="arrow">↘</span></a>
-          <a href="https://wa.me/5512974054956" target="_blank" class="btn btn-secondary"><span data-i18n="hero.cta2">Falar comigo</span> <span class="arrow">↗</span></a>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="hero-eyebrow" data-i18n="hero.eyebrow">Aberto a vagas de design</span>
+          <h1 class="display-c"><span data-i18n="hero.title-c">Web Designer Sênior, do Figma ao <em class="ital">site publicado.</em></span></h1>
+          <p class="sub-c" data-i18n="hero.sub-c">Mais de 9 anos criando landing pages, sites e identidades visuais de alta conversão, com UI/UX, performance e Desenvolvimento com IA. <em>Solução completa em projetos simples e acelerador do time de dev nos complexos.</em></p>
+          <div class="hero-ctas-c">
+            <a href="assets/cv/Matheus_Padula_CV_PT_2026.pdf" class="btn btn-primary" data-cv download><span data-i18n="hero.cta-cv">Baixar currículo (PDF)</span> <span class="arrow">↓</span></a>
+            <a href="https://linkedin.com/in/matheuspadula" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span>LinkedIn</span> <span class="arrow">↗</span></a>
+          </div>
+          <a class="hero-proof" href="#depoimentos"><span class="stars" aria-hidden="true">★★★★★</span><span data-i18n="hero.proof">Avaliações 5 estrelas de clientes</span></a>
+        </div>
+        <div class="hero-visual" id="heroVisual" aria-label="Projetos recentes">
+          <div class="hv-layer hv-l-main" data-depth="0.3">
+            <div class="bf-wrap">
+              <a class="bf" id="bfLink" href="/dialogos" aria-label="Ver case do projeto">
+                <div class="bf-bar">
+                  <span class="bf-dot"></span><span class="bf-dot"></span><span class="bf-dot"></span>
+                  <span class="bf-url" id="bfUrl">dialogosestruturantes.com.br</span>
+                </div>
+                <div class="bf-screen" id="bfScreen">
+                  <img class="bf-page is-active" src="assets/images/hero-page-dialogos.jpg" width="1100" height="2142" alt="Diálogos Estruturantes, página inicial rolando" fetchpriority="high" decoding="async">
+                  <img class="bf-page" src="assets/images/hero-page-ihs.jpg" width="1100" height="2216" alt="IHS Advogados, página inicial rolando" loading="lazy" decoding="async">
+                  <img class="bf-page" src="assets/images/hero-page-drrafael.jpg" width="1100" height="2104" alt="Dr. Rafael Nora Resende, página inicial rolando" loading="lazy" decoding="async">
+                </div>
+              </a>
+              <div class="bf-meta">
+                <div class="bf-name"><span id="bfName">Diálogos Estruturantes</span><small id="bfType" data-i18n="hero.hv1">Landing page</small></div>
+                <div class="bf-dots" role="tablist" aria-label="Escolher projeto">
+                  <button type="button" class="on" aria-label="Diálogos Estruturantes"></button>
+                  <button type="button" aria-label="IHS Advogados"></button>
+                  <button type="button" aria-label="Dr. Rafael Nora Resende"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hv-layer hv-l-a" data-depth="1.1">
+            <a class="hv-sat hv-phone" href="/drrafael">
+              <img src="assets/images/drrafael-phone.jpg" width="900" height="675" alt="Dr. Rafael Nora Resende, versão mobile" decoding="async">
+              <span class="hv-chip" data-i18n="hero.sat1">Versão mobile</span>
+            </a>
+          </div>
+          <div class="hv-layer hv-l-b" data-depth="-0.8">
+            <a class="hv-sat hv-score" href="/drrafael">
+              <span class="hv-score-row"><b>92</b><span>Performance</span></span>
+              <span class="hv-score-row"><b>100</b><span>SEO</span></span>
+              <small data-i18n="hero.sat2">Dr. Rafael, medido no PageSpeed</small>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-
     <div class="stats">
-      <div class="stat">
-        <div class="n"><span class="num" data-to="9">0</span><span class="suffix">+</span></div>
-        <div class="l" data-i18n="stat.years">anos de experiência</div>
-      </div>
-      <div class="stat">
-        <div class="n"><span class="num" data-to="120">0</span><span class="suffix">+</span></div>
-        <div class="l" data-i18n="stat.projects">projetos entregues</div>
-      </div>
-      <div class="stat">
-        <div class="n"><span class="suffix">+</span><span class="num" data-to="15">0</span><span class="suffix">%</span></div>
-        <div class="l" data-i18n="stat.conv">conversão · landing pages</div>
-      </div>
-      <div class="stat">
-        <div class="n"><span class="suffix">−</span><span class="num" data-to="20">0</span><span class="suffix">%</span></div>
-        <div class="l" data-i18n="stat.cpc">custo por clique · ads</div>
-      </div>
+      <div class="stat"><div class="n"><span class="num" data-to="9">0</span><span class="suffix">+</span></div><div class="l" data-i18n="cv.st1">anos de experiência</div></div>
+      <div class="stat"><div class="n"><span class="num" data-to="150">0</span><span class="suffix">+</span></div><div class="l" data-i18n="cv.st2">entregas na Fullzion</div></div>
+      <div class="stat"><div class="n"><span class="suffix">+</span><span class="num" data-to="15">0</span><span class="suffix">%</span></div><div class="l" data-i18n="cv.st3">conversão em landing pages (testes A/B)</div></div>
+      <div class="stat"><div class="n"><span class="suffix">−</span><span class="num" data-to="40">0</span><span class="suffix">%</span></div><div class="l" data-i18n="cv.st4">tempo de prototipagem (design system)</div></div>
     </div>
   </div>
 </header>
 
-<!-- SOBRE -->
+
+
 <section id="sobre" class="about">
   <div class="container">
-    <div class="section-head r">
-      <div class="eyebrow">
-        <span class="label" data-i18n="about.label">// sobre mim</span>
-        <span class="counter">(01 / 05)</span>
+    <div class="about-wrap">
+      <div class="about-photo r">
+        <div class="ap-frame"><img src="assets/matheus.png" alt="Matheus Padula" loading="lazy" width="960" height="1120"></div>
       </div>
-      <h2 class="title" data-i18n="about.title">Web Designer com<br>domínio de <em>IA</em> e<br>código que entrega.</h2>
-    </div>
-    <div class="about-grid">
-      <div class="photo r">
-        <img src="assets/matheus.png" alt="Matheus Padula" loading="lazy">
-        <span class="photo-corner">MP_01.jpg</span>
-        <span class="photo-frame"></span>
-      </div>
-      <div class="about-body r">
+      <div class="about-copy r">
+        <div class="eyebrow"><span class="label" data-i18n="about.label">// sobre mim</span></div>
+        <h2 class="about-title" data-i18n="about.title">Web Designer com<br>domínio de <em>IA</em> e<br>código que entrega.</h2>
         <p data-i18n="about.p1"><strong>Sou Matheus Padula</strong>, designer com formação em Publicidade e 9 anos de mercado combinando criatividade estratégica com execução técnica.</p>
-        <p data-i18n="about.p2">Passei pela Fullzion como web designer pleno, estruturando design systems e aumentando conversão de landing pages. Antes, na OBF Marketing, desenvolvi criativos para tráfego pago e otimizei custos de CPC. Hoje trabalho em projetos que exigem alguém que entenda design <em>e</em> desenvolvimento de verdade.</p>
+        <p data-i18n="about.p2">Passei pela Fullzion como web designer pleno, estruturando design systems e aumentando conversão de landing pages. Antes, na OBF Negócios Digitais, desenvolvi criativos para tráfego pago e otimizei custos de CPC. Hoje trabalho em projetos que exigem alguém que entenda design <em>e</em> desenvolvimento de verdade.</p>
         <p data-i18n="about.p3">Bom design é invisível quando funciona. O objetivo é resultado: conversão, usuários satisfeitos, números que importam pro negócio.</p>
-        <div class="chips">
-          <span class="chip">Figma</span>
-          <span class="chip">WordPress</span>
-          <span class="chip">Elementor</span>
-          <span class="chip">Framer</span>
-          <span class="chip">UI/UX</span>
-          <span class="chip">Branding</span>
-          <span class="chip">Motion</span>
-          <span class="chip">Adobe Suite</span>
+        <ul class="about-facts"><li><b data-i18n="cv.f1t">UI/UX + código</b><span data-i18n="cv.f1d">Do protótipo no Figma ao site publicado.</span></li><li><b data-i18n="cv.f2t">Desenvolvimento com IA</b><span data-i18n="cv.f2d">Claude Code, Astro, React/Vite e CMS headless.</span></li><li><b data-i18n="cv.f3t">Inglês fluente</b><span data-i18n="cv.f3d">Colaboração com equipes internacionais.</span></li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="container">
+    <div class="section-head r">
+      <div class="eyebrow"><span class="label" data-i18n="ex.label">// trajetória</span></div>
+      <h2 class="title" data-i18n="cv.ex.title">Onde eu <em>trabalhei</em><br>e o que entreguei.</h2>
+    </div>
+    <div class="exp-wrap">
+      <div class="exp r">
+        <div class="exp-side"><span data-i18n="cv.e1d">JAN 2017 — </span><span style="color:var(--accent)" data-i18n="cv.now">ATUAL</span><span class="loc" data-i18n="cv.e1l">Autônomo · Remoto</span></div>
+        <div class="exp-body">
+          <h5>Padula Design Studio</h5>
+          <div class="role" data-i18n="cv.e1r">Fundador e Web Designer</div>
+          <ul>
+            <li data-i18n="cv.e1a">Lidera projetos web e e-commerce de ponta a ponta para clientes como Diálogos Estruturantes, Agro Ribeiro, HL Wallwonders, IHS Advogados, Dr. Rafael Nora Resende, Alligators, Menndel & Melo e Instituto OKA, com alta taxa de retenção.</li>
+            <li data-i18n="cv.e1b">Desenvolve sites com IA (Claude Code) e CMS headless, como Astro + Sanity e React/Vite + Sanity, com versionamento em Git e deploy automatizado (CI/CD).</li>
+            <li data-i18n="cv.e1c">Cria identidades visuais completas (Agro Ribeiro, Blended, Alpha Valle, Amanda Mársico, Rio Advocacia, Fire Art): pesquisa estratégica, naming visual e manual de marca.</li>
+            <li data-i18n="cv.e1d2">Executa migrações e otimizações de ambientes WordPress com melhorias em Core Web Vitals, SEO técnico e gestão de DNS.</li>
+            <li data-i18n="cv.e1e">Configura rastreamento de conversões no GA4, integra captura de leads (RD Station) e aplica automações com IA para reduzir retrabalho em projetos de clientes.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp r">
+        <div class="exp-side"><span data-i18n="cv.e2d">MAI 2023 — OUT 2025</span><span class="loc" data-i18n="cv.remote">Remoto</span></div>
+        <div class="exp-body">
+          <h5>Fullzion</h5>
+          <div class="role" data-i18n="cv.e2r">Web Designer Pleno</div>
+          <ul>
+            <li data-i18n="cv.e2a">Criou biblioteca de componentes reutilizáveis no Figma, reduzindo em 40% o tempo de entrega de protótipos.</li>
+            <li data-i18n="cv.e2b">Aumentou em 15% a taxa de conversão das landing pages via testes A/B e refinamentos contínuos de UI/UX.</li>
+            <li data-i18n="cv.e2c">Entregou protótipos de alta fidelidade implementados diretamente em WordPress + Elementor e Framer.</li>
+            <li data-i18n="cv.e2d2">Produziu criativos estáticos e em vídeo para campanhas de performance, integrando copywriting ao design.</li>
+            <li data-i18n="cv.e2e">Contribuiu com mais de 150 entregas ao longo de 2 anos e meio na empresa, com foco em performance e conversão.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp r">
+        <div class="exp-side"><span data-i18n="cv.e3d">ABR 2021 — AGO 2021</span></div>
+        <div class="exp-body">
+          <h5>Prod Agência</h5>
+          <div class="role" data-i18n="cv.e3r">Assistente de Design</div>
+          <ul>
+            <li data-i18n="cv.e3a">Acelerou a aprovação de vídeos em 30% com storyboards detalhados, reduzindo rodadas de revisão.</li>
+            <li data-i18n="cv.e3b">Executou Key Visuals e materiais offline para campanhas sazonais alinhados à estratégia da marca.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp r">
+        <div class="exp-side"><span data-i18n="cv.e4d">NOV 2018 — MAR 2021</span><span class="loc" data-i18n="cv.remote2">Remoto</span></div>
+        <div class="exp-body">
+          <h5>OBF Negócios Digitais</h5>
+          <div class="role" data-i18n="cv.e4r">Web Designer</div>
+          <ul>
+            <li data-i18n="cv.e4a">Reduziu em 20% o CPC de campanhas ao elevar a qualidade visual dos anúncios no Facebook Ads e Google Ads.</li>
+            <li data-i18n="cv.e4b">Construiu landing pages em WordPress otimizadas para conversão e assets para YouTube (thumbnails e canal).</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="servicos">
-  <div class="container">
-    <div class="section-head r">
-      <div class="eyebrow">
-        <span class="label" data-i18n="svc.label">// o que eu faço</span>
-        <span class="counter">(02 / 05)</span>
-      </div>
-      <h2 class="title" data-i18n="svc.title">como<br><em>eu agrego</em> valor.</h2>
-    </div>
-    <div class="services-grid">
-      <div class="service r">
-        <div class="svc-num">01</div>
-        <h3 class="svc-title" data-i18n="svc.t1">Design Estratégico + Implementação</h3>
-        <p class="svc-body" data-i18n="svc.b1">Pesquiso, prototipo em Figma, tomo decisões baseadas em dados. Depois implemento em WordPress, Elementor ou Framer. Na Fullzion, estruturei um design system que reduziu tempo de prototipagem em 40%.</p>
-        <div class="svc-tag" data-i18n="svc.tag1">→ Figma → Código</div>
-      </div>
-      <div class="service r">
-        <div class="svc-num">02</div>
-        <h3 class="svc-title" data-i18n="svc.t2">Performance & Conversão</h3>
-        <p class="svc-body" data-i18n="svc.b2">Design sem performance é falha. Trabalho com Core Web Vitals, A/B testing e otimização contínua. Resultado: +15% em conversão na Fullzion e -20% no CPC na OBF.</p>
-        <div class="svc-tag" data-i18n="svc.tag2">→ Resultado mensurável</div>
-      </div>
-      <div class="service r">
-        <div class="svc-num">03</div>
-        <h3 class="svc-title" data-i18n="svc.t3">Produção Criativa Completa</h3>
-        <p class="svc-body" data-i18n="svc.b3">Figma, Adobe Suite, motion graphics. Identidades visuais do briefing ao guia de marca. Criativos para tráfego pago. Tudo com foco em comunicar claro e converter.</p>
-        <div class="svc-tag" data-i18n="svc.tag3">→ Briefing → Entrega</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DIFFERENTIAL -->
-<section class="differential" id="diferencial">
-  <div class="container">
-    <div class="section-head r">
-      <div class="eyebrow">
-        <span class="label" data-i18n="diff.label">// o diferencial</span>
-        <span class="counter">(03 / 05)</span>
-      </div>
-      <h2 class="title" data-i18n="diff.title">Design refinado com<br>domínio técnico.</h2>
-    </div>
-    <div class="diff-grid">
-      <div class="diff-item r">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        <h4 data-i18n="diff.t1">Prototipo com IA + implementação em mente</h4>
-        <p data-i18n="diff.b1">Uso IA no fluxo de pesquisa e prototipagem. Quando chego no código, tudo já foi testado. Menos retrabalho, mais velocidade.</p>
-      </div>
-      <div class="diff-item r">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z"/></svg>
-        <h4 data-i18n="diff.t2">Entendo velocidade</h4>
-        <p data-i18n="diff.b2">Conheço atalhos entre design, IA e código que economizam semanas de projeto real.</p>
-      </div>
-      <div class="diff-item r">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/></svg>
-        <h4 data-i18n="diff.t3">Traduzo entre áreas</h4>
-        <p data-i18n="diff.b3">Falo a língua do designer e do time técnico. Colaboro melhor em handoffs e iterações rápidas.</p>
-      </div>
-      <div class="diff-item r">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l6-6 4 4 8-8M14 7h7v7"/></svg>
-        <h4 data-i18n="diff.t4">Design que converte</h4>
-        <p data-i18n="diff.b4">Não faço bonito que não entrega. Métrica importa. Sempre. Design sem número é ego.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
 <section id="skills">
   <div class="container">
     <div class="section-head r">
-      <div class="eyebrow">
-        <span class="label" data-i18n="sk.label">// stack técnico</span>
-        <span class="counter">(04 / 05)</span>
-      </div>
+      <div class="eyebrow"><span class="label" data-i18n="sk.label">// stack técnico</span></div>
       <h2 class="title" data-i18n="sk.title">Ferramentas que<br><em>eu uso</em> de verdade.</h2>
     </div>
     <div class="skills-grid">
       <div class="skill-group r">
-        <h5 data-i18n="sk.g1">Design & Prototipagem</h5>
-        <div class="skill"><div class="skill-row"><span class="name">Figma</span></div></div>
-        <div class="skill"><div class="skill-row"><span class="name">Adobe Photoshop</span></div></div>
-        <div class="skill"><div class="skill-row"><span class="name">Adobe Illustrator</span></div></div>
-        <div class="skill"><div class="skill-row"><span class="name">After Effects · Motion</span></div></div>
+        <h5 data-i18n="cv.sg1">Design & Prototipação</h5>
+        <div class="chips" data-i18n="cv.sc1"><span class="chip">Figma (Avançado)</span><span class="chip">Framer</span><span class="chip">UI/UX Design</span><span class="chip">Design Responsivo</span><span class="chip">Prototipagem de Alta Fidelidade</span><span class="chip">Design System</span><span class="chip">Acessibilidade (WCAG)</span></div>
       </div>
       <div class="skill-group r">
-        <h5 data-i18n="sk.g2">Desenvolvimento Web</h5>
-        <div class="skill"><div class="skill-row"><span class="name" data-i18n="sk.i1">Desenvolvimento com IA</span></div></div>
-        <div class="skill"><div class="skill-row"><span class="name">WordPress + Elementor</span></div></div>
-        <div class="skill"><div class="skill-row"><span class="name">Astro + Headless CMS</span></div></div>
-        <div class="skill"><div class="skill-row"><span class="name">Framer</span></div></div>
-        <div class="skill"><div class="skill-row"><span class="name">Git / CI-CD</span></div></div>
+        <h5 data-i18n="cv.sg2">Desenvolvimento Web</h5>
+        <div class="chips" data-i18n="cv.sc2"><span class="chip">WordPress</span><span class="chip">Elementor</span><span class="chip">Framer</span><span class="chip">HTML/CSS</span><span class="chip">Astro</span><span class="chip">React/Vite</span><span class="chip">CMS Headless (Sanity)</span><span class="chip">Git / CI-CD</span><span class="chip">Core Web Vitals</span><span class="chip">SEO on-page e técnico</span><span class="chip">CRO (Otimização da Taxa de Conversão)</span></div>
       </div>
       <div class="skill-group r">
-        <h5 data-i18n="sk.g3">Estratégia</h5>
-        <div class="skill"><div class="skill-row"><span class="name" data-i18n="sk.i2">Branding · Identidade</span></div></div>
-        <div class="skill"><div class="skill-row"><span class="name">Copywriting</span></div></div>
-        <div class="skill"><div class="skill-row"><span class="name">A/B Testing</span></div></div>
-        <div class="skill"><div class="skill-row"><span class="name" data-i18n="sk.i3">Marketing Digital</span></div></div>
+        <h5 data-i18n="cv.sg3">Produção Criativa</h5>
+        <div class="chips" data-i18n="cv.sc3"><span class="chip">Adobe Photoshop</span><span class="chip">Illustrator</span><span class="chip">InDesign</span><span class="chip">Premiere Pro</span><span class="chip">After Effects (Motion Graphics)</span></div>
+      </div>
+      <div class="skill-group r">
+        <h5 data-i18n="cv.sg4">Estratégia & Analytics</h5>
+        <div class="chips" data-i18n="cv.sc4"><span class="chip">Branding</span><span class="chip">Identidade Visual</span><span class="chip">Copywriting</span><span class="chip">Google Analytics (GA4)</span><span class="chip">Marketing Digital</span><span class="chip">Tráfego Pago (Facebook Ads, Google Ads)</span><span class="chip">Teste A/B</span></div>
+      </div>
+      <div class="skill-group r">
+        <h5 data-i18n="cv.sg5">Metodologia & IA</h5>
+        <div class="chips" data-i18n="cv.sc5"><span class="chip">Desenvolvimento com IA (Claude Code)</span><span class="chip">ChatGPT</span><span class="chip">Midjourney</span><span class="chip">Adobe Firefly</span><span class="chip">Figma Weave</span><span class="chip">Agile/Scrum</span><span class="chip">Gestão de Stakeholders</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
 <section id="portfolio">
   <div class="container">
     <div class="section-head r">
       <div class="eyebrow">
         <span class="label" data-i18n="pf.label">// projetos selecionados</span>
-        <span class="counter">(08 / 08)</span>
       </div>
       <h2 class="title" data-i18n="pf.title">Trabalho que<br><em>faz sentido.</em></h2>
     </div>
@@ -932,7 +1016,6 @@ section{position:relative;padding:140px 0}
   </div>
 </section>
 
-<!-- GRAFICO E MOTION -->
 <section id="grafico" style="padding:80px 0;border-top:1px solid var(--line)">
   <div class="container">
     <div class="section-head r">
@@ -960,90 +1043,44 @@ section{position:relative;padding:140px 0}
   </div>
 </section>
 
-<!-- TESTIMONIALS (injetado por components/layout.js — compartilhado com as demais páginas) -->
-<div id="testi-root"></div>
-
-<!-- EXPERIENCE -->
-<section id="experiencia">
+<section id="formacao">
   <div class="container">
     <div class="section-head r">
-      <div class="eyebrow">
-        <span class="label" data-i18n="ex.label">// trajetória</span>
-        <span class="counter">(+)</span>
-      </div>
-      <h2 class="title" data-i18n="ex.title">Onde eu <em>trabalhei</em><br>e o que entreguei.</h2>
+      <div class="eyebrow"><span class="label" data-i18n="cv.ed.label">// formação</span></div>
+      <h2 class="title" data-i18n="cv.ed.title">Formação e <em>idiomas.</em></h2>
     </div>
-    <div class="exp-wrap">
-      <div class="exp r">
-        <div class="exp-side">
-          <span data-i18n="ex.d1">MAI 2023 — OUT 2025</span><span class="loc">Remoto · BR</span>
-          <span class="tag" data-i18n="ex.cur">2+ anos</span>
-        </div>
-        <div class="exp-body">
-          <h5>Fullzion</h5>
-          <div class="role" data-i18n="ex.r1">Web Designer Pleno</div>
-          <ul>
-            <li data-i18n="ex.l1a">Prototipagem de alta fidelidade em Figma para sites complexos e landing pages.</li>
-            <li data-i18n="ex.l1b">Implementação técnica em WordPress/Elementor e Framer.</li>
-            <li data-i18n="ex.l1c">Design system que reduziu tempo de prototipagem em 40%.</li>
-            <li data-i18n="ex.l1d">+15% na taxa de conversão via A/B testing e refinamento de UI/UX.</li>
-          </ul>
-        </div>
+    <div class="edu-grid">
+      <div class="edu-list r">
+        <div class="edu-item" data-i18n="cv.ed1"><b>Tecnologia em Segurança da Informação</b><span>UNINTER EAD · em andamento · Mai 2025 – Prev. Dez 2027</span></div>
+        <div class="edu-item" data-i18n="cv.ed2"><b>Bacharelado em Publicidade e Propaganda</b><span>UNIFATEA · 2015 – 2018</span></div>
+        <div class="edu-item" data-i18n="cv.ed3"><b>Curso de Figma</b><span>Felipe Santana / FEUX · 2023 – Presente</span></div>
+        <div class="edu-item" data-i18n="cv.ed4"><b>Formação em Marketing Digital</b><span>O Novo Mercado · 2021 – Presente</span></div>
+        <div class="edu-item" data-i18n="cv.ed5"><b>Design Gráfico Profissional</b><span>Escola Casa · 2021</span></div>
+        <div class="edu-item" data-i18n="cv.ed6"><b>Especialização WordPress + Elementor</b><span>Chief of Design · 2020</span></div>
       </div>
-      <div class="exp r">
-        <div class="exp-side">
-          <span data-i18n="ex.d2">ABR 2021 — AGO 2021</span><span class="loc">Passa Quatro, MG</span>
-        </div>
-        <div class="exp-body">
-          <h5>Prod Agência</h5>
-          <div class="role" data-i18n="ex.r2">Assistente de Design</div>
-          <ul>
-            <li data-i18n="ex.l2a">Key Visuals para campanhas sazonais e materiais offline.</li>
-            <li data-i18n="ex.l2b">Storyboards que aceleraram aprovação de vídeos em 30%.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="exp r">
-        <div class="exp-side">
-          NOV 2018 — MAR 2021<span class="loc">Remoto · BR</span>
-        </div>
-        <div class="exp-body">
-          <h5>OBF Marketing</h5>
-          <div class="role" data-i18n="ex.r3">Web Designer</div>
-          <ul>
-            <li data-i18n="ex.l3a">Criativos para Facebook Ads e Google Ads com foco em escala.</li>
-            <li data-i18n="ex.l3b">Landing pages em WordPress e assets para YouTube.</li>
-            <li data-i18n="ex.l3c">−20% no CPC com melhoria do índice de qualidade visual.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="exp r">
-        <div class="exp-side">
-          JAN 2017 — <span style="color:var(--accent)" data-i18n="ex.now">ATUAL</span><span class="loc">Independente</span>
-        </div>
-        <div class="exp-body">
-          <h5 data-i18n="ex.free">Freelancer</h5>
-          <div class="role" data-i18n="ex.r4">Designer + Dev</div>
-          <ul>
-            <li data-i18n="ex.l4a">Identidades visuais completas para marcas de diversos setores.</li>
-            <li data-i18n="ex.l4b">Sites e landing pages de alta performance.</li>
-            <li data-i18n="ex.l4c">Gestão técnica: migrações, Core Web Vitals, manutenção WordPress.</li>
-          </ul>
-        </div>
+      <div class="edu-lang r">
+        <h5 data-i18n="cv.lg.t">Idiomas</h5>
+        <ul>
+          <li data-i18n="cv.lg1"><b>Português</b><span>Nativo</span></li>
+          <li data-i18n="cv.lg2"><b>Inglês</b><span>Fluente (escrita e conversação corporativa internacional)</span></li>
+          <li data-i18n="cv.lg3"><b>Espanhol</b><span>Básico</span></li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<div id="testi-root"></div>
+
 <section class="contact" id="contato">
   <div class="container">
     <div class="contact-inner">
       <span class="label r" data-i18n="ct.label" style="justify-content:center">// vamos conversar</span>
-      <h2 class="contact-title r" data-i18n="ct.title">Vamos construir<br>algo <em>juntos?</em></h2>
-      <p class="r" data-i18n="ct.sub">Web designer que vai do briefing ao ar sem depender de ninguém.<br>Respondo no mesmo dia.</p>
+      <h2 class="contact-title r" data-i18n="ct.title">Vamos <em>conversar?</em></h2>
+      <p class="r" data-i18n="ct.sub">Aberto a vagas e projetos de design. Respondo no mesmo dia.</p>
       <div class="contact-ctas r">
-        <a href="https://wa.me/5512974054956" target="_blank" class="btn btn-primary">WhatsApp <span class="arrow">↗</span></a>
+        <a href="assets/cv/Matheus_Padula_CV_PT_2026.pdf" class="btn btn-primary" data-cv download><span data-i18n="cv.dl2">Baixar currículo (PDF)</span> <span class="arrow">↓</span></a>
+        <a href="https://wa.me/5512974054956" target="_blank" class="btn btn-secondary">WhatsApp <span class="arrow">↗</span></a>
         <a href="mailto:matheuspadula7@gmail.com" class="btn btn-secondary">Email <span class="arrow">↗</span></a>
       </div>
       <div class="contact-socials r">
@@ -1212,129 +1249,345 @@ window.addEventListener('resize', ()=>{
 
 // i18n
 const I18N = {
-  pt: {
-    "nav.portfolio":"Portfolio","nav.about":"Sobre","nav.skills":"Skills","nav.exp":"Experiência","nav.testimonials":"Depoimentos","nav.contact":"Contato","nav.cv":"Curriculum",
-    "hero.badge":"Disponível para novas oportunidades",
-    "hero.sub":"<em>9 anos estruturando produtos digitais do zero até conversão.</em> Design que funciona. IA e código que entregam. Métrica que importa.",
-    "hero.cta1":"Ver projetos","hero.cta2":"Falar comigo",
-    "stat.years":"anos de experiência","stat.projects":"projetos entregues","stat.conv":"conversão · landing pages","stat.cpc":"custo por clique · ads",
-    "about.label":"// sobre mim",
-    "about.title":"Web Designer com<br>domínio de <em>IA</em> e<br>código que entrega.",
-    "hero.greet":"Prazer, Matheus Padula",
-    "hero.title-c":"Web Designer especialista<br>em <em class=\"ital\">Performance e Conversão</em>",
-    "hero.sub-c":"<em>Há mais de 9 anos estruturando produtos digitais do zero até a implementação final.</em> Combino refinamento visual de interface com domínio técnico de ferramentas de IA e código — para criar experiências que realmente funcionam e vendem.",
-    "hero.w1":"Design",
-    "hero.w2":"Estratégia",
-    "about.p1":"<strong>Sou Matheus Padula</strong>, designer com formação em Publicidade e 9 anos de mercado combinando criatividade estratégica com execução técnica.",
-    "about.p2":"Passei pela Fullzion como web designer pleno, estruturando design systems e aumentando conversão de landing pages. Antes, na OBF Marketing, desenvolvi criativos para tráfego pago e otimizei custos de CPC. Hoje trabalho em projetos que exigem alguém que entenda design <em>e</em> desenvolvimento de verdade.",
-    "about.p3":"Bom design é invisível quando funciona. O objetivo é resultado: conversão, usuários satisfeitos, números que importam pro negócio.",
-    "svc.label":"// o que eu faço","svc.title":"como<br><em>eu agrego</em> valor.",
-    "svc.t1":"Design Estratégico + Implementação","svc.b1":"Pesquiso, prototipo em Figma, tomo decisões baseadas em dados. Depois implemento em WordPress, Elementor ou Framer. Na Fullzion, estruturei um design system que reduziu tempo de prototipagem em 40%.","svc.tag1":"→ Figma → Código",
-    "svc.t2":"Performance & Conversão","svc.b2":"Design sem performance é falha. Trabalho com Core Web Vitals, A/B testing e otimização contínua. Resultado: +15% em conversão na Fullzion e -20% no CPC na OBF.","svc.tag2":"→ Resultado mensurável",
-    "svc.t3":"Produção Criativa Completa","svc.b3":"Figma, Adobe Suite, motion graphics. Identidades visuais do briefing ao guia de marca. Criativos para tráfego pago. Tudo com foco em comunicar claro e converter.","svc.tag3":"→ Briefing → Entrega",
-    "diff.label":"// o diferencial","diff.title":"Design refinado com<br>domínio técnico.",
-    "diff.t1":"Prototipo com IA + implementação em mente","diff.b1":"Uso IA no fluxo de pesquisa e prototipagem. Quando chego no código, tudo já foi testado. Menos retrabalho, mais velocidade.",
-    "diff.t2":"Entendo velocidade","diff.b2":"Conheço atalhos entre design, IA e código que economizam semanas de projeto real.",
-    "diff.t3":"Traduzo entre áreas","diff.b3":"Falo a língua do designer e do time técnico. Colaboro melhor em handoffs e iterações rápidas.",
-    "diff.t4":"Design que converte","diff.b4":"Não faço bonito que não entrega. Métrica importa. Sempre. Design sem número é ego.",
-    "sk.label":"// stack técnico","sk.title":"Ferramentas que<br><em>eu uso</em> de verdade.",
-    "sk.g1":"Design & Prototipagem","sk.g2":"Desenvolvimento Web","sk.g3":"Estratégia",
-    "sk.i1":"Desenvolvimento com IA","sk.i2":"Branding · Identidade","sk.i3":"Marketing Digital",
-    "pf.label":"// projetos selecionados","pf.title":"Trabalho que<br><em>faz sentido.</em>",
-    "pf.cta":"Ver case",
-    "pf.filter.all":"Todos",
-    "pf.d1":"Identidade visual e site com CMS headless para corretora de fazendas de alto padrão",
-    "pf.d2":"Desenvolvimento WordPress em parceria com a Vitrine Digital, com SEO técnico completo",
-    "pf.d3":"Site institucional para escritório de advocacia, desenvolvido com Claude Code",
-    "pf.d4":"Site institucional para escritório de advocacia com foco em autoridade e conversão",
-    "pf.d5":"Site institucional para cirurgião do aparelho digestivo, desenvolvido com Claude Code",
-    "pf.d6":"Ecommerce completo com foco em performance, UX de compra e identidade visual forte",
-    "pf.d7":"Website para estúdio de audiovisual com linguagem visual editorial e experiência imersiva",
-    "pf.d8":"Site institucional para instituto de conservação ambiental na Serra da Mantiqueira",
-    "pf.d9":"Landing page de lançamento para plataforma de conexão dos setores de agro, infraestrutura e portos",
-    "gr.label":"// além do web design","gr.title":"Gráfico <em>&</em> Motion.","gr.drive":"Ver todos no Drive",
-    "ex.label":"// trajetória","ex.title":"Onde eu <em>trabalhei</em><br>e o que entreguei.",
-    "ex.d1":"MAI 2023 — OUT 2025","ex.d2":"ABR 2021 — AGO 2021",
-    "ex.cur":"2+ anos","ex.now":"ATUAL","ex.free":"Freelancer",
-    "ex.r1":"Web Designer Pleno","ex.r2":"Assistente de Design","ex.r3":"Web Designer","ex.r4":"Designer + Dev",
-    "ex.l1a":"Prototipagem de alta fidelidade em Figma para sites complexos e landing pages.",
-    "ex.l1b":"Implementação técnica em WordPress/Elementor e Framer.",
-    "ex.l1c":"Design system que reduziu tempo de prototipagem em 40%.",
-    "ex.l1d":"+15% na taxa de conversão via A/B testing e refinamento de UI/UX.",
-    "ex.l2a":"Key Visuals para campanhas sazonais e materiais offline.",
-    "ex.l2b":"Storyboards que aceleraram aprovação de vídeos em 30%.",
-    "ex.l3a":"Criativos para Facebook Ads e Google Ads com foco em escala.",
-    "ex.l3b":"Landing pages em WordPress e assets para YouTube.",
-    "ex.l3c":"−20% no CPC com melhoria do índice de qualidade visual.",
-    "ex.l4a":"Identidades visuais completas para marcas de diversos setores.",
-    "ex.l4b":"Sites e landing pages de alta performance.",
-    "ex.l4c":"Gestão técnica: migrações, Core Web Vitals, manutenção WordPress.",
-    "ts.label":"// depoimentos","ts.title":"O que dizem <em>os clientes.</em>","ts.src":"Avaliações 5★ de clientes.",
-    "ct.label":"// vamos conversar","ct.title":"Vamos construir<br>algo <em>juntos?</em>",
-    "ct.sub":"Web designer que vai do briefing ao ar sem depender de ninguém.<br>Respondo no mesmo dia.",
-    "ft.by":"Design + Dev por Matheus Padula"
+  "pt": {
+    "nav.portfolio": "Portfolio",
+    "nav.about": "Sobre",
+    "nav.skills": "Skills",
+    "nav.exp": "Experiência",
+    "nav.testimonials": "Depoimentos",
+    "nav.contact": "Contato",
+    "nav.cv": "Curriculum",
+    "hero.badge": "Disponível para novas oportunidades",
+    "hero.sub": "<em>9 anos estruturando produtos digitais do zero até conversão.</em> Design que funciona. IA e código que entregam. Métrica que importa.",
+    "hero.cta1": "Ver projetos",
+    "hero.cta2": "Falar comigo",
+    "stat.years": "anos de experiência",
+    "stat.projects": "projetos entregues",
+    "stat.conv": "conversão · landing pages",
+    "stat.cpc": "custo por clique · ads",
+    "about.label": "// sobre mim",
+    "about.title": "Web Designer com<br>domínio de <em>IA</em> e<br>código que entrega.",
+    "hero.greet": "Prazer, Matheus Padula",
+    "hero.title-c": "Web Designer Sênior, do Figma ao <em class=\"ital\">site publicado.</em>",
+    "hero.sub-c": "Mais de 9 anos criando landing pages, sites e identidades visuais de alta conversão, com UI/UX, performance e Desenvolvimento com IA. <em>Solução completa em projetos simples e acelerador do time de dev nos complexos.</em>",
+    "hero.w1": "Design",
+    "hero.w2": "Estratégia",
+    "about.p1": "<strong>Sou Matheus Padula</strong>, designer com formação em Publicidade e 9 anos de mercado combinando criatividade estratégica com execução técnica.",
+    "about.p2": "Passei pela Fullzion como web designer pleno, estruturando design systems e aumentando conversão de landing pages. Antes, na OBF Negócios Digitais, desenvolvi criativos para tráfego pago e otimizei custos de CPC. Hoje trabalho em projetos que exigem alguém que entenda design <em>e</em> desenvolvimento de verdade.",
+    "about.p3": "Bom design é invisível quando funciona. O objetivo é resultado: conversão, usuários satisfeitos, números que importam pro negócio.",
+    "svc.label": "// o que eu faço",
+    "svc.title": "como<br><em>eu agrego</em> valor.",
+    "svc.t1": "Design Estratégico + Implementação",
+    "svc.b1": "Pesquiso, prototipo em Figma, tomo decisões baseadas em dados. Depois implemento em WordPress, Elementor ou Framer. Na Fullzion, estruturei um design system que reduziu tempo de prototipagem em 40%.",
+    "svc.tag1": "→ Figma → Código",
+    "svc.t2": "Performance & Conversão",
+    "svc.b2": "Design sem performance é falha. Trabalho com Core Web Vitals, A/B testing e otimização contínua. Resultado: +15% em conversão na Fullzion e -20% no CPC na OBF.",
+    "svc.tag2": "→ Resultado mensurável",
+    "svc.t3": "Produção Criativa Completa",
+    "svc.b3": "Figma, Adobe Suite, motion graphics. Identidades visuais do briefing ao guia de marca. Criativos para tráfego pago. Tudo com foco em comunicar claro e converter.",
+    "svc.tag3": "→ Briefing → Entrega",
+    "diff.label": "// o diferencial",
+    "diff.title": "Design refinado com<br>domínio técnico.",
+    "diff.t1": "Prototipo com IA + implementação em mente",
+    "diff.b1": "Uso IA no fluxo de pesquisa e prototipagem. Quando chego no código, tudo já foi testado. Menos retrabalho, mais velocidade.",
+    "diff.t2": "Entendo velocidade",
+    "diff.b2": "Conheço atalhos entre design, IA e código que economizam semanas de projeto real.",
+    "diff.t3": "Traduzo entre áreas",
+    "diff.b3": "Falo a língua do designer e do time técnico. Colaboro melhor em handoffs e iterações rápidas.",
+    "diff.t4": "Design que converte",
+    "diff.b4": "Não faço bonito que não entrega. Métrica importa. Sempre. Design sem número é ego.",
+    "sk.label": "// stack técnico",
+    "sk.title": "Ferramentas que<br><em>eu uso</em> de verdade.",
+    "sk.g1": "Design & Prototipagem",
+    "sk.g2": "Desenvolvimento Web",
+    "sk.g3": "Estratégia",
+    "sk.i1": "Desenvolvimento com IA",
+    "sk.i2": "Branding · Identidade",
+    "sk.i3": "Marketing Digital",
+    "pf.label": "// projetos selecionados",
+    "pf.title": "Trabalho que<br><em>faz sentido.</em>",
+    "pf.cta": "Ver case",
+    "pf.filter.all": "Todos",
+    "pf.d1": "Identidade visual e site com CMS headless para corretora de fazendas de alto padrão",
+    "pf.d2": "Desenvolvimento WordPress em parceria com a Vitrine Digital, com SEO técnico completo",
+    "pf.d3": "Site institucional para escritório de advocacia, desenvolvido com Claude Code",
+    "pf.d4": "Site institucional para escritório de advocacia com foco em autoridade e conversão",
+    "pf.d5": "Site institucional para cirurgião do aparelho digestivo, desenvolvido com Claude Code",
+    "pf.d6": "Ecommerce completo com foco em performance, UX de compra e identidade visual forte",
+    "pf.d7": "Website para estúdio de audiovisual com linguagem visual editorial e experiência imersiva",
+    "pf.d8": "Site institucional para instituto de conservação ambiental na Serra da Mantiqueira",
+    "pf.d9": "Landing page de lançamento para plataforma de conexão dos setores de agro, infraestrutura e portos",
+    "gr.label": "// além do web design",
+    "gr.title": "Gráfico <em>&</em> Motion.",
+    "gr.drive": "Ver todos no Drive",
+    "ex.label": "// trajetória",
+    "ex.title": "Onde eu <em>trabalhei</em><br>e o que entreguei.",
+    "ex.d1": "MAI 2023 — OUT 2025",
+    "ex.d2": "ABR 2021 — AGO 2021",
+    "ex.cur": "2+ anos",
+    "ex.now": "ATUAL",
+    "ex.free": "Freelancer",
+    "ex.r1": "Web Designer Pleno",
+    "ex.r2": "Assistente de Design",
+    "ex.r3": "Web Designer",
+    "ex.r4": "Designer + Dev",
+    "ex.l1a": "Prototipagem de alta fidelidade em Figma para sites complexos e landing pages.",
+    "ex.l1b": "Implementação técnica em WordPress/Elementor e Framer.",
+    "ex.l1c": "Design system que reduziu tempo de prototipagem em 40%.",
+    "ex.l1d": "+15% na taxa de conversão via A/B testing e refinamento de UI/UX.",
+    "ex.l2a": "Key Visuals para campanhas sazonais e materiais offline.",
+    "ex.l2b": "Storyboards que aceleraram aprovação de vídeos em 30%.",
+    "ex.l3a": "Criativos para Facebook Ads e Google Ads com foco em escala.",
+    "ex.l3b": "Landing pages em WordPress e assets para YouTube.",
+    "ex.l3c": "−20% no CPC com melhoria do índice de qualidade visual.",
+    "ex.l4a": "Identidades visuais completas para marcas de diversos setores.",
+    "ex.l4b": "Sites e landing pages de alta performance.",
+    "ex.l4c": "Gestão técnica: migrações, Core Web Vitals, manutenção WordPress.",
+    "ts.label": "// depoimentos",
+    "ts.title": "O que dizem <em>os clientes.</em>",
+    "ts.src": "Avaliações 5★ de clientes.",
+    "ct.label": "// vamos conversar",
+    "ct.title": "Vamos <em>conversar?</em>",
+    "ct.sub": "Aberto a vagas e projetos de design. Respondo no mesmo dia.",
+    "ft.by": "Design + Dev por Matheus Padula",
+    "hero.eyebrow": "Aberto a vagas de design",
+    "hero.cta-cv": "Baixar currículo (PDF)",
+    "hero.proof": "Avaliações 5 estrelas de clientes",
+    "cv.st1": "anos de experiência",
+    "cv.st2": "entregas na Fullzion",
+    "cv.st3": "conversão em landing pages (testes A/B)",
+    "cv.st4": "tempo de prototipagem (design system)",
+    "hero.hv1": "Landing page",
+    "hero.hv2": "Site institucional",
+    "hero.hv3": "Site institucional",
+    "hero.sat1": "Versão mobile",
+    "hero.sat2": "Dr. Rafael, medido no PageSpeed",
+    "cv.f1t": "UI/UX + código",
+    "cv.f1d": "Do protótipo no Figma ao site publicado.",
+    "cv.f2t": "Desenvolvimento com IA",
+    "cv.f2d": "Claude Code, Astro, React/Vite e CMS headless.",
+    "cv.f3t": "Inglês fluente",
+    "cv.f3d": "Colaboração com equipes internacionais.",
+    "cv.now": "ATUAL",
+    "cv.e1d": "JAN 2017 — ",
+    "cv.e1l": "Autônomo · Remoto",
+    "cv.e2d": "MAI 2023 — OUT 2025",
+    "cv.remote": "Remoto",
+    "cv.e3d": "ABR 2021 — AGO 2021",
+    "cv.e4d": "NOV 2018 — MAR 2021",
+    "cv.remote2": "Remoto",
+    "cv.e1a": "Lidera projetos web e e-commerce de ponta a ponta para clientes como Diálogos Estruturantes, Agro Ribeiro, HL Wallwonders, IHS Advogados, Dr. Rafael Nora Resende, Alligators, Menndel & Melo e Instituto OKA, com alta taxa de retenção.",
+    "cv.e1b": "Desenvolve sites com IA (Claude Code) e CMS headless, como Astro + Sanity e React/Vite + Sanity, com versionamento em Git e deploy automatizado (CI/CD).",
+    "cv.e1c": "Cria identidades visuais completas (Agro Ribeiro, Blended, Alpha Valle, Amanda Mársico, Rio Advocacia, Fire Art): pesquisa estratégica, naming visual e manual de marca.",
+    "cv.e1d2": "Executa migrações e otimizações de ambientes WordPress com melhorias em Core Web Vitals, SEO técnico e gestão de DNS.",
+    "cv.e1e": "Configura rastreamento de conversões no GA4, integra captura de leads (RD Station) e aplica automações com IA para reduzir retrabalho em projetos de clientes.",
+    "cv.e1r": "Fundador e Web Designer",
+    "cv.e2a": "Criou biblioteca de componentes reutilizáveis no Figma, reduzindo em 40% o tempo de entrega de protótipos.",
+    "cv.e2b": "Aumentou em 15% a taxa de conversão das landing pages via testes A/B e refinamentos contínuos de UI/UX.",
+    "cv.e2c": "Entregou protótipos de alta fidelidade implementados diretamente em WordPress + Elementor e Framer.",
+    "cv.e2d2": "Produziu criativos estáticos e em vídeo para campanhas de performance, integrando copywriting ao design.",
+    "cv.e2e": "Contribuiu com mais de 150 entregas ao longo de 2 anos e meio na empresa, com foco em performance e conversão.",
+    "cv.e2r": "Web Designer Pleno",
+    "cv.e3a": "Acelerou a aprovação de vídeos em 30% com storyboards detalhados, reduzindo rodadas de revisão.",
+    "cv.e3b": "Executou Key Visuals e materiais offline para campanhas sazonais alinhados à estratégia da marca.",
+    "cv.e3r": "Assistente de Design",
+    "cv.e4a": "Reduziu em 20% o CPC de campanhas ao elevar a qualidade visual dos anúncios no Facebook Ads e Google Ads.",
+    "cv.e4b": "Construiu landing pages em WordPress otimizadas para conversão e assets para YouTube (thumbnails e canal).",
+    "cv.e4r": "Web Designer",
+    "cv.ex.title": "Onde eu <em>trabalhei</em><br>e o que entreguei.",
+    "cv.sg1": "Design & Prototipação",
+    "cv.sc1": "<span class=\"chip\">Figma (Avançado)</span><span class=\"chip\">Framer</span><span class=\"chip\">UI/UX Design</span><span class=\"chip\">Design Responsivo</span><span class=\"chip\">Prototipagem de Alta Fidelidade</span><span class=\"chip\">Design System</span><span class=\"chip\">Acessibilidade (WCAG)</span>",
+    "cv.sg2": "Desenvolvimento Web",
+    "cv.sc2": "<span class=\"chip\">WordPress</span><span class=\"chip\">Elementor</span><span class=\"chip\">Framer</span><span class=\"chip\">HTML/CSS</span><span class=\"chip\">Astro</span><span class=\"chip\">React/Vite</span><span class=\"chip\">CMS Headless (Sanity)</span><span class=\"chip\">Git / CI-CD</span><span class=\"chip\">Core Web Vitals</span><span class=\"chip\">SEO on-page e técnico</span><span class=\"chip\">CRO (Otimização da Taxa de Conversão)</span>",
+    "cv.sg3": "Produção Criativa",
+    "cv.sc3": "<span class=\"chip\">Adobe Photoshop</span><span class=\"chip\">Illustrator</span><span class=\"chip\">InDesign</span><span class=\"chip\">Premiere Pro</span><span class=\"chip\">After Effects (Motion Graphics)</span>",
+    "cv.sg4": "Estratégia & Analytics",
+    "cv.sc4": "<span class=\"chip\">Branding</span><span class=\"chip\">Identidade Visual</span><span class=\"chip\">Copywriting</span><span class=\"chip\">Google Analytics (GA4)</span><span class=\"chip\">Marketing Digital</span><span class=\"chip\">Tráfego Pago (Facebook Ads, Google Ads)</span><span class=\"chip\">Teste A/B</span>",
+    "cv.sg5": "Metodologia & IA",
+    "cv.sc5": "<span class=\"chip\">Desenvolvimento com IA (Claude Code)</span><span class=\"chip\">ChatGPT</span><span class=\"chip\">Midjourney</span><span class=\"chip\">Adobe Firefly</span><span class=\"chip\">Figma Weave</span><span class=\"chip\">Agile/Scrum</span><span class=\"chip\">Gestão de Stakeholders</span>",
+    "cv.ed1": "<b>Tecnologia em Segurança da Informação</b><span>UNINTER EAD · em andamento · Mai 2025 – Prev. Dez 2027</span>",
+    "cv.ed2": "<b>Bacharelado em Publicidade e Propaganda</b><span>UNIFATEA · 2015 – 2018</span>",
+    "cv.ed3": "<b>Curso de Figma</b><span>Felipe Santana / FEUX · 2023 – Presente</span>",
+    "cv.ed4": "<b>Formação em Marketing Digital</b><span>O Novo Mercado · 2021 – Presente</span>",
+    "cv.ed5": "<b>Design Gráfico Profissional</b><span>Escola Casa · 2021</span>",
+    "cv.ed6": "<b>Especialização WordPress + Elementor</b><span>Chief of Design · 2020</span>",
+    "cv.lg1": "<b>Português</b><span>Nativo</span>",
+    "cv.lg2": "<b>Inglês</b><span>Fluente (escrita e conversação corporativa internacional)</span>",
+    "cv.lg3": "<b>Espanhol</b><span>Básico</span>",
+    "cv.ed.label": "// formação",
+    "cv.ed.title": "Formação e <em>idiomas.</em>",
+    "cv.lg.t": "Idiomas",
+    "cv.dl2": "Baixar currículo (PDF)"
   },
-  en: {
-    "nav.portfolio":"Work","nav.about":"About","nav.skills":"Skills","nav.exp":"Experience","nav.testimonials":"Testimonials","nav.contact":"Contact","nav.cv":"Resume",
-    "hero.badge":"Available for new opportunities",
-    "hero.sub":"<em>9 years shaping digital products from zero to conversion.</em> Design that works. AI and code that ship. Metrics that matter.",
-    "hero.cta1":"See projects","hero.cta2":"Talk to me",
-    "stat.years":"years of experience","stat.projects":"projects shipped","stat.conv":"conversion · landing pages","stat.cpc":"cost per click · ads",
-    "about.label":"// about me",
-    "about.title":"A Web Designer fluent<br>in <em>AI tools</em> and<br>code that ships.",
-    "hero.greet":"Hi, I'm Matheus Padula",
-    "hero.title-c":"Web Designer specialized in<br><em class=\"ital\">Performance and Conversion</em>",
-    "hero.sub-c":"<em>9+ years shaping digital products from zero to final implementation.</em> I combine refined interface craft with technical fluency in AI tools and code — building experiences that actually work and sell.",
-    "hero.w1":"Design",
-    "hero.w2":"Strategy",
-    "about.p1":"<strong>I'm Matheus Padula</strong>, designer with a background in Advertising and 9 years combining strategic creativity with technical execution.",
-    "about.p2":"I worked at Fullzion as a mid web designer, building design systems and raising landing page conversion. Before that, at OBF Marketing, I produced creative for paid traffic and optimized CPC. Today I work on projects that need someone who actually understands design <em>and</em> development.",
-    "about.p3":"Good design is invisible when it works. The goal is outcomes: conversion, happy users, numbers that matter for the business.",
-    "svc.label":"// what I do","svc.title":"how<br>I <em>create value</em>.",
-    "svc.t1":"Strategic Design + Implementation","svc.b1":"I research, prototype in Figma, decide with data. Then ship it in WordPress, Elementor or Framer. At Fullzion, I built a design system that cut prototyping time by 40%.","svc.tag1":"→ Figma → Code",
-    "svc.t2":"Performance & Conversion","svc.b2":"Design without performance is failure. I work with Core Web Vitals, A/B testing and continuous optimization. Result: +15% conversion at Fullzion, −20% CPC at OBF.","svc.tag2":"→ Measurable outcome",
-    "svc.t3":"Full Creative Production","svc.b3":"Figma, full Adobe Suite, motion graphics. Visual identities from brief to brand guide. Creative for paid traffic. Always focused on clear communication that converts.","svc.tag3":"→ Brief → Delivery",
-    "diff.label":"// the edge","diff.title":"Refined design meets<br>technical depth.",
-    "diff.t1":"I prototype with AI + implementation in mind","diff.b1":"I use AI in research and prototyping. By the time I'm in code, everything has been tested. Less rework, faster shipping.",
-    "diff.t2":"I understand speed","diff.b2":"I know shortcuts between design, AI and code that save weeks of real project time.",
-    "diff.t3":"I translate between fields","diff.b3":"I speak designer and the technical team's language. Better handoffs and faster iteration.",
-    "diff.t4":"Design that converts","diff.b4":"I don't make pretty things that don't ship results. Metrics matter. Always. Design without numbers is ego.",
-    "sk.label":"// tech stack","sk.title":"Tools I <em>actually</em><br>use.",
-    "sk.g1":"Design & Prototyping","sk.g2":"Web Development","sk.g3":"Strategy",
-    "sk.i1":"AI Development","sk.i2":"Branding · Identity","sk.i3":"Digital Marketing",
-    "pf.label":"// selected work","pf.title":"Work that<br><em>makes sense.</em>",
-    "pf.cta":"See case",
-    "pf.filter.all":"All",
-    "pf.d1":"Visual identity and headless-CMS website for a high-end rural real estate broker",
-    "pf.d2":"WordPress development in partnership with Vitrine Digital, with full technical SEO",
-    "pf.d3":"Institutional website for a law firm, built with Claude Code",
-    "pf.d4":"Institutional website for a law firm focused on authority and conversion",
-    "pf.d5":"Institutional website for a digestive-system surgeon, built with Claude Code",
-    "pf.d6":"Full ecommerce build focused on performance, shopping UX and strong visual identity",
-    "pf.d7":"Website for an audiovisual studio with an editorial visual language and immersive experience",
-    "pf.d8":"Institutional website for an environmental conservation institute in the Serra da Mantiqueira",
-    "pf.d9":"Launch landing page for a platform connecting the agribusiness, infrastructure and ports sectors",
-    "gr.label":"// beyond web design","gr.title":"Graphic <em>&</em> Motion.","gr.drive":"See all on Drive",
-    "ex.label":"// timeline","ex.title":"Where I <em>worked</em><br>and what I shipped.",
-    "ex.d1":"MAY 2023 — OCT 2025","ex.d2":"APR 2021 — AUG 2021",
-    "ex.cur":"2+ years","ex.now":"NOW","ex.free":"Freelance",
-    "ex.r1":"Mid Web Designer","ex.r2":"Design Assistant","ex.r3":"Web Designer","ex.r4":"Designer + Dev",
-    "ex.l1a":"High-fidelity prototyping in Figma for complex sites and landing pages.",
-    "ex.l1b":"Implementation in WordPress/Elementor and Framer.",
-    "ex.l1c":"Design system that cut prototyping time by 40%.",
-    "ex.l1d":"+15% conversion rate via A/B testing and UI/UX refinement.",
-    "ex.l2a":"Key Visuals for seasonal campaigns and offline materials.",
-    "ex.l2b":"Storyboards that sped up video approval by 30%.",
-    "ex.l3a":"Creative for Facebook Ads and Google Ads focused on scale.",
-    "ex.l3b":"Landing pages in WordPress and YouTube assets.",
-    "ex.l3c":"−20% CPC through better visual quality score.",
-    "ex.l4a":"Full visual identities for brands across sectors.",
-    "ex.l4b":"High-performance websites and landing pages.",
-    "ex.l4c":"Technical ops: migrations, Core Web Vitals, WordPress maintenance.",
-    "ts.label":"// testimonials","ts.title":"What <em>clients say.</em>","ts.src":"5★ client reviews, quoted in their original Portuguese.",
-    "ct.label":"// let's talk","ct.title":"Let's build<br>something <em>together?</em>",
-    "ct.sub":"Web designer who takes projects from brief to launch solo.<br>Same-day replies.",
-    "ft.by":"Design + Dev by Matheus Padula"
+  "en": {
+    "nav.portfolio": "Work",
+    "nav.about": "About",
+    "nav.skills": "Skills",
+    "nav.exp": "Experience",
+    "nav.testimonials": "Testimonials",
+    "nav.contact": "Contact",
+    "nav.cv": "Resume",
+    "hero.badge": "Available for new opportunities",
+    "hero.sub": "<em>9 years shaping digital products from zero to conversion.</em> Design that works. AI and code that ship. Metrics that matter.",
+    "hero.cta1": "See projects",
+    "hero.cta2": "Talk to me",
+    "stat.years": "years of experience",
+    "stat.projects": "projects shipped",
+    "stat.conv": "conversion · landing pages",
+    "stat.cpc": "cost per click · ads",
+    "about.label": "// about me",
+    "about.title": "A Web Designer fluent<br>in <em>AI tools</em> and<br>code that ships.",
+    "hero.greet": "Hi, I'm Matheus Padula",
+    "hero.title-c": "Senior Web Designer, from Figma to <em class=\"ital\">live site.</em>",
+    "hero.sub-c": "9+ years building high-conversion landing pages, websites and visual identities, with UI/UX, performance and AI-assisted development. <em>A complete solution on simpler projects and an accelerator for the dev team on complex ones.</em>",
+    "hero.w1": "Design",
+    "hero.w2": "Strategy",
+    "about.p1": "<strong>I'm Matheus Padula</strong>, designer with a background in Advertising and 9 years combining strategic creativity with technical execution.",
+    "about.p2": "I worked at Fullzion as a mid web designer, building design systems and raising landing page conversion. Before that, at OBF Negócios Digitais, I produced creative for paid traffic and optimized CPC. Today I work on projects that need someone who actually understands design <em>and</em> development.",
+    "about.p3": "Good design is invisible when it works. The goal is outcomes: conversion, happy users, numbers that matter for the business.",
+    "svc.label": "// what I do",
+    "svc.title": "how<br>I <em>create value</em>.",
+    "svc.t1": "Strategic Design + Implementation",
+    "svc.b1": "I research, prototype in Figma, decide with data. Then ship it in WordPress, Elementor or Framer. At Fullzion, I built a design system that cut prototyping time by 40%.",
+    "svc.tag1": "→ Figma → Code",
+    "svc.t2": "Performance & Conversion",
+    "svc.b2": "Design without performance is failure. I work with Core Web Vitals, A/B testing and continuous optimization. Result: +15% conversion at Fullzion, −20% CPC at OBF.",
+    "svc.tag2": "→ Measurable outcome",
+    "svc.t3": "Full Creative Production",
+    "svc.b3": "Figma, full Adobe Suite, motion graphics. Visual identities from brief to brand guide. Creative for paid traffic. Always focused on clear communication that converts.",
+    "svc.tag3": "→ Brief → Delivery",
+    "diff.label": "// the edge",
+    "diff.title": "Refined design meets<br>technical depth.",
+    "diff.t1": "I prototype with AI + implementation in mind",
+    "diff.b1": "I use AI in research and prototyping. By the time I'm in code, everything has been tested. Less rework, faster shipping.",
+    "diff.t2": "I understand speed",
+    "diff.b2": "I know shortcuts between design, AI and code that save weeks of real project time.",
+    "diff.t3": "I translate between fields",
+    "diff.b3": "I speak designer and the technical team's language. Better handoffs and faster iteration.",
+    "diff.t4": "Design that converts",
+    "diff.b4": "I don't make pretty things that don't ship results. Metrics matter. Always. Design without numbers is ego.",
+    "sk.label": "// tech stack",
+    "sk.title": "Tools I <em>actually</em><br>use.",
+    "sk.g1": "Design & Prototyping",
+    "sk.g2": "Web Development",
+    "sk.g3": "Strategy",
+    "sk.i1": "AI Development",
+    "sk.i2": "Branding · Identity",
+    "sk.i3": "Digital Marketing",
+    "pf.label": "// selected work",
+    "pf.title": "Work that<br><em>makes sense.</em>",
+    "pf.cta": "See case",
+    "pf.filter.all": "All",
+    "pf.d1": "Visual identity and headless-CMS website for a high-end rural real estate broker",
+    "pf.d2": "WordPress development in partnership with Vitrine Digital, with full technical SEO",
+    "pf.d3": "Institutional website for a law firm, built with Claude Code",
+    "pf.d4": "Institutional website for a law firm focused on authority and conversion",
+    "pf.d5": "Institutional website for a digestive-system surgeon, built with Claude Code",
+    "pf.d6": "Full ecommerce build focused on performance, shopping UX and strong visual identity",
+    "pf.d7": "Website for an audiovisual studio with an editorial visual language and immersive experience",
+    "pf.d8": "Institutional website for an environmental conservation institute in the Serra da Mantiqueira",
+    "pf.d9": "Launch landing page for a platform connecting the agribusiness, infrastructure and ports sectors",
+    "gr.label": "// beyond web design",
+    "gr.title": "Graphic <em>&</em> Motion.",
+    "gr.drive": "See all on Drive",
+    "ex.label": "// timeline",
+    "ex.title": "Where I <em>worked</em><br>and what I shipped.",
+    "ex.d1": "MAY 2023 — OCT 2025",
+    "ex.d2": "APR 2021 — AUG 2021",
+    "ex.cur": "2+ years",
+    "ex.now": "NOW",
+    "ex.free": "Freelance",
+    "ex.r1": "Mid Web Designer",
+    "ex.r2": "Design Assistant",
+    "ex.r3": "Web Designer",
+    "ex.r4": "Designer + Dev",
+    "ex.l1a": "High-fidelity prototyping in Figma for complex sites and landing pages.",
+    "ex.l1b": "Implementation in WordPress/Elementor and Framer.",
+    "ex.l1c": "Design system that cut prototyping time by 40%.",
+    "ex.l1d": "+15% conversion rate via A/B testing and UI/UX refinement.",
+    "ex.l2a": "Key Visuals for seasonal campaigns and offline materials.",
+    "ex.l2b": "Storyboards that sped up video approval by 30%.",
+    "ex.l3a": "Creative for Facebook Ads and Google Ads focused on scale.",
+    "ex.l3b": "Landing pages in WordPress and YouTube assets.",
+    "ex.l3c": "−20% CPC through better visual quality score.",
+    "ex.l4a": "Full visual identities for brands across sectors.",
+    "ex.l4b": "High-performance websites and landing pages.",
+    "ex.l4c": "Technical ops: migrations, Core Web Vitals, WordPress maintenance.",
+    "ts.label": "// testimonials",
+    "ts.title": "What <em>clients say.</em>",
+    "ts.src": "5★ client reviews, quoted in their original Portuguese.",
+    "ct.label": "// let's talk",
+    "ct.title": "Let's <em>talk?</em>",
+    "ct.sub": "Open to design roles and projects. I reply the same day.",
+    "ft.by": "Design + Dev by Matheus Padula",
+    "hero.eyebrow": "Open to design roles",
+    "hero.cta-cv": "Download résumé (PDF)",
+    "hero.proof": "5-star reviews from clients",
+    "cv.st1": "years of experience",
+    "cv.st2": "deliverables at Fullzion",
+    "cv.st3": "landing page conversion (A/B tests)",
+    "cv.st4": "prototyping time (design system)",
+    "hero.hv1": "Landing page",
+    "hero.hv2": "Institutional website",
+    "hero.hv3": "Institutional website",
+    "hero.sat1": "Mobile version",
+    "hero.sat2": "Dr. Rafael, measured on PageSpeed",
+    "cv.f1t": "UI/UX + code",
+    "cv.f1d": "From Figma prototype to live site.",
+    "cv.f2t": "AI-assisted development",
+    "cv.f2d": "Claude Code, Astro, React/Vite and headless CMS.",
+    "cv.f3t": "Fluent English",
+    "cv.f3d": "Collaboration with international teams.",
+    "cv.now": "PRESENT",
+    "cv.e1d": "JAN 2017 — ",
+    "cv.e1l": "Self-employed · Remote",
+    "cv.e2d": "MAY 2023 — OCT 2025",
+    "cv.remote": "Remote",
+    "cv.e3d": "APR 2021 — AUG 2021",
+    "cv.e4d": "NOV 2018 — MAR 2021",
+    "cv.remote2": "Remote",
+    "cv.e1a": "Leads end-to-end web and e-commerce projects for clients such as Diálogos Estruturantes, Agro Ribeiro, HL Wallwonders, IHS Advogados, Dr. Rafael Nora Resende, Alligators, Menndel & Melo, and Instituto OKA, with high retention rates.",
+    "cv.e1b": "Builds AI-assisted websites (Claude Code) on headless CMS stacks such as Astro + Sanity and React/Vite + Sanity, with Git versioning and automated deployment (CI/CD).",
+    "cv.e1c": "Creates complete visual identities (Agro Ribeiro, Blended, Alpha Valle, Amanda Mársico, Rio Advocacia, Fire Art): strategic research, visual naming, and brand guidelines.",
+    "cv.e1d2": "Carries out WordPress environment migrations and optimizations, improving Core Web Vitals and technical SEO and managing DNS.",
+    "cv.e1e": "Sets up GA4 conversion tracking, integrates lead capture (RD Station), and applies AI-driven automations to reduce rework on client projects.",
+    "cv.e1r": "Founder and Web Designer",
+    "cv.e2a": "Built a reusable component library in Figma, cutting prototype delivery time by 40%.",
+    "cv.e2b": "Increased landing page conversion rate by 15% through A/B testing and continuous UI/UX refinement.",
+    "cv.e2c": "Delivered high-fidelity prototypes implemented directly in WordPress + Elementor and Framer.",
+    "cv.e2d2": "Produced static and video creatives for performance campaigns, integrating copywriting with design.",
+    "cv.e2e": "Contributed to over 150 deliverables across 2.5 years at the company, with a focus on performance and conversion.",
+    "cv.e2r": "Mid-Level Web Designer",
+    "cv.e3a": "Sped up video approval by 30% with detailed storyboards, reducing revision rounds.",
+    "cv.e3b": "Produced key visuals and offline materials for seasonal campaigns aligned with brand strategy.",
+    "cv.e3r": "Design Assistant",
+    "cv.e4a": "Reduced campaign CPC by 20% by raising the visual quality of Facebook Ads and Google Ads creatives.",
+    "cv.e4b": "Built conversion-optimized WordPress landing pages and YouTube assets (thumbnails and channel branding).",
+    "cv.e4r": "Web Designer",
+    "cv.ex.title": "Where I <em>worked</em><br>and what I delivered.",
+    "cv.sg1": "Design & Prototyping",
+    "cv.sc1": "<span class=\"chip\">Figma (Advanced)</span><span class=\"chip\">Framer</span><span class=\"chip\">UI/UX Design</span><span class=\"chip\">Responsive Design</span><span class=\"chip\">High-Fidelity Prototyping</span><span class=\"chip\">Design Systems</span><span class=\"chip\">Accessibility (WCAG)</span>",
+    "cv.sg2": "Web Development",
+    "cv.sc2": "<span class=\"chip\">WordPress</span><span class=\"chip\">Elementor</span><span class=\"chip\">Framer</span><span class=\"chip\">HTML/CSS</span><span class=\"chip\">Astro</span><span class=\"chip\">React/Vite</span><span class=\"chip\">Headless CMS (Sanity)</span><span class=\"chip\">Git / CI-CD</span><span class=\"chip\">Core Web Vitals</span><span class=\"chip\">On-page and Technical SEO</span><span class=\"chip\">CRO (Conversion Rate Optimization)</span>",
+    "cv.sg3": "Creative Production",
+    "cv.sc3": "<span class=\"chip\">Adobe Photoshop</span><span class=\"chip\">Illustrator</span><span class=\"chip\">InDesign</span><span class=\"chip\">Premiere Pro</span><span class=\"chip\">After Effects (Motion Graphics)</span>",
+    "cv.sg4": "Strategy & Analytics",
+    "cv.sc4": "<span class=\"chip\">Branding</span><span class=\"chip\">Visual Identity</span><span class=\"chip\">Copywriting</span><span class=\"chip\">Google Analytics (GA4)</span><span class=\"chip\">Digital Marketing</span><span class=\"chip\">Paid Traffic (Facebook Ads, Google Ads)</span><span class=\"chip\">A/B Testing</span>",
+    "cv.sg5": "Methodology & AI",
+    "cv.sc5": "<span class=\"chip\">AI-Assisted Development (Claude Code)</span><span class=\"chip\">ChatGPT</span><span class=\"chip\">Midjourney</span><span class=\"chip\">Adobe Firefly</span><span class=\"chip\">Figma Weave</span><span class=\"chip\">Agile/Scrum</span><span class=\"chip\">Stakeholder Management</span>",
+    "cv.ed1": "<b>Associate Degree in Information Security Technology</b><span>UNINTER EAD · in progress · May 2025 – Exp. Dec 2027</span>",
+    "cv.ed2": "<b>Bachelor's Degree in Advertising</b><span>UNIFATEA · 2015 – 2018</span>",
+    "cv.ed3": "<b>Figma Course</b><span>Felipe Santana / FEUX · 2023 – Present</span>",
+    "cv.ed4": "<b>Digital Marketing Training</b><span>O Novo Mercado · 2021 – Present</span>",
+    "cv.ed5": "<b>Professional Graphic Design</b><span>Escola Casa · 2021</span>",
+    "cv.ed6": "<b>WordPress + Elementor Specialization</b><span>Chief of Design · 2020</span>",
+    "cv.lg1": "<b>Portuguese</b><span>Native</span>",
+    "cv.lg2": "<b>English</b><span>Fluent (international corporate writing and conversation)</span>",
+    "cv.lg3": "<b>Spanish</b><span>Basic</span>",
+    "cv.ed.label": "// education",
+    "cv.ed.title": "Education and <em>languages.</em>",
+    "cv.lg.t": "Languages",
+    "cv.dl2": "Download résumé (PDF)"
   }
 };
 function setLang_home(lang){
@@ -1439,6 +1692,130 @@ if (carousel) {
     });
   }
 }
+</script>
+<script>
+/* Hero: vitrine com pagina rolando + paralaxe leve. Sem dependencias. */
+(function(){
+  var hero = document.getElementById('top');
+  var vis = document.getElementById('heroVisual');
+  if (!hero || !vis) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var SL = [
+    { name: 'Diálogos Estruturantes', key: 'hero.hv1', href: '/dialogos', url: 'dialogosestruturantes.com.br' },
+    { name: 'IHS Advogados', key: 'hero.hv2', href: '/ihs', url: 'ihsadvogados.com' },
+    { name: 'Dr. Rafael Nora Resende', key: 'hero.hv3', href: '/drrafael', url: 'drrafaelnoraresende.com.br' }
+  ];
+  var pages = Array.prototype.slice.call(vis.querySelectorAll('.bf-page'));
+  var dots = Array.prototype.slice.call(vis.querySelectorAll('.bf-dots button'));
+  var screen = document.getElementById('bfScreen');
+  var link = document.getElementById('bfLink');
+  var nameEl = document.getElementById('bfName');
+  var typeEl = document.getElementById('bfType');
+  var urlEl = document.getElementById('bfUrl');
+  var cur = 0;
+
+  function dict(){ try { return I18N[window.__currentLang || 'pt'] || {}; } catch (e) { return {}; } }
+  function measure(img){
+    var d = Math.max(0, img.getBoundingClientRect().height - screen.clientHeight);
+    img.style.setProperty('--dist', d + 'px');
+    var dur = Math.min(18, Math.max(10, d / 135));
+    vis.style.setProperty('--dur', dur.toFixed(1) + 's');
+  }
+  function meta(){
+    var s = SL[cur];
+    nameEl.textContent = s.name;
+    typeEl.setAttribute('data-i18n', s.key);
+    typeEl.textContent = dict()[s.key] || '';
+    urlEl.textContent = s.url;
+    link.setAttribute('href', s.href);
+    dots.forEach(function(b, k){ b.classList.toggle('on', k === cur); });
+  }
+  function show(i){
+    i = (i + SL.length) % SL.length;
+    var prev = pages[cur];
+    if (i !== cur && prev) {
+      prev.classList.remove('is-active');
+      prev.classList.add('is-leaving');
+      setTimeout(function(){ prev.classList.remove('is-leaving'); }, 900);
+    }
+    cur = i;
+    var img = pages[cur];
+    img.classList.remove('is-leaving');
+    measure(img);
+    void img.offsetWidth;
+    img.classList.add('is-active');
+    meta();
+    // reinicia a barra de progresso do ponto ativo
+    var on = dots[cur];
+    on.classList.remove('on'); void on.offsetWidth; on.classList.add('on');
+  }
+  pages.forEach(function(p){
+    p.addEventListener('animationend', function(e){
+      if (e.animationName === 'bfscroll' && p.classList.contains('is-active') && !reduce) show(cur + 1);
+    });
+  });
+  dots.forEach(function(b, k){ b.addEventListener('click', function(ev){ ev.preventDefault(); show(k); }); });
+  document.addEventListener('click', function(e){ if (e.target.closest && e.target.closest('.lang button')) setTimeout(meta, 0); });
+  window.addEventListener('resize', function(){ measure(pages[cur]); });
+  if (pages[0].complete) { measure(pages[0]); } else { pages[0].addEventListener('load', function(){ measure(pages[0]); }); }
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(function(){ measure(pages[cur]); }); }
+  meta();
+
+  if (reduce) return;
+
+  /* paralaxe: mouse (so em dispositivos com cursor) + deriva na rolagem */
+  var layers = Array.prototype.slice.call(vis.querySelectorAll('.hv-layer')).map(function(el){
+    return { el: el, d: parseFloat(el.getAttribute('data-depth')) || 0, x: 0, y: 0 };
+  });
+  var mx = 0, my = 0, sy = 0, raf = 0;
+  function tick(){
+    for (var n = 0; n < layers.length; n++) {
+      var l = layers[n];
+      var tx = mx * l.d * 16;
+      var ty = my * l.d * 12 + sy * l.d * 38;
+      l.x += (tx - l.x) * 0.08;
+      l.y += (ty - l.y) * 0.08;
+      l.el.style.transform = 'translate3d(' + l.x.toFixed(2) + 'px,' + l.y.toFixed(2) + 'px,0)';
+    }
+    raf = requestAnimationFrame(tick);
+  }
+  if (fine) {
+    hero.addEventListener('mousemove', function(e){
+      var r = hero.getBoundingClientRect();
+      mx = ((e.clientX - r.left) / r.width - 0.5) * 2;
+      my = ((e.clientY - r.top) / r.height - 0.5) * 2;
+    });
+    hero.addEventListener('mouseleave', function(){ mx = 0; my = 0; });
+  }
+  window.addEventListener('scroll', function(){
+    sy = Math.min(1, Math.max(0, window.scrollY / (hero.offsetHeight * 0.85)));
+  }, { passive: true });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(es){
+      var on = es[0].isIntersecting;
+      hero.classList.toggle('is-off', !on);
+      if (on && !raf) raf = requestAnimationFrame(tick);
+      if (!on && raf) { cancelAnimationFrame(raf); raf = 0; }
+    }, { threshold: 0.02 }).observe(hero);
+  } else {
+    raf = requestAnimationFrame(tick);
+  }
+})();
+</script>
+<script>
+/* Botao do curriculo: PDF em portugues ou ingles conforme o idioma do site */
+(function(){
+  var PDF = { pt: 'assets/cv/Matheus_Padula_CV_PT_2026.pdf', en: 'assets/cv/Matheus_Padula_CV_EN_2026.pdf' };
+  function apply(){
+    var lang = (window.__currentLang === 'en') ? 'en' : 'pt';
+    var links = document.querySelectorAll('a[data-cv]');
+    for (var i = 0; i < links.length; i++) { links[i].setAttribute('href', PDF[lang]); }
+  }
+  document.addEventListener('click', function(e){ if (e.target.closest && e.target.closest('.lang button')) setTimeout(apply, 0); });
+  apply();
+  setTimeout(apply, 300);
+})();
 </script>
 <script src="components/layout.js"></script>
 </body>

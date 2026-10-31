@@ -15,6 +15,8 @@ Idioma principal do site: português do Brasil, com versão em inglês nas pági
 
 - Página inicial e portfólio: https://matheuspadula.com.br/
 - Currículo (para vagas e recrutadores): https://matheuspadula.com.br/curriculo
+- Currículo em PDF (português): https://matheuspadula.com.br/assets/cv/Matheus_Padula_CV_PT_2026.pdf
+- Currículo em PDF (inglês): https://matheuspadula.com.br/assets/cv/Matheus_Padula_CV_EN_2026.pdf
 - WhatsApp: https://wa.me/5512974054956
 - E-mail: matheuspadula7@gmail.com
 - LinkedIn: https://linkedin.com/in/matheuspadula
