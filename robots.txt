@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /whatsapp
 
 Sitemap: https://matheuspadula.com.br/sitemap.xml

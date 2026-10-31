@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<script src="/tracking.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSJHZ8GRJ0"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-CSJHZ8GRJ0');
+  gtag('config', 'G-CSJHZ8GRJ0', window.padulaInternal ? { traffic_type: 'internal' } : {});
 </script>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
