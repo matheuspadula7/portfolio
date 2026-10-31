@@ -86,6 +86,7 @@
 <link rel="preconnect" href="https://framerusercontent.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="components/layout.css">
+<link rel="stylesheet" href="components/showcase.css?v=4">
 <style>
 :root{
   --bg-0:#0A0A0A;
@@ -231,46 +232,7 @@ section{position:relative;padding:140px 0}
 .hero-proof{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-size:13.5px;color:var(--fg-dim)}
 .hero-proof .stars{color:var(--accent);letter-spacing:2px;font-size:14px}
 .hero-proof:hover{color:var(--fg)}
-.hero-visual{position:relative;width:100%;aspect-ratio:1/.92}
-.hv-layer{position:absolute;will-change:transform}
-.hv-l-main{left:0;top:3%;width:88%;z-index:1}
-.bf-wrap{width:100%}
-.bf{display:block;border-radius:14px;overflow:hidden;background:#0d0d0d;border:1px solid var(--line-2);box-shadow:0 40px 80px -30px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.02) inset;transition:border-color .3s}
-.bf:hover{border-color:rgba(235,190,56,.45)}
-.bf-bar{display:flex;align-items:center;gap:6px;height:30px;padding:0 12px;background:#141414;border-bottom:1px solid var(--line)}
-.bf-dot{width:8px;height:8px;border-radius:50%;background:#34342f}
-.bf-url{margin-left:10px;flex:1;max-width:260px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--fg-mute);background:#0b0b0b;border:1px solid var(--line);border-radius:999px;padding:3px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.bf-screen{position:relative;aspect-ratio:16/10;overflow:hidden;background:#fff}
-.bf-page{position:absolute;left:0;top:0;width:100%;height:auto;display:block;opacity:0;transition:opacity .7s var(--ease);will-change:transform;user-select:none;-webkit-user-drag:none}
-.bf-page.is-active{opacity:1;animation:bfscroll var(--dur,11s) cubic-bezier(.45,.05,.35,1) forwards}
-.bf-page.is-leaving{transform:translate3d(0,calc(var(--dist,0px)*-1),0)}
-.bf:hover .bf-page.is-active{animation-play-state:paused}
-.hero.is-off .bf-page.is-active{animation-play-state:paused}
-@keyframes bfscroll{0%,9%{transform:translate3d(0,0,0)}91%,100%{transform:translate3d(0,calc(var(--dist,0px)*-1),0)}}
-.bf-meta{display:flex;align-items:center;justify-content:flex-start;gap:22px;margin-top:14px;padding:0 4px}
-.bf-name{display:flex;flex-direction:column;gap:2px;font-size:13px;font-weight:500;color:var(--fg)}
-.bf-name small{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--fg-mute);font-weight:400;letter-spacing:.03em}
-.bf-dots{display:flex;gap:8px}
-.bf-dots button{width:26px;height:4px;border:0;border-radius:4px;background:var(--line-2);cursor:pointer;padding:0;position:relative;overflow:hidden}
-.bf-dots button.on{background:rgba(235,190,56,.35)}
-.bf-dots button.on::after{content:"";position:absolute;inset:0;background:var(--accent);transform-origin:left;animation:bfprog var(--dur,11s) linear forwards}
-.bf:hover~.bf-meta .bf-dots button.on::after,.bf-wrap:hover .bf-dots button.on::after{animation-play-state:paused}
-.hero.is-off .bf-dots button.on::after{animation-play-state:paused}
-@keyframes bfprog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.hv-sat{display:block;position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line-2);background:var(--bg-2);box-shadow:0 30px 60px -20px rgba(0,0,0,.75);transition:border-color .3s}
-.hv-sat:hover{border-color:rgba(235,190,56,.5)}
-.hv-l-a{right:0;top:0;width:34%;z-index:3}
-.hv-l-a .hv-sat{aspect-ratio:4/3;animation:hvfloat 7s ease-in-out infinite}
-.hv-l-a img{display:block;width:100%;height:100%;object-fit:cover}
-.hv-l-b{right:3%;bottom:2%;width:36%;z-index:4}
-.hv-score{padding:16px 18px;display:flex;flex-direction:column;gap:10px;background:rgba(14,14,14,.86);backdrop-filter:blur(10px);animation:hvfloat 8.5s ease-in-out -3s infinite}
-.hv-score-row{display:flex;align-items:baseline;gap:10px}
-.hv-score-row b{font-family:'Bricolage Grotesque',serif;font-weight:500;font-size:34px;letter-spacing:-.03em;line-height:1;color:var(--accent);min-width:2.3ch}
-.hv-score-row span{font-size:12.5px;color:var(--fg-dim)}
-.hv-score small{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--fg-mute);line-height:1.4;border-top:1px solid var(--line);padding-top:9px}
-@keyframes hvfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-.hv-chip{position:absolute;left:10px;bottom:10px;background:rgba(10,10,10,.82);backdrop-filter:blur(8px);border:1px solid var(--line-2);border-radius:10px;padding:5px 10px;font-size:11.5px;font-weight:500;color:var(--fg);line-height:1.25}
-@media (prefers-reduced-motion:reduce){.bf-page.is-active{animation:none}.hv-l-a .hv-sat,.hv-score{animation:none}.bf-dots button.on::after{animation:none;transform:scaleX(1)}}
+/* vitrine do hero: components/showcase.css */
 @media (max-width:980px){
   .hero{min-height:0;padding:120px 0 60px}
   .hero-grid{grid-template-columns:1fr;gap:44px}
@@ -278,11 +240,6 @@ section{position:relative;padding:140px 0}
 }
 @media (max-width:560px){
   .hero-eyebrow{font-size:9.5px;letter-spacing:.03em;padding:6px 11px}
-  .hv-l-a{width:38%}
-  .hv-score{padding:12px 13px;gap:7px}
-  .hv-score-row b{font-size:26px}
-  .hv-score small{display:none}
-  .bf-name small{display:none}
   .hv-chip small{display:none}
   .hv-chip{font-size:11px;padding:5px 9px}
 }
@@ -491,41 +448,64 @@ section{position:relative;padding:140px 0}
           </a>
         </div>
         <div class="hero-visual" id="heroVisual" aria-label="Projetos recentes">
-          <div class="hv-layer hv-l-main" data-depth="0.3">
-            <div class="bf-wrap">
-              <a class="bf" id="bfLink" href="/dialogos" aria-label="Ver case do projeto">
-                <div class="bf-bar">
-                  <span class="bf-dot"></span><span class="bf-dot"></span><span class="bf-dot"></span>
-                  <span class="bf-url" id="bfUrl">dialogosestruturantes.com.br</span>
-                </div>
-                <div class="bf-screen" id="bfScreen">
-                  <img class="bf-page is-active" src="assets/images/hero-page-dialogos.jpg" width="1100" height="2142" alt="Diálogos Estruturantes, página inicial rolando" fetchpriority="high" decoding="async">
-                  <img class="bf-page" src="assets/images/hero-page-ihs.jpg" width="1100" height="2216" alt="IHS Advogados, página inicial rolando" loading="lazy" decoding="async">
-                  <img class="bf-page" src="assets/images/hero-page-drrafael.jpg" width="1100" height="2104" alt="Dr. Rafael Nora Resende, página inicial rolando" loading="lazy" decoding="async">
-                </div>
-              </a>
-              <div class="bf-meta">
-                <div class="bf-name"><span id="bfName">Diálogos Estruturantes</span><small id="bfType" data-i18n="hero.hv1">Landing page</small></div>
-                <div class="bf-dots" role="tablist" aria-label="Escolher projeto">
-                  <button type="button" class="on" aria-label="Diálogos Estruturantes"></button>
-                  <button type="button" aria-label="IHS Advogados"></button>
-                  <button type="button" aria-label="Dr. Rafael Nora Resende"></button>
-                </div>
+          <div class="hv-stage">
+            <div class="hv-layer hv-l-main" data-depth="0.3">
+              <div class="bf-deck" id="bfDeck">
+            <a class="bf" data-i="0" data-pos="0" href="/dialogos" aria-label="Ver case: Diálogos Estruturantes">
+              <div class="bf-bar"><span class="bf-dot"></span><span class="bf-dot"></span><span class="bf-dot"></span><span class="bf-url">dialogosestruturantes.com.br</span></div>
+              <div class="bf-screen"><img class="bf-page is-active" src="assets/images/hero-page-dialogos.jpg" width="1100" height="2142" alt="Diálogos Estruturantes, página inicial" fetchpriority="high" decoding="async"></div>
+            </a>
+            <a class="bf" data-i="1" data-pos="1" href="/ihs" aria-label="Ver case: IHS Advogados">
+              <div class="bf-bar"><span class="bf-dot"></span><span class="bf-dot"></span><span class="bf-dot"></span><span class="bf-url">ihsadvogados.com</span></div>
+              <div class="bf-screen"><img class="bf-page" src="assets/images/hero-page-ihs.jpg" width="1100" height="2216" alt="IHS Advogados, página inicial" loading="lazy" decoding="async"></div>
+            </a>
+            <a class="bf" data-i="2" data-pos="2" href="/drrafael" aria-label="Ver case: Dr. Rafael Nora Resende">
+              <div class="bf-bar"><span class="bf-dot"></span><span class="bf-dot"></span><span class="bf-dot"></span><span class="bf-url">drrafaelnoraresende.com.br</span></div>
+              <div class="bf-screen"><img class="bf-page" src="assets/images/hero-page-drrafael.jpg" width="1100" height="2104" alt="Dr. Rafael Nora Resende, página inicial" loading="lazy" decoding="async"></div>
+            </a>
+              </div>
+            </div>
+            <div class="hv-layer hv-l-a" data-depth="1.1">
+            <div class="hv-sat hv-dev">
+              <img class="on" src="assets/images/dialogos-mockup-desktop.webp" width="944" height="704" alt="Diálogos Estruturantes em desktop" decoding="async">
+              <img src="assets/images/ihs-phone.jpg" width="900" height="675" alt="IHS Advogados, versão mobile" loading="lazy" decoding="async">
+              <img src="assets/images/drrafael-phone.jpg" width="900" height="675" alt="Dr. Rafael Nora Resende, versão mobile" loading="lazy" decoding="async">
+              <span class="hv-chip on" data-i18n="hero.dev1">Em desktop</span>
+              <span class="hv-chip" data-i18n="hero.sat1">Versão mobile</span>
+              <span class="hv-chip" data-i18n="hero.sat1">Versão mobile</span>
+            </div>
+          </div>
+            <div class="hv-layer hv-l-b" data-depth="-0.8">
+            <div class="hv-sat hv-score">
+              <div class="hv-sp on">
+                <span class="hv-score-row"><b>3</b><span data-i18n="hero.sc1at">dias, do wireframe ao ar</span></span>
+                <span class="hv-score-row"><b>100%</b><span data-i18n="hero.sc1bt">captura de lead no RD Station</span></span>
+                <small data-i18n="hero.sc1s">Diálogos, resultado do case</small>
+              </div>
+              <div class="hv-sp">
+                <span class="hv-score-row"><b>100%</b><span data-i18n="hero.sc2at">responsivo, desktop e mobile</span></span>
+                <span class="hv-score-row"><b>1</b><span data-i18n="hero.sc2bt">fluxo: design e código juntos</span></span>
+                <small data-i18n="hero.sc2s">IHS, resultado do case</small>
+              </div>
+              <div class="hv-sp">
+                <span class="hv-score-row"><b>92</b><span>Performance</span></span>
+                <span class="hv-score-row"><b>100</b><span>SEO</span></span>
+                <small data-i18n="hero.sat2">Dr. Rafael, medido no PageSpeed</small>
               </div>
             </div>
           </div>
-          <div class="hv-layer hv-l-a" data-depth="1.1">
-            <a class="hv-sat hv-phone" href="/drrafael">
-              <img src="assets/images/drrafael-phone.jpg" width="900" height="675" alt="Dr. Rafael Nora Resende, versão mobile" decoding="async">
-              <span class="hv-chip" data-i18n="hero.sat1">Versão mobile</span>
-            </a>
           </div>
-          <div class="hv-layer hv-l-b" data-depth="-0.8">
-            <a class="hv-sat hv-score" href="/drrafael">
-              <span class="hv-score-row"><b>92</b><span>Performance</span></span>
-              <span class="hv-score-row"><b>100</b><span>SEO</span></span>
-              <small data-i18n="hero.sat2">Dr. Rafael, medido no PageSpeed</small>
-            </a>
+          <div class="hv-info">
+            <div class="bf-meta">
+                <div class="bf-name"><span id="bfName">Diálogos Estruturantes</span><small id="bfType" data-i18n="hero.hv1">Landing page</small></div>
+                <div class="bf-count" id="bfCount"><b>01</b> / 03</div>
+              </div>
+              <div class="bf-tabs" role="tablist" aria-label="Escolher projeto">
+                <button type="button" role="tab" data-i="0" aria-selected="true" class="on">Diálogos</button>
+                <button type="button" role="tab" data-i="1" aria-selected="false">IHS Advogados</button>
+                <button type="button" role="tab" data-i="2" aria-selected="false">Dr. Rafael</button>
+              </div>
+              <a class="bf-all" href="#portfolio"><span data-i18n="hero.all">Ver todos os projetos</span> <span aria-hidden="true">↓</span></a>
           </div>
         </div>
       </div>
@@ -681,7 +661,7 @@ section{position:relative;padding:140px 0}
     <div class="section-head r">
       <div class="eyebrow">
         <span class="label" data-i18n="pf.label">// projetos selecionados</span>
-        <span class="counter">(09 / 09)</span>
+        <span class="counter">(04 / 04)</span>
       </div>
       <h2 class="title" data-i18n="pf.title">Trabalho que<br><em>faz sentido.</em></h2>
     </div>
@@ -777,35 +757,14 @@ section{position:relative;padding:140px 0}
 
     <!-- FILTER -->
     <div class="filter-bar r">
-      <button class="filter-btn on" data-filter="all">Todos <span class="filter-count">16</span></button>
-      <button class="filter-btn" data-filter="web">Web Design <span class="filter-count">9</span></button>
-      <button class="filter-btn" data-filter="branding">Branding <span class="filter-count">10</span></button>
+      <button class="filter-btn on" data-filter="all">Todos <span class="filter-count">15</span></button>
+      <button class="filter-btn" data-filter="web">Web Design <span class="filter-count">8</span></button>
+      <button class="filter-btn" data-filter="branding">Branding <span class="filter-count">9</span></button>
       <button class="filter-btn" data-filter="ecommerce">E-commerce <span class="filter-count">1</span></button>
     </div>
 
     <!-- GRID -->
     <div class="proj-grid" id="projGrid">
-
-      <!-- 01 ESSENTIA -->
-      <a class="proj-card r" href="/essentia" data-cat="web branding">
-        <div class="card-img">
-          <img src="https://framerusercontent.com/images/jY7OgJxdLGgNfNdNY4On4h6pvw.png" alt="Essent.IA" loading="lazy">
-          <span class="card-badge">Branding + Web</span>
-          <span class="card-arrow-badge">↗</span>
-        </div>
-        <div class="card-body">
-          <div class="card-row-top">
-            <span class="card-num">01</span>
-            <span class="card-name">Essent.IA</span>
-            <span class="card-yr">2026</span>
-          </div>
-          <p class="card-desc">Identidade visual e novo site institucional para empresa de automação com IA</p>
-          <div class="card-footer-row">
-            <span class="card-tag-sm">Figma · Framer</span>
-            <span class="card-cta">Ver case <span class="arr">↗</span></span>
-          </div>
-        </div>
-      </a>
 
       <!-- 02 DR. RAFAEL NORA RESENDE -->
       <a class="proj-card r" href="/drrafael" data-cat="web">
@@ -816,7 +775,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">02</span>
+            <span class="card-num">05</span>
             <span class="card-name">Dr. Rafael Nora Resende</span>
             <span class="card-yr">2026</span>
           </div>
@@ -837,7 +796,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">03</span>
+            <span class="card-num">06</span>
             <span class="card-name">Alligators</span>
             <span class="card-yr">2026</span>
           </div>
@@ -858,7 +817,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">04</span>
+            <span class="card-num">07</span>
             <span class="card-name">JHS Studio</span>
             <span class="card-yr">2024</span>
           </div>
@@ -879,7 +838,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">05</span>
+            <span class="card-num">08</span>
             <span class="card-name">Instituto Oka</span>
             <span class="card-yr">2025</span>
           </div>
@@ -900,7 +859,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">06</span>
+            <span class="card-num">09</span>
             <span class="card-name">Blended</span>
             <span class="card-yr">2026</span>
           </div>
@@ -921,7 +880,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">07</span>
+            <span class="card-num">10</span>
             <span class="card-name">Alpha Valle</span>
             <span class="card-yr">2025</span>
           </div>
@@ -942,7 +901,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">08</span>
+            <span class="card-num">11</span>
             <span class="card-name">Amanda Mársico</span>
             <span class="card-yr">2025</span>
           </div>
@@ -963,7 +922,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">09</span>
+            <span class="card-num">12</span>
             <span class="card-name">Rio Advocacia</span>
             <span class="card-yr">2024</span>
           </div>
@@ -984,7 +943,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">10</span>
+            <span class="card-num">13</span>
             <span class="card-name">Barbosa Advogados</span>
             <span class="card-yr">2024</span>
           </div>
@@ -1005,7 +964,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">11</span>
+            <span class="card-num">14</span>
             <span class="card-name">Fire Art</span>
             <span class="card-yr">2026</span>
           </div>
@@ -1026,7 +985,7 @@ section{position:relative;padding:140px 0}
         </div>
         <div class="card-body">
           <div class="card-row-top">
-            <span class="card-num">12</span>
+            <span class="card-num">15</span>
             <span class="card-name">Agro Ribeiro</span>
             <span class="card-yr">2026</span>
           </div>
@@ -1196,137 +1155,217 @@ filterBtns.forEach(btn=>{
 
 // i18n
 const I18N = {
-  pt: {
-    "hero.sat1":"Versão mobile",
-    "hero.sat2":"Dr. Rafael, medido no PageSpeed",
-    "hero.eyebrow":"Sites · Landing pages · Identidade visual",
-    "hero.proof":"Avaliações 5 estrelas de clientes",
-    "hero.hv1":"Landing page",
-    "hero.hv2":"Site institucional",
-    "hero.hv3":"Site institucional",
-    "about.f1t":"Contato direto",
-    "about.f1d":"Você fala comigo, do início ao fim.",
-    "about.f2t":"2 a 3 semanas",
-    "about.f2d":"Prazo típico de um site completo.",
-    "about.f3t":"Design + código",
-    "about.f3d":"Um processo só, sem handoff.",
-    "nav.portfolio":"Portfolio","nav.about":"Sobre","nav.skills":"Skills","nav.exp":"Experiência","nav.contact":"Contato","nav.cv":"Talk to me",
-    "hero.badge":"Disponível para novas oportunidades",
-    "hero.sub":"<em>9 anos estruturando produtos digitais do zero até conversão.</em> Design que funciona. IA e código que entregam. Métrica que importa.",
-    "hero.cta1":"Ver projetos","hero.cta2":"Falar comigo",
-    "stat.years":"anos no mercado","stat.projects":"projetos entregues","stat.conv":"conversão · landing pages","stat.cpc":"custo por clique · ads",
-    "about.label":"// sobre mim",
-    "about.title":"9 anos entregando<br>sites que <em>funcionam</em><br>de verdade.",
-    "hero.greet":"Olá, bem-vindo ao meu portfólio",
-    "hero.title-c":"Presença digital que faz você ser <em class=\"ital\">levado a sério.</em>",
-    "hero.sub-c":"Design bonito que não converte é desperdício. <em>Crio sites e identidades visuais que comunicam com clareza, passam credibilidade e convertem visitantes em clientes.</em> Do briefing ao ar, sem depender de mais ninguém.",
-    "hero.w1":"Design",
-    "hero.w2":"Estratégia",
-    "about.p1":"<strong>Sou Matheus Padula</strong>, designer com formação em Publicidade e 9 anos de mercado combinando criatividade estratégica com execução técnica.",
-    "about.p2":"Ao longo de 9 anos, trabalhei com empresas de tecnologia, escritórios jurídicos, e-commerces e negócios locais. Em cada projeto, o objetivo é o mesmo: um site que passa credibilidade, comunica bem e traz resultado real para o negócio.",
-    "about.p3":"Trabalho de forma independente, o que significa atenção total ao seu projeto, resposta rápida e custo mais justo do que uma agência.",
-    "svc.label":"// o que eu faço","svc.title":"o que posso<br><em>fazer por</em> você.",
-    "svc.t1":"Design Estratégico + Implementação","svc.b1":"Pesquiso, prototipo em Figma e implemento em WordPress, Elementor ou Framer. Um processo único, sem handoff entre designer e dev — mais velocidade, menos ruído e custo menor para você.","svc.tag1":"→ Figma → Código",
-    "svc.t2":"Performance & Conversão","svc.b2":"Um site lento ou confuso perde cliente antes de qualquer venda. Trabalho com velocidade de carregamento, hierarquia visual clara e fluxo de conversão pensado para o seu público.","svc.tag2":"→ Resultado mensurável",
-    "svc.t3":"Produção Criativa Completa","svc.b3":"Figma, Adobe Suite, motion graphics. Identidades visuais do briefing ao guia de marca. Criativos para redes e tráfego pago. Tudo com foco em comunicar claro e fazer o negócio crescer.","svc.tag3":"→ Briefing → Entrega",
-    "diff.label":"// o diferencial","diff.title":"Design refinado com<br>domínio técnico.",
-    "diff.t1":"Você não precisa de designer + dev separados","diff.b1":"Faço design e implementação. Isso significa menos pessoas no projeto, menos custo, menos ruído e um resultado mais coeso do início ao fim.",
-    "diff.t2":"Entrega rápida sem perder qualidade","diff.b2":"A maioria dos projetos sai do ar em 2 a 3 semanas. Processo enxuto, sem reuniões infinitas, com você atualizado em cada etapa.",
-    "diff.t3":"Comunicação direta, sem intermediários","diff.b3":"Você fala comigo, não com uma agência que repassa para outro. Uma pessoa responsável pelo projeto inteiro, do início ao fim.",
-    "diff.t4":"O site precisa trabalhar por você","diff.b4":"Não basta ficar bonito. Cada decisão visual tem um propósito: fazer o visitante entender, confiar e entrar em contato.",
-    "sk.label":"// stack técnico","sk.title":"Ferramentas que<br><em>eu uso</em> de verdade.",
-    "sk.g1":"Design & Prototipagem","sk.g2":"Desenvolvimento Web","sk.g3":"Estratégia",
-    "pf.label":"// projetos selecionados","pf.title":"Trabalho que<br><em>faz sentido.</em>",
-    "pf.d1":"Identidade visual e novo site institucional",
-    "pf.d2":"Ecommerce",
-    "pf.d3":"Site institucional",
-    "pf.d4":"Site institucional",
-    "pf.d5":"Site institucional",
-    "pf.d6":"Site institucional",
-    "ex.label":"// trajetória","ex.title":"Onde eu <em>trabalhei</em><br>e o que entreguei.",
-    "ex.cur":"2+ anos","ex.now":"ATUAL","ex.free":"Freelancer",
-    "ex.r1":"Web Designer Pleno","ex.r2":"Assistente de Design","ex.r3":"Web Designer","ex.r4":"Designer + Dev",
-    "ex.l1a":"Prototipagem de alta fidelidade em Figma para sites complexos e landing pages.",
-    "ex.l1b":"Implementação técnica em WordPress/Elementor e Framer.",
-    "ex.l1c":"Design system que reduziu tempo de prototipagem em 40%.",
-    "ex.l1d":"+15% na taxa de conversão via A/B testing e refinamento de UI/UX.",
-    "ex.l2a":"Key Visuals para campanhas sazonais e materiais offline.",
-    "ex.l2b":"Storyboards que aceleraram aprovação de vídeos em 30%.",
-    "ex.l3a":"Criativos para Facebook Ads e Google Ads com foco em escala.",
-    "ex.l3b":"Landing pages em WordPress e assets para YouTube.",
-    "ex.l3c":"−20% no CPC com melhoria do índice de qualidade visual.",
-    "ex.l4a":"Identidades visuais completas para marcas de diversos setores.",
-    "ex.l4b":"Sites e landing pages de alta performance.",
-    "ex.l4c":"Gestão técnica: migrações, Core Web Vitals, manutenção WordPress.",
-    "ct.label":"// vamos conversar","ct.title":"Tem um projeto<br>em <em>mente?</em>",
-    "ct.sub":"Me conta o projeto e eu te digo o que é possível.<br>Respondo no mesmo dia.",
-    "ft.by":"Design + Dev por Matheus Padula"
+  "pt": {
+    "hero.sat1": "Versão mobile",
+    "hero.sat2": "Dr. Rafael, medido no PageSpeed",
+    "hero.eyebrow": "Sites · Landing pages · Identidade visual",
+    "hero.proof": "Avaliações 5 estrelas de clientes",
+    "hero.hv1": "Landing page",
+    "hero.hv2": "Site institucional",
+    "hero.hv3": "Site institucional",
+    "about.f1t": "Contato direto",
+    "about.f1d": "Você fala comigo, do início ao fim.",
+    "about.f2t": "2 a 3 semanas",
+    "about.f2d": "Prazo típico de um site completo.",
+    "about.f3t": "Design + código",
+    "about.f3d": "Um processo só, sem handoff.",
+    "nav.portfolio": "Portfolio",
+    "nav.about": "Sobre",
+    "nav.skills": "Skills",
+    "nav.exp": "Experiência",
+    "nav.contact": "Contato",
+    "nav.cv": "Talk to me",
+    "hero.badge": "Disponível para novas oportunidades",
+    "hero.sub": "<em>9 anos estruturando produtos digitais do zero até conversão.</em> Design que funciona. IA e código que entregam. Métrica que importa.",
+    "hero.cta1": "Ver projetos",
+    "hero.cta2": "Falar comigo",
+    "stat.years": "anos no mercado",
+    "stat.projects": "projetos entregues",
+    "stat.conv": "conversão · landing pages",
+    "stat.cpc": "custo por clique · ads",
+    "about.label": "// sobre mim",
+    "about.title": "9 anos entregando<br>sites que <em>funcionam</em><br>de verdade.",
+    "hero.greet": "Olá, bem-vindo ao meu portfólio",
+    "hero.title-c": "Presença digital que faz você ser <em class=\"ital\">levado a sério.</em>",
+    "hero.sub-c": "Design bonito que não converte é desperdício. <em>Crio sites e identidades visuais que comunicam com clareza, passam credibilidade e convertem visitantes em clientes.</em> Do briefing ao ar, sem depender de mais ninguém.",
+    "hero.w1": "Design",
+    "hero.w2": "Estratégia",
+    "about.p1": "<strong>Sou Matheus Padula</strong>, designer com formação em Publicidade e 9 anos de mercado combinando criatividade estratégica com execução técnica.",
+    "about.p2": "Ao longo de 9 anos, trabalhei com empresas de tecnologia, escritórios jurídicos, e-commerces e negócios locais. Em cada projeto, o objetivo é o mesmo: um site que passa credibilidade, comunica bem e traz resultado real para o negócio.",
+    "about.p3": "Trabalho de forma independente, o que significa atenção total ao seu projeto, resposta rápida e custo mais justo do que uma agência.",
+    "svc.label": "// o que eu faço",
+    "svc.title": "o que posso<br><em>fazer por</em> você.",
+    "svc.t1": "Design Estratégico + Implementação",
+    "svc.b1": "Pesquiso, prototipo em Figma e implemento em WordPress, Elementor ou Framer. Um processo único, sem handoff entre designer e dev — mais velocidade, menos ruído e custo menor para você.",
+    "svc.tag1": "→ Figma → Código",
+    "svc.t2": "Performance & Conversão",
+    "svc.b2": "Um site lento ou confuso perde cliente antes de qualquer venda. Trabalho com velocidade de carregamento, hierarquia visual clara e fluxo de conversão pensado para o seu público.",
+    "svc.tag2": "→ Resultado mensurável",
+    "svc.t3": "Produção Criativa Completa",
+    "svc.b3": "Figma, Adobe Suite, motion graphics. Identidades visuais do briefing ao guia de marca. Criativos para redes e tráfego pago. Tudo com foco em comunicar claro e fazer o negócio crescer.",
+    "svc.tag3": "→ Briefing → Entrega",
+    "diff.label": "// o diferencial",
+    "diff.title": "Design refinado com<br>domínio técnico.",
+    "diff.t1": "Você não precisa de designer + dev separados",
+    "diff.b1": "Faço design e implementação. Isso significa menos pessoas no projeto, menos custo, menos ruído e um resultado mais coeso do início ao fim.",
+    "diff.t2": "Entrega rápida sem perder qualidade",
+    "diff.b2": "A maioria dos projetos sai do ar em 2 a 3 semanas. Processo enxuto, sem reuniões infinitas, com você atualizado em cada etapa.",
+    "diff.t3": "Comunicação direta, sem intermediários",
+    "diff.b3": "Você fala comigo, não com uma agência que repassa para outro. Uma pessoa responsável pelo projeto inteiro, do início ao fim.",
+    "diff.t4": "O site precisa trabalhar por você",
+    "diff.b4": "Não basta ficar bonito. Cada decisão visual tem um propósito: fazer o visitante entender, confiar e entrar em contato.",
+    "sk.label": "// stack técnico",
+    "sk.title": "Ferramentas que<br><em>eu uso</em> de verdade.",
+    "sk.g1": "Design & Prototipagem",
+    "sk.g2": "Desenvolvimento Web",
+    "sk.g3": "Estratégia",
+    "pf.label": "// projetos selecionados",
+    "pf.title": "Trabalho que<br><em>faz sentido.</em>",
+    "pf.d1": "Identidade visual e novo site institucional",
+    "pf.d2": "Ecommerce",
+    "pf.d3": "Site institucional",
+    "pf.d4": "Site institucional",
+    "pf.d5": "Site institucional",
+    "pf.d6": "Site institucional",
+    "ex.label": "// trajetória",
+    "ex.title": "Onde eu <em>trabalhei</em><br>e o que entreguei.",
+    "ex.cur": "2+ anos",
+    "ex.now": "ATUAL",
+    "ex.free": "Freelancer",
+    "ex.r1": "Web Designer Pleno",
+    "ex.r2": "Assistente de Design",
+    "ex.r3": "Web Designer",
+    "ex.r4": "Designer + Dev",
+    "ex.l1a": "Prototipagem de alta fidelidade em Figma para sites complexos e landing pages.",
+    "ex.l1b": "Implementação técnica em WordPress/Elementor e Framer.",
+    "ex.l1c": "Design system que reduziu tempo de prototipagem em 40%.",
+    "ex.l1d": "+15% na taxa de conversão via A/B testing e refinamento de UI/UX.",
+    "ex.l2a": "Key Visuals para campanhas sazonais e materiais offline.",
+    "ex.l2b": "Storyboards que aceleraram aprovação de vídeos em 30%.",
+    "ex.l3a": "Criativos para Facebook Ads e Google Ads com foco em escala.",
+    "ex.l3b": "Landing pages em WordPress e assets para YouTube.",
+    "ex.l3c": "−20% no CPC com melhoria do índice de qualidade visual.",
+    "ex.l4a": "Identidades visuais completas para marcas de diversos setores.",
+    "ex.l4b": "Sites e landing pages de alta performance.",
+    "ex.l4c": "Gestão técnica: migrações, Core Web Vitals, manutenção WordPress.",
+    "ct.label": "// vamos conversar",
+    "ct.title": "Tem um projeto<br>em <em>mente?</em>",
+    "ct.sub": "Me conta o projeto e eu te digo o que é possível.<br>Respondo no mesmo dia.",
+    "ft.by": "Design + Dev por Matheus Padula",
+    "hero.dev1": "Em desktop",
+    "hero.all": "Ver todos os projetos",
+    "hero.sc1at": "dias, do wireframe ao ar",
+    "hero.sc1bt": "captura de lead no RD Station",
+    "hero.sc1s": "Diálogos, resultado do case",
+    "hero.sc2at": "responsivo, desktop e mobile",
+    "hero.sc2bt": "fluxo: design e código juntos",
+    "hero.sc2s": "IHS, resultado do case"
   },
-  en: {
-    "hero.sat1":"Mobile version",
-    "hero.sat2":"Dr. Rafael, measured on PageSpeed",
-    "hero.eyebrow":"Websites · Landing pages · Visual identity",
-    "hero.proof":"5-star reviews from clients",
-    "hero.hv1":"Landing page",
-    "hero.hv2":"Institutional website",
-    "hero.hv3":"Institutional website",
-    "about.f1t":"Direct contact",
-    "about.f1d":"You talk to me, start to finish.",
-    "about.f2t":"2 to 3 weeks",
-    "about.f2d":"Typical timeline for a full website.",
-    "about.f3t":"Design + code",
-    "about.f3d":"One process, no handoff.",
-    "nav.portfolio":"Work","nav.about":"About","nav.skills":"Skills","nav.exp":"Experience","nav.contact":"Contact","nav.cv":"Resume",
-    "hero.badge":"Available for new opportunities",
-    "hero.sub":"<em>9 years shaping digital products from zero to conversion.</em> Design that works. AI and code that ship. Metrics that matter.",
-    "hero.cta1":"See projects","hero.cta2":"Talk to me",
-    "stat.years":"years in the market","stat.projects":"projects shipped","stat.delivery":"average delivery time","stat.solo":"from brief to live, solo",
-    "about.label":"// about me",
-    "about.title":"9 years delivering<br>websites that <em>actually</em><br>work.",
-    "hero.greet":"Hi, I'm Matheus Padula",
-    "hero.title-c":"A digital presence that makes people take you <em class=\"ital\">seriously.</em>",
-    "hero.sub-c":"Good-looking design that doesn't convert is a waste. <em>I build websites and visual identities that communicate clearly, build trust and turn visitors into clients.</em> From brief to live, all by myself.",
-    "hero.w1":"Design",
-    "hero.w2":"Strategy",
-    "about.p1":"<strong>I'm Matheus Padula</strong>, designer with a background in Advertising and 9 years combining strategic creativity with technical execution.",
-    "about.p2":"Over 9 years, I've worked with tech companies, law firms, e-commerces and local businesses. In every project, the goal is the same: a website that builds trust, communicates clearly and delivers real results.",
-    "about.p3":"Good design is invisible when it works. The goal is outcomes: conversion, happy users, numbers that matter for the business.",
-    "svc.label":"// what I do","svc.title":"how<br>I <em>create value</em>.",
-    "svc.t1":"Strategic Design + Implementation","svc.b1":"I research, prototype in Figma and implement in WordPress, Elementor or Framer. One process, no handoff between designer and dev — faster delivery and lower cost for you.","svc.tag1":"→ Figma → Code",
-    "svc.t2":"Performance & Conversion","svc.b2":"A slow or confusing website loses customers before any sale happens. I focus on load speed, clear visual hierarchy and conversion flow designed for your audience.","svc.tag2":"→ Measurable outcome",
-    "svc.t3":"Full Creative Production","svc.b3":"Figma, full Adobe Suite, motion graphics. Visual identities from brief to brand guide. Creative for paid traffic. Always focused on clear communication that converts.","svc.tag3":"→ Brief → Delivery",
-    "diff.label":"// the edge","diff.title":"Refined design meets<br>technical depth.",
-    "diff.t1":"I prototype with AI + implementation in mind","diff.b1":"I use AI in research and prototyping. By the time I'm in code, everything has been tested. Less rework, faster shipping.",
-    "diff.t2":"I understand speed","diff.b2":"I know shortcuts between design, AI and code that save weeks of real project time.",
-    "diff.t3":"I translate between fields","diff.b3":"I speak designer and the technical team's language. Better handoffs and faster iteration.",
-    "diff.t4":"Design that converts","diff.b4":"I don't make pretty things that don't ship results. Metrics matter. Always. Design without numbers is ego.",
-    "sk.label":"// tech stack","sk.title":"Tools I <em>actually</em><br>use.",
-    "sk.g1":"Design & Prototyping","sk.g2":"Web Development","sk.g3":"Strategy",
-    "pf.label":"// selected work","pf.title":"Work that<br><em>makes sense.</em>",
-    "pf.d1":"Visual identity and new institutional website",
-    "pf.d2":"Ecommerce",
-    "pf.d3":"Institutional website",
-    "pf.d4":"Institutional website",
-    "pf.d5":"Institutional website",
-    "pf.d6":"Institutional website",
-    "ex.label":"// timeline","ex.title":"Where I <em>worked</em><br>and what I shipped.",
-    "ex.cur":"2+ years","ex.now":"NOW","ex.free":"Freelance",
-    "ex.r1":"Mid Web Designer","ex.r2":"Design Assistant","ex.r3":"Web Designer","ex.r4":"Designer + Dev",
-    "ex.l1a":"High-fidelity prototyping in Figma for complex sites and landing pages.",
-    "ex.l1b":"Implementation in WordPress/Elementor and Framer.",
-    "ex.l1c":"Design system that cut prototyping time by 40%.",
-    "ex.l1d":"+15% conversion rate via A/B testing and UI/UX refinement.",
-    "ex.l2a":"Key Visuals for seasonal campaigns and offline materials.",
-    "ex.l2b":"Storyboards that sped up video approval by 30%.",
-    "ex.l3a":"Creative for Facebook Ads and Google Ads focused on scale.",
-    "ex.l3b":"Landing pages in WordPress and YouTube assets.",
-    "ex.l3c":"−20% CPC through better visual quality score.",
-    "ex.l4a":"Full visual identities for brands across sectors.",
-    "ex.l4b":"High-performance websites and landing pages.",
-    "ex.l4c":"Technical ops: migrations, Core Web Vitals, WordPress maintenance.",
-    "ct.label":"// let's talk","ct.title":"Got a project<br><em>in mind?</em>",
-    "ct.sub":"Tell me about your project and I'll tell you what's possible.<br>Same-day replies.",
-    "ft.by":"Design + Dev by Matheus Padula"
+  "en": {
+    "hero.sat1": "Mobile version",
+    "hero.sat2": "Dr. Rafael, measured on PageSpeed",
+    "hero.eyebrow": "Websites · Landing pages · Visual identity",
+    "hero.proof": "5-star reviews from clients",
+    "hero.hv1": "Landing page",
+    "hero.hv2": "Institutional website",
+    "hero.hv3": "Institutional website",
+    "about.f1t": "Direct contact",
+    "about.f1d": "You talk to me, start to finish.",
+    "about.f2t": "2 to 3 weeks",
+    "about.f2d": "Typical timeline for a full website.",
+    "about.f3t": "Design + code",
+    "about.f3d": "One process, no handoff.",
+    "nav.portfolio": "Work",
+    "nav.about": "About",
+    "nav.skills": "Skills",
+    "nav.exp": "Experience",
+    "nav.contact": "Contact",
+    "nav.cv": "Resume",
+    "hero.badge": "Available for new opportunities",
+    "hero.sub": "<em>9 years shaping digital products from zero to conversion.</em> Design that works. AI and code that ship. Metrics that matter.",
+    "hero.cta1": "See projects",
+    "hero.cta2": "Talk to me",
+    "stat.years": "years in the market",
+    "stat.projects": "projects shipped",
+    "stat.delivery": "average delivery time",
+    "stat.solo": "from brief to live, solo",
+    "about.label": "// about me",
+    "about.title": "9 years delivering<br>websites that <em>actually</em><br>work.",
+    "hero.greet": "Hi, I'm Matheus Padula",
+    "hero.title-c": "A digital presence that makes people take you <em class=\"ital\">seriously.</em>",
+    "hero.sub-c": "Good-looking design that doesn't convert is a waste. <em>I build websites and visual identities that communicate clearly, build trust and turn visitors into clients.</em> From brief to live, all by myself.",
+    "hero.w1": "Design",
+    "hero.w2": "Strategy",
+    "about.p1": "<strong>I'm Matheus Padula</strong>, designer with a background in Advertising and 9 years combining strategic creativity with technical execution.",
+    "about.p2": "Over 9 years, I've worked with tech companies, law firms, e-commerces and local businesses. In every project, the goal is the same: a website that builds trust, communicates clearly and delivers real results.",
+    "about.p3": "Good design is invisible when it works. The goal is outcomes: conversion, happy users, numbers that matter for the business.",
+    "svc.label": "// what I do",
+    "svc.title": "how<br>I <em>create value</em>.",
+    "svc.t1": "Strategic Design + Implementation",
+    "svc.b1": "I research, prototype in Figma and implement in WordPress, Elementor or Framer. One process, no handoff between designer and dev — faster delivery and lower cost for you.",
+    "svc.tag1": "→ Figma → Code",
+    "svc.t2": "Performance & Conversion",
+    "svc.b2": "A slow or confusing website loses customers before any sale happens. I focus on load speed, clear visual hierarchy and conversion flow designed for your audience.",
+    "svc.tag2": "→ Measurable outcome",
+    "svc.t3": "Full Creative Production",
+    "svc.b3": "Figma, full Adobe Suite, motion graphics. Visual identities from brief to brand guide. Creative for paid traffic. Always focused on clear communication that converts.",
+    "svc.tag3": "→ Brief → Delivery",
+    "diff.label": "// the edge",
+    "diff.title": "Refined design meets<br>technical depth.",
+    "diff.t1": "I prototype with AI + implementation in mind",
+    "diff.b1": "I use AI in research and prototyping. By the time I'm in code, everything has been tested. Less rework, faster shipping.",
+    "diff.t2": "I understand speed",
+    "diff.b2": "I know shortcuts between design, AI and code that save weeks of real project time.",
+    "diff.t3": "I translate between fields",
+    "diff.b3": "I speak designer and the technical team's language. Better handoffs and faster iteration.",
+    "diff.t4": "Design that converts",
+    "diff.b4": "I don't make pretty things that don't ship results. Metrics matter. Always. Design without numbers is ego.",
+    "sk.label": "// tech stack",
+    "sk.title": "Tools I <em>actually</em><br>use.",
+    "sk.g1": "Design & Prototyping",
+    "sk.g2": "Web Development",
+    "sk.g3": "Strategy",
+    "pf.label": "// selected work",
+    "pf.title": "Work that<br><em>makes sense.</em>",
+    "pf.d1": "Visual identity and new institutional website",
+    "pf.d2": "Ecommerce",
+    "pf.d3": "Institutional website",
+    "pf.d4": "Institutional website",
+    "pf.d5": "Institutional website",
+    "pf.d6": "Institutional website",
+    "ex.label": "// timeline",
+    "ex.title": "Where I <em>worked</em><br>and what I shipped.",
+    "ex.cur": "2+ years",
+    "ex.now": "NOW",
+    "ex.free": "Freelance",
+    "ex.r1": "Mid Web Designer",
+    "ex.r2": "Design Assistant",
+    "ex.r3": "Web Designer",
+    "ex.r4": "Designer + Dev",
+    "ex.l1a": "High-fidelity prototyping in Figma for complex sites and landing pages.",
+    "ex.l1b": "Implementation in WordPress/Elementor and Framer.",
+    "ex.l1c": "Design system that cut prototyping time by 40%.",
+    "ex.l1d": "+15% conversion rate via A/B testing and UI/UX refinement.",
+    "ex.l2a": "Key Visuals for seasonal campaigns and offline materials.",
+    "ex.l2b": "Storyboards that sped up video approval by 30%.",
+    "ex.l3a": "Creative for Facebook Ads and Google Ads focused on scale.",
+    "ex.l3b": "Landing pages in WordPress and YouTube assets.",
+    "ex.l3c": "−20% CPC through better visual quality score.",
+    "ex.l4a": "Full visual identities for brands across sectors.",
+    "ex.l4b": "High-performance websites and landing pages.",
+    "ex.l4c": "Technical ops: migrations, Core Web Vitals, WordPress maintenance.",
+    "ct.label": "// let's talk",
+    "ct.title": "Got a project<br><em>in mind?</em>",
+    "ct.sub": "Tell me about your project and I'll tell you what's possible.<br>Same-day replies.",
+    "ft.by": "Design + Dev by Matheus Padula",
+    "hero.dev1": "On desktop",
+    "hero.all": "See all projects",
+    "hero.sc1at": "days, from wireframe to live",
+    "hero.sc1bt": "lead capture in RD Station",
+    "hero.sc1s": "Diálogos, case result",
+    "hero.sc2at": "responsive, desktop and mobile",
+    "hero.sc2bt": "workflow: design and code together",
+    "hero.sc2s": "IHS, case result"
   }
 };
 function setLang(lang){
@@ -1385,116 +1424,7 @@ document.querySelectorAll('.tweaks [data-hero]').forEach(s=>{
   });
 });
 </script>
-<script>
-/* Hero: vitrine com pagina rolando + paralaxe leve. Sem dependencias. */
-(function(){
-  var hero = document.getElementById('top');
-  var vis = document.getElementById('heroVisual');
-  if (!hero || !vis) return;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  var SL = [
-    { name: 'Diálogos Estruturantes', key: 'hero.hv1', href: '/dialogos', url: 'dialogosestruturantes.com.br' },
-    { name: 'IHS Advogados', key: 'hero.hv2', href: '/ihs', url: 'ihsadvogados.com' },
-    { name: 'Dr. Rafael Nora Resende', key: 'hero.hv3', href: '/drrafael', url: 'drrafaelnoraresende.com.br' }
-  ];
-  var pages = Array.prototype.slice.call(vis.querySelectorAll('.bf-page'));
-  var dots = Array.prototype.slice.call(vis.querySelectorAll('.bf-dots button'));
-  var screen = document.getElementById('bfScreen');
-  var link = document.getElementById('bfLink');
-  var nameEl = document.getElementById('bfName');
-  var typeEl = document.getElementById('bfType');
-  var urlEl = document.getElementById('bfUrl');
-  var cur = 0;
-
-  function dict(){ try { return I18N[window.__currentLang || 'pt'] || {}; } catch (e) { return {}; } }
-  function measure(img){
-    var d = Math.max(0, img.getBoundingClientRect().height - screen.clientHeight);
-    img.style.setProperty('--dist', d + 'px');
-    var dur = Math.min(18, Math.max(10, d / 135));
-    vis.style.setProperty('--dur', dur.toFixed(1) + 's');
-  }
-  function meta(){
-    var s = SL[cur];
-    nameEl.textContent = s.name;
-    typeEl.setAttribute('data-i18n', s.key);
-    typeEl.textContent = dict()[s.key] || '';
-    urlEl.textContent = s.url;
-    link.setAttribute('href', s.href);
-    dots.forEach(function(b, k){ b.classList.toggle('on', k === cur); });
-  }
-  function show(i){
-    i = (i + SL.length) % SL.length;
-    var prev = pages[cur];
-    if (i !== cur && prev) {
-      prev.classList.remove('is-active');
-      prev.classList.add('is-leaving');
-      setTimeout(function(){ prev.classList.remove('is-leaving'); }, 900);
-    }
-    cur = i;
-    var img = pages[cur];
-    img.classList.remove('is-leaving');
-    measure(img);
-    void img.offsetWidth;
-    img.classList.add('is-active');
-    meta();
-    // reinicia a barra de progresso do ponto ativo
-    var on = dots[cur];
-    on.classList.remove('on'); void on.offsetWidth; on.classList.add('on');
-  }
-  pages.forEach(function(p){
-    p.addEventListener('animationend', function(e){
-      if (e.animationName === 'bfscroll' && p.classList.contains('is-active') && !reduce) show(cur + 1);
-    });
-  });
-  dots.forEach(function(b, k){ b.addEventListener('click', function(ev){ ev.preventDefault(); show(k); }); });
-  document.addEventListener('click', function(e){ if (e.target.closest && e.target.closest('.lang button')) setTimeout(meta, 0); });
-  window.addEventListener('resize', function(){ measure(pages[cur]); });
-  if (pages[0].complete) { measure(pages[0]); } else { pages[0].addEventListener('load', function(){ measure(pages[0]); }); }
-  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(function(){ measure(pages[cur]); }); }
-  meta();
-
-  if (reduce) return;
-
-  /* paralaxe: mouse (so em dispositivos com cursor) + deriva na rolagem */
-  var layers = Array.prototype.slice.call(vis.querySelectorAll('.hv-layer')).map(function(el){
-    return { el: el, d: parseFloat(el.getAttribute('data-depth')) || 0, x: 0, y: 0 };
-  });
-  var mx = 0, my = 0, sy = 0, raf = 0;
-  function tick(){
-    for (var n = 0; n < layers.length; n++) {
-      var l = layers[n];
-      var tx = mx * l.d * 16;
-      var ty = my * l.d * 12 + sy * l.d * 38;
-      l.x += (tx - l.x) * 0.08;
-      l.y += (ty - l.y) * 0.08;
-      l.el.style.transform = 'translate3d(' + l.x.toFixed(2) + 'px,' + l.y.toFixed(2) + 'px,0)';
-    }
-    raf = requestAnimationFrame(tick);
-  }
-  if (fine) {
-    hero.addEventListener('mousemove', function(e){
-      var r = hero.getBoundingClientRect();
-      mx = ((e.clientX - r.left) / r.width - 0.5) * 2;
-      my = ((e.clientY - r.top) / r.height - 0.5) * 2;
-    });
-    hero.addEventListener('mouseleave', function(){ mx = 0; my = 0; });
-  }
-  window.addEventListener('scroll', function(){
-    sy = Math.min(1, Math.max(0, window.scrollY / (hero.offsetHeight * 0.85)));
-  }, { passive: true });
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function(es){
-      var on = es[0].isIntersecting;
-      hero.classList.toggle('is-off', !on);
-      if (on && !raf) raf = requestAnimationFrame(tick);
-      if (!on && raf) { cancelAnimationFrame(raf); raf = 0; }
-    }, { threshold: 0.02 }).observe(hero);
-  } else {
-    raf = requestAnimationFrame(tick);
-  }
-})();
-</script>
+<script src="components/showcase.js?v=2" defer></script>
 <script src="components/layout.js"></script>
 </body>
 </html>
