@@ -1,0 +1,59 @@
+name: Deploy para Hostinger (FTP)
+
+# Publica o site a cada push na main, sem depender do Git do painel da Hostinger.
+# Segredos necessários (Settings > Secrets and variables > Actions > Secrets):
+#   FTP_SERVER    host do FTP (ex.: ftp.seudominio.com.br ou o IP do painel)
+#   FTP_USERNAME  usuário da conta FTP
+#   FTP_PASSWORD  senha da conta FTP
+# Variável opcional (aba Variables):
+#   FTP_DIR       pasta de destino no servidor, terminando em "/" (padrão: ./)
+#                 Se a conta FTP já abre dentro de public_html, deixe em branco.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verificar segredos
+        id: secrets
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          if [ -z "$FTP_SERVER" ] || [ -z "$FTP_USERNAME" ] || [ -z "$FTP_PASSWORD" ]; then
+            echo "::warning::Segredos FTP_SERVER, FTP_USERNAME e FTP_PASSWORD ainda não configurados. Deploy pulado."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Enviar por FTP
+        if: steps.secrets.outputs.ready == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          server-dir: ${{ vars.FTP_DIR || './' }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            .claude/**
+            .gitignore
+            idv/**
+            Claude outputs/**
+            **/node_modules/**
