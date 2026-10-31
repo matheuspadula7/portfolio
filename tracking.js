@@ -46,6 +46,7 @@
     if (el.closest('#contato, .contact')) { return 'contato'; }
     if (el.closest('.hero, header')) { return 'hero'; }
     var slug = window.location.pathname.replace(/^\/+|\/+$/g, '').replace(/\.html$/, '');
+    if (slug === 'curriculo') { return 'curriculo'; }
     return slug ? 'case-' + slug.replace(/\//g, '-') : 'pagina';
   }
 

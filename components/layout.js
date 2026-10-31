@@ -6,7 +6,9 @@
  */
 
 (function () {
-  const isHome = ['/', '/index.html', ''].some(p =>
+  const isCV = /^\/curriculo(\.html)?\/?$/.test(window.location.pathname);
+  // /curriculo tem as mesmas seções ancoradas da home (sobre, portfolio, contato)
+  const isHome = isCV || ['/', '/index.html', ''].some(p =>
     window.location.pathname === p ||
     window.location.pathname.endsWith('/index.html')
   );
@@ -24,6 +26,9 @@
       <a href="${base}#sobre" data-i18n="nav.about">Sobre</a>
       <a href="${base}#depoimentos" data-i18n="nav.testimonials">Depoimentos</a>
       <a href="${base}#contato" data-i18n="nav.contact">Contato</a>
+      ${isCV
+        ? '<a href="/" data-i18n="nav.forclients">Para clientes</a>'
+        : '<a href="/curriculo" data-i18n="nav.resume">Currículo</a>'}
     </div>
     <div class="nav-right">
       <div class="lang" role="tablist">
@@ -172,6 +177,8 @@
       'nav.about': 'Sobre',
       'nav.contact': 'Contato',
       'nav.testimonials': 'Depoimentos',
+      'nav.resume': 'Currículo',
+      'nav.forclients': 'Para clientes',
       'nav.cta': 'Falar comigo',
       'nav.menu': 'MENU',
       'ft.by': '© 2026 Matheus Padula · Design + Dev por Matheus Padula',
@@ -536,6 +543,8 @@
       'nav.about': 'About',
       'nav.contact': 'Contact',
       'nav.testimonials': 'Testimonials',
+      'nav.resume': 'Resume',
+      'nav.forclients': 'For clients',
       'nav.cta': 'Talk to me',
       'nav.menu': 'MENU',
       'ft.by': '© 2026 Matheus Padula · Design + Dev by Matheus Padula',
