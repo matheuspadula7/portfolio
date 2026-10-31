@@ -1,0 +1,46 @@
+# Padula Design Studio
+
+> Estúdio de web design e identidade visual de Matheus Padula, web designer com mais de 9 anos de experiência e formação em Publicidade. Entrega sites, landing pages, e-commerces e identidades visuais do briefing ao ar. Em projetos mais simples, entrega a solução completa. Em projetos complexos, atua como complemento ao desenvolvedor, cuidando de design, interface e conversão.
+
+Idioma principal do site: português do Brasil, com versão em inglês nas páginas.
+
+## Serviços
+
+- Web design e UX/UI: protótipos de alta fidelidade e interfaces pensadas para conversão e performance.
+- Sites e landing pages: implementação em WordPress, Elementor, Framer e código, com Desenvolvimento com IA para acelerar a entrega.
+- E-commerce: lojas com foco em performance e experiência de compra.
+- Identidade visual: logotipo, paleta, tipografia, manual de marca e aplicações.
+
+## Contato
+
+- Página inicial e portfólio: https://matheuspadula.com.br/
+- Página para clientes: https://matheuspadula.com.br/clientes/
+- WhatsApp: https://wa.me/5512974054956
+- E-mail: matheuspadula7@gmail.com
+- LinkedIn: https://linkedin.com/in/matheuspadula
+
+## Projetos de sites e e-commerce
+
+- [Diálogos Estruturantes](https://matheuspadula.com.br/dialogos): landing page de lançamento para uma plataforma de conexão dos setores de agro, infraestrutura e portos, com captura de lead integrada ao RD Station.
+- [Agro Ribeiro](https://matheuspadula.com.br/agroribeiro): site com CMS headless para corretora de fazendas de alto padrão.
+- [HL Wallwonders](https://matheuspadula.com.br/hlwallwonders): desenvolvimento em WordPress, em parceria com a Vitrine Digital, com SEO técnico completo.
+- [IHS Advogados](https://matheuspadula.com.br/ihs): site institucional para escritório de advocacia, publicado em https://ihsadvogados.com/.
+- [Menndel & Melo](https://matheuspadula.com.br/menndel): site institucional para escritório de advocacia, com foco em autoridade e conversão.
+- [Dr. Rafael Nora Resende](https://matheuspadula.com.br/drrafael): site para cirurgião do aparelho digestivo, publicado em https://drrafaelnoraresende.com.br/, com 92 de performance e 100 em SEO no PageSpeed.
+- [Alligators](https://matheuspadula.com.br/alligators): e-commerce completo, com foco em performance e experiência de compra.
+- [JHS Studio](https://matheuspadula.com.br/jhs): site para estúdio de audiovisual, com linguagem visual editorial.
+- [Instituto Oka](https://matheuspadula.com.br/oka): site institucional para instituto de conservação ambiental.
+
+## Projetos de identidade visual
+
+- [Agro Ribeiro](https://matheuspadula.com.br/agroribeiro-marca): identidade visual premium para corretora de fazendas de alto padrão.
+- [Blended](https://matheuspadula.com.br/blended): identidade visual para assessoria de marketing, do conceito à papelaria.
+- [Alpha Valle](https://matheuspadula.com.br/alphavalle): identidade visual para empreendimentos imobiliários.
+- [Amanda Mársico](https://matheuspadula.com.br/amandamarsico): identidade visual para cirurgiã-dentista, sofisticada e acolhedora.
+- [Rio Advocacia](https://matheuspadula.com.br/raphaelrio): identidade visual para advogado especializado em Direito Cível.
+- [Barbosa Advogados](https://matheuspadula.com.br/barbosa): atualização de identidade visual para escritório de advocacia.
+- [Fire Art](https://matheuspadula.com.br/fireart): identidade visual para galeria de arte online, minimalista e fluida.
+
+## Depoimentos
+
+A seção "O que dizem os clientes", na página inicial, reúne avaliações de clientes sobre prazo, atendimento e qualidade da entrega: https://matheuspadula.com.br/#depoimentos
