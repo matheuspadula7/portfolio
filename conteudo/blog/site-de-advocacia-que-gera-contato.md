@@ -9,6 +9,9 @@ tipo: guia
 pilar: web-design-que-converte
 publico: b2b-dono
 funil: atracao
+capa: /assets/blog/site-de-advocacia-que-gera-contato.jpg
+capa_alt: "Estantes escuras com livros antigos em uma biblioteca clássica"
+capa_credito: "Foto: Giammarco Boscaro / Unsplash"
 case_relacionado: ihs
 posts_relacionados:
   - feed-e-aluguel-site-e-imovel

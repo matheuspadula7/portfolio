@@ -9,6 +9,9 @@ tipo: guia
 pilar: identidade-visual
 publico: identidade
 funil: atracao
+capa: /assets/blog/logo-nao-e-marca.jpg
+capa_alt: "Leque circular de amostras de cores sobre uma mesa"
+capa_credito: "Foto: Andy Brown / Unsplash"
 case_relacionado: blended
 posts_relacionados: []
 data_publicacao: 2026-11-02
