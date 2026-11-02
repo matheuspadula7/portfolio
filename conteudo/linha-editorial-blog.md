@@ -269,3 +269,27 @@ Depois de aprovar, trocar `status` para `aprovado` e pedir ao Claude Code para p
 2. Validar volume de busca das 18 pautas.
 3. Colocar o generate_lead no ar antes do primeiro artigo (pacote do Claude Code já enviado).
 4. Conferir a fonte da pesquisa de LinkedIn/Gen Z usada na pauta I6.
+5. Definir quais ferramentas internas (quadro de aprovação, gerador do blog, pipeline de vídeo, painéis) podem ser mostradas como exemplo, e o que fica reservado.
+
+## 17. Posicionamento em IA e soluções sob medida (proposta, 02/11/2026)
+
+Acrescentada na revisão do repositório. Precisa ser levada para a versão original deste documento.
+
+**Posição.** O Matheus domina ferramentas de IA e as usa para entregar sites, landing pages e identidade visual, e também soluções sob medida: aplicativos, painéis e automações. O blog deve fazer ele ser visto como esse profissional, não só como quem faz sites e identidades.
+
+**Regras:**
+
+1. **Ampliar, não substituir.** Nunca falar mal de site ou identidade "à moda antiga". Eles continuam sendo o núcleo da oferta; as soluções sob medida são o passo seguinte.
+2. **Honestidade sobre o que já foi entregue.** Aplicativos e painéis hoje existem apenas como ferramentas internas. Nenhum texto pode sugerir projeto de cliente que não existe. Quando o exemplo for interno, dizer "ferramenta que construí para uso próprio".
+3. **Mostrar processo, não slogan.** Cada texto sobre IA diz o que a IA fez, o que o Matheus decidiu e o que foi revisado. Vocabulário: "Desenvolvimento com IA". Evitar "feito com IA", "AI-powered" e comparação de velocidade sem prazo real.
+4. **Transparência.** O bloco "Sobre o autor" (gerado pelo site) informa que ele usa IA no processo e revisa cada texto antes de publicar. A frase precisa continuar sendo verdadeira.
+5. **Escopo.** Soluções sob medida de escopo definido, com o mesmo posicionamento do site: solução completa em projetos simples, complemento ao desenvolvedor nos complexos (segurança, integrações, manutenção).
+6. **Primeiro cliente.** Ao entregar o primeiro aplicativo ou painel para cliente, ele vira case, passa pela seção 11 e libera pautas com resultado real.
+
+**Pautas candidatas** (a validar com busca; todas precisam de exemplo real, interno ou de cliente):
+
+| # | Título de trabalho | Tipo | Pilar | Apoio |
+|---|---|---|---|---|
+| B11 | Painel no lugar de planilha: quando vale a pena | Guia | Automação e IA | Ferramenta interna, rotulada como tal |
+| B12 | Como montei meu próprio quadro de aprovação de conteúdo com IA | Bastidor | Automação e IA | Quadro de artigos do próprio blog |
+| B13 | O que uma ferramenta sob medida resolve e o aplicativo pronto não | Explicador | Automação e IA | Ferramenta interna |
