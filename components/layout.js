@@ -9,15 +9,18 @@
   const path = window.location.pathname;
   const isCV = /^\/curriculo(\.html)?\/?$/.test(path);
   const isMainHome = ['/', '/index.html', ''].some(p => path === p) || path.endsWith('/index.html');
+  // O blog (PT e EN) tem entrada própria: quem chega por ele não vem do currículo.
+  const isBlog = ['/blog', '/en/blog'].some(b => path === b || path.startsWith(b + '/'));
   // /curriculo tem as mesmas seções ancoradas da home (sobre, portfolio, contato)
   const isHome = isCV || isMainHome;
 
-  // Quem chegou pelo currículo continua no fluxo do currículo ao navegar pelos cases:
+  // Quem chegou pelo currículo continua no fluxo do currículo ao navegar pelos cases
+  // (a home e o blog zeram esse contexto):
   // o logo e os links do menu voltam para /curriculo, e não para a home de clientes.
   let fromCV = isCV;
   try {
     if (isCV) sessionStorage.setItem('padula_ctx', 'cv');
-    else if (isMainHome) sessionStorage.removeItem('padula_ctx');
+    else if (isMainHome || isBlog) sessionStorage.removeItem('padula_ctx');
     fromCV = sessionStorage.getItem('padula_ctx') === 'cv';
   } catch (e) {}
   const homeHref = fromCV ? '/curriculo' : '/';
