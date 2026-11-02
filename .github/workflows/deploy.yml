@@ -76,6 +76,7 @@ jobs:
             .gitignore
             conteudo/**
             scripts/**
+            estudos-python/**
             package.json
             package-lock.json
             idv/**
