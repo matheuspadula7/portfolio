@@ -69,7 +69,6 @@
     }
     loadPyodide().then(function (py) {
       pyodide = py;
-      py.globals.set("pedir_js", function (prompt) { return window.prompt(prompt || "input()"); });
       py.runPython(PY_RUNNER);
       pronto = true;
       definirStatus("on", "Python pronto");
@@ -80,14 +79,14 @@
     });
   }
 
+  function pedirEntrada(prompt) { return window.prompt(prompt || "input()"); }
+
   function executar(codigo, entradas) {
     var rodar = pyodide.globals.get("_rodar");
-    var pedir = pyodide.globals.get("pedir_js");
-    var res = rodar(codigo, entradas || null, pedir);
+    var res = rodar(codigo, entradas || null, pedirEntrada);
     var arr = res.toJs();
     res.destroy();
     rodar.destroy();
-    pedir.destroy();
     return { saida: arr[0], erro: arr[1] };
   }
 
