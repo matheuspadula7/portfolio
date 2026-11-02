@@ -149,6 +149,17 @@
     $("bar-txt").textContent = feitos + " de " + EXS.length + " concluídos";
   }
 
+  function guiaVsCode(teste) {
+    var arq = (window.ARQUIVOS || {})[ex.id];
+    if (!arq) return "";
+    return '<div class="box"><h3>No VS Code</h3>' +
+      "<div>Abra <code>estudos-python/" + esc(arq) + "</code>, escreva a solução e rode:</div>" +
+      "<pre>py " + esc(arq) + "</pre>" +
+      (teste ? "<div>Para conferir com os mesmos testes daqui:</div><pre>py conferir.py " + esc(arq) + "</pre>"
+             : "<div>É um experimento: rode, observe o resultado e leia a explicação abaixo.</div>") +
+      "</div>";
+  }
+
   function desenharExercicio() {
     ex = EXS[estado.atual];
     var codigo = estado.codigos[ex.id];
@@ -159,7 +170,8 @@
       '<div class="eyebrow">' + esc(ex.tema) + "</div>" +
       "<h1>" + esc(ex.titulo) + "</h1>" +
       '<div class="enun">' + ex.enunciado + "</div>" +
-      '<div class="painel"><div class="rotulo"><label for="codigo">Seu código</label><span>Tab insere espaços · Ctrl+Enter roda</span></div>' +
+      guiaVsCode(teste) +
+      '<div class="painel"><div class="rotulo"><label for="codigo">Rascunho rápido (opcional)</label><span>Tab insere espaços · Ctrl+Enter roda</span></div>' +
       '<textarea id="codigo" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off"></textarea>' +
       '<div class="acoes">' +
       '<button class="btn pri" type="button" id="rodar" disabled>Rodar</button>' +

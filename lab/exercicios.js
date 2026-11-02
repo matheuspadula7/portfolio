@@ -14,6 +14,22 @@
     booleano  true se a saída precisa ser True ou False
   codigoDeve: verificações no texto do código (regex), para exigir f-string, len(), etc.
 */
+/* Arquivo de cada exercício na pasta estudos-python (usado para mostrar o comando no Lab). */
+window.ARQUIVOS = {
+    "a2-print-sem-aspas": "exp_print_sem_aspas.py",
+    "a2-divisao-inteira": "exp_divisao.py",
+    "a2-fixacao-expressoes": "ex_fixacao.py",
+    "a3-sentido-da-vida": "ex_sentido_da_vida.py",
+    "a3-nota-media": "ex_nota_media.py",
+    "a4-linguagens": "ex_linguagens.py",
+    "a4-fstring": "ex_fstring.py",
+    "a4-tamanho-nome": "ex_tamanho_nome.py",
+    "a5-ex-2-1": "ex_2_1.py",
+    "a5-ex-2-2": "ex_2_2.py",
+    "a5-ex-2-3": "ex_2_3.py",
+    "a5-ex-2-4": "ex_2_4.py"
+};
+
 window.MODULOS = [
   {
     id: "aula-2",
