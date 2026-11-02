@@ -1,165 +1,150 @@
-/* Vitrine do hero: pilha de projetos, pagina rolando, abas, deslizar, paralaxe leve.
-   Sem dependencias. Usada em / e /curriculo (precisa do objeto global I18N e de window.__currentLang). */
+/* Vitrine do hero estilo "Explore": cartoes de imagem passando em profundidade.
+   Desktop: progresso preso a rolagem do hero. Celular: avanca sozinho, aceita deslizar e tocar.
+   Sem dependencias. Usada em / e /curriculo. */
 (function () {
   'use strict';
   var hero = document.getElementById('top');
-  var vis = document.getElementById('heroVisual');
-  if (!hero || !vis) return;
+  var stage = document.getElementById('hsStage');
+  if (!hero || !stage) return;
 
+  var cards = Array.prototype.slice.call(stage.querySelectorAll('.hs-card'));
+  var N = cards.length;
+  if (!N) return;
+  var countEl = document.getElementById('hsCount');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var wide = window.matchMedia('(min-width:981px)');
 
-  var SL = [
-    { name: 'Diálogos Estruturantes', key: 'hero.hv1' },
-    { name: 'IHS Advogados', key: 'hero.hv2' },
-    { name: 'Dr. Rafael Nora Resende', key: 'hero.hv3' }
+  // d = posicao relativa ao cartao ativo: x, y (% do palco), escala, opacidade, escurecimento, rotulo
+  var KEY = [
+    [-2, -34, -38, .50, 0, .45, 0],
+    [-1, -27, -29, .64, .9, .42, 0],
+    [0, 0, 0, 1, 1, 0, 1],
+    [1, 26, 30, .64, 1, .42, 0],
+    [2, 34, 40, .50, 0, .45, 0]
   ];
-  var N = SL.length;
-  var q = function (sel) { return Array.prototype.slice.call(vis.querySelectorAll(sel)); };
-  var cards = q('.bf');
-  var pages = q('.bf-page');
-  var tabs = q('.bf-tabs button');
-  var devImgs = q('.hv-dev img');
-  var devChips = q('.hv-chip');
-  var panels = q('.hv-sp');
-  var deck = document.getElementById('bfDeck');
-  var nameEl = document.getElementById('bfName');
-  var typeEl = document.getElementById('bfType');
-  var countEl = document.getElementById('bfCount');
-  var cur = 0;
-
-  function dict() { try { return I18N[window.__currentLang || 'pt'] || {}; } catch (e) { return {}; } }
-  function pad(n) { return (n < 10 ? '0' : '') + n; }
-
-  function measure(i) {
-    var card = cards[i], img = pages[i];
-    var screen = card.querySelector('.bf-screen');
-    var d = Math.max(0, img.getBoundingClientRect().height - screen.clientHeight);
-    img.style.setProperty('--dist', d + 'px');
-    vis.style.setProperty('--dur', Math.min(18, Math.max(10, d / 135)).toFixed(1) + 's');
+  function pose(d) {
+    if (d <= -2) return KEY[0];
+    if (d >= 2) return KEY[4];
+    var k = 0;
+    while (k < 3 && d > KEY[k + 1][0]) k++;
+    var a = KEY[k], b = KEY[k + 1], t = (d - a[0]) / (b[0] - a[0]), o = [d];
+    for (var i = 1; i < 7; i++) o.push(a[i] + (b[i] - a[i]) * t);
+    return o;
   }
 
-  function meta() {
-    nameEl.textContent = SL[cur].name;
-    typeEl.setAttribute('data-i18n', SL[cur].key);
-    typeEl.textContent = dict()[SL[cur].key] || '';
-    countEl.innerHTML = '<b>' + pad(cur + 1) + '</b> / ' + pad(N);
-    tabs.forEach(function (b, k) {
-      b.classList.toggle('on', k === cur);
-      b.setAttribute('aria-selected', k === cur ? 'true' : 'false');
-    });
-    devImgs.forEach(function (im, k) { im.classList.toggle('on', k === cur); });
-    devChips.forEach(function (c, k) { c.classList.toggle('on', k === cur); });
-    panels.forEach(function (p, k) { p.classList.toggle('on', k === cur); });
+  var W = 0, H = 0;
+  function measure() { W = stage.clientWidth; H = stage.clientHeight; }
+
+  var pos = 0;          // posicao atual (suavizada)
+  var target = 0;       // posicao alvo
+  var circular = false; // celular: o deck gira em loop
+  var raf = 0;
+
+  function wrap(d) {
+    if (!circular) return d;
+    d = ((d % N) + N) % N;
+    return d > N / 2 ? d - N : d;
   }
 
-  function show(i) {
-    i = ((i % N) + N) % N;
-    var prev = cur;
-    if (i !== prev) {
-      var old = pages[prev];
-      old.classList.remove('is-active');
-      old.classList.add('is-leaving');
-      setTimeout(function () { old.classList.remove('is-leaving'); }, 950);
+  function render() {
+    var front = 0, best = 9;
+    for (var i = 0; i < N; i++) {
+      var d = wrap(i - pos), p = pose(d), ad = Math.abs(d);
+      var c = cards[i];
+      c.style.transform = 'translate(-50%,-50%) translate3d(' + (p[1] * W / 100).toFixed(1) + 'px,' + (p[2] * H / 100).toFixed(1) + 'px,0) scale(' + p[3].toFixed(3) + ')';
+      c.style.opacity = p[4].toFixed(3);
+      c.style.zIndex = String(10 - Math.round(ad * 3));
+      c.style.setProperty('--dim', p[5].toFixed(3));
+      c.style.setProperty('--lab', Math.max(0, p[6] * 1.4 - .4).toFixed(3));
+      c.classList.toggle('is-vis', p[4] > .3);
+      if (ad < best) { best = ad; front = i; }
     }
-    cur = i;
-    cards.forEach(function (c, k) { c.setAttribute('data-pos', String(((k - cur) % N + N) % N)); });
-    var img = pages[cur];
-    img.classList.remove('is-leaving');
-    measure(cur);
-    void img.offsetWidth;
-    img.classList.add('is-active');
-    meta();
-    // reinicia a barra de progresso da aba ativa
-    var on = tabs[cur];
-    on.classList.remove('on'); void on.offsetWidth; on.classList.add('on');
+    for (var j = 0; j < N; j++) cards[j].classList.toggle('is-front', j === front);
+    if (countEl) countEl.innerHTML = '<b>' + String(front + 1).padStart(2, '0') + '</b> / ' + String(N).padStart(2, '0');
   }
 
-  /* fim da rolagem da pagina da frente -> proximo projeto */
-  pages.forEach(function (p, k) {
-    p.addEventListener('animationend', function (e) {
-      if (e.animationName === 'bfscroll' && k === cur && !reduce) show(cur + 1);
-    });
-  });
-
-  /* clique em um cartao de tras traz ele para a frente; o da frente abre o case */
-  var swiped = false;
-  cards.forEach(function (c, k) {
-    c.addEventListener('click', function (ev) {
-      if (swiped) { ev.preventDefault(); return; }
-      if (k !== cur) { ev.preventDefault(); show(k); }
-    });
-  });
-  tabs.forEach(function (b, k) {
-    b.addEventListener('click', function () { show(k); });
-    b.addEventListener('keydown', function (ev) {
-      if (ev.key === 'ArrowRight') { ev.preventDefault(); show(cur + 1); tabs[cur].focus(); }
-      if (ev.key === 'ArrowLeft') { ev.preventDefault(); show(cur - 1); tabs[cur].focus(); }
-    });
-  });
-
-  /* deslizar para o lado (toque ou mouse) troca de projeto */
-  var sx = 0, sy0 = 0, down = false;
-  deck.addEventListener('pointerdown', function (e) { down = true; swiped = false; sx = e.clientX; sy0 = e.clientY; });
-  deck.addEventListener('pointerup', function (e) {
-    if (!down) return; down = false;
-    var dx = e.clientX - sx, dy = e.clientY - sy0;
-    if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.4) {
-      swiped = true;
-      show(dx < 0 ? cur + 1 : cur - 1);
-      setTimeout(function () { swiped = false; }, 350);
-    }
-  });
-  deck.addEventListener('pointercancel', function () { down = false; });
-
-  document.addEventListener('click', function (e) {
-    if (e.target.closest && e.target.closest('.lang button')) setTimeout(meta, 0);
-  });
-  window.addEventListener('resize', function () { measure(cur); });
-  if (pages[0].complete) { measure(0); } else { pages[0].addEventListener('load', function () { measure(0); }); }
-  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(function () { measure(cur); }); }
-
-  /* estado inicial (o HTML ja traz data-pos e a primeira pagina ativa) */
-  show(0);
-  if (reduce) { pages[0].classList.remove('is-active'); }
-
-  if (reduce) return;
-
-  /* ---------- paralaxe: mouse (so com cursor) + deriva na rolagem ---------- */
-  var layers = q('.hv-layer').map(function (el) {
-    return { el: el, d: parseFloat(el.getAttribute('data-depth')) || 0, x: 0, y: 0 };
-  });
-  var mx = 0, my = 0, sy = 0, raf = 0;
   function tick() {
-    for (var n = 0; n < layers.length; n++) {
-      var l = layers[n];
-      var tx = mx * l.d * 16;
-      var ty = my * l.d * 12 + sy * l.d * 38;
-      l.x += (tx - l.x) * 0.08;
-      l.y += (ty - l.y) * 0.08;
-      l.el.style.transform = 'translate3d(' + l.x.toFixed(2) + 'px,' + l.y.toFixed(2) + 'px,0)';
-    }
+    raf = 0;
+    var diff = target - pos;
+    if (Math.abs(diff) < .002) { pos = target; render(); return; }
+    pos += diff * (reduce ? 1 : .14);
+    render();
     raf = requestAnimationFrame(tick);
   }
-  if (fine) {
-    hero.addEventListener('mousemove', function (e) {
-      var r = hero.getBoundingClientRect();
-      mx = ((e.clientX - r.left) / r.width - 0.5) * 2;
-      my = ((e.clientY - r.top) / r.height - 0.5) * 2;
+  function go() { if (!raf) raf = requestAnimationFrame(tick); }
+
+  // ---------- desktop: rolagem ----------
+  var scrub = false;
+  function onScroll() {
+    if (!scrub) return;
+    var r = hero.getBoundingClientRect();
+    var span = r.height - window.innerHeight;
+    var prog = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0;
+    target = prog * (N - 1);
+    go();
+  }
+
+  // ---------- celular: autoplay, deslizar e tocar ----------
+  var timer = 0, paused = false, visible = true, dragX = null;
+  function step(n) {
+    target = Math.round(target) + n;
+    go();
+  }
+  function startAuto() {
+    stopAuto();
+    if (reduce || scrub) return;
+    timer = setInterval(function () { if (!paused && visible && !document.hidden) step(1); }, 3200);
+  }
+  function stopAuto() { if (timer) { clearInterval(timer); timer = 0; } }
+
+  stage.addEventListener('pointerdown', function (e) { if (!scrub) { dragX = e.clientX; paused = true; } });
+  window.addEventListener('pointerup', function (e) {
+    if (dragX === null) return;
+    var dx = e.clientX - dragX; dragX = null;
+    if (Math.abs(dx) > 40) { step(dx < 0 ? 1 : -1); startAuto(); }
+    setTimeout(function () { paused = false; }, 1200);
+  });
+  stage.addEventListener('pointercancel', function () { dragX = null; paused = false; });
+
+  // clicar num cartao lateral traz ele para a frente; no da frente abre o case
+  cards.forEach(function (c, i) {
+    c.addEventListener('click', function (e) {
+      var d = wrap(i - pos);
+      if (Math.abs(d) > .5) {
+        e.preventDefault();
+        if (scrub) {
+          var r = hero.getBoundingClientRect(), span = r.height - window.innerHeight;
+          var y = window.scrollY + r.top + span * (i / (N - 1));
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        } else {
+          target = Math.round(pos) + Math.round(d);
+          go();
+        }
+      }
     });
-    hero.addEventListener('mouseleave', function () { mx = 0; my = 0; });
-  }
-  window.addEventListener('scroll', function () {
-    sy = Math.min(1, Math.max(0, window.scrollY / (hero.offsetHeight * 0.85)));
-  }, { passive: true });
+    c.addEventListener('dragstart', function (e) { e.preventDefault(); });
+  });
+
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (es) {
-      var on = es[0].isIntersecting;
-      hero.classList.toggle('is-off', !on);
-      if (on && !raf) raf = requestAnimationFrame(tick);
-      if (!on && raf) { cancelAnimationFrame(raf); raf = 0; }
-    }, { threshold: 0.02 }).observe(hero);
-  } else {
-    raf = requestAnimationFrame(tick);
+    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: .15 }).observe(stage);
   }
+  stage.addEventListener('mouseenter', function () { paused = true; });
+  stage.addEventListener('mouseleave', function () { paused = false; });
+
+  function mode() {
+    var wantScrub = wide.matches && !reduce;
+    measure();
+    scrub = wantScrub;
+    circular = !wantScrub;
+    hero.classList.toggle('is-scrub', wantScrub);
+    hero.style.setProperty('--steps', N - 1);
+    if (wantScrub) { stopAuto(); onScroll(); }
+    else { pos = target = Math.round(target); startAuto(); }
+    render();
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', function () { mode(); });
+  if (wide.addEventListener) wide.addEventListener('change', mode);
+  mode();
 })();
