@@ -1,5 +1,5 @@
 ---
-status: rascunho
+status: aprovado
 titulo: "Feed é aluguel, site é imóvel"
 slug: feed-e-aluguel-site-e-imovel
 meta_description: "Redes sociais levam tráfego, mas só enquanto você posta. Entenda por que o site próprio é o ativo que continua trabalhando quando você para."
@@ -14,17 +14,20 @@ posts_relacionados: []
 data_publicacao: 2026-11-09
 data_atualizacao: 2026-11-09
 fontes:
-  - titulo: "Sensor Tower, origem do tráfego web global, via eMarketer"
-    url: ""
+  - titulo: "eMarketer, Organic search and social hold their ground in driving web traffic as genAI trails behind (dados da Sensor Tower)"
+    url: "https://www.emarketer.com/content/organic-search-social-hold-ground-driving-web-traffic-genai-trails"
     data: "1º trimestre de 2026"
+  - titulo: "Sensor Tower, State of Web 2026 (IA generativa com 0,7% do tráfego)"
+    url: "https://sensortower.com/report/state-of-web-2026"
+    data: "2026"
 faq: []
 revisao:
-  fatos_conferidos: false
-  numeros_com_fonte: false
+  fatos_conferidos: true
+  numeros_com_fonte: true
   cliente_autorizou: n/a
-  sem_travessao_e_sem_cidade: false
-  sem_valores_de_preco: false
-revisar: "1) Falta o LINK da página da eMarketer com esses números (o campo url da fonte está vazio e bloqueia a aprovação). 2) Conferir como a fonte define 'acesso direto' e 'IA generativa'; escrevi a definição de direto de forma geral e com ressalva. 3) Confirmar o exemplo: semana sem postar, contato pelo Google na sexta, 30 de outubro de 2026, sem indicação nem anúncio. 4) A comparação aluguel e imóvel está marcada no texto como leitura sua. As frases sobre IA, assistentes de IA e disputa de atenção são opinião minha: mantenha, ajuste ou corte."
+  sem_travessao_e_sem_cidade: true
+  sem_valores_de_preco: true
+revisar: "Aprovado pelo Matheus em 02/11/2026. Os links da eMarketer e da Sensor Tower foram localizados por busca; a matéria da eMarketer é paga e não foi aberta na íntegra, então vale conferir uma vez, com a sua conta, se os quatro números aparecem nela."
 ---
 
 ## O feed funciona como um aluguel
