@@ -6,6 +6,13 @@
     <description>Artigos sobre web design, sites que convertem, identidade visual e bastidores de projetos, por Matheus Padula.</description>
     <language>pt-BR</language>
     <atom:link href="https://matheuspadula.com.br/blog/rss.xml" rel="self" type="application/rss+xml"/>
-
+    <item>
+      <title>Feed é aluguel, site é imóvel</title>
+      <link>https://matheuspadula.com.br/blog/feed-e-aluguel-site-e-imovel/</link>
+      <guid isPermaLink="true">https://matheuspadula.com.br/blog/feed-e-aluguel-site-e-imovel/</guid>
+      <pubDate>Mon, 02 Nov 2026 12:00:00 GMT</pubDate>
+      <category>Web e desenvolvimento</category>
+      <description>Redes sociais levam tráfego, mas só enquanto você posta. Entenda por que o site próprio é o ativo que continua trabalhando quando você para.</description>
+    </item>
   </channel>
 </rss>

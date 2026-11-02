@@ -11,8 +11,8 @@ publico: b2b-dono
 funil: atracao
 case_relacionado: ""
 posts_relacionados: []
-data_publicacao: 2026-11-09
-data_atualizacao: 2026-11-09
+data_publicacao: 2026-11-02
+data_atualizacao: 2026-11-02
 fontes:
   - titulo: "eMarketer, Organic search and social hold their ground in driving web traffic as genAI trails behind (dados da Sensor Tower)"
     url: "https://www.emarketer.com/content/organic-search-social-hold-ground-driving-web-traffic-genai-trails"
