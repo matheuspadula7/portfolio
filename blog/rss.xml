@@ -7,6 +7,14 @@
     <language>pt-BR</language>
     <atom:link href="https://matheuspadula.com.br/blog/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Vender confiança antes de vender terra: marca e site da Agro Ribeiro</title>
+      <link>https://matheuspadula.com.br/blog/agro-ribeiro-marca-e-site/</link>
+      <guid isPermaLink="true">https://matheuspadula.com.br/blog/agro-ribeiro-marca-e-site/</guid>
+      <pubDate>Mon, 02 Nov 2026 12:00:00 GMT</pubDate>
+      <category>Web e desenvolvimento</category>
+      <description>Como a identidade visual e o site da Agro Ribeiro foram pensados para vender confiança antes de vender terra, com CMS próprio e deploy automático.</description>
+    </item>
+    <item>
       <title>Feed é aluguel, site é imóvel</title>
       <link>https://matheuspadula.com.br/blog/feed-e-aluguel-site-e-imovel/</link>
       <guid isPermaLink="true">https://matheuspadula.com.br/blog/feed-e-aluguel-site-e-imovel/</guid>

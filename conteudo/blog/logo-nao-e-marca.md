@@ -9,9 +9,9 @@ tipo: guia
 pilar: identidade-visual
 publico: identidade
 funil: atracao
-capa: /assets/blog/logo-nao-e-marca.jpg
-capa_alt: "Leque circular de amostras de cores sobre uma mesa"
-capa_credito: "Foto: Andy Brown / Unsplash"
+capa: /assets/images/blended-cover.jpg
+capa_alt: "Papelaria da Blended: caderno, cartões de visita, envelope e pasta em tons de terracota e bege"
+capa_original: true
 case_relacionado: blended
 posts_relacionados: []
 data_publicacao: 2026-11-02
