@@ -1,5 +1,5 @@
 ---
-status: rascunho
+status: aprovado
 titulo: "Logo não é marca: o que é, de fato, uma identidade visual"
 slug: logo-nao-e-marca
 meta_description: "Logo não é marca. Veja o que uma identidade visual inclui, como ela nasce da estratégia e quais sinais mostram que só um logo não é suficiente."
@@ -27,12 +27,12 @@ faq:
   - p: "Uma identidade visual serve para o site e para as redes sociais?"
     r: "Sim. Uma boa identidade já nasce com versões e regras para o impresso e o digital, para que o cartão de visita e o perfil na rede pareçam da mesma empresa."
 revisao:
-  fatos_conferidos: false
-  numeros_com_fonte: false
+  fatos_conferidos: true
+  numeros_com_fonte: true
   cliente_autorizou: n/a
-  sem_travessao_e_sem_cidade: false
-  sem_valores_de_preco: false
-revisar: "1) Os fatos da Blended vêm da página do case (quatro pilares, lettering serifado, paleta terracota, tipografia editorial, versões do logotipo, sistema cromático, aplicação do cartão ao Instagram). 2) As definições de logo, identidade visual e marca e a lista do que uma identidade inclui são conhecimento geral meu: confirme se batem com a forma como você explica. 3) A resposta do FAQ sobre manual de marca se apoia no case Agro Ribeiro (manual como referência única para fornecedores). 4) Não há preços nem prazos."
+  sem_travessao_e_sem_cidade: true
+  sem_valores_de_preco: true
+revisar: "Aprovado pelo Matheus em 02/11/2026."
 ---
 
 ## Qual a diferença entre logo, identidade visual e marca?
