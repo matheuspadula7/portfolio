@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /whatsapp
-Disallow: /lab/
 
 Sitemap: https://matheuspadula.com.br/sitemap.xml
 Sitemap: https://matheuspadula.com.br/sitemap-blog.xml
