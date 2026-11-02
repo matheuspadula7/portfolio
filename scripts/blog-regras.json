@@ -1,0 +1,26 @@
+{
+  "_comentario": "Regras editoriais lidas pelo gerador do blog (secoes 2, 7 e 11 de conteudo/linha-editorial-blog.md). Edite aqui, nao no codigo.",
+  "regiao": "Vale do Paraíba",
+  "cases": {
+    "b2b": ["menndel", "agroribeiro", "hlwallwonders"],
+    "identidade": ["agroribeiro-marca", "blended", "alphavalle", "amandamarsico", "raphaelrio", "fireart", "barbosa"],
+    "livres": ["ihs", "drrafael", "dialogos", "alligators", "jhs", "oka"],
+    "bloqueados": ["essentia"]
+  },
+  "termosProibidos": ["vibecoding", "R$"],
+  "cidadesProibidas": [
+    "São José dos Campos", "Taubaté", "Jacareí", "Pindamonhangaba", "Guaratinguetá", "Caçapava",
+    "Cachoeira Paulista", "Campos do Jordão", "Aparecida", "Potim", "Roseira", "Lavrinhas",
+    "Passa Quatro", "Resende", "Volta Redonda",
+    "São Paulo", "Rio de Janeiro", "Campinas", "Curitiba", "Belo Horizonte", "Brasília",
+    "Porto Alegre", "Salvador", "Fortaleza", "Recife", "Goiânia"
+  ],
+  "tamanhos": {
+    "guia": [1200, 1800],
+    "sintoma": [900, 1400],
+    "explicador": [900, 1400],
+    "bastidor": [800, 1200],
+    "tese": [600, 1000]
+  },
+  "faqObrigatorioEm": ["guia", "sintoma", "explicador"]
+}

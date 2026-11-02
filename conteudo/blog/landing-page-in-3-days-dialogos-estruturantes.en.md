@@ -1,16 +1,32 @@
 ---
-titulo: How a landing page shipped in 3 days: behind the Diálogos Estruturantes case
-descricao: From an AI-built wireframe to a live page capturing leads in RD Station. The step-by-step of a delivery on a tight deadline.
-data: 2026-11-16
-categoria: bastidores
-idioma: en
+status: rascunho
+titulo: "How a landing page shipped in 3 days: behind the Diálogos Estruturantes case"
 slug: landing-page-in-3-days-dialogos-estruturantes
+meta_description: "From an AI-built wireframe to a live page capturing leads in RD Station: the step-by-step of a delivery on a tight deadline, done in 3 days."
+resposta_curta: "The Diálogos Estruturantes landing page went from wireframe to live in 3 days because the structure was defined before the visuals, design and code were built together in Framer, and the form was integrated with RD Station from the start."
+palavra_chave: "landing page in 3 days"
+tipo: bastidor
+pilar: qualidade-e-responsabilidade
+publico: b2b-dono
+funil: evidencia
+case_relacionado: dialogos
+posts_relacionados: []
+data_publicacao: 2026-11-16
+data_atualizacao: 2026-11-16
+idioma: en
 par: landing-page-em-3-dias-dialogos-estruturantes
 capa: /assets/images/dialogos-hero.jpg
+capa_alt: "Diálogos Estruturantes landing page"
 capa_original: true
-capa_alt: Diálogos Estruturantes landing page
-rascunho: true
-revisar: Tradução do post em português. Revise o tom em inglês e as frases de interpretação.
+fontes: []
+faq: []
+revisao:
+  fatos_conferidos: false
+  numeros_com_fonte: false
+  cliente_autorizou: n/a
+  sem_travessao_e_sem_cidade: false
+  sem_valores_de_preco: false
+revisar: "Tradução do post em português. Revise o tom em inglês e as frases de interpretação."
 ---
 
 Diálogos Estruturantes started as a magazine about taxation and is becoming a platform that connects the agribusiness, infrastructure and ports sectors, bringing together content, podcast, events and networking. The new brand and positioning were already defined. What was missing was a place to communicate the change while the full platform site wasn't ready yet.

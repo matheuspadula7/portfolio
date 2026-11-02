@@ -1,15 +1,36 @@
 ---
-titulo: 5 sinais de que o seu site é bonito, mas não vende
-descricao: Um site pode agradar os olhos e mesmo assim não gerar contato. Veja cinco sinais de que a página não está fazendo o trabalho dela.
-data: 2026-11-09
-categoria: clientes
-idioma: pt
+status: rascunho
+titulo: "5 sinais de que o seu site é bonito, mas não vende"
 slug: site-bonito-que-nao-converte
+meta_description: "Um site pode agradar os olhos e mesmo assim não gerar contato. Veja cinco sinais de que a sua página não está fazendo o trabalho de um vendedor."
+resposta_curta: "Seu site é bonito, mas não vende quando o visitante não entende o que você faz, não sabe qual é o próximo passo, encontra obstáculos para falar com você, sofre no celular ou não vê provas de que pode confiar."
+palavra_chave: "site bonito que não converte"
+tipo: sintoma
+pilar: web-design-que-converte
+publico: b2b-dono
+funil: atracao
+case_relacionado: ""
+posts_relacionados: []
+data_publicacao: 2026-11-09
+data_atualizacao: 2026-11-09
 capa: /assets/blog/site-bonito-que-nao-converte.jpg
-capa_alt: Notebook com painel de gráficos de desempenho na tela
-capa_credito: Foto: path digital / Unsplash
-rascunho: true
-revisar: Texto genérico de boas práticas, sem números. Acrescentar um exemplo real seu (um site que você corrigiu) e conferir se o tom é o seu.
+capa_alt: "Notebook com painel de gráficos de desempenho na tela"
+capa_credito: "Foto: path digital / Unsplash"
+fontes: []
+faq:
+  - p: "Quanto tempo leva para ajustar um site que não converte?"
+    r: "Depende do que está travando. Ajustes de texto, botões e formulário costumam ser rápidos. Refazer a estrutura inteira da página leva mais tempo."
+  - p: "Preciso refazer o site do zero para converter mais?"
+    r: "Na maioria dos casos, não. Quase tudo se resolve com ajustes de estrutura, texto e caminho até o contato."
+  - p: "Como saber se o meu site está gerando contato?"
+    r: "Meça os cliques no WhatsApp, no telefone e os envios de formulário. Sem essa medição, qualquer conclusão é palpite."
+revisao:
+  fatos_conferidos: false
+  numeros_com_fonte: false
+  cliente_autorizou: n/a
+  sem_travessao_e_sem_cidade: false
+  sem_valores_de_preco: false
+revisar: "Texto genérico de boas práticas, sem números e sem exemplo real do estúdio. Falta um case relacionado (a linha editorial exige um exemplo real) e confirmar o tom. As respostas do FAQ também são minhas."
 ---
 
 Todo mundo já viu um site lindo que não leva a lugar nenhum. A pessoa entra, admira o visual, fecha a aba e nunca mais volta. Para quem tem uma empresa, isso custa caro: o site existe, mas não faz o trabalho de um vendedor.

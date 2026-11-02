@@ -1,16 +1,32 @@
 ---
-titulo: Como saiu uma landing page em 3 dias: bastidores do case Diálogos Estruturantes
-descricao: Do wireframe feito com IA à página no ar captando leads no RD Station. O passo a passo de uma entrega com prazo apertado.
-data: 2026-11-16
-categoria: bastidores
-idioma: pt
+status: rascunho
+titulo: "Como saiu uma landing page em 3 dias: bastidores do case Diálogos Estruturantes"
 slug: landing-page-em-3-dias-dialogos-estruturantes
+meta_description: "Do wireframe feito com IA à página no ar captando leads no RD Station: o passo a passo de uma entrega com prazo apertado, feita em apenas 3 dias."
+resposta_curta: "A landing page da Diálogos Estruturantes foi do wireframe à publicação em 3 dias porque a estrutura foi definida antes do visual, o design e o código foram feitos juntos no Framer e o formulário já nasceu integrado ao RD Station."
+palavra_chave: "landing page em 3 dias"
+tipo: bastidor
+pilar: qualidade-e-responsabilidade
+publico: b2b-dono
+funil: evidencia
+case_relacionado: dialogos
+posts_relacionados: []
+data_publicacao: 2026-11-16
+data_atualizacao: 2026-11-16
+idioma: pt
 par: landing-page-in-3-days-dialogos-estruturantes
 capa: /assets/images/dialogos-hero.jpg
+capa_alt: "Landing page da Diálogos Estruturantes"
 capa_original: true
-capa_alt: Landing page da Diálogos Estruturantes
-rascunho: true
-revisar: Todos os fatos vêm da página do case (3 dias, wireframe no Claude, Framer, formulário para o RD Station). As frases sobre o que você aprendeu e como decidiu são interpretação minha: ajuste para o que realmente aconteceu.
+fontes: []
+faq: []
+revisao:
+  fatos_conferidos: false
+  numeros_com_fonte: false
+  cliente_autorizou: n/a
+  sem_travessao_e_sem_cidade: false
+  sem_valores_de_preco: false
+revisar: "Os fatos vêm da página do case (3 dias, wireframe no Claude, Framer, formulário para o RD Station). As frases de interpretação (\"o que levo desse projeto\") são minhas, ajuste para o que de fato aconteceu."
 ---
 
 A Diálogos Estruturantes nasceu como uma revista sobre tributação e está se transformando em uma plataforma que conecta os setores de agro, infraestrutura e portos, reunindo conteúdo, podcast, eventos e networking. A marca nova e o novo posicionamento já estavam definidos. O que faltava era um endereço para comunicar essa mudança enquanto o site completo ainda não ficava pronto.
