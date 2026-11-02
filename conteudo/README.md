@@ -38,4 +38,4 @@ npm run blog           # exatamente o que vai para produção
 
 Para ver no navegador, sirva a pasta do site (por exemplo, `python -m http.server 8080`) e abra `http://localhost:8080/blog/`.
 
-As pastas `blog/` e `en/` na raiz são geradas e ficam fora do git.
+As pastas `blog/` e `en/` e o `sitemap-blog.xml` na raiz são **gerados, mas ficam versionados no git**, para o blog aparecer em qualquer forma de deploy (inclusive o "Reimplantar" do painel da Hostinger, que não roda o gerador). Por isso, antes de cada commit de artigo, rode `npm run blog` (nunca `blog:preview`, que inclui rascunhos). O deploy do GitHub Actions também regenera tudo e é quem publica posts agendados pela data.
