@@ -7,12 +7,44 @@
     <language>pt-BR</language>
     <atom:link href="https://matheuspadula.com.br/blog/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Vender confiança antes de vender terra: marca e site da Agro Ribeiro</title>
+      <link>https://matheuspadula.com.br/blog/agro-ribeiro-marca-e-site/</link>
+      <guid isPermaLink="true">https://matheuspadula.com.br/blog/agro-ribeiro-marca-e-site/</guid>
+      <pubDate>Mon, 02 Nov 2026 12:00:00 GMT</pubDate>
+      <category>Web e desenvolvimento</category>
+      <description>Como a identidade visual e o site da Agro Ribeiro foram pensados para vender confiança antes de vender terra, com CMS próprio e deploy automático.</description>
+    </item>
+    <item>
+      <title>O que o ataque à Binance ensina a quem tem site e marca</title>
+      <link>https://matheuspadula.com.br/blog/ataque-binance-o-que-ensina-a-quem-tem-site/</link>
+      <guid isPermaLink="true">https://matheuspadula.com.br/blog/ataque-binance-o-que-ensina-a-quem-tem-site/</guid>
+      <pubDate>Mon, 02 Nov 2026 12:00:00 GMT</pubDate>
+      <category>Web e desenvolvimento</category>
+      <description>O roubo bilionário à Binance não é um assunto só de cripto. Veja o que ele ensina a quem tem site e marca sobre acessos, resposta e confiança.</description>
+    </item>
+    <item>
       <title>Feed é aluguel, site é imóvel</title>
       <link>https://matheuspadula.com.br/blog/feed-e-aluguel-site-e-imovel/</link>
       <guid isPermaLink="true">https://matheuspadula.com.br/blog/feed-e-aluguel-site-e-imovel/</guid>
       <pubDate>Mon, 02 Nov 2026 12:00:00 GMT</pubDate>
       <category>Web e desenvolvimento</category>
       <description>Redes sociais levam tráfego, mas só enquanto você posta. Entenda por que o site próprio é o ativo que continua trabalhando quando você para.</description>
+    </item>
+    <item>
+      <title>Logo não é marca: o que é, de fato, uma identidade visual</title>
+      <link>https://matheuspadula.com.br/blog/logo-nao-e-marca/</link>
+      <guid isPermaLink="true">https://matheuspadula.com.br/blog/logo-nao-e-marca/</guid>
+      <pubDate>Mon, 02 Nov 2026 12:00:00 GMT</pubDate>
+      <category>Identidade visual</category>
+      <description>Logo não é marca. Veja o que uma identidade visual inclui, como ela nasce da estratégia e quais sinais mostram que só um logo não é suficiente.</description>
+    </item>
+    <item>
+      <title>O que um site de escritório de advocacia precisa ter para gerar contato</title>
+      <link>https://matheuspadula.com.br/blog/site-de-advocacia-que-gera-contato/</link>
+      <guid isPermaLink="true">https://matheuspadula.com.br/blog/site-de-advocacia-que-gera-contato/</guid>
+      <pubDate>Mon, 02 Nov 2026 12:00:00 GMT</pubDate>
+      <category>Web e desenvolvimento</category>
+      <description>Veja o que um site de escritório de advocacia precisa ter para gerar contato: áreas claras, provas de credibilidade e um caminho simples até o primeiro contato.</description>
     </item>
   </channel>
 </rss>

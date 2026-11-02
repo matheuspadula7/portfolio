@@ -46,7 +46,7 @@ const T = {
     more: 'Continue lendo', by: 'Por', updated: 'Atualizado em', answer: 'Resposta curta',
     faq: 'Perguntas frequentes', sources: 'Fontes', caseLabel: 'Case relacionado', caseCta: 'Ver o case',
     authorTitle: 'Sobre o autor',
-    authorText: (r) => `Matheus Padula é web designer, com mais de 9 anos de experiência em sites, landing pages e identidade visual. Atende empresas em todo o Brasil, com foco no ${r}. Usa IA no processo e revisa cada texto antes de publicar.`,
+    authorText: (r) => `Sou designer com formação em Publicidade e 9 anos de mercado, combinando criatividade estratégica com execução técnica. Atendo empresas de todo o Brasil, com foco no ${r}, e trabalho de forma independente: você fala comigo do início ao fim, com design e código em um processo só. Uso IA no meu processo e reviso cada texto antes de publicar.`,
     ctaTitle: 'Quer conversar sobre <em>o seu caso?</em>',
     ctaText: 'Me conta o que você tem em mente. Eu respondo direto pelo WhatsApp.',
     ctaBtn: 'Falar comigo',
@@ -65,7 +65,7 @@ const T = {
     more: 'Keep reading', by: 'By', updated: 'Updated on', answer: 'Short answer',
     faq: 'Frequently asked questions', sources: 'Sources', caseLabel: 'Related case', caseCta: 'See the case',
     authorTitle: 'About the author',
-    authorText: (r) => `Matheus Padula is a web designer with over 9 years of experience in websites, landing pages and visual identity. He works with companies across Brazil, with a focus on the ${r} region. He uses AI in his process and reviews every text before publishing.`,
+    authorText: (r) => `I'm a designer with a background in Advertising and 9 years in the market, combining strategic creativity with technical execution. I work with companies across Brazil, with a focus on the ${r} region, and I work independently: you talk to me from start to finish, with design and code in a single process. I use AI in my process and review every text before publishing.`,
     ctaTitle: 'Want to talk about <em>your case?</em>',
     ctaText: 'Tell me what you have in mind. I reply directly on WhatsApp.',
     ctaBtn: 'Talk to me',
@@ -76,6 +76,8 @@ const T = {
 // ── utilidades ──────────────────────────────────────────────────────────────
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const slugify = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+// o marked já entrega título e alt escapados; escapa só o que faltar, sem duplicar (&amp;quot;)
+const escOnce = (s) => esc(s).replace(/&amp;(quot|amp|lt|gt|#d+);/g, '&$1;');
 const stripTags = (s) => s.replace(/<[^>]*>/g, ' ').replace(/&[a-z#0-9]+;/gi, ' ');
 const abs = (p) => (p.startsWith('http') ? p : SITE + p);
 const jsonLd = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
@@ -117,11 +119,11 @@ function renderMarkdown(body) {
       },
       link(href, title, text) {
         const ext = /^https?:\/\//.test(href) && !href.startsWith(SITE);
-        return `<a href="${esc(href)}"${title ? ` title="${esc(title)}"` : ''}${ext ? ' target="_blank" rel="noopener noreferrer"' : ''}>${text}</a>`;
+        return `<a href="${esc(href)}"${title ? ` title="${escOnce(title)}"` : ''}${ext ? ' target="_blank" rel="noopener noreferrer"' : ''}>${text}</a>`;
       },
       image(href, title, text) {
-        const img = `<img src="${esc(href)}" alt="${esc(text)}" loading="lazy" decoding="async">`;
-        return title ? `<figure>${img}<figcaption>${esc(title)}</figcaption></figure>` : img;
+        const img = `<img src="${esc(href)}" alt="${escOnce(text)}" loading="lazy" decoding="async">`;
+        return title ? `<figure>${img}<figcaption>${escOnce(title)}</figcaption></figure>` : img;
       },
     },
   });
@@ -342,14 +344,14 @@ ${extra}<link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/components/layout.css?v=4">
-<link rel="stylesheet" href="/components/blog.css?v=2">
+<link rel="stylesheet" href="/components/blog.css?v=3">
 </head>`;
 }
 
 function tail(lang, altMap) {
   return `<div id="footer-root"></div>
 <script>window.__BLOG = ${JSON.stringify({ lang, alt: altMap })};</script>
-<script src="/components/layout.js?v=4"></script>
+<script src="/components/layout.js?v=5"></script>
 <script src="/components/blog.js?v=1"></script>
 </body>
 </html>
@@ -531,7 +533,7 @@ ${p.fontes.map((f) => `          <li><a href="${esc(f.url)}" target="_blank" rel
       <h1>${esc(p.title)}</h1>
       <div class="answer"><span class="answer-label">${t.answer}</span><p>${esc(p.resposta)}</p></div>
       <div class="byline">
-        <img src="/assets/matheus.png" alt="" width="40" height="40">
+        <img src="/assets/matheus-autor.jpg?v=2" alt="" width="40" height="40">
         <span>${t.by} <b>Matheus Padula</b></span>
         <span class="dot" aria-hidden="true">·</span>
         <time datetime="${p.date}">${fmtDate(p.date, p.lang)}</time>${p.updated !== p.date ? `
@@ -558,7 +560,7 @@ ${p.md.html}
       <a class="btn-cta" href="${cta}" data-no-lead>${t.ctaBtn} <span aria-hidden="true">↗</span></a>
     </section>
     <aside class="container author-box" aria-label="${t.authorTitle}">
-      <img src="/assets/matheus.png" alt="" width="64" height="64" loading="lazy">
+      <img src="/assets/matheus-autor.jpg?v=2" alt="" width="76" height="76" loading="lazy">
       <div>
         <span class="author-label">${t.authorTitle}</span>
         <b>Matheus Padula</b>

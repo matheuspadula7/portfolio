@@ -86,7 +86,7 @@
 <link rel="preconnect" href="https://framerusercontent.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="components/layout.css">
-<link rel="stylesheet" href="components/showcase.css?v=4">
+<link rel="stylesheet" href="components/showcase.css?v=5">
 <style>
 :root{
   --bg-0:#0A0A0A;
@@ -233,6 +233,8 @@ section{position:relative;padding:140px 0}
 .hero-proof .stars{color:var(--accent);letter-spacing:2px;font-size:14px}
 .hero-proof:hover{color:var(--fg)}
 /* vitrine do hero: components/showcase.css */
+.hero-stats{padding-top:24px}
+.hero-stats .stats{margin-top:0}
 @media (max-width:980px){
   .hero{min-height:0;padding:120px 0 60px}
   .hero-grid{grid-template-columns:1fr;gap:44px}
@@ -240,8 +242,6 @@ section{position:relative;padding:140px 0}
 }
 @media (max-width:560px){
   .hero-eyebrow{font-size:9.5px;letter-spacing:.03em;padding:6px 11px}
-  .hv-chip small{display:none}
-  .hv-chip{font-size:11px;padding:5px 9px}
 }
 
 /* ===== SOBRE v2: foto e texto lado a lado ===== */
@@ -372,8 +372,7 @@ section{position:relative;padding:140px 0}
   .hero-grid .sub-c{margin-top:20px}
   .hero-grid .hero-ctas-c{margin-top:24px}
   .hero-proof{margin-top:18px}
-  .hv-info{margin-top:16px}
-  .stats{margin-top:40px}
+  .hero-stats{padding-top:0}
   .stat{padding:20px 16px}
   .stat .n{font-size:40px}
   .stat .n .suffix{font-size:24px}
@@ -466,7 +465,7 @@ section{position:relative;padding:140px 0}
 
 <!-- HERO -->
 <header class="hero" id="top" data-variant="center">
-  <div class="container">
+  <div class="container hero-pin">
     <!-- HERO: texto + vitrine de projetos -->
     <div class="hero-center">
       <div class="hero-grid">
@@ -478,7 +477,7 @@ section{position:relative;padding:140px 0}
           <p class="sub-c" data-i18n="hero.sub-c">Design bonito que não converte é desperdício. <em>Crio sites e identidades visuais que comunicam com clareza, passam credibilidade e convertem visitantes em clientes.</em> Do briefing ao ar, sem depender de mais ninguém.</p>
           <div class="hero-ctas-c">
             <a href="#portfolio" class="btn btn-primary"><span data-i18n="hero.cta1">Ver projetos</span> <span class="arrow">↘</span></a>
-            <a href="https://wa.me/5512974054956" target="_blank" class="btn btn-secondary"><span data-i18n="hero.cta2">Falar comigo</span> <span class="arrow">↗</span></a>
+            <a href="https://wa.me/5512974054956" target="_blank" rel="noopener" class="btn btn-secondary"><span data-i18n="hero.cta2">Falar comigo</span> <span class="arrow">↗</span></a>
           </div>
           <a class="hero-proof" href="#depoimentos">
             <span class="stars" aria-hidden="true">★★★★★</span>
@@ -486,64 +485,32 @@ section{position:relative;padding:140px 0}
           </a>
         </div>
         <div class="hero-visual" id="heroVisual" aria-label="Projetos recentes">
-          <div class="hv-stage">
-            <div class="hv-layer hv-l-main" data-depth="0.3">
-              <div class="bf-deck" id="bfDeck">
-            <a class="bf" data-i="0" data-pos="0" href="/dialogos" aria-label="Ver case: Diálogos Estruturantes">
-              <div class="bf-bar"><span class="bf-dot"></span><span class="bf-dot"></span><span class="bf-dot"></span><span class="bf-url">dialogosestruturantes.com.br</span></div>
-              <div class="bf-screen"><img class="bf-page is-active" src="assets/images/hero-page-dialogos.jpg" width="1100" height="2142" alt="Diálogos Estruturantes, página inicial" fetchpriority="high" decoding="async"></div>
+          <div class="hs-stage" id="hsStage">
+            <a class="hs-card" href="/dialogos" aria-label="Ver case: Diálogos Estruturantes">
+              <img src="assets/images/dialogos-mockup-desktop.webp" width="944" height="704" alt="Diálogos Estruturantes" fetchpriority="high" decoding="async" draggable="false">
+              <span class="hs-label"><b>Diálogos Estruturantes</b><i>01</i></span>
             </a>
-            <a class="bf" data-i="1" data-pos="1" href="/ihs" aria-label="Ver case: IHS Advogados">
-              <div class="bf-bar"><span class="bf-dot"></span><span class="bf-dot"></span><span class="bf-dot"></span><span class="bf-url">ihsadvogados.com</span></div>
-              <div class="bf-screen"><img class="bf-page" src="assets/images/hero-page-ihs.jpg" width="1100" height="2216" alt="IHS Advogados, página inicial" loading="lazy" decoding="async"></div>
+            <a class="hs-card" href="/ihs" aria-label="Ver case: IHS Advogados">
+              <img src="assets/images/hs-ihs.jpg" width="1000" height="750" alt="IHS Advogados" loading="lazy" decoding="async" draggable="false">
+              <span class="hs-label"><b>IHS Advogados</b><i>02</i></span>
             </a>
-            <a class="bf" data-i="2" data-pos="2" href="/drrafael" aria-label="Ver case: Dr. Rafael Nora Resende">
-              <div class="bf-bar"><span class="bf-dot"></span><span class="bf-dot"></span><span class="bf-dot"></span><span class="bf-url">drrafaelnoraresende.com.br</span></div>
-              <div class="bf-screen"><img class="bf-page" src="assets/images/hero-page-drrafael.jpg" width="1100" height="2104" alt="Dr. Rafael Nora Resende, página inicial" loading="lazy" decoding="async"></div>
+            <a class="hs-card" href="/drrafael" aria-label="Ver case: Dr. Rafael Nora Resende">
+              <img src="assets/images/hs-drrafael.jpg" width="1000" height="750" alt="Dr. Rafael Nora Resende" loading="lazy" decoding="async" draggable="false">
+              <span class="hs-label"><b>Dr. Rafael Nora Resende</b><i>03</i></span>
             </a>
-              </div>
-            </div>
-            <div class="hv-layer hv-l-a" data-depth="1.1">
-            <div class="hv-sat hv-dev">
-              <img class="on" src="assets/images/dialogos-mockup-desktop.webp" width="944" height="704" alt="Diálogos Estruturantes em desktop" decoding="async">
-              <img src="assets/images/ihs-phone.jpg" width="900" height="675" alt="IHS Advogados, versão mobile" loading="lazy" decoding="async">
-              <img src="assets/images/drrafael-phone.jpg" width="900" height="675" alt="Dr. Rafael Nora Resende, versão mobile" loading="lazy" decoding="async">
-              <span class="hv-chip on" data-i18n="hero.dev1">Em desktop</span>
-              <span class="hv-chip" data-i18n="hero.sat1">Versão mobile</span>
-              <span class="hv-chip" data-i18n="hero.sat1">Versão mobile</span>
-            </div>
+            <a class="hs-card" href="/agroribeiro" aria-label="Ver case: Agro Ribeiro">
+              <img src="assets/images/hs-ribeiro.jpg" width="1000" height="750" alt="Agro Ribeiro" loading="lazy" decoding="async" draggable="false">
+              <span class="hs-label"><b>Agro Ribeiro</b><i>04</i></span>
+            </a>
+            <a class="hs-card" href="/jhs" aria-label="Ver case: JHS Studio">
+              <img src="assets/images/hs-jhs.jpg" width="1000" height="750" alt="JHS Studio" loading="lazy" decoding="async" draggable="false">
+              <span class="hs-label"><b>JHS Studio</b><i>05</i></span>
+            </a>
           </div>
-            <div class="hv-layer hv-l-b" data-depth="-0.8">
-            <div class="hv-sat hv-score">
-              <div class="hv-sp on">
-                <span class="hv-score-row"><b>3</b><span data-i18n="hero.sc1at">dias, do wireframe ao ar</span></span>
-                <span class="hv-score-row"><b>100%</b><span data-i18n="hero.sc1bt">captura de lead no RD Station</span></span>
-                <small data-i18n="hero.sc1s">Diálogos, resultado do case</small>
-              </div>
-              <div class="hv-sp">
-                <span class="hv-score-row"><b>100%</b><span data-i18n="hero.sc2at">responsivo, desktop e mobile</span></span>
-                <span class="hv-score-row"><b>1</b><span data-i18n="hero.sc2bt">fluxo: design e código juntos</span></span>
-                <small data-i18n="hero.sc2s">IHS, resultado do case</small>
-              </div>
-              <div class="hv-sp">
-                <span class="hv-score-row"><b>92</b><span>Performance</span></span>
-                <span class="hv-score-row"><b>100</b><span>SEO</span></span>
-                <small data-i18n="hero.sat2">Dr. Rafael, medido no PageSpeed</small>
-              </div>
-            </div>
-          </div>
-          </div>
-          <div class="hv-info">
-            <div class="bf-meta">
-                <div class="bf-name"><span id="bfName">Diálogos Estruturantes</span><small id="bfType" data-i18n="hero.hv1">Landing page</small></div>
-                <div class="bf-count" id="bfCount"><b>01</b> / 03</div>
-              </div>
-              <div class="bf-tabs" role="tablist" aria-label="Escolher projeto">
-                <button type="button" role="tab" data-i="0" aria-selected="true" class="on">Diálogos</button>
-                <button type="button" role="tab" data-i="1" aria-selected="false">IHS Advogados</button>
-                <button type="button" role="tab" data-i="2" aria-selected="false">Dr. Rafael</button>
-              </div>
-              <a class="bf-all" href="#portfolio"><span data-i18n="hero.all">Ver todos os projetos</span> <span aria-hidden="true">↓</span></a>
+          <div class="hs-foot">
+            <span class="hs-count" id="hsCount"><b>01</b> / 05</span>
+            <span class="hs-hint" data-i18n="hero.hint">Role para explorar ↓</span>
+            <a class="hs-all" href="#portfolio"><span data-i18n="hero.all">Ver todos os projetos</span> ↓</a>
           </div>
         </div>
       </div>
@@ -560,31 +527,34 @@ section{position:relative;padding:140px 0}
         <p data-i18n="hero.sub"><em>9 anos estruturando produtos digitais do zero até conversão.</em> Design que funciona. IA e código que entregam. Métrica que importa.</p>
         <div class="hero-ctas">
           <a href="#portfolio" class="btn btn-primary"><span data-i18n="hero.cta1">Ver projetos</span> <span class="arrow">↘</span></a>
-          <a href="https://wa.me/5512974054956" target="_blank" class="btn btn-secondary"><span data-i18n="hero.cta2">Falar comigo</span> <span class="arrow">↗</span></a>
+          <a href="https://wa.me/5512974054956" target="_blank" rel="noopener" class="btn btn-secondary"><span data-i18n="hero.cta2">Falar comigo</span> <span class="arrow">↗</span></a>
         </div>
       </div>
     </div>
 
-    <div class="stats">
-      <div class="stat">
-        <div class="n"><span class="num" data-to="120">0</span><span class="suffix">+</span></div>
-        <div class="l" data-i18n="stat.projects">projetos entregues</div>
-      </div>
-      <div class="stat">
-        <div class="n"><span class="num" data-to="9">0</span><span class="suffix">+</span></div>
-        <div class="l" data-i18n="stat.years">anos no mercado</div>
-      </div>
-      <div class="stat">
-        <div class="n"><span class="num" data-to="3">0</span><span class="suffix">sem</span></div>
-        <div class="l" data-i18n="stat.delivery">prazo médio de entrega</div>
-      </div>
-      <div class="stat">
-        <div class="n"><span class="num" data-to="100">0</span><span class="suffix">%</span></div>
-        <div class="l" data-i18n="stat.solo">do briefing ao ar, por conta própria</div>
-      </div>
-    </div>
   </div>
 </header>
+
+<div class="container hero-stats">
+  <div class="stats">
+    <div class="stat">
+      <div class="n"><span class="num" data-to="120">0</span><span class="suffix">+</span></div>
+      <div class="l" data-i18n="stat.projects">projetos entregues</div>
+    </div>
+    <div class="stat">
+      <div class="n"><span class="num" data-to="9">0</span><span class="suffix">+</span></div>
+      <div class="l" data-i18n="stat.years">anos no mercado</div>
+    </div>
+    <div class="stat">
+      <div class="n"><span class="num" data-to="3">0</span><span class="suffix">sem</span></div>
+      <div class="l" data-i18n="stat.delivery">prazo médio de entrega</div>
+    </div>
+    <div class="stat">
+      <div class="n"><span class="num" data-to="100">0</span><span class="suffix">%</span></div>
+      <div class="l" data-i18n="stat.solo">do briefing ao ar, por conta própria</div>
+    </div>
+  </div>
+</div>
 
 <!-- SOBRE -->
 <section id="sobre" class="about">
@@ -1050,11 +1020,11 @@ section{position:relative;padding:140px 0}
       <h2 class="contact-title r" data-i18n="ct.title">Tem um projeto<br>em <em>mente?</em></h2>
       <p class="r" data-i18n="ct.sub">Me conta o projeto e eu te digo o que é possível.<br>Respondo no mesmo dia.</p>
       <div class="contact-ctas r">
-        <a href="https://wa.me/5512974054956" target="_blank" class="btn btn-primary">WhatsApp <span class="arrow">↗</span></a>
+        <a href="https://wa.me/5512974054956" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp <span class="arrow">↗</span></a>
         <a href="mailto:matheuspadula7@gmail.com" class="btn btn-secondary">Email <span class="arrow">↗</span></a>
       </div>
       <div class="contact-socials r">
-        <a href="https://linkedin.com/in/matheuspadula" target="_blank">LINKEDIN <span class="arr">↗</span></a>
+        <a href="https://linkedin.com/in/matheuspadula" target="_blank" rel="noopener">LINKEDIN <span class="arr">↗</span></a>
 
         <a href="tel:+5512974054956">+55 12 97405-4956 <span class="arr">↗</span></a>
       </div>
@@ -1292,6 +1262,7 @@ const I18N = {
     "ft.by": "Design + Dev por Matheus Padula",
     "hero.dev1": "Em desktop",
     "hero.all": "Ver todos os projetos",
+    "hero.hint": "Role para explorar ↓",
     "hero.sc1at": "dias, do wireframe ao ar",
     "hero.sc1bt": "captura de lead no RD Station",
     "hero.sc1s": "Diálogos, resultado do case",
@@ -1398,6 +1369,7 @@ const I18N = {
     "ft.by": "Design + Dev by Matheus Padula",
     "hero.dev1": "On desktop",
     "hero.all": "See all projects",
+    "hero.hint": "Scroll to explore ↓",
     "hero.sc1at": "days, from wireframe to live",
     "hero.sc1bt": "lead capture in RD Station",
     "hero.sc1s": "Diálogos, case result",
@@ -1462,7 +1434,7 @@ document.querySelectorAll('.tweaks [data-hero]').forEach(s=>{
   });
 });
 </script>
-<script src="components/showcase.js?v=2" defer></script>
-<script src="components/layout.js?v=4"></script>
+<script src="components/showcase.js?v=5" defer></script>
+<script src="components/layout.js?v=5"></script>
 </body>
 </html>

@@ -1,94 +1,43 @@
-/* Vitrine do hero: pilha de projetos com navegador rolando + cartoes contextuais.
-   Usada em / e /curriculo. Depende das variaveis do tema (--line, --line-2, --fg, --accent...). */
+/* Vitrine do hero estilo "Explore": cartoes de imagem grandes, pouca informacao.
+   Desktop: o hero fica fixo e a rolagem passa os projetos. Celular: avanca sozinho e aceita deslizar.
+   Usada em / e /curriculo. Depende das variaveis do tema (--line-2, --fg, --fg-mute, --accent). */
 
 .hero-visual{width:100%}
-.hv-stage{position:relative;width:100%;aspect-ratio:1/.8}
-.hv-info{margin-top:22px}
-.hv-layer{position:absolute;will-change:transform}
+.hs-stage{position:relative;width:100%;aspect-ratio:1/.92;touch-action:pan-y;-webkit-tap-highlight-color:transparent}
+.hs-card{position:absolute;left:50%;top:50%;width:68%;aspect-ratio:4/3;margin:0;border-radius:16px;overflow:hidden;display:block;background:#0d0d0d;border:1px solid var(--line-2);box-shadow:0 40px 70px -32px rgba(0,0,0,.9);will-change:transform,opacity;transform:translate(-50%,-50%);opacity:0;pointer-events:none}
+.hs-card.is-vis{pointer-events:auto;cursor:pointer}
+.hs-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;user-select:none;-webkit-user-drag:none}
+.hs-card::after{content:"";position:absolute;inset:0;background:#0a0a0a;opacity:var(--dim,0);transition:opacity .2s;pointer-events:none}
+.hs-card.is-front:hover{border-color:rgba(235,190,56,.55)}
+.hs-label{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:44px 20px 16px;background:linear-gradient(to top,rgba(10,10,10,.82),rgba(10,10,10,0));color:var(--fg);opacity:var(--lab,0);transition:opacity .2s;pointer-events:none}
+.hs-label b{font-family:'Bricolage Grotesque',serif;font-weight:500;font-size:21px;letter-spacing:-.02em;line-height:1.1}
+.hs-label i{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:.06em}
 
-/* ---------- pilha de navegadores ---------- */
-.hv-l-main{left:0;top:0;width:84%;z-index:1}
-.bf-deck{position:relative;margin:70px 0 0;aspect-ratio:16/10.8;touch-action:pan-y}
-.bf{position:absolute;inset:0;display:flex;flex-direction:column;border-radius:14px;overflow:hidden;background:#0d0d0d;border:1px solid var(--line-2);box-shadow:0 36px 70px -30px rgba(0,0,0,.9);transform-origin:left bottom;transition:transform .85s var(--ease),opacity .85s var(--ease),filter .85s var(--ease),border-color .3s;-webkit-tap-highlight-color:transparent}
-.bf[data-pos="0"]{z-index:3;transform:none;opacity:1;filter:none}
-.bf[data-pos="0"]:hover{border-color:rgba(235,190,56,.5)}
-.bf[data-pos="1"]{z-index:2;transform:translate3d(38px,-34px,0) scale(.965);filter:brightness(.8);border-color:rgba(255,255,255,.2);cursor:pointer}
-.bf[data-pos="2"]{z-index:1;transform:translate3d(76px,-68px,0) scale(.93);filter:brightness(.55);border-color:rgba(255,255,255,.14);cursor:pointer}
-.bf[data-pos="1"]:hover{transform:translate3d(46px,-41px,0) scale(.965);filter:brightness(1);border-color:rgba(235,190,56,.55)}
-.bf[data-pos="2"]:hover{transform:translate3d(84px,-75px,0) scale(.93);filter:brightness(.85);border-color:rgba(235,190,56,.45)}
-.bf[data-pos="1"] .bf-bar{background:#1d1d1b}
-.bf[data-pos="2"] .bf-bar{background:#191917}
-.bf-bar{flex:0 0 30px;display:flex;align-items:center;gap:6px;padding:0 12px;background:#141414;border-bottom:1px solid var(--line)}
-.bf-dot{width:8px;height:8px;border-radius:50%;background:#34342f}
-.bf-url{margin-left:10px;flex:1;max-width:260px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--fg-mute);background:#0b0b0b;border:1px solid var(--line);border-radius:999px;padding:3px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.bf-screen{flex:1;position:relative;overflow:hidden;background:#fff}
-.bf-page{position:absolute;left:0;top:0;width:100%;height:auto;display:block;will-change:transform;user-select:none;-webkit-user-drag:none;pointer-events:none}
-.bf-page.is-active{animation:bfscroll var(--dur,11s) cubic-bezier(.45,.05,.35,1) forwards}
-.bf-page.is-leaving{transform:translate3d(0,calc(var(--dist,0px)*-1),0)}
-.bf[data-pos="0"]:hover .bf-page.is-active,.hero.is-off .bf-page.is-active{animation-play-state:paused}
-@keyframes bfscroll{0%,9%{transform:translate3d(0,0,0)}91%,100%{transform:translate3d(0,calc(var(--dist,0px)*-1),0)}}
+.hs-foot{margin-top:18px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--fg-mute)}
+.hs-count b{color:var(--accent);font-weight:500}
+.hs-hint{display:none}
+.hs-all{color:var(--fg-dim);text-decoration:none;transition:color .2s}
+.hs-all:hover{color:var(--accent)}
 
-/* ---------- legenda, abas e atalho para a grade ---------- */
-.bf-meta{display:flex;align-items:flex-end;justify-content:flex-start;gap:16px;padding:0 2px}
-.bf-name{display:flex;flex-direction:column;gap:2px;font-size:14px;font-weight:500;color:var(--fg)}
-.bf-name small{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--fg-mute);font-weight:400;letter-spacing:.03em}
-.bf-count{order:-1;padding-bottom:2px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--fg-mute);letter-spacing:.06em}
-.bf-count b{color:var(--accent);font-weight:500}
-.bf-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.bf-tabs button{position:relative;overflow:hidden;font-family:inherit;font-size:12px;font-weight:500;color:var(--fg-dim);background:transparent;border:1px solid var(--line-2);border-radius:999px;padding:7px 14px;cursor:pointer;transition:color .25s,border-color .25s,background .25s}
-.bf-tabs button:hover{color:var(--fg);border-color:var(--fg-mute)}
-.bf-tabs button.on{color:var(--fg);border-color:rgba(235,190,56,.55);background:rgba(235,190,56,.06)}
-.bf-tabs button.on::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--accent);transform-origin:left;animation:bfprog var(--dur,11s) linear forwards}
-.bf-tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.hv-info:hover .bf-tabs button.on::after,.hero.is-off .bf-tabs button.on::after{animation-play-state:paused}
-@keyframes bfprog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.bf-all{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:12.5px;color:var(--fg-dim);transition:color .2s,gap .2s}
-.bf-all:hover{color:var(--accent);gap:10px}
+/* Desktop: hero alto e fixo; a rolagem passa os cartoes */
+@media (min-width:981px){
+  header.hero.is-scrub{display:block;min-height:0;padding:0;height:calc(100vh + var(--steps,4)*46vh)}
+  header.hero.is-scrub>.hero-pin{position:sticky;top:0;height:100vh;box-sizing:border-box;padding-top:96px;padding-bottom:28px;display:flex;flex-direction:column;justify-content:center}
+  header.hero.is-scrub .hero-center{flex:0 1 auto;padding-top:0}
+  header.hero.is-scrub .hs-hint{display:inline}
+}
 
-/* ---------- cartoes que acompanham o projeto ---------- */
-.hv-sat{display:block;position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line-2);background:var(--bg-2);box-shadow:0 30px 60px -20px rgba(0,0,0,.75);transition:border-color .3s}
-.hv-sat:hover{border-color:rgba(235,190,56,.5)}
-.hv-l-a{right:0;top:0;width:33%;z-index:4}
-.hv-dev{aspect-ratio:4/3;animation:hvfloat 7s ease-in-out infinite}
-.hv-dev img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s var(--ease)}
-.hv-dev img.on{opacity:1}
-.hv-chip{position:absolute;left:10px;bottom:10px;background:rgba(10,10,10,.82);backdrop-filter:blur(8px);border:1px solid var(--line-2);border-radius:10px;padding:5px 10px;font-size:11.5px;font-weight:500;color:var(--fg);line-height:1.25;opacity:0;transition:opacity .5s}
-.hv-chip.on{opacity:1}
-.hv-l-b{right:0;bottom:0;width:44%;z-index:5}
-.hv-score{display:grid;padding:16px 18px;background:rgba(14,14,14,.88);backdrop-filter:blur(10px);animation:hvfloat 8.5s ease-in-out -3s infinite}
-.hv-sp{grid-area:1/1;display:flex;flex-direction:column;gap:10px;opacity:0;transition:opacity .6s var(--ease);pointer-events:none}
-.hv-sp.on{opacity:1;pointer-events:auto}
-.hv-score-row{display:grid;grid-template-columns:minmax(64px,auto) 1fr;column-gap:12px;align-items:baseline}
-.hv-score-row b{font-family:'Bricolage Grotesque',serif;font-weight:500;font-size:30px;letter-spacing:-.03em;line-height:1;color:var(--accent);white-space:nowrap}
-.hv-score-row span{font-size:12px;color:var(--fg-dim);line-height:1.3}
-.hv-sp small{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--fg-mute);line-height:1.4;border-top:1px solid var(--line);padding-top:9px}
-@keyframes hvfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-
-/* ---------- mobile / movimento reduzido ---------- */
+/* Celular e tablet: palco mais compacto */
 @media (max-width:980px){
-  .hero-visual{max-width:560px;margin:0 auto}
+  .hs-stage{aspect-ratio:1/.95;max-width:560px;margin:0 auto}
 }
 @media (max-width:560px){
-  .hv-l-main{width:86%}
-  .bf-deck{margin-top:34px}
-  .bf[data-pos="1"]{transform:translate3d(18px,-16px,0) scale(.95)}
-  .bf[data-pos="2"]{transform:translate3d(36px,-32px,0) scale(.9)}
-  .bf[data-pos="1"]:hover{transform:translate3d(18px,-16px,0) scale(.95)}
-  .bf[data-pos="2"]:hover{transform:translate3d(36px,-32px,0) scale(.9)}
-  .bf-name small{display:none}
-  .bf-tabs button{font-size:11px;padding:6px 11px}
-  .hv-l-a{width:36%}
-  .hv-l-b{width:54%}
-  .hv-score{padding:12px 13px}
-  .hv-score-row{grid-template-columns:minmax(50px,auto) 1fr;column-gap:8px}
-  .hv-score-row b{font-size:22px}
-  .hv-score-row span{font-size:11px}
-  .hv-sp small{display:none}
-  .hv-chip{font-size:10.5px;padding:4px 8px}
+  .hs-stage{aspect-ratio:1/1.02}
+  .hs-card{width:74%;border-radius:14px}
+  .hs-label{padding:34px 14px 12px}
+  .hs-label b{font-size:17px}
 }
+
 @media (prefers-reduced-motion:reduce){
-  .bf{transition:none}
-  .bf-page.is-active{animation:none}
-  .hv-dev,.hv-score{animation:none}
-  .bf-tabs button.on::after{animation:none;transform:scaleX(1)}
+  .hs-label{transition:none}
 }

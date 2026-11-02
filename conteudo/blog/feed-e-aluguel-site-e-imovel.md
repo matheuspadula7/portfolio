@@ -9,6 +9,9 @@ tipo: tese
 pilar: web-design-que-converte
 publico: b2b-dono
 funil: atracao
+capa: /assets/blog/feed-e-aluguel-site-e-imovel.jpg
+capa_alt: "Chave sendo segurada sobre casas em miniatura"
+capa_credito: "Foto: Jakub Żerdzicki / Unsplash"
 case_relacionado: ""
 posts_relacionados: []
 data_publicacao: 2026-11-02
