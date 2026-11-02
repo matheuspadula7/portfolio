@@ -76,6 +76,8 @@ const T = {
 // ── utilidades ──────────────────────────────────────────────────────────────
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const slugify = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+// o marked já entrega título e alt escapados; escapa só o que faltar, sem duplicar (&amp;quot;)
+const escOnce = (s) => esc(s).replace(/&amp;(quot|amp|lt|gt|#d+);/g, '&$1;');
 const stripTags = (s) => s.replace(/<[^>]*>/g, ' ').replace(/&[a-z#0-9]+;/gi, ' ');
 const abs = (p) => (p.startsWith('http') ? p : SITE + p);
 const jsonLd = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
@@ -117,11 +119,11 @@ function renderMarkdown(body) {
       },
       link(href, title, text) {
         const ext = /^https?:\/\//.test(href) && !href.startsWith(SITE);
-        return `<a href="${esc(href)}"${title ? ` title="${esc(title)}"` : ''}${ext ? ' target="_blank" rel="noopener noreferrer"' : ''}>${text}</a>`;
+        return `<a href="${esc(href)}"${title ? ` title="${escOnce(title)}"` : ''}${ext ? ' target="_blank" rel="noopener noreferrer"' : ''}>${text}</a>`;
       },
       image(href, title, text) {
-        const img = `<img src="${esc(href)}" alt="${esc(text)}" loading="lazy" decoding="async">`;
-        return title ? `<figure>${img}<figcaption>${esc(title)}</figcaption></figure>` : img;
+        const img = `<img src="${esc(href)}" alt="${escOnce(text)}" loading="lazy" decoding="async">`;
+        return title ? `<figure>${img}<figcaption>${escOnce(title)}</figcaption></figure>` : img;
       },
     },
   });
