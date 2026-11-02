@@ -533,7 +533,7 @@ ${p.fontes.map((f) => `          <li><a href="${esc(f.url)}" target="_blank" rel
       <h1>${esc(p.title)}</h1>
       <div class="answer"><span class="answer-label">${t.answer}</span><p>${esc(p.resposta)}</p></div>
       <div class="byline">
-        <img src="/assets/matheus-autor.jpg" alt="" width="40" height="40">
+        <img src="/assets/matheus-autor.jpg?v=2" alt="" width="40" height="40">
         <span>${t.by} <b>Matheus Padula</b></span>
         <span class="dot" aria-hidden="true">·</span>
         <time datetime="${p.date}">${fmtDate(p.date, p.lang)}</time>${p.updated !== p.date ? `
@@ -560,7 +560,7 @@ ${p.md.html}
       <a class="btn-cta" href="${cta}" data-no-lead>${t.ctaBtn} <span aria-hidden="true">↗</span></a>
     </section>
     <aside class="container author-box" aria-label="${t.authorTitle}">
-      <img src="/assets/matheus-autor.jpg" alt="" width="76" height="76" loading="lazy">
+      <img src="/assets/matheus-autor.jpg?v=2" alt="" width="76" height="76" loading="lazy">
       <div>
         <span class="author-label">${t.authorTitle}</span>
         <b>Matheus Padula</b>
