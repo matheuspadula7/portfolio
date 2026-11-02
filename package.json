@@ -1,0 +1,15 @@
+{
+  "name": "padula-portfolio",
+  "private": true,
+  "type": "module",
+  "description": "Site estático. O npm só é usado para gerar o blog (scripts/build-blog.mjs).",
+  "scripts": {
+    "blog": "node scripts/build-blog.mjs",
+    "blog:preview": "node scripts/build-blog.mjs --rascunhos",
+    "blog:validar": "node scripts/build-blog.mjs --validar"
+  },
+  "dependencies": {
+    "marked": "12.0.2",
+    "yaml": "^2.6.1"
+  }
+}
