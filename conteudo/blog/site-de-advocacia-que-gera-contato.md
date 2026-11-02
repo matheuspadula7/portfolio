@@ -9,9 +9,9 @@ tipo: guia
 pilar: web-design-que-converte
 publico: b2b-dono
 funil: atracao
-capa: /assets/blog/site-de-advocacia-que-gera-contato.jpg
-capa_alt: "Estantes escuras com livros antigos em uma biblioteca clássica"
-capa_credito: "Foto: Giammarco Boscaro / Unsplash"
+capa: /assets/images/ihs-laptop.jpg
+capa_alt: "Notebook exibindo a página inicial do site do IHS Advogados, sobre uma bancada escura"
+capa_original: true
 case_relacionado: ihs
 posts_relacionados:
   - feed-e-aluguel-site-e-imovel

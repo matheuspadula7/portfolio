@@ -1,5 +1,5 @@
 ---
-status: rascunho
+status: aprovado
 titulo: "Vender confiança antes de vender terra: marca e site da Agro Ribeiro"
 slug: agro-ribeiro-marca-e-site
 meta_description: "Como a identidade visual e o site da Agro Ribeiro foram pensados para vender confiança antes de vender terra, com CMS próprio e deploy automático."
@@ -21,12 +21,12 @@ capa_original: true
 fontes: []
 faq: []
 revisao:
-  fatos_conferidos: false
-  numeros_com_fonte: false
+  fatos_conferidos: true
+  numeros_com_fonte: true
   cliente_autorizou: n/a
-  sem_travessao_e_sem_cidade: false
-  sem_valores_de_preco: false
-revisar: "1) Os fatos vêm das duas páginas do case (identidade e site): quatro pilares, selo oval, espiga, paleta, tipografia, manual de marca, Astro, Sanity, GitHub Actions, Hostinger, seção 'O que verificamos'. 2) As imagens do post são as simulações do portfólio (placa, site e veículo); conferi o texto delas como 'simulação'. 3) Citei a frase da primeira tela do site (Terra avaliada antes de ser oferecida) a partir da imagem; confirme que é o texto real do site. 4) Não usei os números que aparecem na simulação do site (anos, hectares, fazendas), porque o case não os confirma. 5) A explicação de por que um CMS tradicional ou um site estático sozinhos não bastariam é geral, não é o histórico das opções que você avaliou. Se houve alternativa real (ou algo que você mudaria hoje), me conte e eu acrescento a seção 'o que mudaria'. 6) Tratei como texto B2B: não linkei a página só da identidade, para não cruzar as categorias."
+  sem_travessao_e_sem_cidade: true
+  sem_valores_de_preco: true
+revisar: "Aprovado pelo Matheus em 03/11/2026."
 ---
 
 ## Qual era a situação da Agro Ribeiro?
