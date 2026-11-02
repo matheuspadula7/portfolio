@@ -13,6 +13,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # Todo dia as 11:00 UTC (08:00 em Sao Paulo): publica posts agendados
+    # cuja data chegou. O envio por FTP so manda o que mudou.
+    - cron: '0 11 * * *'
 
 concurrency:
   group: deploy
@@ -24,6 +28,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Gerar o blog
+        # Converte conteudo/blog/*.md em HTML (blog/ e en/blog/). Posts com
+        # rascunho: true ou data futura nao sao publicados.
+        run: |
+          npm ci --no-audit --no-fund
+          node scripts/build-blog.mjs
 
       - name: Verificar segredos
         id: secrets
@@ -60,6 +71,10 @@ jobs:
             .github/**
             .claude/**
             .gitignore
+            conteudo/**
+            scripts/**
+            package.json
+            package-lock.json
             idv/**
             Claude outputs/**
             **/node_modules/**

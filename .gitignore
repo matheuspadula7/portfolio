@@ -1,1 +1,7 @@
 idv/
+node_modules/
+
+# Gerado por scripts/build-blog.mjs (o deploy roda o script)
+/blog/
+/en/
+/sitemap-blog.xml

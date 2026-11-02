@@ -30,12 +30,13 @@
   const navHTML = `
 <nav class="nav" id="nav">
   <div class="container row">
-    <a href="${logoHref}" class="logo"><img src="${isHome ? '' : '../'}assets/logo.png" alt="Padula" style="height:28px;display:block;"></a>
+    <a href="${logoHref}" class="logo"><img src="/assets/logo.png" alt="Padula" style="height:28px;display:block;"></a>
     <div class="nav-links">
       <a href="${base}#portfolio" data-i18n="nav.portfolio">Portfolio</a>
       <a href="${base}#sobre" data-i18n="nav.about">Sobre</a>
       <a href="${base}#depoimentos" data-i18n="nav.testimonials">Depoimentos</a>
       <a href="${base}#contato" data-i18n="nav.contact">Contato</a>
+      <a href="/blog/" data-blog-link data-i18n="nav.blog">Blog</a>
       ${fromCV
         ? '<a href="/" data-i18n="nav.forclients">Para clientes</a>'
         : '<a href="/curriculo" data-i18n="nav.resume">Currículo</a>'}
@@ -63,6 +64,7 @@
       <a href="${base}#sobre" data-i18n="nav.about">Sobre</a>
       <a href="${base}#depoimentos" data-i18n="nav.testimonials">Depoimentos</a>
       <a href="${base}#contato" data-i18n="nav.contact">Contato</a>
+      <a href="/blog/" data-blog-link data-i18n="nav.blog">Blog</a>
     </div>
   </div>
 </footer>`;
@@ -218,6 +220,7 @@
       'nav.portfolio': 'Portfolio',
       'nav.about': 'Sobre',
       'nav.contact': 'Contato',
+      'nav.blog': 'Blog',
       'nav.testimonials': 'Depoimentos',
       'nav.resume': 'Currículo',
       'nav.forclients': 'Para clientes',
@@ -584,6 +587,7 @@
       'nav.portfolio': 'Work',
       'nav.about': 'About',
       'nav.contact': 'Contact',
+      'nav.blog': 'Blog',
       'nav.testimonials': 'Testimonials',
       'nav.resume': 'Resume',
       'nav.forclients': 'For clients',
@@ -960,11 +964,27 @@
       b.classList.toggle('on', b.dataset.lang === lang);
     });
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    document.querySelectorAll('[data-blog-link]').forEach(a => {
+      a.setAttribute('href', lang === 'en' ? '/en/blog/' : '/blog/');
+    });
     try { localStorage.setItem('lang', lang); } catch (e) {}
   }
 
   function initLang() {
-    const saved = localStorage.getItem('lang') || 'pt';
+    // Páginas do blog (window.__BLOG, definido pelo gerador): o idioma é o da URL
+    // e o seletor PT/EN leva para a versão correspondente, não troca o texto no lugar.
+    if (window.__BLOG) {
+      applyCaseLang(window.__BLOG.lang);
+      document.querySelectorAll('.lang button').forEach(b => {
+        b.addEventListener('click', () => {
+          const dest = window.__BLOG.alt[b.dataset.lang];
+          if (dest && b.dataset.lang !== window.__BLOG.lang) window.location.href = dest;
+        });
+      });
+      return;
+    }
+    let saved = 'pt';
+    try { saved = localStorage.getItem('lang') || 'pt'; } catch (e) {}
     applyCaseLang(saved);
     document.querySelectorAll('.lang button').forEach(b => {
       b.addEventListener('click', () => applyCaseLang(b.dataset.lang));
