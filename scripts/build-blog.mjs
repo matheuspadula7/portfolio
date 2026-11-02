@@ -149,6 +149,7 @@ function loadPosts() {
       file, lang, slug, body, md,
       title: meta.titulo, desc: meta.descricao, date: meta.data, updated: meta.atualizado || meta.data,
       cat: meta.categoria, par: meta.par || '', cover: meta.capa || '', coverAlt: meta.capa_alt || '',
+      stock: meta.capa_original !== 'true', // toda capa recebe o tratamento da marca, exceto com capa_original: true coverCredit: meta.capa_credito || '',
       draft: isDraft || isFuture,
       minutes: Math.max(1, Math.round(md.words / 200)),
       url: `${T[lang].base}${slug}/`,
@@ -238,7 +239,7 @@ function tail(lang, altMap) {
 const cover = (p, size) => {
   const t = T[p.lang];
   if (p.cover) {
-    return `<div class="cover cover-${size}"><img src="${esc(p.cover)}" alt="${esc(p.coverAlt)}"${size === 'hero' ? '' : ' loading="lazy"'} decoding="async"></div>`;
+    return `<div class="cover cover-${size}${p.stock ? ' cover-stock' : ''}"><img src="${esc(p.cover)}" alt="${esc(p.coverAlt)}"${size === 'hero' ? '' : ' loading="lazy"'} decoding="async"></div>`;
   }
   return `<div class="cover cover-${size} cover-type" aria-hidden="true"><span class="cover-cat">// ${esc(t.cats[p.cat])}</span><span class="cover-brand">Padula<i>.</i></span></div>`;
 };
@@ -379,7 +380,7 @@ ${p.md.toc.map((h) => `          <li><a href="#${h.id}">${esc(h.text)}</a></li>`
         <span>${p.minutes} ${t.min}</span>${p.draft ? '\n        <span class="draft-flag">RASCUNHO</span>' : ''}
       </div>
     </header>
-    <div class="container">${cover(p, 'hero')}</div>
+    <div class="container">${cover(p, 'hero')}${p.coverCredit ? `<p class="cover-credit">${esc(p.coverCredit)}</p>` : ''}</div>
     <div class="container post-grid${toc ? '' : ' no-toc'}">
       ${toc}
       <div class="prose">

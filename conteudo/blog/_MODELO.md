@@ -17,6 +17,9 @@ par:
 # capa: opcional. Sem capa, o site gera uma capa tipográfica automaticamente.
 # capa: /assets/blog/slug-do-post.jpg
 # capa_alt: Descrição da imagem
+# capa_credito: Foto: Nome do autor / Unsplash
+# capa_original: true  (só para capas que NÃO podem ser alteradas, como print de projeto de cliente;
+#                       por padrão toda capa recebe o tratamento escuro com toque amarelo da marca)
 # rascunho: true impede a publicação. Troque para false depois de revisar.
 rascunho: true
 # revisar: anotações para você (não são publicadas). Ex.: números e fatos a conferir.

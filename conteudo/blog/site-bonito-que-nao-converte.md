@@ -5,6 +5,9 @@ data: 2026-11-09
 categoria: clientes
 idioma: pt
 slug: site-bonito-que-nao-converte
+capa: /assets/blog/site-bonito-que-nao-converte.jpg
+capa_alt: Notebook com painel de gráficos de desempenho na tela
+capa_credito: Foto: path digital / Unsplash
 rascunho: true
 revisar: Texto genérico de boas práticas, sem números. Acrescentar um exemplo real seu (um site que você corrigiu) e conferir se o tom é o seu.
 ---

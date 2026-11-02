@@ -7,6 +7,7 @@ idioma: en
 slug: landing-page-in-3-days-dialogos-estruturantes
 par: landing-page-em-3-dias-dialogos-estruturantes
 capa: /assets/images/dialogos-hero.jpg
+capa_original: true
 capa_alt: Diálogos Estruturantes landing page
 rascunho: true
 revisar: Tradução do post em português. Revise o tom em inglês e as frases de interpretação.

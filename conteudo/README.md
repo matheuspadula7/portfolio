@@ -15,6 +15,12 @@ Cada artigo é um arquivo Markdown em `blog/`. Copie `blog/_MODELO.md` para come
 - Inglês: `my-post.en.md` com `idioma: en` → `/en/blog/my-post/`
 - Para ligar as duas versões, preencha `par:` nos dois arquivos com o slug do outro.
 
+## Capas
+
+- Fotos de banco (Unsplash/Pexels) ficam em `assets/blog/`, 1600×900, até ~200 KB, e entram com `capa:`, `capa_alt:` e `capa_credito:`.
+- Toda capa recebe automaticamente o tratamento da marca (escuro, dessaturado, toque amarelo). Só use `capa_original: true` quando a imagem não puder ser alterada (por exemplo, print de projeto de cliente).
+- Sem `capa:`, o site gera uma capa tipográfica.
+
 ## Ver no computador
 
 ```bash

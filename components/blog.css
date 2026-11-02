@@ -66,6 +66,11 @@
 .cover-hero .cover-brand { font-size: clamp(48px, 8vw, 120px); }
 @media (max-width: 720px) { .cover-hero { aspect-ratio: 16 / 10; border-radius: 14px; }  }
 
+/* Fotos de banco de imagens: mesmo tratamento em todas (escurece, dessatura e puxa o amarelo da marca) */
+.cover-stock img { filter: grayscale(.4) contrast(1.05) brightness(.78); }
+.cover-stock::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(10,10,10,.05) 0%, rgba(10,10,10,.6) 100%), linear-gradient(135deg, rgba(235,190,56,.22), rgba(235,190,56,0) 55%); mix-blend-mode: normal; }
+.cover-credit { margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-mute); }
+
 /* ── ARTIGO ─────────────────────────────────────────────── */
 .post-head.container { max-width: 960px; }
 .crumbs { display: flex; flex-wrap: wrap; gap: 10px; font-size: 12px; color: var(--fg-mute); margin-bottom: 26px; }

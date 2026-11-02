@@ -7,6 +7,7 @@ idioma: pt
 slug: landing-page-em-3-dias-dialogos-estruturantes
 par: landing-page-in-3-days-dialogos-estruturantes
 capa: /assets/images/dialogos-hero.jpg
+capa_original: true
 capa_alt: Landing page da Diálogos Estruturantes
 rascunho: true
 revisar: Todos os fatos vêm da página do case (3 dias, wireframe no Claude, Framer, formulário para o RD Station). As frases sobre o que você aprendeu e como decidiu são interpretação minha: ajuste para o que realmente aconteceu.
