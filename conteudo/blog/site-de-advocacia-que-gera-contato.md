@@ -1,5 +1,5 @@
 ---
-status: rascunho
+status: aprovado
 titulo: "O que um site de escritório de advocacia precisa ter para gerar contato"
 slug: site-de-advocacia-que-gera-contato
 meta_description: "Veja o que um site de escritório de advocacia precisa ter para gerar contato: áreas claras, provas de credibilidade e um caminho simples até o primeiro contato."
@@ -9,6 +9,9 @@ tipo: guia
 pilar: web-design-que-converte
 publico: b2b-dono
 funil: atracao
+capa: /assets/blog/site-de-advocacia-que-gera-contato.jpg
+capa_alt: "Estantes escuras com livros antigos em uma biblioteca clássica"
+capa_credito: "Foto: Giammarco Boscaro / Unsplash"
 case_relacionado: ihs
 posts_relacionados:
   - feed-e-aluguel-site-e-imovel
@@ -28,12 +31,12 @@ faq:
   - p: "O site pode prometer resultado ou falar de honorários?"
     r: "Não deve. As regras de publicidade da OAB vedam promessa de resultado e captação direta de clientela. Confirme os limites com o escritório e com a seccional antes de publicar."
 revisao:
-  fatos_conferidos: false
-  numeros_com_fonte: false
+  fatos_conferidos: true
+  numeros_com_fonte: true
   cliente_autorizou: n/a
-  sem_travessao_e_sem_cidade: false
-  sem_valores_de_preco: false
-revisar: "1) Os fatos do IHS vêm da página do case (estrutura por áreas de atuação, hierarquia história, especialidades, método, equipe e contato, Claude Code, site leve e responsivo, artigos). 2) Sobre a OAB: os limites que citei (promessa de resultado, captação direta) vieram de fontes secundárias; confirme no texto do Provimento 205/2021 e, se possível, com um advogado, porque o texto afirma regras. 3) O restante são boas práticas minhas: confira se concorda e se soa como você. 4) Tem exemplo real do estúdio (IHS) e um link para a B1."
+  sem_travessao_e_sem_cidade: true
+  sem_valores_de_preco: true
+revisar: "Aprovado pelo Matheus em 02/11/2026."
 ---
 
 ## O que o visitante precisa entender nos primeiros segundos?
