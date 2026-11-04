@@ -1,0 +1,135 @@
+---
+status: aprovado
+titulo: "Como saber se o seu site gera contato: o mínimo de medição"
+slug: como-saber-se-o-seu-site-gera-contato
+meta_description: "Visita não paga conta. Veja o mínimo de medição para saber se o seu site gera contato: o que contar, como testar e de onde o cliente chegou."
+resposta_curta: "Para saber se o site gera contato, conte o que importa: cliques no WhatsApp, no telefone e envios de formulário. Teste se cada um é registrado, descubra de onde a pessoa veio e anote os contatos reais uma vez por mês. O número de visitas, sozinho, não responde isso."
+palavra_chave: "como saber se meu site gera contato"
+tipo: bastidor
+pilar: qualidade-e-responsabilidade
+publico: b2b-dono
+funil: confianca
+posts_relacionados:
+  - feed-e-aluguel-site-e-imovel
+data_publicacao: 2026-11-04
+data_atualizacao: 2026-11-04
+capa: /assets/blog/como-saber-se-o-seu-site-gera-contato.jpg
+capa_alt: "Tela de notebook com gráficos de análise de desempenho de um site"
+capa_credito: "Foto: Luke Chesser / Unsplash"
+fontes: []
+faq:
+  - p: "Quantas visitas por mês um site precisa ter?"
+    r: "Não existe um número certo. O que importa é quantas dessas visitas viram um pedido de contato. Um site com poucas visitas e vários contatos trabalha melhor do que um com muitas visitas e nenhum."
+  - p: "Preciso de Google Analytics para medir contato?"
+    r: "Ajuda, mas não é o ponto de partida. Antes de qualquer ferramenta, defina o que conta como contato. Em um site pequeno, uma planilha com a data, o canal e a origem declarada de cada contato já responde o essencial."
+  - p: "Como medir os contatos que chegam pelo WhatsApp?"
+    r: "Marque o clique no botão de WhatsApp como uma ação a ser contada e, na primeira conversa, pergunte como a pessoa encontrou o negócio. O clique mostra o interesse, e a pergunta mostra a origem que a ferramenta muitas vezes perde."
+  - p: "Com que frequência devo olhar esses números?"
+    r: "Uma vez por mês é suficiente para a maioria dos negócios pequenos. Compare com o mês anterior e anote o que mudou no site ou na divulgação nesse período."
+revisao:
+  fatos_conferidos: true
+  numeros_com_fonte: true
+  cliente_autorizou: n/a
+  sem_travessao_e_sem_cidade: true
+  sem_valores_de_preco: true
+revisar: "Aprovado pelo Matheus em 04/11/2026. Confirmados por ele: contato de 30/10/2026, frase sobre privacidade e LGPD, termos evento e evento-chave. Seção sobre o generate_lead conferida no whatsapp.html do site."
+---
+
+## Por que medir contato e não visita?
+
+Porque visita não paga conta. Um site pode receber bastante gente e não gerar nenhum pedido de orçamento, e outro pode receber pouca gente e gerar vários. O número de visitas diz que alguém chegou. O contato diz que alguém quis falar com você.
+
+Por isso, o mínimo de medição não começa em uma ferramenta. Começa em uma decisão: o que, no seu negócio, conta como contato?
+
+## O que é o mínimo de medição?
+
+São três perguntas, e só três:
+
+1. **Quantas pessoas pediram contato** neste mês?
+2. **Por qual caminho** pediram: WhatsApp, formulário, telefone ou e-mail?
+3. **De onde vieram**: da busca, de uma rede social, de uma indicação, de quem digitou o endereço?
+
+Se você responde as três, já sabe mais do que a maioria dos sites que eu vejo. Todo o resto, como mapa de calor, funil e relatório de comportamento, vem depois e só faz sentido se essas três estiverem em dia.
+
+## Como contar os contatos?
+
+Defina duas ou três ações que valem como contato. Em geral:
+
+- clique no botão de WhatsApp;
+- envio do formulário;
+- clique no telefone ou no e-mail.
+
+Depois, peça à ferramenta de análise que registre cada uma dessas ações como um evento e a marque como importante (nas ferramentas do Google, isso aparece como evento-chave). Se o site não tem ferramenta nenhuma, comece pelo simples: uma planilha com data, canal e origem de cada contato que chegar.
+
+E teste. Abra o site no seu celular, clique no botão, envie o formulário e confira se cada ação apareceu no registro. É o passo que mais gente pula, e o que mais evita surpresa: muitos sites passam meses "medindo" um botão que nunca foi ligado à ferramenta.
+
+## Como saber de onde vem o contato?
+
+Aqui há uma limitação honesta: nem sempre a ferramenta consegue dizer. Quem chega a um site por um link aberto dentro de um aplicativo, por exemplo, muitas vezes aparece sem origem identificada. E quando o contato acontece no WhatsApp, a conversa sai do site e a pista se perde.
+
+Duas coisas ajudam:
+
+- **Olhar as buscas que levaram ao site.** O Search Console, ferramenta gratuita do Google, mostra por quais pesquisas o site apareceu e quantas pessoas clicaram.
+- **Perguntar.** Coloque um campo "como você nos encontrou?" no formulário e faça a mesma pergunta na primeira conversa. É a medição mais barata que existe, e frequentemente a mais confiável.
+
+## Como montar a planilha mínima?
+
+Se você ainda não tem ferramenta, uma planilha com cinco colunas resolve:
+
+1. **Data** do contato.
+2. **Canal**: WhatsApp, formulário, telefone ou e-mail.
+3. **Origem declarada**: o que a pessoa respondeu quando você perguntou como encontrou o negócio.
+4. **Assunto**: o que ela queria.
+5. **Resultado**: virou conversa, virou proposta, virou cliente ou não deu em nada.
+
+A quinta coluna é a que mais muda a análise. Dez contatos que não viram nada contam uma história diferente de três que viram clientes, e só quem anota o resultado enxerga isso. Preencha na hora, enquanto a lembrança está fresca: deixar para o fim do mês é a forma mais rápida de abandonar a planilha.
+
+## Um exemplo do meu próprio estúdio
+
+Na sexta-feira, 30 de outubro de 2026, alguém me encontrou no Google e me chamou. Eu soube disso porque o próprio cliente me contou, na conversa, que tinha me achado pelo Google.
+
+Um caso não prova uma regra. Mas mostra o valor de perguntar: a origem desse contato veio da conversa, e não de um relatório. Anotada, essa informação deixa de ser uma lembrança e passa a ser algo que posso comparar no mês seguinte.
+
+## Como eu faço no meu próprio site
+
+No meu site, o botão de WhatsApp não abre a conversa direto. Ele leva a uma página intermediária, que registra o clique no Google Analytics como um evento chamado `generate_lead` (o nome que a ferramenta usa para "alguém demonstrou interesse") e, menos de um segundo depois, abre o WhatsApp. Cada link carrega a origem do clique, como o blog e o artigo em que a pessoa estava, e essa origem fica gravada junto com o evento. Esse tipo de marcação é feito com parâmetros no endereço do link, chamados UTM.
+
+Na prática, isso me deixa responder o que a ferramenta sozinha não responde: de qual texto, de qual página ou de qual botão veio o interesse.
+
+Há um limite que eu também declaro: o que eu registro é o clique, e não a conversa. Alguém pode clicar e desistir antes de mandar a mensagem. Por isso mantenho a planilha e a pergunta "como você me encontrou?" ao lado da ferramenta. Uma mede o interesse, a outra confirma o contato de verdade.
+
+## Como ler os números no fim do mês?
+
+Com a planilha preenchida, três comparações bastam:
+
+- **Contatos deste mês contra o mês anterior.** Subiu, caiu ou ficou igual?
+- **De onde vieram.** Se a maioria diz "Google" ou "indicação", você sabe o que está funcionando e o que proteger.
+- **Contatos por visita.** Divida o número de contatos pelo de visitas. Em sites pequenos essa conta oscila bastante de um mês para o outro, então olhe a tendência de alguns meses antes de tirar conclusão.
+
+Antes de mudar qualquer coisa no site, anote o que mudou e quando. Sem esse registro, você não consegue ligar uma melhora ou uma piora a uma decisão.
+
+## Quais erros mais atrapalham?
+
+- **Medir só visitas.** O número é fácil de conseguir e quase não ajuda a decidir.
+- **Não testar a medição.** Um botão que não registra nada parece um site sem resultado.
+- **Olhar um número isolado.** Sem comparar com o mês anterior, ele não diz se melhorou ou piorou.
+- **Esquecer a origem.** Saber que vieram alguns contatos sem saber de onde vieram impede de repetir o que funcionou.
+- **Ignorar o aviso de privacidade.** Se o site usa ferramenta de análise, a política de privacidade deve informar isso. Confirme com quem entende do assunto o que a LGPD pede no seu caso.
+
+## O que eu faria
+
+1. Escolheria as duas ou três ações que contam como contato.
+2. Ligaria cada uma à ferramenta de análise (ou à planilha) e testaria no celular.
+3. Conectaria o Search Console ao site.
+4. Colocaria a pergunta "como você nos encontrou?" no formulário e na primeira conversa.
+5. Uma vez por mês, anotaria quantos contatos chegaram, por qual canal e de onde vieram, e compararia com o mês anterior.
+
+A configuração é rápida, e o acompanhamento mensal toma pouco tempo.
+
+## Quando isso não se aplica
+
+Se o seu negócio vive de indicação e o site funciona só como cartão de visita, uma ferramenta de análise é exagero. Nesse caso, a planilha com a pergunta "como você nos conheceu?" já resolve.
+
+A medição entra no mesmo raciocínio de [Feed é aluguel, site é imóvel](/blog/feed-e-aluguel-site-e-imovel/): um site só trabalha por você se você sabe o que ele está entregando.
+
+E você: sabe quantos contatos o seu site gerou no último mês?
