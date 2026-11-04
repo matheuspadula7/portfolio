@@ -13,6 +13,9 @@ posts_relacionados:
   - feed-e-aluguel-site-e-imovel
 data_publicacao: 2026-11-04
 data_atualizacao: 2026-11-04
+capa: /assets/blog/como-saber-se-o-seu-site-gera-contato.jpg
+capa_alt: "Tela de notebook com gráficos de análise de desempenho de um site"
+capa_credito: "Foto: Luke Chesser / Unsplash"
 fontes: []
 faq:
   - p: "Quantas visitas por mês um site precisa ter?"
@@ -29,7 +32,7 @@ revisao:
   cliente_autorizou: n/a
   sem_travessao_e_sem_cidade: true
   sem_valores_de_preco: true
-revisar: "Aprovado pelo Matheus em 04/11/2026."
+revisar: "Aprovado pelo Matheus em 04/11/2026. Confirmados por ele: contato de 30/10/2026, frase sobre privacidade e LGPD, termos evento e evento-chave. Seção sobre o generate_lead conferida no whatsapp.html do site."
 ---
 
 ## Por que medir contato e não visita?
@@ -69,11 +72,41 @@ Duas coisas ajudam:
 - **Olhar as buscas que levaram ao site.** O Search Console, ferramenta gratuita do Google, mostra por quais pesquisas o site apareceu e quantas pessoas clicaram.
 - **Perguntar.** Coloque um campo "como você nos encontrou?" no formulário e faça a mesma pergunta na primeira conversa. É a medição mais barata que existe, e frequentemente a mais confiável.
 
+## Como montar a planilha mínima?
+
+Se você ainda não tem ferramenta, uma planilha com cinco colunas resolve:
+
+1. **Data** do contato.
+2. **Canal**: WhatsApp, formulário, telefone ou e-mail.
+3. **Origem declarada**: o que a pessoa respondeu quando você perguntou como encontrou o negócio.
+4. **Assunto**: o que ela queria.
+5. **Resultado**: virou conversa, virou proposta, virou cliente ou não deu em nada.
+
+A quinta coluna é a que mais muda a análise. Dez contatos que não viram nada contam uma história diferente de três que viram clientes, e só quem anota o resultado enxerga isso. Preencha na hora, enquanto a lembrança está fresca: deixar para o fim do mês é a forma mais rápida de abandonar a planilha.
+
 ## Um exemplo do meu próprio estúdio
 
 Na sexta-feira, 30 de outubro de 2026, alguém me encontrou no Google e me chamou. Eu soube disso porque o próprio cliente me contou, na conversa, que tinha me achado pelo Google.
 
 Um caso não prova uma regra. Mas mostra o valor de perguntar: a origem desse contato veio da conversa, e não de um relatório. Anotada, essa informação deixa de ser uma lembrança e passa a ser algo que posso comparar no mês seguinte.
+
+## Como eu faço no meu próprio site
+
+No meu site, o botão de WhatsApp não abre a conversa direto. Ele leva a uma página intermediária, que registra o clique no Google Analytics como um evento chamado `generate_lead` (o nome que a ferramenta usa para "alguém demonstrou interesse") e, menos de um segundo depois, abre o WhatsApp. Cada link carrega a origem do clique, como o blog e o artigo em que a pessoa estava, e essa origem fica gravada junto com o evento. Esse tipo de marcação é feito com parâmetros no endereço do link, chamados UTM.
+
+Na prática, isso me deixa responder o que a ferramenta sozinha não responde: de qual texto, de qual página ou de qual botão veio o interesse.
+
+Há um limite que eu também declaro: o que eu registro é o clique, e não a conversa. Alguém pode clicar e desistir antes de mandar a mensagem. Por isso mantenho a planilha e a pergunta "como você me encontrou?" ao lado da ferramenta. Uma mede o interesse, a outra confirma o contato de verdade.
+
+## Como ler os números no fim do mês?
+
+Com a planilha preenchida, três comparações bastam:
+
+- **Contatos deste mês contra o mês anterior.** Subiu, caiu ou ficou igual?
+- **De onde vieram.** Se a maioria diz "Google" ou "indicação", você sabe o que está funcionando e o que proteger.
+- **Contatos por visita.** Divida o número de contatos pelo de visitas. Em sites pequenos essa conta oscila bastante de um mês para o outro, então olhe a tendência de alguns meses antes de tirar conclusão.
+
+Antes de mudar qualquer coisa no site, anote o que mudou e quando. Sem esse registro, você não consegue ligar uma melhora ou uma piora a uma decisão.
 
 ## Quais erros mais atrapalham?
 
