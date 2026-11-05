@@ -353,7 +353,7 @@ ${extra}<link rel="icon" type="image/png" href="/assets/favicon.png">
 function tail(lang, altMap) {
   return `<div id="footer-root"></div>
 <script>window.__BLOG = ${JSON.stringify({ lang, alt: altMap })};</script>
-<script src="/components/layout.js?v=5"></script>
+<script src="/components/layout.js?v=8"></script>
 <script src="/components/blog.js?v=1"></script>
 </body>
 </html>
