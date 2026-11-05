@@ -40,14 +40,15 @@
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="shortcut icon" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Mulish:wght@400;500;600&family=Courgette&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@300,400,500,700,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Mulish:wght@400;500;600&family=Courgette&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --bg: #0a0a0a; --surface: #111111; --border: #1e1e1e;
     --text: #e8e6e0; --muted: #6b6862; --accent: #ebbe38;
     --accent-dim: rgba(235,190,56,0.08);
-    --font-display: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+    --font-display: 'Cabinet Grotesk', sans-serif; --font-body: 'Inter', sans-serif;
   }
   html { scroll-behavior: smooth; }
   body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; cursor: none; }
@@ -58,51 +59,51 @@
   @media (max-width:900px){ .cursor, .cursor-ring { display:none !important; } body { cursor:auto !important; } }
   .progress-bar { position:fixed;top:0;left:0;height:2px;background:var(--accent);z-index:1000;width:0%;transition:width .1s linear; }
   section { padding:120px 48px; }
-  .section-number { font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-family:var(--font-display);margin-bottom:16px; }
+  .section-number { font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-family:var(--font-display);margin-bottom:16px; }
   .section-title { font-family:var(--font-display);font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin-bottom:32px; }
   .section-body { font-size:17px;line-height:1.75;color:#b0aea8;max-width:640px; }
 
   /* HERO */
   .hero { min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px;position:relative;overflow:hidden; }
   .hero-bg { position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 40%,rgba(235,190,56,.06) 0%,transparent 70%);pointer-events:none; }
-  .hero-label { font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:12px; }
+  .hero-label { font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:12px; }
   .hero-label::before { content:'';display:block;width:32px;height:1px;background:var(--muted); }
   .hero-title { font-family:var(--font-display);font-size:clamp(56px,9vw,120px);font-weight:800;line-height:.98;letter-spacing:-.03em;margin-bottom:48px;overflow-wrap:anywhere;word-break:break-word; }
   .hero-title span { color:var(--accent); }
   .hero-meta { display:grid;grid-template-columns:repeat(4,auto) minmax(180px,1fr);gap:0;border-top:1px solid var(--border);padding-top:32px;max-width:1100px; }
   .meta-item { padding-right:48px;border-right:1px solid var(--border);margin-right:48px; }
   .meta-item:last-child { border:none;margin:0;padding:0; }
-  .meta-label { font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px; }
-  .meta-value { font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--text);white-space:nowrap; }
+  .meta-label { font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px; }
+  .meta-value { font-family:var(--font-display);font-size:15px;font-weight:600;color:var(--text);white-space:nowrap; }
 
   /* HERO IMAGE */
   .hero-image-section { padding:0 48px 120px; }
   .hero-image-wrap { width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;background:var(--surface); }
   .hero-image-wrap img { width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.92);transition:filter .6s,transform .6s; }
   .hero-image-wrap:hover img { filter:brightness(1);transform:scale(1.01); }
-  .image-caption { font-size:12px;color:var(--muted);letter-spacing:.06em;margin-top:12px; }
+  .image-caption { font-size:13px;color:var(--muted);letter-spacing:.06em;margin-top:12px; }
 
   /* CHALLENGE / CONCEPT */
   .challenge-section { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;border-top:1px solid var(--border); }
   .solution-section { background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border); }
   .solution-inner { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start; }
   .solution-tags { display:flex;flex-wrap:wrap;gap:8px;margin-top:32px; }
-  .tag { font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border:1px solid var(--border);color:var(--muted);font-family:var(--font-display); }
+  .tag { font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border:1px solid var(--border);color:var(--muted);font-family:var(--font-display); }
 
   /* LOGO SHOWCASE */
   .identity-section { border-top:1px solid var(--border); }
   .logo-showcase { display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:64px; }
   .logo-tile { aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:48px;position:relative;background:var(--surface); }
   .logo-tile img { max-width:70%;max-height:60%;object-fit:contain; }
-  .logo-tile-label { position:absolute;bottom:18px;left:22px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-display);color:rgba(232,230,224,.45); }
+  .logo-tile-label { position:absolute;bottom:18px;left:22px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-display);color:rgba(232,230,224,.45); }
   .logo-tile.tile-light { background:#f2f0ea; }
   .logo-tile.tile-light .logo-tile-label { color:rgba(10,10,10,.35); }
 
   /* PALETTE */
   .palette-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;margin-top:64px; }
   .swatch-card { aspect-ratio:1;display:flex;flex-direction:column;justify-content:flex-end;padding:22px; }
-  .swatch-name { font-family:var(--font-display);font-size:14px;font-weight:700; }
-  .swatch-hex { font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.75;margin-top:4px;text-transform:uppercase; }
+  .swatch-name { font-family:var(--font-display);font-size:15px;font-weight:700; }
+  .swatch-hex { font-family:'JetBrains Mono',monospace;font-size:12.5px;opacity:.75;margin-top:4px;text-transform:uppercase; }
 
   /* TYPOGRAPHY SPECIMEN */
   .type-specimen { margin-top:64px;border-top:1px solid var(--border); }
@@ -128,7 +129,7 @@
   .result-card::before { content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s; }
   .result-card:hover::before { transform:scaleX(1); }
   .result-number { font-family:var(--font-display);font-size:clamp(40px,5vw,64px);font-weight:800;color:var(--accent);line-height:1;margin-bottom:12px;letter-spacing:-.03em; }
-  .result-desc { font-size:14px;color:var(--muted);line-height:1.5; }
+  .result-desc { font-size:15px;color:var(--muted);line-height:1.5; }
   .results-text { font-size:17px;line-height:1.75;color:#b0aea8;max-width:640px; }
 
   /* NEXT PROJECT */
@@ -136,7 +137,7 @@
   .next-project:hover { background:#161616; }
   .next-project::after { content:'';position:absolute;inset:0;background:radial-gradient(ellipse 40% 60% at 80% 50%,rgba(235,190,56,.04) 0%,transparent 70%);opacity:0;transition:opacity .4s; }
   .next-project:hover::after { opacity:1; }
-  .next-label { font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:12px; }
+  .next-label { font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:12px; }
   .next-title { font-family:var(--font-display);font-size:clamp(36px,6vw,80px);font-weight:800;color:var(--text);line-height:1;letter-spacing:-.03em;display:flex;align-items:center;gap:24px;transition:gap .3s; }
   .next-project:hover .next-title { gap:36px; }
   .next-arrow { font-size:.6em;color:var(--accent);transition:transform .3s; }
