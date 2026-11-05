@@ -6,6 +6,13 @@
  */
 
 (function () {
+  // Fonte de marca (Cabinet Grotesk) usada no menu, rodape e depoimentos; as paginas de case nao a carregam.
+  if (!document.querySelector('link[href*="fontshare.com"]')) {
+    const f = document.createElement('link');
+    f.rel = 'stylesheet';
+    f.href = 'https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@300,400,500,700,800&display=swap';
+    document.head.appendChild(f);
+  }
   const path = window.location.pathname;
   const isCV = /^\/curriculo(\.html)?\/?$/.test(path);
   const isMainHome = ['/', '/index.html', ''].some(p => path === p) || path.endsWith('/index.html');
