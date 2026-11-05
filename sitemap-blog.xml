@@ -2,7 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://matheuspadula.com.br/blog/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://matheuspadula.com.br/blog/quem-tem-acesso-ao-seu-site/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheuspadula.com.br/blog/quem-tem-acesso-ao-seu-site/"/>
   </url>
   <url>
     <loc>https://matheuspadula.com.br/blog/como-saber-se-o-seu-site-gera-contato/</loc>
