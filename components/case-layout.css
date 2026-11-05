@@ -1,0 +1,17 @@
+/* Paginas de case: margem lateral equilibrada em telas largas.
+   O CSS inline de cada pagina usa 48px fixos nas laterais, entao em monitores largos o conteudo
+   ficava colado na esquerda. Aqui o conteudo ganha a mesma largura util do menu e do rodape
+   (1360px de container com 32px de respiro = 1296px) e fica centralizado. Carregado depois do CSS inline. */
+@media (min-width:769px){
+  body .hero,
+  body section,
+  body .hero-image-section,
+  body .next-project{
+    padding-left:max(48px,calc((100% - 1296px)/2));
+    padding-right:max(48px,calc((100% - 1296px)/2));
+  }
+}
+
+/* O CSS de cada case tem uma regra "nav {display:flex}" que tambem pega o menu compartilhado
+   e o encolhe no centro. O menu compartilhado (nav.nav) deve ocupar o container inteiro, como na home. */
+body nav.nav{display:block}
