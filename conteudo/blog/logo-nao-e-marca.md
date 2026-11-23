@@ -2,7 +2,7 @@
 status: aprovado
 titulo: "Logo não é marca: o que é, de fato, uma identidade visual"
 slug: logo-nao-e-marca
-meta_description: "Logo não é marca. Veja o que uma identidade visual inclui, como ela nasce da estratégia e quais sinais mostram que só um logo não é suficiente."
+meta_description: "Logo, logotipo e marca não são a mesma coisa. Veja o que é um logotipo, o que uma identidade visual inclui e quando só o logo não basta para o negócio."
 resposta_curta: "O logo é uma peça. A identidade visual é o sistema que faz a marca ser reconhecida em qualquer lugar: logotipo e versões, cores, tipografia, regras de uso e aplicações. E a marca é maior ainda, porque é o que as pessoas pensam e sentem sobre o negócio."
 palavra_chave: "o que é identidade visual"
 tipo: guia
@@ -15,9 +15,15 @@ capa_original: true
 case_relacionado: blended
 posts_relacionados: []
 data_publicacao: 2026-11-02
-data_atualizacao: 2026-11-02
+data_atualizacao: 2026-11-23
 fontes: []
 faq:
+  - p: "O que é logotipo?"
+    r: "É o nome da marca desenhado com tipografia própria. Na prática, as pessoas usam \"logo\" como abreviação, e o termo costuma valer para qualquer assinatura visual da empresa."
+  - p: "Logotipo é masculino ou feminino?"
+    r: "Masculino: o logotipo e o logo. Já \"logomarca\" é feminina: a logomarca."
+  - p: "Qual a diferença entre logo, logotipo e logomarca?"
+    r: "Em sentido técnico, logotipo é a versão só com letras, o símbolo é a parte em imagem e a logomarca junta os dois. No uso comum, os três viram \"logo\". O que pesa para o negócio é o que vem depois do desenho: as regras de cor, tipografia e aplicação que fazem a marca ser reconhecida."
   - p: "Identidade visual é a mesma coisa que branding?"
     r: "Não exatamente. Branding é o trabalho mais amplo de construir a marca, e inclui estratégia e comunicação. A identidade visual é a parte que se vê: logo, cores, tipografia e aplicações."
   - p: "Preciso de manual de marca?"
@@ -34,6 +40,10 @@ revisao:
   sem_valores_de_preco: true
 revisar: "Aprovado pelo Matheus em 02/11/2026."
 ---
+
+## O que é um logotipo?
+
+Logotipo é o nome da marca desenhado com tipografia própria, uma palavra que virou imagem. No dia a dia, quase todo mundo chama de "logo" qualquer assinatura visual de uma empresa, e está tudo bem: "logo" é a forma abreviada de logotipo. Quando a assinatura junta o nome e um símbolo, muita gente fala em logomarca. Na conversa comum os três termos funcionam como sinônimos, mas nenhum deles é a marca. É a peça mais visível dela.
 
 ## Qual a diferença entre logo, identidade visual e marca?
 

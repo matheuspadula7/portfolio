@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 <url>
 <loc>https://matheuspadula.com.br/</loc>
 <lastmod>2026-09-04</lastmod>
@@ -108,4 +108,65 @@
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 </url>
+<!-- blog:inicio (gerado por scripts/build-blog.mjs, não edite) -->
+  <url>
+    <loc>https://matheuspadula.com.br/blog/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://matheuspadula.com.br/blog/terceirizar-implementacao-do-design/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheuspadula.com.br/blog/terceirizar-implementacao-do-design/"/>
+  </url>
+  <url>
+    <loc>https://matheuspadula.com.br/blog/documentacao-de-projeto-de-site/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheuspadula.com.br/blog/documentacao-de-projeto-de-site/"/>
+  </url>
+  <url>
+    <loc>https://matheuspadula.com.br/blog/site-em-codigo-ou-wordpress/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheuspadula.com.br/blog/site-em-codigo-ou-wordpress/"/>
+  </url>
+  <url>
+    <loc>https://matheuspadula.com.br/blog/nova-identidade-visual-da-caixa/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheuspadula.com.br/blog/nova-identidade-visual-da-caixa/"/>
+  </url>
+  <url>
+    <loc>https://matheuspadula.com.br/blog/quem-tem-acesso-ao-seu-site/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheuspadula.com.br/blog/quem-tem-acesso-ao-seu-site/"/>
+  </url>
+  <url>
+    <loc>https://matheuspadula.com.br/blog/como-saber-se-o-seu-site-gera-contato/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheuspadula.com.br/blog/como-saber-se-o-seu-site-gera-contato/"/>
+  </url>
+  <url>
+    <loc>https://matheuspadula.com.br/blog/agro-ribeiro-marca-e-site/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheuspadula.com.br/blog/agro-ribeiro-marca-e-site/"/>
+  </url>
+  <url>
+    <loc>https://matheuspadula.com.br/blog/ataque-binance-o-que-ensina-a-quem-tem-site/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheuspadula.com.br/blog/ataque-binance-o-que-ensina-a-quem-tem-site/"/>
+  </url>
+  <url>
+    <loc>https://matheuspadula.com.br/blog/feed-e-aluguel-site-e-imovel/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheuspadula.com.br/blog/feed-e-aluguel-site-e-imovel/"/>
+  </url>
+  <url>
+    <loc>https://matheuspadula.com.br/blog/logo-nao-e-marca/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheuspadula.com.br/blog/logo-nao-e-marca/"/>
+  </url>
+  <url>
+    <loc>https://matheuspadula.com.br/blog/site-de-advocacia-que-gera-contato/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheuspadula.com.br/blog/site-de-advocacia-que-gera-contato/"/>
+  </url>
+<!-- blog:fim -->
 </urlset>

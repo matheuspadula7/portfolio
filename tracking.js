@@ -66,7 +66,9 @@
     if (!a || a.hasAttribute('data-no-lead')) { return; }
     var href = a.getAttribute('href') || '';
     var method = null;
-    if (/^https?:\/\/(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\//i.test(href) || /^whatsapp:/i.test(href)) {
+    // Só conta como lead o link para uma conversa com número (wa.me/55...). O botão "compartilhar"
+    // dos artigos usa wa.me/?text=..., que não é contato comigo.
+    if (/^https?:\/\/wa\.me\/\d/i.test(href) || /^https?:\/\/(api|web)\.whatsapp\.com\/send\?[^#]*phone=\d/i.test(href) || /^whatsapp:\/\/send\?[^#]*phone=\d/i.test(href)) {
       method = 'whatsapp';
     } else if (/^mailto:/i.test(href)) {
       method = 'email';

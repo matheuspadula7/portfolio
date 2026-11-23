@@ -43,10 +43,17 @@
 
   // Os UTMs ficam na URL desta página, então o GA4 já atribui a sessão à campanha no page_view.
   // Eles também seguem como parâmetros do lead, para conferir no DebugView.
+  // Página de onde o visitante veio (o referrer só vale se for do próprio site).
+  var origemPagina = '';
+  try {
+    var ref = document.referrer ? new URL(document.referrer) : null;
+    if (ref && ref.hostname.replace(/^www\./, '') === window.location.hostname.replace(/^www\./, '')) { origemPagina = ref.pathname; }
+  } catch (e) {}
+
   var params = {
     lead_method: 'whatsapp',
     link_location: origem,
-    page_path: window.location.pathname,
+    page_path: origemPagina || window.location.pathname,
     link_url: TARGET,
     transport_type: 'beacon'
   };

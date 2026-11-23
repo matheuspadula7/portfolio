@@ -2,7 +2,7 @@
 status: aprovado
 titulo: "A Caixa mudou a marca depois de quase 30 anos, e eu acho que acertou"
 slug: nova-identidade-visual-da-caixa
-meta_description: "A Caixa mudou a marca após quase 30 anos, em um projeto de 3,5 milhões de reais. Minha leitura do que acertou e do que um negócio pequeno pode levar."
+meta_description: "Nome, X, azul e laranja ficaram. O X ganhou profundidade e as letras mudaram. Veja o que mudou na marca da Caixa e o que um negócio pequeno pode levar."
 resposta_curta: "Em 9 de novembro de 2026, a Caixa apresentou a nova marca, feita pela Tátil Design, depois de quase 30 anos sem uma grande atualização. Minha opinião é que acertou ao evoluir sem romper: manteve o X e o azul, mexeu no que estava defasado e tratou a identidade como um sistema. Um negócio pequeno não precisa do orçamento, mas pode usar o mesmo método."
 palavra_chave: "nova identidade visual da Caixa"
 tipo: tese
@@ -13,7 +13,7 @@ case_relacionado: barbosa
 posts_relacionados:
   - logo-nao-e-marca
 data_publicacao: 2026-11-10
-data_atualizacao: 2026-11-10
+data_atualizacao: 2026-11-23
 capa: /assets/blog/nova-identidade-visual-da-caixa-capa.png
 capa_alt: "Logotipo da nova identidade visual da Caixa, em branco e laranja sobre fundo azul"
 capa_credito: "Imagem: Tátil Design, case Caixa Branding"
@@ -40,7 +40,15 @@ fontes:
   - titulo: "Estado de Minas, Web reage a rebranding da Caixa: nova logo gera memes e opiniões mistas"
     url: "https://www.em.com.br/economia/2026/11/7535793-web-reage-a-rebranding-da-caixa-nova-logo-gera-memes-e-opinioes-mistas.html"
     data: "11/2026"
+  - titulo: "Times Brasil, Caixa renova identidade visual após quase 30 anos"
+    url: "https://timesbrasil.com.br/empresas-e-negocios/bancos-fintechs/caixa-renova-identidade-visual-apos-quase-30-anos/"
+    data: "11/2026"
+  - titulo: "Acessa, Caixa apresenta nova identidade visual após quase 30 anos"
+    url: "https://www.acessa.com/economia/2026/11/343923-caixa-apresenta-nova-identidade-visual-apos-quase-30-anos.html"
+    data: "11/2026"
 faq:
+  - p: "O que mudou no logo da Caixa?"
+    r: "O nome, o X e as cores azul e laranja foram mantidos. O X foi redesenhado com mais profundidade, as letras ficaram mais curvas e a marca ganhou a assinatura \"Vem realizar\"."
   - p: "Quem criou a nova identidade visual da Caixa?"
     r: "A Tátil Design, segundo o Meio & Mensagem e o case publicado pelo próprio estúdio. A Agência Brasil não informa quem desenvolveu o projeto."
   - p: "Quanto custou a nova marca da Caixa?"
@@ -63,6 +71,16 @@ A Caixa passou quase 30 anos sem uma grande atualização de marca. Segundo a Ag
 Pare para pensar no que isso significa. É uma marca presente no FGTS, na casa própria, nos benefícios sociais, na vida de quase todo brasileiro. Mexer nela é mexer na memória de milhões de pessoas. Por isso eu acho que este é um dos projetos de identidade mais importantes do ano, e vale olhar para ele como projeto, e não como notícia.
 
 ![Empena de um prédio histórico com a nova marca da Caixa e o slogan "Vem realizar", em branco sobre fundo azul](/assets/blog/caixa-mural-vem-realizar.jpg "A nova marca aplicada em um mural urbano, com o slogan \"Vem realizar\". Imagem: Tátil Design, case Caixa Branding.")
+
+## O que mudou na marca da Caixa, ponto a ponto
+
+Antes de voltar à minha opinião, os fatos lado a lado, para quem quer saber só o que mudou.
+
+**O que ficou:** o nome Caixa, o X como símbolo central e as cores azul e laranja, com os tons revisados para funcionar melhor no digital.
+
+**O que mudou:** o X foi redesenhado, com mais profundidade e novas proporções. As letras do nome ganharam curvas mais suaves e maiúsculas e minúsculas na mesma altura. A marca passou a vir com a assinatura "Vem realizar", e os novos grafismos derivam do X.
+
+**Como chega às ruas:** 11 agências, nas cinco regiões do país, já têm a nova marca. O restante da rede recebe a identidade aos poucos, junto com reformas e manutenções, até 2030.
 
 ## O que eu acho que a Caixa acertou
 

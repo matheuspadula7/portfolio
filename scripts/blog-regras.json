@@ -22,5 +22,6 @@
     "bastidor": [800, 1200],
     "tese": [600, 1000]
   },
-  "faqObrigatorioEm": ["guia", "sintoma", "explicador"]
+  "faqObrigatorioEm": ["guia", "sintoma", "explicador"],
+  "faqPerguntas": [3, 8]
 }

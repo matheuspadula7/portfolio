@@ -207,7 +207,8 @@ function validate(p, all) {
 
   // FAQ
   p.faq.forEach((f, i) => { if (!f || !f.p || !f.r) err(`faq[${i}] precisa de p e r`); });
-  if (RULES.faqObrigatorioEm.includes(p.tipo) && (p.faq.length < 3 || p.faq.length > 4)) err(`tipo ${p.tipo} exige FAQ com 3 a 4 perguntas (tem ${p.faq.length})`);
+  const [faqMin, faqMax] = RULES.faqPerguntas || [3, 4];
+  if (RULES.faqObrigatorioEm.includes(p.tipo) && (p.faq.length < faqMin || p.faq.length > faqMax)) err(`tipo ${p.tipo} exige FAQ com ${faqMin} a ${faqMax} perguntas (tem ${p.faq.length})`);
 
   // case relacionado (seção 11)
   const C = RULES.cases;
@@ -604,7 +605,7 @@ ${items}
 `;
 }
 
-function sitemap(posts) {
+function sitemapUrls(posts) {
   const link = (hreflang, href) => `    <xhtml:link rel="alternate" hreflang="${hreflang}" href="${abs(href)}"/>`;
   const hl = (l) => (l === 'pt' ? 'pt-BR' : 'en');
   const urls = [];
@@ -618,11 +619,30 @@ function sitemap(posts) {
     if (p.alt) links.push(link(hl(p.alt.lang), p.alt.url));
     urls.push(`  <url>\n    <loc>${abs(p.url)}</loc>\n    <lastmod>${p.updated}</lastmod>\n${links.join('\n')}\n  </url>`);
   }
+  return urls;
+}
+
+function sitemap(posts) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${urls.join('\n')}
+${sitemapUrls(posts).join('\n')}
 </urlset>
 `;
+}
+
+// O sitemap.xml principal é escrito à mão; as URLs do blog entram entre dois marcadores.
+// Assim o Google as encontra no sitemap que já está cadastrado no Search Console.
+function injectBlogIntoSitemap(posts) {
+  const file = join(ROOT, 'sitemap.xml');
+  if (!existsSync(file)) return;
+  const raw = readFileSync(file, 'utf8');
+  const crlf = raw.includes('\r\n');
+  let xml = raw.split('\r\n').join('\n');
+  const block = `<!-- blog:inicio (gerado por scripts/build-blog.mjs, não edite) -->\n${sitemapUrls(posts).join('\n')}\n<!-- blog:fim -->`;
+  xml = xml.replace(/<!-- blog:inicio[\s\S]*?<!-- blog:fim -->\n?/, '');
+  if (!xml.includes('xmlns:xhtml')) xml = xml.replace('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"');
+  xml = xml.replace('</urlset>', `${block}\n</urlset>`);
+  writeFileSync(file, crlf ? xml.split('\n').join('\r\n') : xml);
 }
 
 // ── execução ────────────────────────────────────────────────────────────────
@@ -646,7 +666,9 @@ for (const lang of ['pt', 'en']) {
   write(`${dir}rss.xml`, rss(lang, list));
   for (const p of list) write(`${dir}${p.slug}/index.html`, postPage(p, posts));
 }
-write('sitemap-blog.xml', sitemap(WITH_DRAFTS ? posts.filter((p) => !p.flag) : posts));
+const sitemapPosts = WITH_DRAFTS ? posts.filter((p) => !p.flag) : posts;
+write('sitemap-blog.xml', sitemap(sitemapPosts));
+injectBlogIntoSitemap(sitemapPosts);
 
 const n = (l) => posts.filter((p) => p.lang === l).length;
 console.log(`blog: ${posts.length} post(s) (${n('pt')} PT, ${n('en')} EN)${WITH_DRAFTS ? ', incluindo rascunhos/agendados' : ''}`);
