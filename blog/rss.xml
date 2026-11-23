@@ -7,6 +7,14 @@
     <language>pt-BR</language>
     <atom:link href="https://matheuspadula.com.br/blog/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Como terceirizar a implementação do design sem retrabalho</title>
+      <link>https://matheuspadula.com.br/blog/terceirizar-implementacao-do-design/</link>
+      <guid isPermaLink="true">https://matheuspadula.com.br/blog/terceirizar-implementacao-do-design/</guid>
+      <pubDate>Mon, 23 Nov 2026 12:00:00 GMT</pubDate>
+      <category>Web e desenvolvimento</category>
+      <description>Como passar um design para implementação sem retrabalho: o que a agência entrega, o que o desenvolvedor pergunta e um checklist para os dois lados.</description>
+    </item>
+    <item>
       <title>Documentação de projeto de site: o que registrar sobre decisões e acessos</title>
       <link>https://matheuspadula.com.br/blog/documentacao-de-projeto-de-site/</link>
       <guid isPermaLink="true">https://matheuspadula.com.br/blog/documentacao-de-projeto-de-site/</guid>

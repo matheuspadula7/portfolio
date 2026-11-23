@@ -13,7 +13,7 @@ case_relacionado: menndel
 posts_relacionados:
   - documentacao-de-projeto-de-site
   - site-em-codigo-ou-wordpress
-data_publicacao: 2026-11-30
+data_publicacao: 2026-11-23
 data_atualizacao: 2026-11-23
 capa: /assets/blog/terceirizar-implementacao-do-design.jpg
 capa_alt: "Duas pessoas vistas de cima, sentadas a uma mesa branca, cada uma com um laptop, trabalhando lado a lado"
@@ -40,7 +40,7 @@ revisao:
   cliente_autorizou: n/a
   sem_travessao_e_sem_cidade: true
   sem_valores_de_preco: true
-revisar: 'Aprovado pelo Matheus em 23/11/2026, com publicação agendada para 30/11/2026. Pontos que ele conferiu: (1) no Menndel, o ponto de partida foi um arquivo do Figma da equipe interna de marketing e design do escritório e o que evitou retrabalho foi alinhar cedo com a equipe (suas respostas no chat); o resto do caso vem da página do case (Framer, componentes reutilizáveis, CMS, 4 semanas do alinhamento ao site publicado). (2) Estados e interações e versões para tablet e celular como o que mais falta são, segundo você, sua experiência geral, e não do Menndel. (3) As recomendações do checklist vêm da Figma (abril de 2025) e da Smashing (maio de 2023). A última parte do artigo da Figma, cerca de 18 por cento do final, foi lida só por resumo. (4) A frase sobre marcar o que a equipe edita antes de implementar é adaptação minha do caso do Menndel (CMS ativo). (5) Capa: foto de Ben Spray no Unsplash (licença gratuita do Unsplash, 11/11/2021). O nome do fotógrafo veio do perfil exibido na página, sem linha explícita de crédito: confirme em unsplash.com/photos/gEvMA8O6Et4 antes de publicar. Datas: publicação sugerida para segunda, 30/11/2026.'
+revisar: 'Aprovado pelo Matheus em 23/11/2026, com publicação no mesmo dia (23/11/2026). Pontos que ele conferiu: (1) no Menndel, o ponto de partida foi um arquivo do Figma da equipe interna de marketing e design do escritório e o que evitou retrabalho foi alinhar cedo com a equipe (suas respostas no chat); o resto do caso vem da página do case (Framer, componentes reutilizáveis, CMS, 4 semanas do alinhamento ao site publicado). (2) Estados e interações e versões para tablet e celular como o que mais falta são, segundo você, sua experiência geral, e não do Menndel. (3) As recomendações do checklist vêm da Figma (abril de 2025) e da Smashing (maio de 2023). A última parte do artigo da Figma, cerca de 18 por cento do final, foi lida só por resumo. (4) A frase sobre marcar o que a equipe edita antes de implementar é adaptação minha do caso do Menndel (CMS ativo). (5) Capa: foto de Ben Spray no Unsplash (licença gratuita do Unsplash, 11/11/2021). O nome do fotógrafo veio do perfil exibido na página, sem linha explícita de crédito: confirme em unsplash.com/photos/gEvMA8O6Et4 antes de publicar. Data de publicação antecipada de 30/11 para 23/11/2026 a pedido dele.'
 ---
 
 ## Por que o retrabalho aparece na passagem do design?
