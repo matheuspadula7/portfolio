@@ -2,7 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://matheuspadula.com.br/blog/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://matheuspadula.com.br/blog/terceirizar-implementacao-do-design/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheuspadula.com.br/blog/terceirizar-implementacao-do-design/"/>
+  </url>
+  <url>
+    <loc>https://matheuspadula.com.br/blog/documentacao-de-projeto-de-site/</loc>
     <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheuspadula.com.br/blog/documentacao-de-projeto-de-site/"/>
   </url>
   <url>
     <loc>https://matheuspadula.com.br/blog/site-em-codigo-ou-wordpress/</loc>
