@@ -15,9 +15,8 @@ posts_relacionados:
   - documentacao-de-projeto-de-site
 data_publicacao: 2026-11-24
 data_atualizacao: 2026-11-24
-capa: /assets/blog/app-criado-com-ia-dados-de-clientes-capa.jpg
-capa_alt: "Bandeja de madeira sobre uma mesa escura com óculos, um chaveiro de couro e um objeto redondo preto"
-capa_credito: "Foto: Jason Dela Cueva / Unsplash"
+capa: /assets/blog/app-criado-com-ia-dados-de-clientes-senha.jpg
+capa_alt: "Dedo tocando o teclado numérico de uma tela de bloqueio com senha em um tablet"
 fontes:
   - titulo: "GitGuardian, The State of Secrets Sprawl 2026 (página do relatório)"
     url: "https://www.gitguardian.com/state-of-secrets-sprawl-report-2026"
@@ -43,7 +42,7 @@ revisao:
   cliente_autorizou: n/a
   sem_travessao_e_sem_cidade: true
   sem_valores_de_preco: true
-revisar: 'Aprovado pelo Matheus em 24/11/2026, com publicação no mesmo dia (24/11/2026). Pontos que ele conferiu: (1) Os números da GitGuardian (taxa duas vezes maior em commits com IA, 64 por cento dos segredos de 2022 ainda ativos, 32,2 por cento de repositórios internos com segredos contra 5,6 por cento de públicos) vêm da página de apresentação do relatório de 2026, e não do PDF completo. Os dados são de commits no GitHub público e repositórios analisados pela empresa. Vale abrir o PDF e conferir a definição de commit assistido por IA. (2) A OWASP foi lida só até cerca de 47 por cento; as regras sobre revogar e trocar segredos expostos e centralizar em cofre vêm de uma parte lida por resumo. (3) Da LGPD, só o art. 6º, VII foi lido literalmente; não citei o art. 46 nem o 42. A frase de que nome e contato de clientes são em regra dados pessoais é conhecimento geral, sem citação de artigo; o texto diz para consultar profissional de direito digital. (4) A frase sobre proibir levar ao uso escondido é opinião minha, sem fonte. (5) Sem exemplo de caso seu, conforme combinado. O texto não afirma que você entregou apps a clientes. (6) Capa: foto de Jason Dela Cueva no Unsplash (licença gratuita, 05/07/2022), recortada em 21:9 e clareada para o enquadramento do site; o nome é o do perfil exibido na página, sem linha explícita de crédito: confirme em unsplash.com/photos/NduqeuVp0sA. Inspirado no formato do post de Demian dos Santos no LinkedIn, mas com tema, dados e estrutura próprios; não reproduz o texto dele. Data de publicação antecipada de 30/11 para 24/11/2026 a pedido dele.'
+revisar: 'Aprovado pelo Matheus em 24/11/2026, com publicação no mesmo dia (24/11/2026). Pontos que ele conferiu: (1) Os números da GitGuardian (taxa duas vezes maior em commits com IA, 64 por cento dos segredos de 2022 ainda ativos, 32,2 por cento de repositórios internos com segredos contra 5,6 por cento de públicos) vêm da página de apresentação do relatório de 2026, e não do PDF completo. Os dados são de commits no GitHub público e repositórios analisados pela empresa. Vale abrir o PDF e conferir a definição de commit assistido por IA. (2) A OWASP foi lida só até cerca de 47 por cento; as regras sobre revogar e trocar segredos expostos e centralizar em cofre vêm de uma parte lida por resumo. (3) Da LGPD, só o art. 6º, VII foi lido literalmente; não citei o art. 46 nem o 42. A frase de que nome e contato de clientes são em regra dados pessoais é conhecimento geral, sem citação de artigo; o texto diz para consultar profissional de direito digital. (4) A frase sobre proibir levar ao uso escondido é opinião minha, sem fonte. (5) Sem exemplo de caso seu, conforme combinado. O texto não afirma que você entregou apps a clientes. (6) Capa: foto enviada pelo Matheus (tela de bloqueio com senha em um tablet), recortada em 21:9; fotógrafo e licença ainda NÃO confirmados, preencher capa_credito. A tela mostra texto da interface do sistema do aparelho, que o recorte remove em parte. Inspirado no formato do post de Demian dos Santos no LinkedIn, mas com tema, dados e estrutura próprios; não reproduz o texto dele. Data de publicação antecipada de 30/11 para 24/11/2026 a pedido dele.'
 ---
 
 ## O app funcionar no teste significa que ele está pronto?
