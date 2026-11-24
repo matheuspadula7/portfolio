@@ -2,7 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://matheuspadula.com.br/blog/</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://matheuspadula.com.br/blog/app-criado-com-ia-dados-de-clientes/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheuspadula.com.br/blog/app-criado-com-ia-dados-de-clientes/"/>
   </url>
   <url>
     <loc>https://matheuspadula.com.br/blog/terceirizar-implementacao-do-design/</loc>
