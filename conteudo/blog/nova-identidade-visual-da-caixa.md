@@ -1,8 +1,8 @@
 ---
 status: aprovado
-titulo: "A Caixa mudou a marca depois de quase 30 anos, e eu acho que acertou"
+titulo: "Nova logomarca da Caixa: o que mudou e por que acho que acertou"
 slug: nova-identidade-visual-da-caixa
-meta_description: "Nome, X, azul e laranja ficaram. O X ganhou profundidade e as letras mudaram. Veja o que mudou na marca da Caixa e o que um negócio pequeno pode levar."
+meta_description: "A Caixa mudou a logo. Veja o que ficou, o que mudou no X e nas letras, quem fez o projeto e o que um negócio pequeno pode aprender com essa decisão."
 resposta_curta: "Em 9 de novembro de 2026, a Caixa apresentou a nova marca, feita pela Tátil Design, depois de quase 30 anos sem uma grande atualização. Minha opinião é que acertou ao evoluir sem romper: manteve o X e o azul, mexeu no que estava defasado e tratou a identidade como um sistema. Um negócio pequeno não precisa do orçamento, mas pode usar o mesmo método."
 palavra_chave: "nova identidade visual da Caixa"
 tipo: tese
@@ -13,7 +13,7 @@ case_relacionado: barbosa
 posts_relacionados:
   - logo-nao-e-marca
 data_publicacao: 2026-11-10
-data_atualizacao: 2026-11-23
+data_atualizacao: 2026-11-26
 capa: /assets/blog/nova-identidade-visual-da-caixa-capa.png
 capa_alt: "Logotipo da nova identidade visual da Caixa, em branco e laranja sobre fundo azul"
 capa_credito: "Imagem: Tátil Design, case Caixa Branding"
