@@ -11,6 +11,13 @@ Idioma principal do site: português do Brasil, com versão em inglês nas pági
 - E-commerce: lojas com foco em performance e experiência de compra.
 - Identidade visual: logotipo, paleta, tipografia, manual de marca e aplicações.
 
+## Páginas de serviço
+
+- [Criação de sites](https://matheuspadula.com.br/criacao-de-sites): o que o projeto inclui, etapas, prazo de 2 a 3 semanas e perguntas frequentes.
+- [Identidade visual](https://matheuspadula.com.br/identidade-visual): logotipo, cores, tipografia, aplicações e manual de marca, em média de 30 a 45 dias.
+- [Landing page](https://matheuspadula.com.br/landing-page): página única para lançamento ou campanha, pronta em até 5 dias.
+- [Implementação de design](https://matheuspadula.com.br/implementacao-de-design): para agências e designers, em WordPress, Elementor, Framer ou código.
+
 ## Contato
 
 - Página inicial e portfólio: https://matheuspadula.com.br/

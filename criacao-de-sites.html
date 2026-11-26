@@ -38,7 +38,11 @@
   "serviceType": "Criação de sites",
   "url": "https://matheuspadula.com.br/criacao-de-sites",
   "areaServed": "BR",
-  "provider": { "@type": "ProfessionalService", "name": "Padula Design Studio", "url": "https://matheuspadula.com.br" }
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Padula Design Studio",
+    "url": "https://matheuspadula.com.br"
+  }
 }
 </script>
 <link rel="icon" type="image/png" href="/assets/favicon.png">
@@ -47,81 +51,7 @@
 <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@300,400,500,700,800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/components/layout.css?v=5">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:#0A0A0A;color:#F5F5F0;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-button{font:inherit;border:0;background:0;cursor:pointer}
-h1,h2,h3{font-family:'Cabinet Grotesk',sans-serif;font-weight:500;letter-spacing:-.025em;text-wrap:balance}
-p,li{text-wrap:pretty}
-h1 em,h2 em{font-style:italic;font-weight:400;color:#EBBE38}
-
-.sv-wrap{max-width:1160px;margin:0 auto;padding:0 32px}
-.sv-hero{padding:168px 0 96px}
-.sv-eyebrow{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#EBBE38;border:1px solid #2a2a27;border-radius:999px;padding:7px 14px;margin-bottom:28px}
-.sv-hero h1{font-size:clamp(40px,6vw,76px);line-height:1.03;max-width:17ch}
-.sv-hero p{margin-top:28px;font-size:18px;line-height:1.6;color:#a8a8a0;max-width:58ch}
-.sv-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-.sv-btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:999px;font-size:15px;font-weight:500;border:1px solid transparent;transition:transform .25s,border-color .25s}
-.sv-btn:hover{transform:translateY(-2px)}
-.sv-btn.primary{background:#EBBE38;color:#0A0A0A}
-.sv-btn.ghost{border-color:#2a2a27}
-.sv-btn.ghost:hover{border-color:#F5F5F0}
-
-.sv-sec{padding:88px 0;border-top:1px solid #1f1f1f}
-.sv-sec h2{font-size:clamp(32px,4.2vw,52px);line-height:1.06;max-width:20ch;margin-bottom:20px}
-.sv-lead{font-size:17px;line-height:1.65;color:#a8a8a0;max-width:62ch;margin-bottom:44px}
-
-.sv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.sv-card{background:#111;border:1px solid #1f1f1f;border-radius:14px;padding:30px 28px}
-.sv-card h3{font-size:24px;line-height:1.15;margin-bottom:12px}
-.sv-card p{font-size:16px;line-height:1.6;color:#a8a8a0}
-
-.sv-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;column-gap:48px}
-.sv-list li{padding:20px 0;border-top:1px solid #1f1f1f;font-size:16px;line-height:1.6;color:#a8a8a0}
-.sv-list b{display:block;color:#F5F5F0;font-weight:500;font-size:17px;margin-bottom:4px}
-
-.sv-steps{list-style:none;counter-reset:p}
-.sv-steps li{counter-increment:p;display:grid;grid-template-columns:80px 260px 1fr;gap:24px;padding:28px 0;border-top:1px solid #1f1f1f}
-.sv-steps li::before{content:"0" counter(p);font-family:'JetBrains Mono',monospace;font-size:13px;color:#EBBE38;padding-top:6px}
-.sv-steps h3{font-size:24px}
-.sv-steps p{font-size:16px;line-height:1.6;color:#a8a8a0;max-width:56ch}
-
-.sv-cases{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.sv-case{background:#111;border:1px solid #1f1f1f;border-radius:14px;overflow:hidden;transition:border-color .3s}
-.sv-case:hover{border-color:#EBBE38}
-.sv-case img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
-.sv-case div{padding:22px 24px 26px}
-.sv-case h3{font-size:22px;margin-bottom:8px}
-.sv-case p{font-size:15px;line-height:1.55;color:#a8a8a0}
-
-.sv-faq details{border-top:1px solid #1f1f1f;max-width:820px}
-.sv-faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:24px;padding:24px 0;font-size:18px;font-weight:500}
-.sv-faq summary::-webkit-details-marker{display:none}
-.sv-faq summary::after{content:"+";color:#EBBE38;font-size:22px;line-height:1}
-.sv-faq details[open] summary::after{content:"−"}
-.sv-faq details p{padding:0 0 26px;font-size:16px;line-height:1.65;color:#a8a8a0;max-width:66ch}
-.sv-faq details a,.sv-lead a{color:#EBBE38;text-decoration:underline;text-underline-offset:3px}
-
-.contact{background:#111;border-top:1px solid #1f1f1f;padding:110px 0;text-align:center}
-.contact h2{font-size:clamp(40px,6vw,80px);margin:0 auto 22px}
-.contact .sv-lead{margin:0 auto 36px}
-.contact .sv-ctas{justify-content:center;margin-top:0}
-
-@media (max-width:900px){
-  .sv-grid,.sv-cases,.sv-list{grid-template-columns:1fr}
-  .sv-steps li{grid-template-columns:44px 1fr;gap:8px 16px}
-  .sv-steps li p{grid-column:2}
-}
-@media (max-width:720px){
-  .sv-wrap{padding:0 20px}
-  .sv-hero{padding:116px 0 56px}
-  .sv-sec{padding:56px 0}
-  .contact{padding:72px 0}
-}
-</style>
+<link rel="stylesheet" href="/components/service.css?v=1">
 <script async src="https://stats.matheuspadula.com.br/script.js" data-website-id="8c8a8c97-6407-4df7-857e-8631dd3a3922" data-exclude-hash="true" data-domains="matheuspadula.com.br,www.matheuspadula.com.br"></script>
 </head>
 <body>
@@ -131,31 +61,31 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:#EBBE38}
 <main>
 <header class="hero sv-hero" id="top">
   <div class="sv-wrap">
-    <span class="sv-eyebrow">Design + código</span>
-    <h1>Criação de sites que explicam o que você faz e <em>levam ao contato.</em></h1>
-    <p>Eu desenho e construo o site da sua empresa, e você fala direto comigo em todas as etapas. Um site completo costuma ficar pronto em 2 a 3 semanas.</p>
+    <span class="sv-eyebrow" data-i18n="sv.1">Design + código</span>
+    <h1 data-i18n="sv.2">Criação de sites que explicam o que você faz e <em>levam ao contato.</em></h1>
+    <p data-i18n="sv.3">Eu desenho e construo o site da sua empresa, e você fala direto comigo em todas as etapas. Um site completo costuma ficar pronto em 2 a 3 semanas.</p>
     <div class="sv-ctas">
-      <a class="sv-btn primary" href="https://wa.me/5512974054956?text=Ol%C3%A1%2C%20Matheus!%20Quero%20uma%20proposta%20para%20o%20meu%20site." target="_blank" rel="noopener">Pedir proposta pelo WhatsApp ↗</a>
-      <a class="sv-btn ghost" href="#cases">Ver sites que fiz ↓</a>
+      <a class="sv-btn primary" href="https://wa.me/5512974054956?text=Ol%C3%A1%2C%20Matheus!%20Quero%20uma%20proposta%20para%20o%20meu%20site." data-en-href="https://wa.me/5512974054956?text=Hi%20Matheus!%20I%20would%20like%20a%20proposal%20for%20my%20website." target="_blank" rel="noopener"><span data-i18n="sv.4">Pedir proposta pelo WhatsApp ↗</span></a>
+      <a class="sv-btn ghost" href="#cases"><span data-i18n="sv.5">Ver sites que fiz ↓</span></a>
     </div>
   </div>
 </header>
 
 <section class="sv-sec">
   <div class="sv-wrap">
-    <h2>Seu caso é <em>um destes?</em></h2>
+    <h2 data-i18n="sv.6">Seu caso é <em>um destes?</em></h2>
     <div class="sv-grid">
       <article class="sv-card">
-        <h3>Você ainda não tem site</h3>
-        <p>Quem pesquisa a sua empresa só encontra rede social e precisa procurar para entender o que você faz e como pedir um orçamento.</p>
+        <h3 data-i18n="sv.7">Você ainda não tem site</h3>
+        <p data-i18n="sv.8">Quem pesquisa a sua empresa só encontra rede social e precisa procurar para entender o que você faz e como pedir um orçamento.</p>
       </article>
       <article class="sv-card">
-        <h3>O site atual ficou para trás</h3>
-        <p>Está lento, ruim no celular ou difícil de atualizar. Quem entra não percebe o nível do trabalho que você entrega.</p>
+        <h3 data-i18n="sv.9">O site atual ficou para trás</h3>
+        <p data-i18n="sv.10">Está lento, ruim no celular ou difícil de atualizar. Quem entra não percebe o nível do trabalho que você entrega.</p>
       </article>
       <article class="sv-card">
-        <h3>O site não gera contato</h3>
-        <p>As pessoas visitam e não chamam. Costuma faltar texto claro, prova do trabalho ou um caminho curto até a conversa.</p>
+        <h3 data-i18n="sv.11">O site não gera contato</h3>
+        <p data-i18n="sv.12">As pessoas visitam e não chamam. Costuma faltar texto claro, prova do trabalho ou um caminho curto até a conversa.</p>
       </article>
     </div>
   </div>
@@ -163,47 +93,47 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:#EBBE38}
 
 <section class="sv-sec">
   <div class="sv-wrap">
-    <h2>O que o seu site <em>recebe.</em></h2>
-    <p class="sv-lead">Vale para um site que apresenta a empresa e gera contato. O que entra no seu projeto fica escrito na proposta.</p>
+    <h2 data-i18n="sv.13">O que o seu site <em>recebe.</em></h2>
+    <p class="sv-lead" data-i18n="sv.14">Vale para um site que apresenta a empresa e gera contato. O que entra no seu projeto fica escrito na proposta.</p>
     <ul class="sv-list">
-      <li><b>Páginas na ordem certa</b>Cada informação aparece no momento em que o seu cliente procura por ela.</li>
-      <li><b>Design da sua marca</b>Telas desenhadas para a sua empresa, pensadas primeiro para quem acessa pelo celular.</li>
-      <li><b>Tecnologia para o seu caso</b>Site em código, com Desenvolvimento com IA, ou em WordPress, Elementor ou Framer.</li>
-      <li><b>Painel para editar</b>Se você vai publicar ou atualizar conteúdo, faz isso em um painel, sem abrir o código.</li>
-      <li><b>Preparo para o Google</b>Cada página sai com título, descrição, endereço e dados estruturados, que ajudam o buscador a entender o assunto.</li>
-      <li><b>Ferramentas de acompanhamento</b>Se você já tem Pixel e GTM configurados, instalo no site sem custo extra. Também posso inserir o Clarity ou um serviço parecido.</li>
+      <li><b data-i18n="sv.15">Páginas na ordem certa</b><span data-i18n="sv.16">Cada informação aparece no momento em que o seu cliente procura por ela.</span></li>
+      <li><b data-i18n="sv.17">Design da sua marca</b><span data-i18n="sv.18">Telas desenhadas para a sua empresa, pensadas primeiro para quem acessa pelo celular.</span></li>
+      <li><b data-i18n="sv.19">Tecnologia para o seu caso</b><span data-i18n="sv.20">Site em código, com Desenvolvimento com IA, ou em WordPress, Elementor ou Framer.</span></li>
+      <li><b data-i18n="sv.21">Painel para editar</b><span data-i18n="sv.22">Se você vai publicar ou atualizar conteúdo, faz isso em um painel, sem abrir o código.</span></li>
+      <li><b data-i18n="sv.23">Preparo para o Google</b><span data-i18n="sv.24">Cada página sai com título, descrição, endereço e dados estruturados, que ajudam o buscador a entender o assunto.</span></li>
+      <li><b data-i18n="sv.25">Ferramentas de acompanhamento</b><span data-i18n="sv.26">Se você já tem Pixel e GTM configurados, instalo no site sem custo extra. Também posso inserir o Clarity ou um serviço parecido.</span></li>
     </ul>
   </div>
 </section>
 
 <section class="sv-sec">
   <div class="sv-wrap">
-    <h2>Da primeira conversa ao <em>site no ar.</em></h2>
-    <p class="sv-lead">São quatro etapas. O prazo muda com o tamanho do projeto e com o envio dos materiais.</p>
+    <h2 data-i18n="sv.27">Da primeira conversa ao <em>site no ar.</em></h2>
+    <p class="sv-lead" data-i18n="sv.28">São quatro etapas. O prazo muda com o tamanho do projeto e com o envio dos materiais.</p>
     <ol class="sv-steps">
-      <li><h3>Contato e proposta</h3><p>Por reunião ou pelo WhatsApp, você conta sobre o negócio e o que o site precisa fazer. A partir desse primeiro contato, envio a proposta.</p></li>
-      <li><h3>Design</h3><p>Desenho as telas da sua marca, pensadas primeiro para quem acessa pelo celular.</p></li>
-      <li><h3>Construção e aprovação</h3><p>Quem desenhou é quem constrói. Você pede ajustes, em até 3 rodadas, e aprova antes de o site ir ao ar.</p></li>
-      <li><h3>Publicação</h3><p>Testo no celular, coloco o site no ar e entrego os acessos em nome da sua empresa. Depois da entrega, há suporte por até 30 dias.</p></li>
+      <li><h3 data-i18n="sv.29">Contato e proposta</h3><p data-i18n="sv.30">Por reunião ou pelo WhatsApp, você conta sobre o negócio e o que o site precisa fazer. A partir desse primeiro contato, envio a proposta.</p></li>
+      <li><h3 data-i18n="sv.31">Design</h3><p data-i18n="sv.32">Desenho as telas da sua marca, pensadas primeiro para quem acessa pelo celular.</p></li>
+      <li><h3 data-i18n="sv.33">Construção e aprovação</h3><p data-i18n="sv.34">Quem desenhou é quem constrói. Você pede ajustes, em até 3 rodadas, e aprova antes de o site ir ao ar.</p></li>
+      <li><h3 data-i18n="sv.35">Publicação</h3><p data-i18n="sv.36">Testo no celular, coloco o site no ar e entrego os acessos em nome da sua empresa. Depois da entrega, há suporte por até 30 dias.</p></li>
     </ol>
   </div>
 </section>
 
 <section class="sv-sec" id="cases">
   <div class="sv-wrap">
-    <h2>Sites que <em>já entreguei.</em></h2>
-    <div class="sv-cases">
+    <h2 data-i18n="sv.37">Sites que <em>já entreguei.</em></h2>
+    <div class="sv-cases cols-3">
       <a class="sv-case" href="/ihs">
-        <img src="/assets/images/hs-ihs.jpg" width="1000" height="750" alt="Site do IHS Advogados em um notebook" loading="lazy">
-        <div><h3>IHS Advogados</h3><p>Site institucional de escritório de advocacia, em código, com painel para o escritório publicar artigos.</p></div>
+        <img src="/assets/images/hs-ihs.jpg" alt="Site do IHS Advogados em um notebook" data-en-alt="IHS Advogados website on a laptop" loading="lazy">
+        <div><h3>IHS Advogados</h3><p data-i18n="sv.38">Site institucional de escritório de advocacia, em código, com painel para o escritório publicar artigos.</p></div>
       </a>
       <a class="sv-case" href="/agroribeiro">
-        <img src="/assets/images/hs-ribeiro.jpg" width="1000" height="750" alt="Site da Agro Ribeiro" loading="lazy">
-        <div><h3>Agro Ribeiro</h3><p>Corretora de fazendas de alto padrão. O cliente cadastra e publica novas fazendas em um painel próprio.</p></div>
+        <img src="/assets/images/hs-ribeiro.jpg" alt="Site da Agro Ribeiro" data-en-alt="Agro Ribeiro website" loading="lazy">
+        <div><h3>Agro Ribeiro</h3><p data-i18n="sv.39">Corretora de fazendas de alto padrão. O cliente cadastra e publica novas fazendas em um painel próprio.</p></div>
       </a>
       <a class="sv-case" href="/drrafael">
-        <img src="/assets/images/hs-drrafael.jpg" width="1000" height="750" alt="Site do Dr. Rafael Nora Resende" loading="lazy">
-        <div><h3>Dr. Rafael Nora Resende</h3><p>Site de cirurgião do aparelho digestivo, com 92 de performance e 100 em SEO no PageSpeed.</p></div>
+        <img src="/assets/images/hs-drrafael.jpg" alt="Site do Dr. Rafael Nora Resende" data-en-alt="Dr. Rafael Nora Resende website" loading="lazy">
+        <div><h3>Dr. Rafael Nora Resende</h3><p data-i18n="sv.40">Site de cirurgião do aparelho digestivo, com 92 de performance e 100 em SEO no PageSpeed.</p></div>
       </a>
     </div>
   </div>
@@ -213,57 +143,57 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:#EBBE38}
 
 <section class="sv-sec">
   <div class="sv-wrap sv-faq">
-    <h2>Perguntas <em>frequentes.</em></h2>
+    <h2 data-i18n="sv.41">Perguntas <em>frequentes.</em></h2>
     <details>
-      <summary>Quanto tempo leva para criar um site?</summary>
-      <p>Em geral, de 2 a 3 semanas. Mais páginas, integrações ou materiais ainda por produzir aumentam o prazo, que fica combinado na proposta.</p>
+      <summary><span data-i18n="sv.42">Quanto tempo leva para criar um site?</span></summary>
+      <p data-i18n="sv.43">Em geral, de 2 a 3 semanas. Mais páginas, integrações ou materiais ainda por produzir aumentam o prazo, que fica combinado na proposta.</p>
     </details>
     <details>
-      <summary>Quanto custa um site?</summary>
-      <p>O valor depende do número de páginas, do painel de conteúdo e das integrações. A proposta é enviada a partir do primeiro contato, em reunião ou pelo WhatsApp.</p>
+      <summary><span data-i18n="sv.44">Quanto custa um site?</span></summary>
+      <p data-i18n="sv.45">O valor depende do número de páginas, do painel de conteúdo e das integrações. A proposta é enviada a partir do primeiro contato, em reunião ou pelo WhatsApp.</p>
     </details>
     <details>
-      <summary>Como funciona o pagamento?</summary>
-      <p>À vista ou em 2 parcelas: uma no início e outra no término do projeto.</p>
+      <summary><span data-i18n="sv.46">Como funciona o pagamento?</span></summary>
+      <p data-i18n="sv.47">À vista ou em 2 parcelas: uma no início e outra no término do projeto.</p>
     </details>
     <details>
-      <summary>Quantas rodadas de ajustes estão incluídas?</summary>
-      <p>São 3 rodadas de ajustes.</p>
+      <summary><span data-i18n="sv.48">Quantas rodadas de ajustes estão incluídas?</span></summary>
+      <p data-i18n="sv.49">São 3 rodadas de ajustes.</p>
     </details>
     <details>
-      <summary>Quem escreve os textos do site?</summary>
-      <p>Você escolhe. A redação pode ser contratada junto com o site, ou você entrega os textos prontos no início do projeto.</p>
+      <summary><span data-i18n="sv.50">Quem escreve os textos do site?</span></summary>
+      <p data-i18n="sv.51">Você escolhe. A redação pode ser contratada junto com o site, ou você entrega os textos prontos no início do projeto.</p>
     </details>
     <details>
-      <summary>Tem suporte depois da entrega?</summary>
-      <p>Sim, por até 30 dias. Também ofereço o serviço de gestão e acompanhamento do site.</p>
+      <summary><span data-i18n="sv.52">Tem suporte depois da entrega?</span></summary>
+      <p data-i18n="sv.53">Sim, por até 30 dias. Também ofereço o serviço de gestão e acompanhamento do site.</p>
     </details>
     <details>
-      <summary>Consigo editar o site sem depender de você?</summary>
-      <p>Sim, quando o projeto prevê edição. Você usa um painel: o do WordPress ou, em um site em código, um como o Sanity.</p>
+      <summary><span data-i18n="sv.54">Consigo editar o site sem depender de você?</span></summary>
+      <p data-i18n="sv.55">Sim, quando o projeto prevê edição. Você usa um painel: o do WordPress ou, em um site em código, um como o Sanity.</p>
     </details>
     <details>
-      <summary>Site em código ou WordPress?</summary>
-      <p>Para apresentar o negócio e gerar contato, o site em código costuma ser a melhor escolha. Para loja ou muitas pessoas editando todo dia, o WordPress pode ser mais prático. Explico os critérios no texto <a href="/blog/site-em-codigo-ou-wordpress/">site em código ou WordPress</a>.</p>
+      <summary><span data-i18n="sv.56">Site em código ou WordPress?</span></summary>
+      <p data-i18n="sv.57">Para apresentar o negócio e gerar contato, o site em código costuma ser a melhor escolha. Para loja ou muitas pessoas editando todo dia, o WordPress pode ser mais prático. Explico os critérios no texto <a href="/blog/site-em-codigo-ou-wordpress/">site em código ou WordPress</a>.</p>
     </details>
     <details>
-      <summary>Domínio e hospedagem ficam no nome de quem?</summary>
-      <p>No seu nome ou no da sua empresa, assim como os acessos. Se você preferir, também posso hospedar o site no meu servidor.</p>
+      <summary><span data-i18n="sv.58">Domínio e hospedagem ficam no nome de quem?</span></summary>
+      <p data-i18n="sv.59">No seu nome ou no da sua empresa, assim como os acessos. Se você preferir, também posso hospedar o site no meu servidor.</p>
     </details>
     <details>
-      <summary>E se o projeto tiver sistema ou área com login?</summary>
-      <p>Em projetos simples, entrego a solução completa. Nos complexos, atuo como complemento ao desenvolvedor, cuidando de design, interface e conversão.</p>
+      <summary><span data-i18n="sv.60">E se o projeto tiver sistema ou área com login?</span></summary>
+      <p data-i18n="sv.61">Em projetos simples, entrego a solução completa. Nos complexos, atuo como complemento ao desenvolvedor, cuidando de design, interface e conversão.</p>
     </details>
   </div>
 </section>
 
 <section class="contact" id="contato">
   <div class="sv-wrap">
-    <h2>Vamos falar do <em>seu site?</em></h2>
-    <p class="sv-lead">Conte em poucas linhas o que a sua empresa faz e o que o site precisa resolver. Eu respondo com o que falta saber para montar a proposta.</p>
+    <h2 data-i18n="sv.62">Vamos falar do <em>seu site?</em></h2>
+    <p class="sv-lead" data-i18n="sv.63">Conte em poucas linhas o que a sua empresa faz e o que o site precisa resolver. Eu respondo com o que falta saber para montar a proposta.</p>
     <div class="sv-ctas">
-      <a class="sv-btn primary" href="https://wa.me/5512974054956?text=Ol%C3%A1%2C%20Matheus!%20Quero%20uma%20proposta%20para%20o%20meu%20site." target="_blank" rel="noopener">Pedir proposta pelo WhatsApp ↗</a>
-      <a class="sv-btn ghost" href="mailto:matheuspadula7@gmail.com?subject=Cria%C3%A7%C3%A3o%20de%20site">Pedir proposta por e-mail</a>
+      <a class="sv-btn primary" href="https://wa.me/5512974054956?text=Ol%C3%A1%2C%20Matheus!%20Quero%20uma%20proposta%20para%20o%20meu%20site." data-en-href="https://wa.me/5512974054956?text=Hi%20Matheus!%20I%20would%20like%20a%20proposal%20for%20my%20website." target="_blank" rel="noopener"><span data-i18n="sv.64">Pedir proposta pelo WhatsApp ↗</span></a>
+      <a class="sv-btn ghost" href="mailto:matheuspadula7@gmail.com?subject=Cria%C3%A7%C3%A3o%20de%20site"><span data-i18n="sv.65">Pedir proposta por e-mail</span></a>
     </div>
   </div>
 </section>
@@ -272,5 +202,28 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:#EBBE38}
 <div id="footer-root"></div>
 
 <script src="/components/layout.js?v=8"></script>
+<script>
+// Textos desta pagina para o seletor PT/EN do menu (aplicados por components/layout.js).
+(function () {
+  Object.assign(window.CASE_I18N.pt, {"sv.1":"Design + código","sv.2":"Criação de sites que explicam o que você faz e \u003cem>levam ao contato.\u003c/em>","sv.3":"Eu desenho e construo o site da sua empresa, e você fala direto comigo em todas as etapas. Um site completo costuma ficar pronto em 2 a 3 semanas.","sv.4":"Pedir proposta pelo WhatsApp ↗","sv.5":"Ver sites que fiz ↓","sv.6":"Seu caso é \u003cem>um destes?\u003c/em>","sv.7":"Você ainda não tem site","sv.8":"Quem pesquisa a sua empresa só encontra rede social e precisa procurar para entender o que você faz e como pedir um orçamento.","sv.9":"O site atual ficou para trás","sv.10":"Está lento, ruim no celular ou difícil de atualizar. Quem entra não percebe o nível do trabalho que você entrega.","sv.11":"O site não gera contato","sv.12":"As pessoas visitam e não chamam. Costuma faltar texto claro, prova do trabalho ou um caminho curto até a conversa.","sv.13":"O que o seu site \u003cem>recebe.\u003c/em>","sv.14":"Vale para um site que apresenta a empresa e gera contato. O que entra no seu projeto fica escrito na proposta.","sv.15":"Páginas na ordem certa","sv.16":"Cada informação aparece no momento em que o seu cliente procura por ela.","sv.17":"Design da sua marca","sv.18":"Telas desenhadas para a sua empresa, pensadas primeiro para quem acessa pelo celular.","sv.19":"Tecnologia para o seu caso","sv.20":"Site em código, com Desenvolvimento com IA, ou em WordPress, Elementor ou Framer.","sv.21":"Painel para editar","sv.22":"Se você vai publicar ou atualizar conteúdo, faz isso em um painel, sem abrir o código.","sv.23":"Preparo para o Google","sv.24":"Cada página sai com título, descrição, endereço e dados estruturados, que ajudam o buscador a entender o assunto.","sv.25":"Ferramentas de acompanhamento","sv.26":"Se você já tem Pixel e GTM configurados, instalo no site sem custo extra. Também posso inserir o Clarity ou um serviço parecido.","sv.27":"Da primeira conversa ao \u003cem>site no ar.\u003c/em>","sv.28":"São quatro etapas. O prazo muda com o tamanho do projeto e com o envio dos materiais.","sv.29":"Contato e proposta","sv.30":"Por reunião ou pelo WhatsApp, você conta sobre o negócio e o que o site precisa fazer. A partir desse primeiro contato, envio a proposta.","sv.31":"Design","sv.32":"Desenho as telas da sua marca, pensadas primeiro para quem acessa pelo celular.","sv.33":"Construção e aprovação","sv.34":"Quem desenhou é quem constrói. Você pede ajustes, em até 3 rodadas, e aprova antes de o site ir ao ar.","sv.35":"Publicação","sv.36":"Testo no celular, coloco o site no ar e entrego os acessos em nome da sua empresa. Depois da entrega, há suporte por até 30 dias.","sv.37":"Sites que \u003cem>já entreguei.\u003c/em>","sv.38":"Site institucional de escritório de advocacia, em código, com painel para o escritório publicar artigos.","sv.39":"Corretora de fazendas de alto padrão. O cliente cadastra e publica novas fazendas em um painel próprio.","sv.40":"Site de cirurgião do aparelho digestivo, com 92 de performance e 100 em SEO no PageSpeed.","sv.41":"Perguntas \u003cem>frequentes.\u003c/em>","sv.42":"Quanto tempo leva para criar um site?","sv.43":"Em geral, de 2 a 3 semanas. Mais páginas, integrações ou materiais ainda por produzir aumentam o prazo, que fica combinado na proposta.","sv.44":"Quanto custa um site?","sv.45":"O valor depende do número de páginas, do painel de conteúdo e das integrações. A proposta é enviada a partir do primeiro contato, em reunião ou pelo WhatsApp.","sv.46":"Como funciona o pagamento?","sv.47":"À vista ou em 2 parcelas: uma no início e outra no término do projeto.","sv.48":"Quantas rodadas de ajustes estão incluídas?","sv.49":"São 3 rodadas de ajustes.","sv.50":"Quem escreve os textos do site?","sv.51":"Você escolhe. A redação pode ser contratada junto com o site, ou você entrega os textos prontos no início do projeto.","sv.52":"Tem suporte depois da entrega?","sv.53":"Sim, por até 30 dias. Também ofereço o serviço de gestão e acompanhamento do site.","sv.54":"Consigo editar o site sem depender de você?","sv.55":"Sim, quando o projeto prevê edição. Você usa um painel: o do WordPress ou, em um site em código, um como o Sanity.","sv.56":"Site em código ou WordPress?","sv.57":"Para apresentar o negócio e gerar contato, o site em código costuma ser a melhor escolha. Para loja ou muitas pessoas editando todo dia, o WordPress pode ser mais prático. Explico os critérios no texto \u003ca href=\"/blog/site-em-codigo-ou-wordpress/\">site em código ou WordPress\u003c/a>.","sv.58":"Domínio e hospedagem ficam no nome de quem?","sv.59":"No seu nome ou no da sua empresa, assim como os acessos. Se você preferir, também posso hospedar o site no meu servidor.","sv.60":"E se o projeto tiver sistema ou área com login?","sv.61":"Em projetos simples, entrego a solução completa. Nos complexos, atuo como complemento ao desenvolvedor, cuidando de design, interface e conversão.","sv.62":"Vamos falar do \u003cem>seu site?\u003c/em>","sv.63":"Conte em poucas linhas o que a sua empresa faz e o que o site precisa resolver. Eu respondo com o que falta saber para montar a proposta.","sv.64":"Pedir proposta pelo WhatsApp ↗","sv.65":"Pedir proposta por e-mail"});
+  Object.assign(window.CASE_I18N.en, {"sv.1":"Design + code","sv.2":"Websites that explain what you do and \u003cem>lead to contact.\u003c/em>","sv.3":"I design and build your company website, and you talk directly to me at every step. A complete website is usually ready in 2 to 3 weeks.","sv.4":"Request a proposal on WhatsApp ↗","sv.5":"See websites I built ↓","sv.6":"Is this \u003cem>your situation?\u003c/em>","sv.7":"You do not have a website yet","sv.8":"People who search for your company only find social media and have to dig to understand what you do and how to ask for a quote.","sv.9":"Your current website fell behind","sv.10":"It is slow, poor on mobile or hard to update. Visitors cannot tell the level of work you deliver.","sv.11":"Your website does not bring contacts","sv.12":"People visit and do not get in touch. What is usually missing is clear copy, proof of work or a short path to a conversation.","sv.13":"What your website \u003cem>gets.\u003c/em>","sv.14":"This applies to a website that presents your company and brings contacts. What your project includes is written in the proposal.","sv.15":"Pages in the right order","sv.16":"Each piece of information shows up when your customer is looking for it.","sv.17":"Design for your brand","sv.18":"Screens designed for your company, planned for mobile visitors first.","sv.19":"Technology that fits your case","sv.20":"A coded website, with AI-assisted development, or one built in WordPress, Elementor or Framer.","sv.21":"A panel for editing","sv.22":"If you will publish or update content, you do it in a panel, without opening the code.","sv.23":"Ready for Google","sv.24":"Each page ships with its title, description, address and structured data, which help the search engine understand the subject.","sv.25":"Tracking tools","sv.26":"If you already have Pixel and GTM set up, I install them at no extra cost. I can also add Clarity or a similar service.","sv.27":"From first conversation to \u003cem>live website.\u003c/em>","sv.28":"There are four steps. The timeline depends on the size of the project and on when materials arrive.","sv.29":"Contact and proposal","sv.30":"In a meeting or on WhatsApp, you tell me about the business and what the website needs to do. From that first contact, I send the proposal.","sv.31":"Design","sv.32":"I design the screens for your brand, planned for mobile visitors first.","sv.33":"Build and approval","sv.34":"The person who designed it builds it. You ask for changes, in up to 3 rounds, and approve before the website goes live.","sv.35":"Launch","sv.36":"I test on mobile, put the website live and hand over the access in your company name. After delivery there is support for up to 30 days.","sv.37":"Websites I have \u003cem>delivered.\u003c/em>","sv.38":"Law firm website, built in code, with a panel for the firm to publish articles.","sv.39":"High-end farm brokerage. The client adds and publishes new farms in their own panel.","sv.40":"Website for a digestive system surgeon, scoring 92 in performance and 100 in SEO on PageSpeed.","sv.41":"Frequently asked \u003cem>questions.\u003c/em>","sv.42":"How long does a website take?","sv.43":"Usually 2 to 3 weeks. More pages, integrations or materials still to be produced make it longer, and that is agreed in the proposal.","sv.44":"How much does a website cost?","sv.45":"It depends on the number of pages, the content panel and the integrations. The proposal is sent from the first contact, in a meeting or on WhatsApp.","sv.46":"How does payment work?","sv.47":"In full, or in 2 installments: one at the start and one at the end of the project.","sv.48":"How many rounds of revisions are included?","sv.49":"There are 3 rounds of revisions.","sv.50":"Who writes the website copy?","sv.51":"You choose. Copywriting can be hired with the website, or you hand in the finished texts at the start of the project.","sv.52":"Is there support after delivery?","sv.53":"Yes, for up to 30 days. I also offer an ongoing website management service.","sv.54":"Can I edit the website without depending on you?","sv.55":"Yes, when the project includes editing. You use a panel: the WordPress one or, on a coded website, one such as Sanity.","sv.56":"Coded website or WordPress?","sv.57":"To present a business and bring contacts, a coded website is usually the better choice. For a store, or many people editing every day, WordPress can be more practical. I explain the criteria in \u003ca href=\"/blog/site-em-codigo-ou-wordpress/\">this article (in Portuguese)\u003c/a>.","sv.58":"Who owns the domain and hosting?","sv.59":"You or your company, along with the access. If you prefer, I can also host the website on my server.","sv.60":"What if the project has a system or a login area?","sv.61":"On simpler projects I deliver the complete solution. On complex ones I work alongside your developer, taking care of design, interface and conversion.","sv.62":"Shall we talk about \u003cem>your website?\u003c/em>","sv.63":"Tell me in a few lines what your company does and what the website needs to solve. I will reply with what I still need to know to put the proposal together.","sv.64":"Request a proposal on WhatsApp ↗","sv.65":"Request a proposal by email"});
+  // Links do WhatsApp, textos alternativos e titulo da aba acompanham o idioma.
+  var titles = {"pt":"Criação de sites sob medida | Padula Design Studio","en":"Custom website design and build | Padula Design Studio"};
+  var root = document.documentElement;
+  function sync() {
+    var en = root.lang === 'en';
+    document.querySelectorAll('[data-en-href]').forEach(function (a) {
+      if (!a.dataset.ptHref) { a.dataset.ptHref = a.getAttribute('href'); }
+      a.setAttribute('href', en ? a.dataset.enHref : a.dataset.ptHref);
+    });
+    document.querySelectorAll('[data-en-alt]').forEach(function (i) {
+      if (!i.dataset.ptAlt) { i.dataset.ptAlt = i.getAttribute('alt'); }
+      i.setAttribute('alt', en ? i.dataset.enAlt : i.dataset.ptAlt);
+    });
+    document.title = en ? titles.en : titles.pt;
+  }
+  new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+})();
+</script>
 </body>
 </html>
